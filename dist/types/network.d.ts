@@ -17,4 +17,4 @@ interface ReachAccount {
     tokenAccepted: (asa: AsaId) => Promise<boolean>;
     getAddress: () => NetworkAddress;
 }
-export { BigNumber, AsaId, ContractId, NetworkAddress, NetworkAccount, ReachAccount, };
+export { BigNumber, AsaId, ContractId, NetworkAddress, NetworkAccount, ReachAccount };

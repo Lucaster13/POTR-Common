@@ -1,13 +1,13 @@
 import { AsaId } from "./network";
 
 interface Cids {
-    potr: string;
-    coin: string;
+	potr: string;
+	coin: string;
 }
 
 interface AsaIds {
-    potr: AsaId[];
-    coin: AsaId[];
+	potr: AsaId[];
+	coin: AsaId[];
 }
 
 export { Cids, AsaIds };

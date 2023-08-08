@@ -24,45 +24,45 @@ errl:
 err
 _reachi_0:
 txn Sender
-store 22 // Deployer/506
-load 11 // v1375
+store 22 // Deployer/725
+load 11 // v1606
 btoi
-store 12 // v1374
+store 12 // v1605
 byte base64(gsRh/g==)
-load 12 // v1374
+load 12 // v1605
 itob
 concat
 log // up to 12 bytes
-// ^ log: "_reach_e0" [v1374] "_reach_e0(uint64)"
-load 12 // v1374
+// ^ log: "_reach_e0" [v1605] "_reach_e0(uint64)"
+load 12 // v1605
 callsub l2_LF_timeCheck
 int 17
 bzero
 dup
-store 12 // initialInfo/500
+store 12 // initialInfo/719
 dup
 concat
-store 11 // tokInfos/501
+store 11 // tokInfos/720
 byte base64(UFJFUEFSSU5HAAAAAAAAAAAAAAA=)
-store 12 // v509
+store 12 // v728
 byte base64(QOznkw==)
-load 12 // v509
+load 12 // v728
 concat
 log // up to 24 bytes
-// ^ log: "status" [v509] "status(byte[20])"
-load 22 // Deployer/506
-store 21 // Summoner/510
+// ^ log: "status" [v728] "status(byte[20])"
+load 22 // Deployer/725
+store 21 // Summoner/729
 global Round
 int 20
 +
-store 14 // value/517
+store 14 // value/736
 l3_LF_svsDump_1:
-load 11 // tokInfos/501
-load 22 // Deployer/506
+load 11 // tokInfos/720
+load 22 // Deployer/725
 concat
-load 21 // Summoner/510
+load 21 // Summoner/729
 concat
-load 14 // value/517
+load 14 // value/736
 itob
 concat
 int 81
@@ -107,73 +107,73 @@ int 1
 return
 _reachi_1:
 txn Sender
-store 20 // Admin/528
+store 20 // Admin/746
 int 1
 load 1 // GV_currentStep :: UInt
 ==
 assert
 callsub l4_LF_svsLoad_1
-load 12 // v1378
+load 12 // v1609
 int 0
 extract_uint64
-store 13 // v1377
-load 12 // v1378
+store 13 // v1608
+load 12 // v1609
 int 8
 extract_uint64
-store 19 // coin/529
+store 19 // coin/747
 byte base64(x7YK1Q==)
-load 13 // v1377
+load 13 // v1608
 itob
 concat
-load 19 // coin/529
+load 19 // coin/747
 itob
 concat
 log // up to 20 bytes
-// ^ log: "_reach_e1" [v1377,coin/529] "_reach_e1(uint64,uint64)"
-load 13 // v1377
+// ^ log: "_reach_e1" [v1608,coin/747] "_reach_e1(uint64,uint64)"
+load 13 // v1608
 callsub l2_LF_timeCheck
 global Round
-load 14 // value/517
+load 14 // value/736
 <
 assert
-load 11 // tokInfos/501
+load 11 // tokInfos/720
 dup
 extract 0 17
 int 8
 bzero
 replace2 0
 replace2 0
-store 14 // tokInfos'/534
+store 14 // tokInfos'/752
 int 100000
 callsub l1_LF_mbrAdd
 int 0
 // resource: R_Asset
-load 19 // coin/529
+load 19 // coin/747
 global CurrentApplicationAddress
 callsub l5_LF_makeTxn_False_False_True_True
 byte base64(UEFZSU5HAAAAAAAAAAAAAAAAAAA=)
-store 11 // v536
+store 11 // v754
 byte base64(QOznkw==)
-load 11 // v536
+load 11 // v754
 concat
 log // up to 24 bytes
-// ^ log: "status" [v536] "status(byte[20])"
+// ^ log: "status" [v754] "status(byte[20])"
 global Round
 int 20
 +
-store 12 // value/540
+store 12 // value/758
 l6_LF_svsDump_3:
-load 22 // Deployer/506
-load 21 // Summoner/510
+load 22 // Deployer/725
+load 21 // Summoner/729
 concat
-load 20 // Admin/528
+load 20 // Admin/746
 concat
-load 19 // coin/529
+load 19 // coin/747
 itob
 concat
-load 14 // tokInfos'/534
+load 14 // tokInfos'/752
 concat
-load 12 // value/540
+load 12 // value/758
 itob
 concat
 int 41
@@ -188,83 +188,83 @@ load 1 // GV_currentStep :: UInt
 ==
 assert
 callsub l7_LF_svsLoad_9
-load 11 // v1405
+load 11 // v1636
 btoi
-store 12 // v1404
+store 12 // v1635
 byte base64(p4vCCw==)
-load 12 // v1404
+load 12 // v1635
 itob
 concat
 log // up to 12 bytes
-// ^ log: "_reach_e10" [v1404] "_reach_e10(uint64)"
-load 12 // v1404
+// ^ log: "_reach_e10" [v1635] "_reach_e10(uint64)"
+load 12 // v1635
 callsub l2_LF_timeCheck
 global Round
-load 16 // value/621
+load 16 // value/852
 >=
 assert
-load 20 // Admin/528
+load 20 // Admin/746
 txn Sender
 ==
-load 22 // Deployer/506
+load 22 // Deployer/725
 txn Sender
 ==
 ||
-load 21 // Summoner/510
+load 21 // Summoner/729
 txn Sender
 ==
 ||
 assert
 // ^ Claim: sender correct
 // at reach standard library:197:11:dot
-// at ./src/contracts/summon.rsh:156:32:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
-load 14 // v630
+// at ./src/contracts/summon.rsh:151:32:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
+load 14 // v861
 dup
 -
 dup
-store 11 // v716
+store 11 // v947
 int 0
 >=
 assert
 // ^ Claim: assume >= 0
 // at reach standard library:198:46:application
-// at ./src/contracts/summon.rsh:156:32:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
-load 14 // v630
+// at ./src/contracts/summon.rsh:151:32:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
+load 14 // v861
 // resource: R_Asset
-load 18 // potr/582
+load 18 // potr/813
 // resource: R_Account
-load 20 // Admin/528
+load 20 // Admin/746
 callsub l5_LF_makeTxn_False_False_True_True
-load 17 // tokInfos'/615
-load 15 // tokInfo/629
-load 11 // v716
+load 17 // tokInfos'/846
+load 15 // tokInfo/860
+load 11 // v947
 itob
 replace2 0
 replace2 17
 extract 0 17
 int 0
 extract_uint64
-load 13 // v632
+load 13 // v863
 -
 int 0
 >=
 assert
 // ^ Claim: assume >= 0
 // at reach standard library:198:46:application
-// at ./src/contracts/summon.rsh:156:32:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
-load 13 // v632
+// at ./src/contracts/summon.rsh:151:32:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
+load 13 // v863
 // resource: R_Asset
-load 19 // coin/529
-load 20 // Admin/528
+load 19 // coin/747
+load 20 // Admin/746
 callsub l5_LF_makeTxn_False_False_True_True
 // resource: R_Account
 int 0
-load 18 // potr/582
+load 18 // potr/813
 global CurrentApplicationAddress
 global CreatorAddress
 callsub l8_LF_makeTxn_False_True_True_True
 int 0
-load 19 // coin/529
+load 19 // coin/747
 global CurrentApplicationAddress
 global CreatorAddress
 callsub l8_LF_makeTxn_False_True_True_True
@@ -287,19 +287,19 @@ load 1 // GV_currentStep :: UInt
 ==
 assert
 callsub l4_LF_svsLoad_1
-load 12 // v1381
+load 12 // v1612
 btoi
-store 11 // v1380
+store 11 // v1611
 byte base64(l073Fw==)
-load 11 // v1380
+load 11 // v1611
 itob
 concat
 log // up to 12 bytes
-// ^ log: "_reach_e2" [v1380] "_reach_e2(uint64)"
-load 11 // v1380
+// ^ log: "_reach_e2" [v1611] "_reach_e2(uint64)"
+load 11 // v1611
 callsub l2_LF_timeCheck
 global Round
-load 14 // value/517
+load 14 // value/736
 >=
 assert
 b updateStateHalt
@@ -309,85 +309,85 @@ load 1 // GV_currentStep :: UInt
 ==
 assert
 callsub l9_LF_svsLoad_3
-load 11 // v1384
+load 11 // v1615
 btoi
-store 13 // v1383
+store 13 // v1614
 byte base64(1Axs1g==)
-load 13 // v1383
+load 13 // v1614
 itob
 concat
 log // up to 12 bytes
-// ^ log: "_reach_e3" [v1383] "_reach_e3(uint64)"
-load 13 // v1383
+// ^ log: "_reach_e3" [v1614] "_reach_e3(uint64)"
+load 13 // v1614
 callsub l2_LF_timeCheck
 global Round
-load 12 // value/540
+load 12 // value/758
 <
 assert
-load 14 // tokInfos'/534
+load 14 // tokInfos'/752
 extract 0 17
 dup
-store 13 // tokInfo/551
+store 13 // tokInfo/771
 int 0
 extract_uint64
 int 1
 +
 dup
-store 12 // v553
+store 12 // v773
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
-// at ./src/contracts/summon.rsh:106:18:dot
-load 14 // tokInfos'/534
-load 13 // tokInfo/551
-load 12 // v553
+// at ./src/contracts/summon.rsh:101:18:dot
+load 14 // tokInfos'/752
+load 13 // tokInfo/771
+load 12 // v773
 itob
 replace2 0
 replace2 0
-store 11 // tokInfos'/558
+store 11 // tokInfos'/778
 int 1
-load 19 // coin/529
+load 19 // coin/747
 callsub l10_LF_checkTxn_True
 // ^ CheckPay
-// at ./src/contracts/summon.rsh:106:18:dot
-load 21 // Summoner/510
+// at ./src/contracts/summon.rsh:101:18:dot
+load 21 // Summoner/729
 txn Sender
 ==
 assert
 // ^ Claim: sender correct
-// at ./src/contracts/summon.rsh:106:18:dot
+// at ./src/contracts/summon.rsh:101:18:dot
 byte base64(U1VNTU9OSU5HAAAAAAAAAAAAAAA=)
-store 12 // v560
+store 12 // v780
 byte base64(QOznkw==)
-load 12 // v560
+load 12 // v780
 concat
 log // up to 24 bytes
-// ^ log: "status" [v560] "status(byte[20])"
+// ^ log: "status" [v780] "status(byte[20])"
 global Round
 int 20
 +
-store 14 // value/564
-load 11 // tokInfos'/558
+store 14 // value/784
+load 11 // tokInfos'/778
 extract 0 17
 int 0
 extract_uint64
-store 13 // v573
+store 13 // v793
 l11_LF_svsDump_5:
-load 22 // Deployer/506
-load 21 // Summoner/510
+load 22 // Deployer/725
+load 21 // Summoner/729
 concat
-load 20 // Admin/528
+load 20 // Admin/746
 concat
-load 19 // coin/529
+load 19 // coin/747
 itob
 concat
-load 11 // tokInfos'/558
+load 11 // tokInfos'/778
 concat
-load 14 // value/564
+load 14 // value/784
 itob
 concat
-load 13 // v573
+load 13 // v793
 itob
 concat
 int 33
@@ -402,40 +402,40 @@ load 1 // GV_currentStep :: UInt
 ==
 assert
 callsub l9_LF_svsLoad_3
-load 11 // v1387
+load 11 // v1618
 btoi
-store 13 // v1386
+store 13 // v1617
 byte base64(+YuveA==)
-load 13 // v1386
+load 13 // v1617
 itob
 concat
 log // up to 12 bytes
-// ^ log: "_reach_e4" [v1386] "_reach_e4(uint64)"
-load 13 // v1386
+// ^ log: "_reach_e4" [v1617] "_reach_e4(uint64)"
+load 13 // v1617
 callsub l2_LF_timeCheck
 global Round
-load 12 // value/540
+load 12 // value/758
 >=
 assert
-load 20 // Admin/528
+load 20 // Admin/746
 txn Sender
 ==
-load 22 // Deployer/506
+load 22 // Deployer/725
 txn Sender
 ==
 ||
-load 21 // Summoner/510
+load 21 // Summoner/729
 txn Sender
 ==
 ||
 assert
 // ^ Claim: sender correct
 // at reach standard library:197:11:dot
-// at ./src/contracts/summon.rsh:109:24:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
+// at ./src/contracts/summon.rsh:104:24:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
 // resource: R_Account
 int 0
 // resource: R_Asset
-load 19 // coin/529
+load 19 // coin/747
 global CurrentApplicationAddress
 global CreatorAddress
 callsub l8_LF_makeTxn_False_True_True_True
@@ -446,83 +446,83 @@ load 1 // GV_currentStep :: UInt
 ==
 assert
 callsub l12_LF_svsLoad_5
-load 12 // v1390
+load 12 // v1621
 int 0
 extract_uint64
-store 13 // v1389
-load 12 // v1390
+store 13 // v1620
+load 12 // v1621
 int 8
 extract_uint64
-store 18 // potr/582
+store 18 // potr/813
 byte base64(s1H3jw==)
-load 13 // v1389
+load 13 // v1620
 itob
 concat
-load 18 // potr/582
+load 18 // potr/813
 itob
 concat
 log // up to 20 bytes
-// ^ log: "_reach_e5" [v1389,potr/582] "_reach_e5(uint64,uint64)"
-load 13 // v1389
+// ^ log: "_reach_e5" [v1620,potr/813] "_reach_e5(uint64,uint64)"
+load 13 // v1620
 callsub l2_LF_timeCheck
 global Round
-load 14 // value/564
+load 14 // value/784
 <
 assert
-load 11 // tokInfos'/558
+load 11 // tokInfos'/778
 dup
 extract 17 17
 int 8
 bzero
 replace2 0
 replace2 17
-store 13 // tokInfos'/587
-load 18 // potr/582
-load 19 // coin/529
+store 13 // tokInfos'/818
+load 18 // potr/813
+load 19 // coin/747
 !=
 assert
 // ^ Claim: non-network tokens distinct
-// at ./src/contracts/summon.rsh:127:15:dot
+// at ./src/contracts/summon.rsh:122:15:dot
 int 100000
 callsub l1_LF_mbrAdd
 int 0
 // resource: R_Asset
-load 18 // potr/582
+load 18 // potr/813
 global CurrentApplicationAddress
 callsub l5_LF_makeTxn_False_False_True_True
-load 20 // Admin/528
+load 20 // Admin/746
 txn Sender
 ==
 assert
 // ^ Claim: sender correct
-// at ./src/contracts/summon.rsh:127:15:dot
+// at ./src/contracts/summon.rsh:122:15:dot
 global Round
 int 20
 +
-store 14 // value/595
-load 13 // tokInfos'/587
+store 14 // value/826
+load 13 // tokInfos'/818
 extract 0 17
 int 0
 extract_uint64
-store 12 // v604
+store 12 // v835
 l13_LF_svsDump_7:
-load 22 // Deployer/506
-load 21 // Summoner/510
+load 22 // Deployer/725
+load 21 // Summoner/729
 concat
-load 20 // Admin/528
+load 20 // Admin/746
 concat
-load 19 // coin/529
+load 19 // coin/747
 itob
 concat
-load 18 // potr/582
+load 18 // potr/813
 itob
 concat
-load 13 // tokInfos'/587
+load 13 // tokInfos'/818
 concat
-load 14 // value/595
+load 14 // value/826
 itob
 concat
-load 12 // v604
+load 12 // v835
 itob
 concat
 int 25
@@ -537,37 +537,37 @@ load 1 // GV_currentStep :: UInt
 ==
 assert
 callsub l12_LF_svsLoad_5
-load 12 // v1393
+load 12 // v1624
 btoi
-store 11 // v1392
+store 11 // v1623
 byte base64(cO3veg==)
-load 11 // v1392
+load 11 // v1623
 itob
 concat
 log // up to 12 bytes
-// ^ log: "_reach_e6" [v1392] "_reach_e6(uint64)"
-load 11 // v1392
+// ^ log: "_reach_e6" [v1623] "_reach_e6(uint64)"
+load 11 // v1623
 callsub l2_LF_timeCheck
 global Round
-load 14 // value/564
+load 14 // value/784
 >=
 assert
-load 20 // Admin/528
+load 20 // Admin/746
 txn Sender
 ==
-load 22 // Deployer/506
+load 22 // Deployer/725
 txn Sender
 ==
 ||
-load 21 // Summoner/510
+load 21 // Summoner/729
 txn Sender
 ==
 ||
 assert
 // ^ Claim: sender correct
 // at reach standard library:197:11:dot
-// at ./src/contracts/summon.rsh:130:24:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
-load 13 // v573
+// at ./src/contracts/summon.rsh:125:24:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
+load 13 // v793
 dup
 -
 int 0
@@ -575,16 +575,16 @@ int 0
 assert
 // ^ Claim: assume >= 0
 // at reach standard library:198:46:application
-// at ./src/contracts/summon.rsh:130:24:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
-load 13 // v573
+// at ./src/contracts/summon.rsh:125:24:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
+load 13 // v793
 // resource: R_Asset
-load 19 // coin/529
+load 19 // coin/747
 // resource: R_Account
-load 21 // Summoner/510
+load 21 // Summoner/729
 callsub l5_LF_makeTxn_False_False_True_True
 // resource: R_Account
 int 0
-load 19 // coin/529
+load 19 // coin/747
 global CurrentApplicationAddress
 global CreatorAddress
 callsub l8_LF_makeTxn_False_True_True_True
@@ -595,100 +595,100 @@ load 1 // GV_currentStep :: UInt
 ==
 assert
 callsub l14_LF_svsLoad_7
-load 11 // v1396
+load 11 // v1627
 btoi
-store 12 // v1395
+store 12 // v1626
 byte base64(caixow==)
-load 12 // v1395
+load 12 // v1626
 itob
 concat
 log // up to 12 bytes
-// ^ log: "_reach_e7" [v1395] "_reach_e7(uint64)"
-load 12 // v1395
+// ^ log: "_reach_e7" [v1626] "_reach_e7(uint64)"
+load 12 // v1626
 callsub l2_LF_timeCheck
 global Round
-load 14 // value/595
+load 14 // value/826
 <
 assert
-load 13 // tokInfos'/587
+load 13 // tokInfos'/818
 extract 17 17
 dup
-store 12 // tokInfo/608
+store 12 // tokInfo/839
 int 0
 extract_uint64
 int 1
 +
 dup
-store 11 // v610
+store 11 // v841
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
-// at ./src/contracts/summon.rsh:133:15:dot
-load 13 // tokInfos'/587
-load 12 // tokInfo/608
-load 11 // v610
+// at ./src/contracts/summon.rsh:128:15:dot
+load 13 // tokInfos'/818
+load 12 // tokInfo/839
+load 11 // v841
 itob
 replace2 0
 replace2 17
-store 17 // tokInfos'/615
+store 17 // tokInfos'/846
 int 1
-load 18 // potr/582
+load 18 // potr/813
 callsub l10_LF_checkTxn_True
 // ^ CheckPay
-// at ./src/contracts/summon.rsh:133:15:dot
-load 20 // Admin/528
+// at ./src/contracts/summon.rsh:128:15:dot
+load 20 // Admin/746
 txn Sender
 ==
 assert
 // ^ Claim: sender correct
-// at ./src/contracts/summon.rsh:133:15:dot
+// at ./src/contracts/summon.rsh:128:15:dot
 byte base64(Q0xBSU1JTkcAAAAAAAAAAAAAAAA=)
-store 11 // v617
+store 11 // v848
 byte base64(QOznkw==)
-load 11 // v617
+load 11 // v848
 concat
 log // up to 24 bytes
-// ^ log: "status" [v617] "status(byte[20])"
+// ^ log: "status" [v848] "status(byte[20])"
 global Round
 int 20
 +
-store 16 // value/621
-load 17 // tokInfos'/615
+store 16 // value/852
+load 17 // tokInfos'/846
 extract 17 17
 dup
-store 15 // tokInfo/629
+store 15 // tokInfo/860
 int 0
 extract_uint64
-store 14 // v630
-load 17 // tokInfos'/615
+store 14 // v861
+load 17 // tokInfos'/846
 extract 0 17
 int 0
 extract_uint64
-store 13 // v632
+store 13 // v863
 l15_LF_svsDump_9:
-load 22 // Deployer/506
-load 21 // Summoner/510
+load 22 // Deployer/725
+load 21 // Summoner/729
 concat
-load 20 // Admin/528
+load 20 // Admin/746
 concat
-load 19 // coin/529
+load 19 // coin/747
 itob
 concat
-load 18 // potr/582
+load 18 // potr/813
 itob
 concat
-load 17 // tokInfos'/615
+load 17 // tokInfos'/846
 concat
-load 16 // value/621
+load 16 // value/852
 itob
 concat
-load 15 // tokInfo/629
+load 15 // tokInfo/860
 concat
-load 14 // v630
+load 14 // v861
 itob
 concat
-load 13 // v632
+load 13 // v863
 itob
 concat
 int 9
@@ -700,37 +700,37 @@ load 1 // GV_currentStep :: UInt
 ==
 assert
 callsub l14_LF_svsLoad_7
-load 11 // v1399
+load 11 // v1630
 btoi
-store 13 // v1398
+store 13 // v1629
 byte base64(L9rpHQ==)
-load 13 // v1398
+load 13 // v1629
 itob
 concat
 log // up to 12 bytes
-// ^ log: "_reach_e8" [v1398] "_reach_e8(uint64)"
-load 13 // v1398
+// ^ log: "_reach_e8" [v1629] "_reach_e8(uint64)"
+load 13 // v1629
 callsub l2_LF_timeCheck
 global Round
-load 14 // value/595
+load 14 // value/826
 >=
 assert
-load 20 // Admin/528
+load 20 // Admin/746
 txn Sender
 ==
-load 22 // Deployer/506
+load 22 // Deployer/725
 txn Sender
 ==
 ||
-load 21 // Summoner/510
+load 21 // Summoner/729
 txn Sender
 ==
 ||
 assert
 // ^ Claim: sender correct
 // at reach standard library:197:11:dot
-// at ./src/contracts/summon.rsh:136:24:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
-load 12 // v604
+// at ./src/contracts/summon.rsh:131:24:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
+load 12 // v835
 dup
 -
 int 0
@@ -738,22 +738,22 @@ int 0
 assert
 // ^ Claim: assume >= 0
 // at reach standard library:198:46:application
-// at ./src/contracts/summon.rsh:136:24:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
-load 12 // v604
+// at ./src/contracts/summon.rsh:131:24:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
+load 12 // v835
 // resource: R_Asset
-load 19 // coin/529
+load 19 // coin/747
 // resource: R_Account
-load 21 // Summoner/510
+load 21 // Summoner/729
 callsub l5_LF_makeTxn_False_False_True_True
 // resource: R_Account
 int 0
 // resource: R_Asset
-load 18 // potr/582
+load 18 // potr/813
 global CurrentApplicationAddress
 global CreatorAddress
 callsub l8_LF_makeTxn_False_True_True_True
 int 0
-load 19 // coin/529
+load 19 // coin/747
 global CurrentApplicationAddress
 global CreatorAddress
 callsub l8_LF_makeTxn_False_True_True_True
@@ -764,60 +764,60 @@ load 1 // GV_currentStep :: UInt
 ==
 assert
 callsub l7_LF_svsLoad_9
-load 11 // v1402
+load 11 // v1633
 btoi
-store 12 // v1401
+store 12 // v1632
 byte base64(Y1dRXA==)
-load 12 // v1401
+load 12 // v1632
 itob
 concat
 log // up to 12 bytes
-// ^ log: "_reach_e9" [v1401] "_reach_e9(uint64)"
-load 12 // v1401
+// ^ log: "_reach_e9" [v1632] "_reach_e9(uint64)"
+load 12 // v1632
 callsub l2_LF_timeCheck
 global Round
-load 16 // value/621
+load 16 // value/852
 <
 assert
-load 21 // Summoner/510
+load 21 // Summoner/729
 txn Sender
 ==
 assert
 // ^ Claim: sender correct
-// at ./src/contracts/summon.rsh:150:18:dot
-load 13 // v632
+// at ./src/contracts/summon.rsh:145:18:dot
+load 13 // v863
 int 1
 ==
 assert
 // ^ Claim
 // at reach standard library:57:5:application
-// at ./src/contracts/summon.rsh:162:14:application call to "check" (defined at: reach standard library:49:32:function exp)
-load 14 // v630
+// at ./src/contracts/summon.rsh:157:14:application call to "check" (defined at: reach standard library:49:32:function exp)
+load 14 // v861
 int 1
 ==
 assert
 // ^ Claim
 // at reach standard library:57:5:application
-// at ./src/contracts/summon.rsh:163:14:application call to "check" (defined at: reach standard library:49:32:function exp)
-load 14 // v630
+// at ./src/contracts/summon.rsh:158:14:application call to "check" (defined at: reach standard library:49:32:function exp)
+load 14 // v861
 dup
 -
 dup
-store 11 // v655
+store 11 // v886
 int 0
 >=
 assert
 // ^ Claim: assume >= 0
-// at ./src/contracts/summon.rsh:166:45:application
-load 14 // v630
+// at ./src/contracts/summon.rsh:161:45:application
+load 14 // v861
 // resource: R_Asset
-load 18 // potr/582
+load 18 // potr/813
 // resource: R_Account
-load 21 // Summoner/510
+load 21 // Summoner/729
 callsub l5_LF_makeTxn_False_False_True_True
-load 17 // tokInfos'/615
-load 15 // tokInfo/629
-load 11 // v655
+load 17 // tokInfos'/846
+load 15 // tokInfo/860
+load 11 // v886
 itob
 replace2 0
 replace2 17
@@ -825,35 +825,35 @@ extract 0 17
 int 0
 extract_uint64
 dup
-store 12 // v662
+store 12 // v893
 dup
 -
 int 0
 >=
 assert
 // ^ Claim: assume >= 0
-// at ./src/contracts/summon.rsh:167:45:application
-load 12 // v662
+// at ./src/contracts/summon.rsh:162:45:application
+load 12 // v893
 // resource: R_Asset
-load 19 // coin/529
+load 19 // coin/747
 // resource: R_Account
-load 20 // Admin/528
+load 20 // Admin/746
 callsub l5_LF_makeTxn_False_False_True_True
-byte base64(U1VDQ0VTUwAAAAAAAAAAAAAAAAA=)
-store 11 // v674
-byte base64(BV2GLA==)
-load 11 // v674
+byte base64(U1VDQ0VTUw==)
+store 11 // v905
+byte base64(n6Oh9w==)
+load 11 // v905
 concat
-log // up to 24 bytes
-// ^ log: "result" [v674] "result(byte[20])"
+log // up to 11 bytes
+// ^ log: "result" [v905] "result(byte[7])"
 // resource: R_Account
 int 0
-load 18 // potr/582
+load 18 // potr/813
 global CurrentApplicationAddress
 global CreatorAddress
 callsub l8_LF_makeTxn_False_True_True_True
 int 0
-load 19 // coin/529
+load 19 // coin/747
 global CurrentApplicationAddress
 global CreatorAddress
 callsub l8_LF_makeTxn_False_True_True_True
@@ -863,57 +863,57 @@ callsub l0_LF_wasntMeth
 int 100000
 callsub l1_LF_mbrAdd
 txna ApplicationArgs 1
-store 11 // v1375
+store 11 // v1606
 b _reachi_0
 _reachp_1:
 callsub l0_LF_wasntMeth
 txna ApplicationArgs 1
-store 12 // v1378
+store 12 // v1609
 b _reachi_1
 _reachp_10:
 callsub l0_LF_wasntMeth
 txna ApplicationArgs 1
-store 11 // v1405
+store 11 // v1636
 b _reachi_10
 _reachp_2:
 callsub l0_LF_wasntMeth
 txna ApplicationArgs 1
-store 12 // v1381
+store 12 // v1612
 b _reachi_2
 _reachp_3:
 callsub l0_LF_wasntMeth
 txna ApplicationArgs 1
-store 11 // v1384
+store 11 // v1615
 b _reachi_3
 _reachp_4:
 callsub l0_LF_wasntMeth
 txna ApplicationArgs 1
-store 11 // v1387
+store 11 // v1618
 b _reachi_4
 _reachp_5:
 callsub l0_LF_wasntMeth
 txna ApplicationArgs 1
-store 12 // v1390
+store 12 // v1621
 b _reachi_5
 _reachp_6:
 callsub l0_LF_wasntMeth
 txna ApplicationArgs 1
-store 12 // v1393
+store 12 // v1624
 b _reachi_6
 _reachp_7:
 callsub l0_LF_wasntMeth
 txna ApplicationArgs 1
-store 11 // v1396
+store 11 // v1627
 b _reachi_7
 _reachp_8:
 callsub l0_LF_wasntMeth
 txna ApplicationArgs 1
-store 11 // v1399
+store 11 // v1630
 b _reachi_8
 _reachp_9:
 callsub l0_LF_wasntMeth
 txna ApplicationArgs 1
-store 11 // v1402
+store 11 // v1633
 b _reachi_9
 alloc:
 int 0
@@ -1032,73 +1032,73 @@ retsub
 l9_LF_svsLoad_3:
 dup
 extract 0 32
-store 22 // Deployer/506
+store 22 // Deployer/725
 dup
 extract 32 32
-store 21 // Summoner/510
+store 21 // Summoner/729
 dup
 extract 64 32
-store 20 // Admin/528
+store 20 // Admin/746
 dup
 int 96
 extract_uint64
-store 19 // coin/529
+store 19 // coin/747
 dup
 extract 104 34
-store 14 // tokInfos'/534
+store 14 // tokInfos'/752
 int 138
 extract_uint64
-store 12 // value/540
+store 12 // value/758
 retsub
 l7_LF_svsLoad_9:
 dup
 extract 0 32
-store 22 // Deployer/506
+store 22 // Deployer/725
 dup
 extract 32 32
-store 21 // Summoner/510
+store 21 // Summoner/729
 dup
 extract 64 32
-store 20 // Admin/528
+store 20 // Admin/746
 dup
 int 96
 extract_uint64
-store 19 // coin/529
+store 19 // coin/747
 dup
 int 104
 extract_uint64
-store 18 // potr/582
+store 18 // potr/813
 dup
 extract 112 34
-store 17 // tokInfos'/615
+store 17 // tokInfos'/846
 dup
 int 146
 extract_uint64
-store 16 // value/621
+store 16 // value/852
 dup
 extract 154 17
-store 15 // tokInfo/629
+store 15 // tokInfo/860
 dup
 int 171
 extract_uint64
-store 14 // v630
+store 14 // v861
 int 179
 extract_uint64
-store 13 // v632
+store 13 // v863
 retsub
 l4_LF_svsLoad_1:
 dup
 extract 0 34
-store 11 // tokInfos/501
+store 11 // tokInfos/720
 dup
 extract 34 32
-store 22 // Deployer/506
+store 22 // Deployer/725
 dup
 extract 66 32
-store 21 // Summoner/510
+store 21 // Summoner/729
 int 98
 extract_uint64
-store 14 // value/517
+store 14 // value/736
 retsub
 l16_LF_updateMbr:
 load 6 // GV_mbrAdd :: UInt
@@ -1110,56 +1110,56 @@ b updateMbr_pos_eq
 l14_LF_svsLoad_7:
 dup
 extract 0 32
-store 22 // Deployer/506
+store 22 // Deployer/725
 dup
 extract 32 32
-store 21 // Summoner/510
+store 21 // Summoner/729
 dup
 extract 64 32
-store 20 // Admin/528
+store 20 // Admin/746
 dup
 int 96
 extract_uint64
-store 19 // coin/529
+store 19 // coin/747
 dup
 int 104
 extract_uint64
-store 18 // potr/582
+store 18 // potr/813
 dup
 extract 112 34
-store 13 // tokInfos'/587
+store 13 // tokInfos'/818
 dup
 int 146
 extract_uint64
-store 14 // value/595
+store 14 // value/826
 int 154
 extract_uint64
-store 12 // v604
+store 12 // v835
 retsub
 l12_LF_svsLoad_5:
 dup
 extract 0 32
-store 22 // Deployer/506
+store 22 // Deployer/725
 dup
 extract 32 32
-store 21 // Summoner/510
+store 21 // Summoner/729
 dup
 extract 64 32
-store 20 // Admin/528
+store 20 // Admin/746
 dup
 int 96
 extract_uint64
-store 19 // coin/529
+store 19 // coin/747
 dup
 extract 104 34
-store 11 // tokInfos'/558
+store 11 // tokInfos'/778
 dup
 int 138
 extract_uint64
-store 14 // value/564
+store 14 // value/784
 int 146
 extract_uint64
-store 13 // v573
+store 13 // v793
 retsub
 l10_LF_checkTxn_True:
 // resource: R_Txn

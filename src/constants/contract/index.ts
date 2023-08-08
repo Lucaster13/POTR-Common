@@ -1,17 +1,17 @@
 const enum Participant {
-  ADMIN = "Admin",
-  SUMMONER = "Summoner",
-  DEPLOYER = "Deployer",
+	ADMIN = "Admin",
+	SUMMONER = "Summoner",
+	DEPLOYER = "Deployer",
 }
 
 const enum Result {
-  SUCCESS = "SUCCESS",
-  FAILURE = "FAILURE",
+	SUCCESS = "SUCCESS",
+	FAILURE = "FAILURE",
 }
 
 const enum ContractName {
-  COIN_SHOP = "coin_shop",
-  SUMMON = "summon",
+	COIN_SHOP = "coin_shop",
+	SUMMON = "summon",
 }
 
 export { Participant, Result, ContractName };

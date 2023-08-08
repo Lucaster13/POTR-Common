@@ -686,17 +686,17 @@ contract Stdlib {
 struct T2 {
   uint256[3] elem0;
   }
-enum _enum_T3 {buyer_api_bronze0_895, buyer_api_gold0_895, buyer_api_silver0_895, controller_api_restock0_895, controller_api_set_prices0_895, controller_api_terminate0_895, controller_api_toggle_pause0_895, controller_api_withdraw0_895}
+enum _enum_T3 {buyer_api_bronze0_907, buyer_api_gold0_907, buyer_api_silver0_907, controller_api_restock0_907, controller_api_set_prices0_907, controller_api_terminate0_907, controller_api_toggle_pause0_907, controller_api_withdraw0_907}
 struct T3 {
   _enum_T3 which;
-  bool _buyer_api_bronze0_895;
-  bool _buyer_api_gold0_895;
-  bool _buyer_api_silver0_895;
-  T2 _controller_api_restock0_895;
-  T2 _controller_api_set_prices0_895;
-  bool _controller_api_terminate0_895;
-  bool _controller_api_toggle_pause0_895;
-  bool _controller_api_withdraw0_895;
+  bool _buyer_api_bronze0_907;
+  bool _buyer_api_gold0_907;
+  bool _buyer_api_silver0_907;
+  T2 _controller_api_restock0_907;
+  T2 _controller_api_set_prices0_907;
+  bool _controller_api_terminate0_907;
+  bool _controller_api_toggle_pause0_907;
+  bool _controller_api_withdraw0_907;
   }
 struct T4 {
   uint256 elem0;
@@ -708,43 +708,44 @@ struct T5 {
   bool elem2;
   }
 struct T7 {
-  address payable v6612;
-  address payable v6613;
-  address payable v6614;
-  address payable v6615;
-  address payable v6637;
-  uint256[3] v6677;
-  bool v6678;
-  T5[3] v6686;
-  uint256 v6687;
-  T5 v12120;
-  uint256 v12121;
-  uint256 v12123;
-  uint256 v12125;
-  uint256[3] v12126;
+  address payable v6629;
+  address payable v6630;
+  address payable v6631;
+  address payable v6632;
+  address payable v6654;
+  uint256[3] v6695;
+  bool v6696;
+  T5[3] v6704;
+  uint256 v6705;
+  T5 v12146;
+  uint256 v12147;
+  uint256 v12149;
+  uint256 v12151;
+  uint256[3] v12152;
   }
 struct T8 {
-  address payable v6612;
-  address payable v6613;
-  address payable v6614;
-  address payable v6615;
-  address payable v6637;
-  uint256[3] v6677;
-  bool v6678;
-  bool v6679;
-  T5[3] v6686;
-  uint256 v6687;
-  bool v6713;
-  T5 v6714;
-  uint256 v6715;
-  T5 v6716;
-  uint256 v6717;
-  T5 v6718;
-  uint256 v6719;
-  uint256[3] v6720;
-  uint256 v6722;
-  uint256 v6723;
-  uint256 v6724;
+  address payable v6629;
+  address payable v6630;
+  address payable v6631;
+  address payable v6632;
+  address payable v6654;
+  uint256[3] v6695;
+  bool v6696;
+  bool v6697;
+  T5[3] v6704;
+  uint256 v6705;
+  bool v6735;
+  bool v6737;
+  T5 v6738;
+  uint256 v6739;
+  T5 v6740;
+  uint256 v6741;
+  T5 v6742;
+  uint256 v6743;
+  uint256[3] v6744;
+  uint256 v6746;
+  uint256 v6747;
+  uint256 v6748;
   }
 struct T9 {
   uint256 elem0;
@@ -753,12 +754,12 @@ struct T9 {
   address payable elem3;
   }
 struct T10 {
-  address payable v6612;
-  address payable v6613;
-  address payable v6614;
-  address payable v6615;
-  T5[3] v6630;
-  address payable v6637;
+  address payable v6629;
+  address payable v6630;
+  address payable v6631;
+  address payable v6632;
+  T5[3] v6647;
+  address payable v6654;
   }
 struct T11 {
   uint256 elem0;
@@ -801,14 +802,14 @@ contract ReachContract is Stdlib {
   event _reach_e1(address _who, T11 _a);
   event _reach_e3(address _who, T11 _a);
   event _reach_e4(address _who, T4 _a);
-  event _reach_oe_v10163(bool v0);
-  event _reach_oe_v10794(bool v0);
-  event _reach_oe_v11422(bool v0);
-  event _reach_oe_v12112(bool v0);
-  event _reach_oe_v7512(bool v0);
-  event _reach_oe_v8202(bool v0);
-  event _reach_oe_v8892(bool v0);
-  event _reach_oe_v9528(bool v0);
+  event _reach_oe_v10187(bool v0);
+  event _reach_oe_v10818(bool v0);
+  event _reach_oe_v12136(bool v0);
+  event _reach_oe_v6735(bool v0);
+  event _reach_oe_v7536(bool v0);
+  event _reach_oe_v8226(bool v0);
+  event _reach_oe_v8916(bool v0);
+  event _reach_oe_v9552(bool v0);
   event price_change(uint256[3] v0);
   event purchase(bytes6 v0, address payable v1);
   event restock(uint256[3] v0);
@@ -830,625 +831,624 @@ contract ReachContract is Stdlib {
     bool _reachr_controller_api_withdraw;
     bool _reachr_is_paused;
     }
-  struct _F17791 {
-    bool v17744;
-    T3 v17745;
+  struct _F17945 {
+    bool v17898;
+    T3 v17899;
     }
   function _reacha_buyer_api_bronze(bool _a, Memory memory _Memory) internal  {
-    _F17791 memory _f;
-    _f.v17745.which = _enum_T3.buyer_api_bronze0_895;
-    _f.v17745._buyer_api_bronze0_895 = _f.v17744;
+    _F17945 memory _f;
+    _f.v17899.which = _enum_T3.buyer_api_bronze0_907;
+    _f.v17899._buyer_api_bronze0_907 = _f.v17898;
     T4  memory _ja;
     _ja.elem0 = (uint256(0));
-    _ja.elem1 = _f.v17745;
+    _ja.elem1 = _f.v17899;
     _reachi_4(_ja, _Memory);
     }
-  struct _F17792 {
-    bool v17748;
-    T3 v17749;
+  struct _F17946 {
+    bool v17902;
+    T3 v17903;
     }
   function _reacha_buyer_api_gold(bool _a, Memory memory _Memory) internal  {
-    _F17792 memory _f;
-    _f.v17749.which = _enum_T3.buyer_api_gold0_895;
-    _f.v17749._buyer_api_gold0_895 = _f.v17748;
+    _F17946 memory _f;
+    _f.v17903.which = _enum_T3.buyer_api_gold0_907;
+    _f.v17903._buyer_api_gold0_907 = _f.v17902;
     T4  memory _ja;
     _ja.elem0 = (uint256(0));
-    _ja.elem1 = _f.v17749;
+    _ja.elem1 = _f.v17903;
     _reachi_4(_ja, _Memory);
     }
-  struct _F17793 {
-    bool v17752;
-    T3 v17753;
+  struct _F17947 {
+    bool v17906;
+    T3 v17907;
     }
   function _reacha_buyer_api_silver(bool _a, Memory memory _Memory) internal  {
-    _F17793 memory _f;
-    _f.v17753.which = _enum_T3.buyer_api_silver0_895;
-    _f.v17753._buyer_api_silver0_895 = _f.v17752;
+    _F17947 memory _f;
+    _f.v17907.which = _enum_T3.buyer_api_silver0_907;
+    _f.v17907._buyer_api_silver0_907 = _f.v17906;
     T4  memory _ja;
     _ja.elem0 = (uint256(0));
-    _ja.elem1 = _f.v17753;
+    _ja.elem1 = _f.v17907;
     _reachi_4(_ja, _Memory);
     }
   function _reacha_coin_prices(bool _a, Memory memory _Memory) internal view {
     if ((current_step < uint256(5))) {
-      reachRequire(((current_step == uint256(3))), uint256(7) /*'(./src/contracts/coin_shop.rsh:83:28:property binding,[],Just "Incorrect state: not leaf")'*/);
+      reachRequire(((current_step == uint256(3))), uint256(7) /*'(./src/contracts/coin_shop.rsh:78:28:property binding,[],Just "Incorrect state: not leaf")'*/);
       (T7 memory _svs) = abi.decode(current_svbs, (T7));
-      _Memory._reachr_coin_prices = _svs.v6677;
+      _Memory._reachr_coin_prices = _svs.v6695;
       }
     else {
-      reachRequire(((current_step == uint256(5))), uint256(8) /*'(./src/contracts/coin_shop.rsh:83:28:property binding,[],Just "Incorrect state: not leaf")'*/);
+      reachRequire(((current_step == uint256(5))), uint256(8) /*'(./src/contracts/coin_shop.rsh:78:28:property binding,[],Just "Incorrect state: not leaf")'*/);
       (T8 memory _svs) = abi.decode(current_svbs, (T8));
-      _Memory._reachr_coin_prices = _svs.v6677;
+      _Memory._reachr_coin_prices = _svs.v6695;
       }
     }
   function _reacha_coin_supply(bool _a, Memory memory _Memory) internal view {
     if ((current_step < uint256(5))) {
-      reachRequire(((current_step == uint256(3))), uint256(9) /*'(./src/contracts/coin_shop.rsh:82:28:property binding,[],Just "Incorrect state: not leaf")'*/);
+      reachRequire(((current_step == uint256(3))), uint256(9) /*'(./src/contracts/coin_shop.rsh:77:28:property binding,[],Just "Incorrect state: not leaf")'*/);
       (T7 memory _svs) = abi.decode(current_svbs, (T7));
-      _Memory._reachr_coin_supply = _svs.v12126;
+      _Memory._reachr_coin_supply = _svs.v12152;
       }
     else {
-      reachRequire(((current_step == uint256(5))), uint256(10) /*'(./src/contracts/coin_shop.rsh:82:28:property binding,[],Just "Incorrect state: not leaf")'*/);
+      reachRequire(((current_step == uint256(5))), uint256(10) /*'(./src/contracts/coin_shop.rsh:77:28:property binding,[],Just "Incorrect state: not leaf")'*/);
       (T8 memory _svs) = abi.decode(current_svbs, (T8));
-      _Memory._reachr_coin_supply = _svs.v6720;
+      _Memory._reachr_coin_supply = _svs.v6744;
       }
     }
-  struct _F17796 {
-    T2 v17757;
-    T3 v17758;
+  struct _F17950 {
+    T2 v17911;
+    T3 v17912;
     }
   function _reacha_controller_api_restock(uint256[3] memory _a, Memory memory _Memory) internal  {
-    _F17796 memory _f;
-    _f.v17757.elem0 = _a;
-    _f.v17758.which = _enum_T3.controller_api_restock0_895;
-    _f.v17758._controller_api_restock0_895 = _f.v17757;
+    _F17950 memory _f;
+    _f.v17911.elem0 = _a;
+    _f.v17912.which = _enum_T3.controller_api_restock0_907;
+    _f.v17912._controller_api_restock0_907 = _f.v17911;
     T4  memory _ja;
     _ja.elem0 = (uint256(0));
-    _ja.elem1 = _f.v17758;
+    _ja.elem1 = _f.v17912;
     _reachi_4(_ja, _Memory);
     }
-  struct _F17797 {
-    T2 v17763;
-    T3 v17764;
+  struct _F17951 {
+    T2 v17917;
+    T3 v17918;
     }
   function _reacha_controller_api_set_prices(uint256[3] memory _a, Memory memory _Memory) internal  {
-    _F17797 memory _f;
-    _f.v17763.elem0 = _a;
-    _f.v17764.which = _enum_T3.controller_api_set_prices0_895;
-    _f.v17764._controller_api_set_prices0_895 = _f.v17763;
+    _F17951 memory _f;
+    _f.v17917.elem0 = _a;
+    _f.v17918.which = _enum_T3.controller_api_set_prices0_907;
+    _f.v17918._controller_api_set_prices0_907 = _f.v17917;
     T4  memory _ja;
     _ja.elem0 = (uint256(0));
-    _ja.elem1 = _f.v17764;
+    _ja.elem1 = _f.v17918;
     _reachi_4(_ja, _Memory);
     }
-  struct _F17798 {
-    bool v17768;
-    T3 v17769;
+  struct _F17952 {
+    bool v17922;
+    T3 v17923;
     }
   function _reacha_controller_api_terminate(bool _a, Memory memory _Memory) internal  {
-    _F17798 memory _f;
-    _f.v17769.which = _enum_T3.controller_api_terminate0_895;
-    _f.v17769._controller_api_terminate0_895 = _f.v17768;
+    _F17952 memory _f;
+    _f.v17923.which = _enum_T3.controller_api_terminate0_907;
+    _f.v17923._controller_api_terminate0_907 = _f.v17922;
     T4  memory _ja;
     _ja.elem0 = (uint256(0));
-    _ja.elem1 = _f.v17769;
+    _ja.elem1 = _f.v17923;
     _reachi_4(_ja, _Memory);
     }
-  struct _F17799 {
-    bool v17772;
-    T3 v17773;
+  struct _F17953 {
+    bool v17926;
+    T3 v17927;
     }
   function _reacha_controller_api_toggle_pause(bool _a, Memory memory _Memory) internal  {
-    _F17799 memory _f;
-    _f.v17773.which = _enum_T3.controller_api_toggle_pause0_895;
-    _f.v17773._controller_api_toggle_pause0_895 = _f.v17772;
+    _F17953 memory _f;
+    _f.v17927.which = _enum_T3.controller_api_toggle_pause0_907;
+    _f.v17927._controller_api_toggle_pause0_907 = _f.v17926;
     T4  memory _ja;
     _ja.elem0 = (uint256(0));
-    _ja.elem1 = _f.v17773;
+    _ja.elem1 = _f.v17927;
     _reachi_4(_ja, _Memory);
     }
-  struct _F17800 {
-    bool v17776;
-    T3 v17777;
+  struct _F17954 {
+    bool v17930;
+    T3 v17931;
     }
   function _reacha_controller_api_withdraw(bool _a, Memory memory _Memory) internal  {
-    _F17800 memory _f;
-    _f.v17777.which = _enum_T3.controller_api_withdraw0_895;
-    _f.v17777._controller_api_withdraw0_895 = _f.v17776;
+    _F17954 memory _f;
+    _f.v17931.which = _enum_T3.controller_api_withdraw0_907;
+    _f.v17931._controller_api_withdraw0_907 = _f.v17930;
     T4  memory _ja;
     _ja.elem0 = (uint256(0));
-    _ja.elem1 = _f.v17777;
+    _ja.elem1 = _f.v17931;
     _reachi_4(_ja, _Memory);
     }
   function _reacha_is_paused(bool _a, Memory memory _Memory) internal view {
     if ((current_step < uint256(5))) {
-      reachRequire(((current_step == uint256(3))), uint256(11) /*'(./src/contracts/coin_shop.rsh:84:26:property binding,[],Just "Incorrect state: not leaf")'*/);
+      reachRequire(((current_step == uint256(3))), uint256(11) /*'(./src/contracts/coin_shop.rsh:79:26:property binding,[],Just "Incorrect state: not leaf")'*/);
       (T7 memory _svs) = abi.decode(current_svbs, (T7));
-      _Memory._reachr_is_paused = _svs.v6678;
+      _Memory._reachr_is_paused = _svs.v6696;
       }
     else {
-      reachRequire(((current_step == uint256(5))), uint256(12) /*'(./src/contracts/coin_shop.rsh:84:26:property binding,[],Just "Incorrect state: not leaf")'*/);
+      reachRequire(((current_step == uint256(5))), uint256(12) /*'(./src/contracts/coin_shop.rsh:79:26:property binding,[],Just "Incorrect state: not leaf")'*/);
       (T8 memory _svs) = abi.decode(current_svbs, (T8));
-      _Memory._reachr_is_paused = _svs.v6678;
+      _Memory._reachr_is_paused = _svs.v6696;
       }
     }
-  struct _F17802 {
-    T5 v6567;
-    T5[3] v6568;
-    T5[3] v6620;
-    T5[3] v6624;
-    bool v6632;
-    bool v6635;
-    address payable v6637;
+  struct _F17956 {
+    T5 v6583;
+    T5[3] v6584;
+    T5[3] v6637;
+    T5[3] v6641;
+    bool v6649;
+    bool v6652;
+    address payable v6654;
     }
   function _reachi_0(T9 memory _a, Memory memory _Memory) internal  {
-    _F17802 memory _f;
+    _F17956 memory _f;
     reachRequire((! locked), uint256(13) /*'locked'*/);
     emit _reach_e0(msg.sender, _a);
-    reachRequire((((_a.elem0) == uint256(0)) || (current_time == (_a.elem0))), uint256(14) /*'time check at ./src/contracts/coin_shop.rsh:108:18:dot'*/);
-    _f.v6567.elem0 = uint256(0);
-    _f.v6567.elem1 = uint256(0);
-    _f.v6567.elem2 = false;
-    _f.v6568[0] = _f.v6567;
-    _f.v6568[1] = _f.v6567;
-    _f.v6568[2] = _f.v6567;
-    _f.v6620 = array_set6(_f.v6568, uint256(0), (T5({elem0: uint256(0), elem1: (_f.v6568[uint256(0)]).elem1, elem2: (_f.v6568[uint256(0)]).elem2})));
-    _f.v6624 = array_set6(_f.v6620, uint256(1), (T5({elem0: uint256(0), elem1: (_f.v6620[uint256(1)]).elem1, elem2: (_f.v6620[uint256(1)]).elem2})));
-    reachRequire(((((_a.elem2) == (_a.elem1)) ? false : true)), uint256(15) /*'(./src/contracts/coin_shop.rsh:108:18:dot,[],Just "non-network tokens distinct")'*/);
-    _f.v6632 = (_a.elem3) == (_a.elem1);
-    _f.v6635 = ((_a.elem3) == (_a.elem2)) ? false : true;
-    reachRequire(((_f.v6632 ? false : _f.v6635)), uint256(16) /*'(./src/contracts/coin_shop.rsh:108:18:dot,[],Just "non-network tokens distinct")'*/);
+    reachRequire((((_a.elem0) == uint256(0)) || (current_time == (_a.elem0))), uint256(14) /*'time check at ./src/contracts/coin_shop.rsh:103:18:dot'*/);
+    _f.v6583.elem0 = uint256(0);
+    _f.v6583.elem1 = uint256(0);
+    _f.v6583.elem2 = false;
+    _f.v6584[0] = _f.v6583;
+    _f.v6584[1] = _f.v6583;
+    _f.v6584[2] = _f.v6583;
+    _f.v6637 = array_set6(_f.v6584, uint256(0), (T5({elem0: uint256(0), elem1: (_f.v6584[uint256(0)]).elem1, elem2: (_f.v6584[uint256(0)]).elem2})));
+    _f.v6641 = array_set6(_f.v6637, uint256(1), (T5({elem0: uint256(0), elem1: (_f.v6637[uint256(1)]).elem1, elem2: (_f.v6637[uint256(1)]).elem2})));
+    reachRequire(((((_a.elem2) == (_a.elem1)) ? false : true)), uint256(15) /*'(./src/contracts/coin_shop.rsh:103:18:dot,[],Just "non-network tokens distinct")'*/);
+    _f.v6649 = (_a.elem3) == (_a.elem1);
+    _f.v6652 = ((_a.elem3) == (_a.elem2)) ? false : true;
+    reachRequire(((_f.v6649 ? false : _f.v6652)), uint256(16) /*'(./src/contracts/coin_shop.rsh:103:18:dot,[],Just "non-network tokens distinct")'*/);
     
     
     
-    reachRequire((msg.value == uint256(0)), uint256(17) /*'(./src/contracts/coin_shop.rsh:108:18:dot,[],"verify network token pay amount")'*/);
-    _f.v6637 = payable(msg.sender);
-    reachRequire(((((_a.elem1) == (_a.elem2)) ? false : true)), uint256(18) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:24:49:application call to "check" (defined at: reach standard library:49:32:function exp),at reach standard library:554:6:application call to "f" (defined at: ./src/contracts/util/checks.rsh:23:52:function exp),at reach standard library:553:20:application call to [unknown function] (defined at: reach standard library:553:41:function exp),at reach standard library:559:25:application call to "Array_forEachWithIndex" (defined at: reach standard library:552:46:function exp),at ./src/contracts/util/checks.rsh:23:40:application call to [unknown function] (defined at: reach standard library:558:51:function exp),at reach standard library:554:6:application call to "f" (defined at: ./src/contracts/util/checks.rsh:22:44:function exp),at reach standard library:553:20:application call to [unknown function] (defined at: reach standard library:553:41:function exp),at reach standard library:559:25:application call to "Array_forEachWithIndex" (defined at: reach standard library:552:46:function exp),at ./src/contracts/util/checks.rsh:22:32:application call to [unknown function] (defined at: reach standard library:558:51:function exp),at ./src/contracts/coin_shop.rsh:114:26:application call to "checkUniqueTokens" (defined at: ./src/contracts/util/checks.rsh:21:36:function exp)],Just "The asa ids provided are the same")'*/);
-    reachRequire(((((_a.elem1) == (_a.elem3)) ? false : true)), uint256(19) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:24:49:application call to "check" (defined at: reach standard library:49:32:function exp),at reach standard library:554:6:application call to "f" (defined at: ./src/contracts/util/checks.rsh:23:52:function exp),at reach standard library:553:20:application call to [unknown function] (defined at: reach standard library:553:41:function exp),at reach standard library:559:25:application call to "Array_forEachWithIndex" (defined at: reach standard library:552:46:function exp),at ./src/contracts/util/checks.rsh:23:40:application call to [unknown function] (defined at: reach standard library:558:51:function exp),at reach standard library:554:6:application call to "f" (defined at: ./src/contracts/util/checks.rsh:22:44:function exp),at reach standard library:553:20:application call to [unknown function] (defined at: reach standard library:553:41:function exp),at reach standard library:559:25:application call to "Array_forEachWithIndex" (defined at: reach standard library:552:46:function exp),at ./src/contracts/util/checks.rsh:22:32:application call to [unknown function] (defined at: reach standard library:558:51:function exp),at ./src/contracts/coin_shop.rsh:114:26:application call to "checkUniqueTokens" (defined at: ./src/contracts/util/checks.rsh:21:36:function exp)],Just "The asa ids provided are the same")'*/);
-    reachRequire(((((_a.elem2) == (_a.elem3)) ? false : true)), uint256(20) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:24:49:application call to "check" (defined at: reach standard library:49:32:function exp),at reach standard library:554:6:application call to "f" (defined at: ./src/contracts/util/checks.rsh:23:52:function exp),at reach standard library:553:20:application call to [unknown function] (defined at: reach standard library:553:41:function exp),at reach standard library:559:25:application call to "Array_forEachWithIndex" (defined at: reach standard library:552:46:function exp),at ./src/contracts/util/checks.rsh:23:40:application call to [unknown function] (defined at: reach standard library:558:51:function exp),at reach standard library:554:6:application call to "f" (defined at: ./src/contracts/util/checks.rsh:22:44:function exp),at reach standard library:553:20:application call to [unknown function] (defined at: reach standard library:553:41:function exp),at reach standard library:559:25:application call to "Array_forEachWithIndex" (defined at: reach standard library:552:46:function exp),at ./src/contracts/util/checks.rsh:22:32:application call to [unknown function] (defined at: reach standard library:558:51:function exp),at ./src/contracts/coin_shop.rsh:114:26:application call to "checkUniqueTokens" (defined at: ./src/contracts/util/checks.rsh:21:36:function exp)],Just "The asa ids provided are the same")'*/);
-    reachRequire(((_f.v6632 ? false : true)), uint256(21) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:24:49:application call to "check" (defined at: reach standard library:49:32:function exp),at reach standard library:554:6:application call to "f" (defined at: ./src/contracts/util/checks.rsh:23:52:function exp),at reach standard library:553:20:application call to [unknown function] (defined at: reach standard library:553:41:function exp),at reach standard library:559:25:application call to "Array_forEachWithIndex" (defined at: reach standard library:552:46:function exp),at ./src/contracts/util/checks.rsh:23:40:application call to [unknown function] (defined at: reach standard library:558:51:function exp),at reach standard library:554:6:application call to "f" (defined at: ./src/contracts/util/checks.rsh:22:44:function exp),at reach standard library:553:20:application call to [unknown function] (defined at: reach standard library:553:41:function exp),at reach standard library:559:25:application call to "Array_forEachWithIndex" (defined at: reach standard library:552:46:function exp),at ./src/contracts/util/checks.rsh:22:32:application call to [unknown function] (defined at: reach standard library:558:51:function exp),at ./src/contracts/coin_shop.rsh:114:26:application call to "checkUniqueTokens" (defined at: ./src/contracts/util/checks.rsh:21:36:function exp)],Just "The asa ids provided are the same")'*/);
-    reachRequire((_f.v6635), uint256(22) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:24:49:application call to "check" (defined at: reach standard library:49:32:function exp),at reach standard library:554:6:application call to "f" (defined at: ./src/contracts/util/checks.rsh:23:52:function exp),at reach standard library:553:20:application call to [unknown function] (defined at: reach standard library:553:41:function exp),at reach standard library:559:25:application call to "Array_forEachWithIndex" (defined at: reach standard library:552:46:function exp),at ./src/contracts/util/checks.rsh:23:40:application call to [unknown function] (defined at: reach standard library:558:51:function exp),at reach standard library:554:6:application call to "f" (defined at: ./src/contracts/util/checks.rsh:22:44:function exp),at reach standard library:553:20:application call to [unknown function] (defined at: reach standard library:553:41:function exp),at reach standard library:559:25:application call to "Array_forEachWithIndex" (defined at: reach standard library:552:46:function exp),at ./src/contracts/util/checks.rsh:22:32:application call to [unknown function] (defined at: reach standard library:558:51:function exp),at ./src/contracts/coin_shop.rsh:114:26:application call to "checkUniqueTokens" (defined at: ./src/contracts/util/checks.rsh:21:36:function exp)],Just "The asa ids provided are the same")'*/);
+    reachRequire((msg.value == uint256(0)), uint256(17) /*'(./src/contracts/coin_shop.rsh:103:18:dot,[],"verify network token pay amount")'*/);
+    _f.v6654 = payable(msg.sender);
+    reachRequire(((((_a.elem1) == (_a.elem2)) ? false : true)), uint256(18) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:25:49:application call to "check" (defined at: reach standard library:49:32:function exp),at reach standard library:554:6:application call to "f" (defined at: ./src/contracts/util/checks.rsh:24:55:function exp),at reach standard library:553:20:application call to [unknown function] (defined at: reach standard library:553:41:function exp),at reach standard library:559:25:application call to "Array_forEachWithIndex" (defined at: reach standard library:552:46:function exp),at ./src/contracts/util/checks.rsh:24:43:application call to [unknown function] (defined at: reach standard library:558:51:function exp),at reach standard library:554:6:application call to "f" (defined at: ./src/contracts/util/checks.rsh:23:47:function exp),at reach standard library:553:20:application call to [unknown function] (defined at: reach standard library:553:41:function exp),at reach standard library:559:25:application call to "Array_forEachWithIndex" (defined at: reach standard library:552:46:function exp),at ./src/contracts/util/checks.rsh:23:35:application call to [unknown function] (defined at: reach standard library:558:51:function exp),at ./src/contracts/coin_shop.rsh:109:26:application call to "checkUniqueTokens" (defined at: ./src/contracts/util/checks.rsh:21:51:function exp)],Just "The asa ids provided are the same")'*/);
+    reachRequire(((((_a.elem1) == (_a.elem3)) ? false : true)), uint256(19) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:25:49:application call to "check" (defined at: reach standard library:49:32:function exp),at reach standard library:554:6:application call to "f" (defined at: ./src/contracts/util/checks.rsh:24:55:function exp),at reach standard library:553:20:application call to [unknown function] (defined at: reach standard library:553:41:function exp),at reach standard library:559:25:application call to "Array_forEachWithIndex" (defined at: reach standard library:552:46:function exp),at ./src/contracts/util/checks.rsh:24:43:application call to [unknown function] (defined at: reach standard library:558:51:function exp),at reach standard library:554:6:application call to "f" (defined at: ./src/contracts/util/checks.rsh:23:47:function exp),at reach standard library:553:20:application call to [unknown function] (defined at: reach standard library:553:41:function exp),at reach standard library:559:25:application call to "Array_forEachWithIndex" (defined at: reach standard library:552:46:function exp),at ./src/contracts/util/checks.rsh:23:35:application call to [unknown function] (defined at: reach standard library:558:51:function exp),at ./src/contracts/coin_shop.rsh:109:26:application call to "checkUniqueTokens" (defined at: ./src/contracts/util/checks.rsh:21:51:function exp)],Just "The asa ids provided are the same")'*/);
+    reachRequire(((((_a.elem2) == (_a.elem3)) ? false : true)), uint256(20) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:25:49:application call to "check" (defined at: reach standard library:49:32:function exp),at reach standard library:554:6:application call to "f" (defined at: ./src/contracts/util/checks.rsh:24:55:function exp),at reach standard library:553:20:application call to [unknown function] (defined at: reach standard library:553:41:function exp),at reach standard library:559:25:application call to "Array_forEachWithIndex" (defined at: reach standard library:552:46:function exp),at ./src/contracts/util/checks.rsh:24:43:application call to [unknown function] (defined at: reach standard library:558:51:function exp),at reach standard library:554:6:application call to "f" (defined at: ./src/contracts/util/checks.rsh:23:47:function exp),at reach standard library:553:20:application call to [unknown function] (defined at: reach standard library:553:41:function exp),at reach standard library:559:25:application call to "Array_forEachWithIndex" (defined at: reach standard library:552:46:function exp),at ./src/contracts/util/checks.rsh:23:35:application call to [unknown function] (defined at: reach standard library:558:51:function exp),at ./src/contracts/coin_shop.rsh:109:26:application call to "checkUniqueTokens" (defined at: ./src/contracts/util/checks.rsh:21:51:function exp)],Just "The asa ids provided are the same")'*/);
+    reachRequire(((_f.v6649 ? false : true)), uint256(21) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:25:49:application call to "check" (defined at: reach standard library:49:32:function exp),at reach standard library:554:6:application call to "f" (defined at: ./src/contracts/util/checks.rsh:24:55:function exp),at reach standard library:553:20:application call to [unknown function] (defined at: reach standard library:553:41:function exp),at reach standard library:559:25:application call to "Array_forEachWithIndex" (defined at: reach standard library:552:46:function exp),at ./src/contracts/util/checks.rsh:24:43:application call to [unknown function] (defined at: reach standard library:558:51:function exp),at reach standard library:554:6:application call to "f" (defined at: ./src/contracts/util/checks.rsh:23:47:function exp),at reach standard library:553:20:application call to [unknown function] (defined at: reach standard library:553:41:function exp),at reach standard library:559:25:application call to "Array_forEachWithIndex" (defined at: reach standard library:552:46:function exp),at ./src/contracts/util/checks.rsh:23:35:application call to [unknown function] (defined at: reach standard library:558:51:function exp),at ./src/contracts/coin_shop.rsh:109:26:application call to "checkUniqueTokens" (defined at: ./src/contracts/util/checks.rsh:21:51:function exp)],Just "The asa ids provided are the same")'*/);
+    reachRequire((_f.v6652), uint256(22) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:25:49:application call to "check" (defined at: reach standard library:49:32:function exp),at reach standard library:554:6:application call to "f" (defined at: ./src/contracts/util/checks.rsh:24:55:function exp),at reach standard library:553:20:application call to [unknown function] (defined at: reach standard library:553:41:function exp),at reach standard library:559:25:application call to "Array_forEachWithIndex" (defined at: reach standard library:552:46:function exp),at ./src/contracts/util/checks.rsh:24:43:application call to [unknown function] (defined at: reach standard library:558:51:function exp),at reach standard library:554:6:application call to "f" (defined at: ./src/contracts/util/checks.rsh:23:47:function exp),at reach standard library:553:20:application call to [unknown function] (defined at: reach standard library:553:41:function exp),at reach standard library:559:25:application call to "Array_forEachWithIndex" (defined at: reach standard library:552:46:function exp),at ./src/contracts/util/checks.rsh:23:35:application call to [unknown function] (defined at: reach standard library:558:51:function exp),at ./src/contracts/coin_shop.rsh:109:26:application call to "checkUniqueTokens" (defined at: ./src/contracts/util/checks.rsh:21:51:function exp)],Just "The asa ids provided are the same")'*/);
     T10 memory nsvs;
-    nsvs.v6612 = payable(msg.sender);
-    nsvs.v6613 = (_a.elem1);
-    nsvs.v6614 = (_a.elem2);
-    nsvs.v6615 = (_a.elem3);
-    nsvs.v6630 = (array_set6(_f.v6624, uint256(2), (T5({elem0: uint256(0), elem1: (_f.v6624[uint256(2)]).elem1, elem2: (_f.v6624[uint256(2)]).elem2}))));
-    nsvs.v6637 = _f.v6637;
+    nsvs.v6629 = payable(msg.sender);
+    nsvs.v6630 = (_a.elem1);
+    nsvs.v6631 = (_a.elem2);
+    nsvs.v6632 = (_a.elem3);
+    nsvs.v6647 = (array_set6(_f.v6641, uint256(2), (T5({elem0: uint256(0), elem1: (_f.v6641[uint256(2)]).elem1, elem2: (_f.v6641[uint256(2)]).elem2}))));
+    nsvs.v6654 = _f.v6654;
     current_step = uint256(1);
     current_time = uint256(block.number);
     current_svbs = abi.encode(nsvs);
     }
-  struct _F17803 {
-    uint256[3] v6676;
+  struct _F17957 {
+    uint256[3] v6694;
     }
   function _reachi_1(T11 memory _a, Memory memory _Memory) internal  {
-    _F17803 memory _f;
-    reachRequire((current_step == uint256(1)), uint256(23) /*'state check at ./src/contracts/coin_shop.rsh:120:18:dot'*/);
+    _F17957 memory _f;
+    reachRequire((current_step == uint256(1)), uint256(23) /*'state check at ./src/contracts/coin_shop.rsh:115:18:dot'*/);
     (T10 memory _svs) = abi.decode(current_svbs, (T10));
     reachRequire((! locked), uint256(24) /*'locked'*/);
     emit _reach_e1(msg.sender, _a);
-    reachRequire((((_a.elem0) == uint256(0)) || (current_time == (_a.elem0))), uint256(25) /*'time check at ./src/contracts/coin_shop.rsh:120:18:dot'*/);
-    reachRequire((msg.value == uint256(0)), uint256(26) /*'(./src/contracts/coin_shop.rsh:120:18:dot,[],"verify network token pay amount")'*/);
-    reachRequire(((_svs.v6612 == payable(msg.sender))), uint256(27) /*'(./src/contracts/coin_shop.rsh:120:18:dot,[],Just "sender correct")'*/);
-    _f.v6676[0] = uint256(10000000);
-    _f.v6676[1] = uint256(20000000);
-    _f.v6676[2] = uint256(30000000);
+    reachRequire((((_a.elem0) == uint256(0)) || (current_time == (_a.elem0))), uint256(25) /*'time check at ./src/contracts/coin_shop.rsh:115:18:dot'*/);
+    reachRequire((msg.value == uint256(0)), uint256(26) /*'(./src/contracts/coin_shop.rsh:115:18:dot,[],"verify network token pay amount")'*/);
+    reachRequire(((_svs.v6629 == payable(msg.sender))), uint256(27) /*'(./src/contracts/coin_shop.rsh:115:18:dot,[],Just "sender correct")'*/);
+    _f.v6694[0] = uint256(10000000);
+    _f.v6694[1] = uint256(20000000);
+    _f.v6694[2] = uint256(30000000);
     T12  memory _ja;
-    _ja.elem0 = _svs.v6612;
-    _ja.elem1 = _svs.v6613;
-    _ja.elem2 = _svs.v6614;
-    _ja.elem3 = _svs.v6615;
-    _ja.elem4 = _svs.v6637;
-    _ja.elem5 = _f.v6676;
+    _ja.elem0 = _svs.v6629;
+    _ja.elem1 = _svs.v6630;
+    _ja.elem2 = _svs.v6631;
+    _ja.elem3 = _svs.v6632;
+    _ja.elem4 = _svs.v6654;
+    _ja.elem5 = _f.v6694;
     _ja.elem6 = false;
     _ja.elem7 = false;
     _ja.elem8 = uint256(block.number);
-    _ja.elem9 = _svs.v6630;
+    _ja.elem9 = _svs.v6647;
     _ja.elem10 = uint256(0);
     _reachl_2(_ja, _Memory);
     }
-  struct _F17804 {
-    uint256 v12173;
-    T5[3] v12178;
-    uint256 v12184;
+  struct _F17958 {
+    uint256 v12199;
+    T5[3] v12204;
+    uint256 v12210;
     }
   function _reachi_3(T11 memory _a, Memory memory _Memory) internal  {
-    _F17804 memory _f;
+    _F17958 memory _f;
     reachRequire((current_step == uint256(3)), uint256(28) /*'state check at reach standard library:197:11:dot'*/);
     (T7 memory _svs) = abi.decode(current_svbs, (T7));
     reachRequire((! locked), uint256(29) /*'locked'*/);
     emit _reach_e3(msg.sender, _a);
     reachRequire((((_a.elem0) == uint256(0)) || (current_time == (_a.elem0))), uint256(30) /*'time check at reach standard library:197:11:dot'*/);
-    reachRequire((msg.value == uint256(0)), uint256(31) /*'(reach standard library:197:11:dot,[at ./src/contracts/coin_shop.rsh:309:16:application call to "closeTo" (defined at: reach standard library:195:8:function exp)],"verify network token pay amount")'*/);
-    reachRequire((((_svs.v6637 == payable(msg.sender)) ? true : (_svs.v6612 == payable(msg.sender)))), uint256(32) /*'(reach standard library:197:11:dot,[at ./src/contracts/coin_shop.rsh:309:16:application call to "closeTo" (defined at: reach standard library:195:8:function exp)],Just "sender correct")'*/);
-    reachRequire((((unsafeSub(_svs.v6687, _svs.v6687)) >= uint256(0))), uint256(33) /*'(reach standard library:198:46:application,[at ./src/contracts/coin_shop.rsh:309:16:application call to "closeTo" (defined at: reach standard library:195:8:function exp)],Just "assume >= 0")'*/);
-    _svs.v6637.transfer(_svs.v6687);
-    _f.v12173 = unsafeSub(_svs.v12121, _svs.v12121);
-    reachRequire(((_f.v12173 >= uint256(0))), uint256(34) /*'(reach standard library:198:46:application,[at ./src/contracts/coin_shop.rsh:309:16:application call to "closeTo" (defined at: reach standard library:195:8:function exp)],Just "assume >= 0")'*/);
-    _f.v12178 = array_set6(_svs.v6686, uint256(0), (T5({elem0: _f.v12173, elem1: _svs.v12120.elem1, elem2: _svs.v12120.elem2})));
-    safeTokenTransfer(_svs.v6613, _svs.v6637, _svs.v12121);
-    _f.v12184 = unsafeSub(((_f.v12178[uint256(1)]).elem0), _svs.v12123);
-    reachRequire(((_f.v12184 >= uint256(0))), uint256(35) /*'(reach standard library:198:46:application,[at ./src/contracts/coin_shop.rsh:309:16:application call to "closeTo" (defined at: reach standard library:195:8:function exp)],Just "assume >= 0")'*/);
-    safeTokenTransfer(_svs.v6614, _svs.v6637, _svs.v12123);
-    reachRequire((((unsafeSub((((array_set6(_f.v12178, uint256(1), (T5({elem0: _f.v12184, elem1: (_f.v12178[uint256(1)]).elem1, elem2: (_f.v12178[uint256(1)]).elem2}))))[uint256(2)]).elem0), _svs.v12125)) >= uint256(0))), uint256(36) /*'(reach standard library:198:46:application,[at ./src/contracts/coin_shop.rsh:309:16:application call to "closeTo" (defined at: reach standard library:195:8:function exp)],Just "assume >= 0")'*/);
-    safeTokenTransfer(_svs.v6615, _svs.v6637, _svs.v12125);
+    reachRequire((msg.value == uint256(0)), uint256(31) /*'(reach standard library:197:11:dot,[at ./src/contracts/coin_shop.rsh:304:16:application call to "closeTo" (defined at: reach standard library:195:8:function exp)],"verify network token pay amount")'*/);
+    reachRequire((((_svs.v6654 == payable(msg.sender)) ? true : (_svs.v6629 == payable(msg.sender)))), uint256(32) /*'(reach standard library:197:11:dot,[at ./src/contracts/coin_shop.rsh:304:16:application call to "closeTo" (defined at: reach standard library:195:8:function exp)],Just "sender correct")'*/);
+    reachRequire((((unsafeSub(_svs.v6705, _svs.v6705)) >= uint256(0))), uint256(33) /*'(reach standard library:198:46:application,[at ./src/contracts/coin_shop.rsh:304:16:application call to "closeTo" (defined at: reach standard library:195:8:function exp)],Just "assume >= 0")'*/);
+    _svs.v6654.transfer(_svs.v6705);
+    _f.v12199 = unsafeSub(_svs.v12147, _svs.v12147);
+    reachRequire(((_f.v12199 >= uint256(0))), uint256(34) /*'(reach standard library:198:46:application,[at ./src/contracts/coin_shop.rsh:304:16:application call to "closeTo" (defined at: reach standard library:195:8:function exp)],Just "assume >= 0")'*/);
+    _f.v12204 = array_set6(_svs.v6704, uint256(0), (T5({elem0: _f.v12199, elem1: _svs.v12146.elem1, elem2: _svs.v12146.elem2})));
+    safeTokenTransfer(_svs.v6630, _svs.v6654, _svs.v12147);
+    _f.v12210 = unsafeSub(((_f.v12204[uint256(1)]).elem0), _svs.v12149);
+    reachRequire(((_f.v12210 >= uint256(0))), uint256(35) /*'(reach standard library:198:46:application,[at ./src/contracts/coin_shop.rsh:304:16:application call to "closeTo" (defined at: reach standard library:195:8:function exp)],Just "assume >= 0")'*/);
+    safeTokenTransfer(_svs.v6631, _svs.v6654, _svs.v12149);
+    reachRequire((((unsafeSub((((array_set6(_f.v12204, uint256(1), (T5({elem0: _f.v12210, elem1: (_f.v12204[uint256(1)]).elem1, elem2: (_f.v12204[uint256(1)]).elem2}))))[uint256(2)]).elem0), _svs.v12151)) >= uint256(0))), uint256(36) /*'(reach standard library:198:46:application,[at ./src/contracts/coin_shop.rsh:304:16:application call to "closeTo" (defined at: reach standard library:195:8:function exp)],Just "assume >= 0")'*/);
+    safeTokenTransfer(_svs.v6632, _svs.v6654, _svs.v12151);
     current_step = 0x0;
     current_time = 0x0;
     delete current_svbs;
     }
-  struct _F17805 {
-    uint256 v7416;
-    uint256 v7475;
-    uint256 v7505;
-    bytes6 v7511;
-    uint256 v8030;
-    uint256 v8165;
-    uint256 v8195;
-    bytes6 v8201;
-    uint256 v8644;
-    uint256 v8855;
-    uint256 v8885;
-    bytes6 v8891;
-    T2 v9049;
-    uint256 v9263;
-    T5[3] v9268;
-    uint256 v9271;
-    T5[3] v9276;
-    uint256 v9279;
-    T5[3] v9284;
-    uint256[3] v9524;
-    T2 v9663;
-    bool v11422;
-    uint256 v12083;
-    T5[3] v12088;
-    uint256 v12094;
-    T5[3] v12099;
-    uint256 v12105;
+  struct _F17959 {
+    uint256 v7440;
+    uint256 v7499;
+    uint256 v7529;
+    bytes6 v7535;
+    uint256 v8054;
+    uint256 v8189;
+    uint256 v8219;
+    bytes6 v8225;
+    uint256 v8668;
+    uint256 v8879;
+    uint256 v8909;
+    bytes6 v8915;
+    T2 v9073;
+    uint256 v9287;
+    T5[3] v9292;
+    uint256 v9295;
+    T5[3] v9300;
+    uint256 v9303;
+    T5[3] v9308;
+    uint256[3] v9548;
+    T2 v9687;
+    uint256 v12107;
+    T5[3] v12112;
+    uint256 v12118;
+    T5[3] v12123;
+    uint256 v12129;
     }
   function _reachi_4(T4 memory _a, Memory memory _Memory) internal  {
-    _F17805 memory _f;
-    reachRequire((current_step == uint256(5)), uint256(37) /*'state check at ./src/contracts/coin_shop.rsh:123:68:dot'*/);
+    _F17959 memory _f;
+    reachRequire((current_step == uint256(5)), uint256(37) /*'state check at ./src/contracts/coin_shop.rsh:118:68:dot'*/);
     (T8 memory _svs) = abi.decode(current_svbs, (T8));
     reachRequire((! locked), uint256(38) /*'locked'*/);
     emit _reach_e4(msg.sender, _a);
-    reachRequire((((_a.elem0) == uint256(0)) || (current_time == (_a.elem0))), uint256(39) /*'time check at ./src/contracts/coin_shop.rsh:123:68:dot'*/);
-    if ((_a.elem1).which == _enum_T3.buyer_api_bronze0_895) {
-    reachRequire((_svs.v6713), uint256(40) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:31:35:application call to "check" (defined at: reach standard library:49:32:function exp),at ./src/contracts/coin_shop.rsh:155:38:application call to "checkInactive" (defined at: ./src/contracts/util/checks.rsh:31:27:function exp),at ./src/contracts/coin_shop.rsh:154:40:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:154:40:function exp),at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:154:40:function exp),at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:123:68:function exp),at ./src/contracts/coin_shop.rsh:130:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:130:26:function exp)],Just "contract is currently inactive")'*/);
-    reachRequire(((_svs.v6715 >= uint256(1))), uint256(41) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:27:42:application call to "check" (defined at: reach standard library:49:32:function exp),at ./src/contracts/coin_shop.rsh:156:40:application call to "checkWithdrawal" (defined at: ./src/contracts/util/checks.rsh:27:34:function exp),at ./src/contracts/coin_shop.rsh:154:40:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:154:40:function exp),at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:154:40:function exp),at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:123:68:function exp),at ./src/contracts/coin_shop.rsh:130:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:130:26:function exp)],Just "balance insufficient for transaction")'*/);
-    _f.v7416 = unsafeAdd(_svs.v6687, _svs.v6722);
-    reachRequire(((_f.v7416 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(42) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    reachRequire((msg.value == _svs.v6722), uint256(43) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify network token pay amount")'*/);
-    reachRequire(((_svs.v6715 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(44) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    reachRequire((checkPayAmt(msg.sender, _svs.v6613, uint256(0))), uint256(45) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify non-network token pay amount")'*/);
-    reachRequire(((_svs.v6717 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(46) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    reachRequire((checkPayAmt(msg.sender, _svs.v6614, uint256(0))), uint256(47) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify non-network token pay amount")'*/);
-    reachRequire(((_svs.v6719 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(48) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    reachRequire((checkPayAmt(msg.sender, _svs.v6615, uint256(0))), uint256(49) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify non-network token pay amount")'*/);
-    _f.v7475 = unsafeSub(_f.v7416, _f.v7416);
-    reachRequire(((_f.v7475 >= uint256(0))), uint256(50) /*'(./src/contracts/coin_shop.rsh:163:84:application,[at ./src/contracts/coin_shop.rsh:161:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:161:43:function exp)],Just "assume >= 0")'*/);
-    _svs.v6637.transfer(_f.v7416);
-    _f.v7505 = unsafeSub(_svs.v6715, uint256(1));
-    reachRequire(((_f.v7505 >= uint256(0))), uint256(51) /*'(./src/contracts/coin_shop.rsh:164:76:application,[at ./src/contracts/coin_shop.rsh:161:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:161:43:function exp)],Just "assume >= 0")'*/);
-    safeTokenTransfer(_svs.v6613, payable(msg.sender), uint256(1));
-    _f.v7511 = hex'62726f6e7a65';
-    emit purchase( _f.v7511,  payable(msg.sender));
-    emit _reach_oe_v7512( (true));
+    reachRequire((((_a.elem0) == uint256(0)) || (current_time == (_a.elem0))), uint256(39) /*'time check at ./src/contracts/coin_shop.rsh:118:68:dot'*/);
+    if ((_a.elem1).which == _enum_T3.buyer_api_bronze0_907) {
+    reachRequire((_svs.v6737), uint256(40) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:33:33:application call to "check" (defined at: reach standard library:49:32:function exp),at ./src/contracts/coin_shop.rsh:150:36:application call to "checkActive" (defined at: ./src/contracts/util/checks.rsh:33:25:function exp),at ./src/contracts/coin_shop.rsh:149:40:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:149:40:function exp),at ./src/contracts/coin_shop.rsh:118:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:149:40:function exp),at ./src/contracts/coin_shop.rsh:118:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:118:68:function exp),at ./src/contracts/coin_shop.rsh:125:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:125:26:function exp)],Just "contract is currently inactive")'*/);
+    reachRequire(((_svs.v6739 >= uint256(1))), uint256(41) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:29:42:application call to "check" (defined at: reach standard library:49:32:function exp),at ./src/contracts/coin_shop.rsh:151:40:application call to "checkWithdrawal" (defined at: ./src/contracts/util/checks.rsh:29:34:function exp),at ./src/contracts/coin_shop.rsh:149:40:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:149:40:function exp),at ./src/contracts/coin_shop.rsh:118:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:149:40:function exp),at ./src/contracts/coin_shop.rsh:118:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:118:68:function exp),at ./src/contracts/coin_shop.rsh:125:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:125:26:function exp)],Just "balance insufficient for transaction")'*/);
+    _f.v7440 = unsafeAdd(_svs.v6705, _svs.v6746);
+    reachRequire(((_f.v7440 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(42) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    reachRequire((msg.value == _svs.v6746), uint256(43) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify network token pay amount")'*/);
+    reachRequire(((_svs.v6739 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(44) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    reachRequire((checkPayAmt(msg.sender, _svs.v6630, uint256(0))), uint256(45) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify non-network token pay amount")'*/);
+    reachRequire(((_svs.v6741 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(46) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    reachRequire((checkPayAmt(msg.sender, _svs.v6631, uint256(0))), uint256(47) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify non-network token pay amount")'*/);
+    reachRequire(((_svs.v6743 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(48) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    reachRequire((checkPayAmt(msg.sender, _svs.v6632, uint256(0))), uint256(49) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify non-network token pay amount")'*/);
+    _f.v7499 = unsafeSub(_f.v7440, _f.v7440);
+    reachRequire(((_f.v7499 >= uint256(0))), uint256(50) /*'(./src/contracts/coin_shop.rsh:158:84:application,[at ./src/contracts/coin_shop.rsh:156:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:156:43:function exp)],Just "assume >= 0")'*/);
+    _svs.v6654.transfer(_f.v7440);
+    _f.v7529 = unsafeSub(_svs.v6739, uint256(1));
+    reachRequire(((_f.v7529 >= uint256(0))), uint256(51) /*'(./src/contracts/coin_shop.rsh:159:76:application,[at ./src/contracts/coin_shop.rsh:156:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:156:43:function exp)],Just "assume >= 0")'*/);
+    safeTokenTransfer(_svs.v6630, payable(msg.sender), uint256(1));
+    _f.v7535 = hex'62726f6e7a65';
+    emit purchase( _f.v7535,  payable(msg.sender));
+    emit _reach_oe_v7536( (true));
     _Memory._reachr_buyer_api_bronze = (true);
     T12  memory _ja;
-    _ja.elem0 = _svs.v6612;
-    _ja.elem1 = _svs.v6613;
-    _ja.elem2 = _svs.v6614;
-    _ja.elem3 = _svs.v6615;
-    _ja.elem4 = _svs.v6637;
-    _ja.elem5 = _svs.v6677;
-    _ja.elem6 = _svs.v6678;
-    _ja.elem7 = _svs.v6679;
+    _ja.elem0 = _svs.v6629;
+    _ja.elem1 = _svs.v6630;
+    _ja.elem2 = _svs.v6631;
+    _ja.elem3 = _svs.v6632;
+    _ja.elem4 = _svs.v6654;
+    _ja.elem5 = _svs.v6695;
+    _ja.elem6 = _svs.v6696;
+    _ja.elem7 = _svs.v6697;
     _ja.elem8 = uint256(block.number);
-    _ja.elem9 = (array_set6(_svs.v6686, uint256(0), (T5({elem0: _f.v7505, elem1: _svs.v6714.elem1, elem2: _svs.v6714.elem2}))));
-    _ja.elem10 = _f.v7475;
+    _ja.elem9 = (array_set6(_svs.v6704, uint256(0), (T5({elem0: _f.v7529, elem1: _svs.v6738.elem1, elem2: _svs.v6738.elem2}))));
+    _ja.elem10 = _f.v7499;
     _reachl_2(_ja, _Memory);
-    } else if ((_a.elem1).which == _enum_T3.buyer_api_gold0_895) {
-    reachRequire((_svs.v6713), uint256(52) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:31:35:application call to "check" (defined at: reach standard library:49:32:function exp),at ./src/contracts/coin_shop.rsh:195:38:application call to "checkInactive" (defined at: ./src/contracts/util/checks.rsh:31:27:function exp),at ./src/contracts/coin_shop.rsh:194:38:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:194:38:function exp),at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:194:38:function exp),at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:123:68:function exp),at ./src/contracts/coin_shop.rsh:130:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:130:26:function exp)],Just "contract is currently inactive")'*/);
-    reachRequire(((_svs.v6719 >= uint256(1))), uint256(53) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:27:42:application call to "check" (defined at: reach standard library:49:32:function exp),at ./src/contracts/coin_shop.rsh:196:40:application call to "checkWithdrawal" (defined at: ./src/contracts/util/checks.rsh:27:34:function exp),at ./src/contracts/coin_shop.rsh:194:38:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:194:38:function exp),at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:194:38:function exp),at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:123:68:function exp),at ./src/contracts/coin_shop.rsh:130:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:130:26:function exp)],Just "balance insufficient for transaction")'*/);
-    _f.v8030 = unsafeAdd(_svs.v6687, _svs.v6724);
-    reachRequire(((_f.v8030 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(54) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    reachRequire((msg.value == _svs.v6724), uint256(55) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify network token pay amount")'*/);
-    reachRequire(((_svs.v6715 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(56) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    reachRequire((checkPayAmt(msg.sender, _svs.v6613, uint256(0))), uint256(57) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify non-network token pay amount")'*/);
-    reachRequire(((_svs.v6717 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(58) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    reachRequire((checkPayAmt(msg.sender, _svs.v6614, uint256(0))), uint256(59) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify non-network token pay amount")'*/);
-    reachRequire(((_svs.v6719 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(60) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    reachRequire((checkPayAmt(msg.sender, _svs.v6615, uint256(0))), uint256(61) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify non-network token pay amount")'*/);
-    _f.v8165 = unsafeSub(_f.v8030, _f.v8030);
-    reachRequire(((_f.v8165 >= uint256(0))), uint256(62) /*'(./src/contracts/coin_shop.rsh:203:84:application,[at ./src/contracts/coin_shop.rsh:201:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:201:43:function exp)],Just "assume >= 0")'*/);
-    _svs.v6637.transfer(_f.v8030);
-    _f.v8195 = unsafeSub(_svs.v6719, uint256(1));
-    reachRequire(((_f.v8195 >= uint256(0))), uint256(63) /*'(./src/contracts/coin_shop.rsh:204:76:application,[at ./src/contracts/coin_shop.rsh:201:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:201:43:function exp)],Just "assume >= 0")'*/);
-    safeTokenTransfer(_svs.v6615, payable(msg.sender), uint256(1));
-    _f.v8201 = hex'676f6c640000';
-    emit purchase( _f.v8201,  payable(msg.sender));
-    emit _reach_oe_v8202( (true));
+    } else if ((_a.elem1).which == _enum_T3.buyer_api_gold0_907) {
+    reachRequire((_svs.v6737), uint256(52) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:33:33:application call to "check" (defined at: reach standard library:49:32:function exp),at ./src/contracts/coin_shop.rsh:190:36:application call to "checkActive" (defined at: ./src/contracts/util/checks.rsh:33:25:function exp),at ./src/contracts/coin_shop.rsh:189:38:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:189:38:function exp),at ./src/contracts/coin_shop.rsh:118:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:189:38:function exp),at ./src/contracts/coin_shop.rsh:118:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:118:68:function exp),at ./src/contracts/coin_shop.rsh:125:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:125:26:function exp)],Just "contract is currently inactive")'*/);
+    reachRequire(((_svs.v6743 >= uint256(1))), uint256(53) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:29:42:application call to "check" (defined at: reach standard library:49:32:function exp),at ./src/contracts/coin_shop.rsh:191:40:application call to "checkWithdrawal" (defined at: ./src/contracts/util/checks.rsh:29:34:function exp),at ./src/contracts/coin_shop.rsh:189:38:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:189:38:function exp),at ./src/contracts/coin_shop.rsh:118:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:189:38:function exp),at ./src/contracts/coin_shop.rsh:118:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:118:68:function exp),at ./src/contracts/coin_shop.rsh:125:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:125:26:function exp)],Just "balance insufficient for transaction")'*/);
+    _f.v8054 = unsafeAdd(_svs.v6705, _svs.v6748);
+    reachRequire(((_f.v8054 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(54) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    reachRequire((msg.value == _svs.v6748), uint256(55) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify network token pay amount")'*/);
+    reachRequire(((_svs.v6739 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(56) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    reachRequire((checkPayAmt(msg.sender, _svs.v6630, uint256(0))), uint256(57) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify non-network token pay amount")'*/);
+    reachRequire(((_svs.v6741 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(58) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    reachRequire((checkPayAmt(msg.sender, _svs.v6631, uint256(0))), uint256(59) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify non-network token pay amount")'*/);
+    reachRequire(((_svs.v6743 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(60) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    reachRequire((checkPayAmt(msg.sender, _svs.v6632, uint256(0))), uint256(61) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify non-network token pay amount")'*/);
+    _f.v8189 = unsafeSub(_f.v8054, _f.v8054);
+    reachRequire(((_f.v8189 >= uint256(0))), uint256(62) /*'(./src/contracts/coin_shop.rsh:198:84:application,[at ./src/contracts/coin_shop.rsh:196:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:196:43:function exp)],Just "assume >= 0")'*/);
+    _svs.v6654.transfer(_f.v8054);
+    _f.v8219 = unsafeSub(_svs.v6743, uint256(1));
+    reachRequire(((_f.v8219 >= uint256(0))), uint256(63) /*'(./src/contracts/coin_shop.rsh:199:76:application,[at ./src/contracts/coin_shop.rsh:196:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:196:43:function exp)],Just "assume >= 0")'*/);
+    safeTokenTransfer(_svs.v6632, payable(msg.sender), uint256(1));
+    _f.v8225 = hex'676f6c640000';
+    emit purchase( _f.v8225,  payable(msg.sender));
+    emit _reach_oe_v8226( (true));
     _Memory._reachr_buyer_api_gold = (true);
     T12  memory _ja;
-    _ja.elem0 = _svs.v6612;
-    _ja.elem1 = _svs.v6613;
-    _ja.elem2 = _svs.v6614;
-    _ja.elem3 = _svs.v6615;
-    _ja.elem4 = _svs.v6637;
-    _ja.elem5 = _svs.v6677;
-    _ja.elem6 = _svs.v6678;
-    _ja.elem7 = _svs.v6679;
+    _ja.elem0 = _svs.v6629;
+    _ja.elem1 = _svs.v6630;
+    _ja.elem2 = _svs.v6631;
+    _ja.elem3 = _svs.v6632;
+    _ja.elem4 = _svs.v6654;
+    _ja.elem5 = _svs.v6695;
+    _ja.elem6 = _svs.v6696;
+    _ja.elem7 = _svs.v6697;
     _ja.elem8 = uint256(block.number);
-    _ja.elem9 = (array_set6(_svs.v6686, uint256(2), (T5({elem0: _f.v8195, elem1: _svs.v6718.elem1, elem2: _svs.v6718.elem2}))));
-    _ja.elem10 = _f.v8165;
+    _ja.elem9 = (array_set6(_svs.v6704, uint256(2), (T5({elem0: _f.v8219, elem1: _svs.v6742.elem1, elem2: _svs.v6742.elem2}))));
+    _ja.elem10 = _f.v8189;
     _reachl_2(_ja, _Memory);
-    } else if ((_a.elem1).which == _enum_T3.buyer_api_silver0_895) {
-    reachRequire((_svs.v6713), uint256(64) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:31:35:application call to "check" (defined at: reach standard library:49:32:function exp),at ./src/contracts/coin_shop.rsh:175:38:application call to "checkInactive" (defined at: ./src/contracts/util/checks.rsh:31:27:function exp),at ./src/contracts/coin_shop.rsh:174:40:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:174:40:function exp),at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:174:40:function exp),at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:123:68:function exp),at ./src/contracts/coin_shop.rsh:130:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:130:26:function exp)],Just "contract is currently inactive")'*/);
-    reachRequire(((_svs.v6717 >= uint256(1))), uint256(65) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:27:42:application call to "check" (defined at: reach standard library:49:32:function exp),at ./src/contracts/coin_shop.rsh:176:40:application call to "checkWithdrawal" (defined at: ./src/contracts/util/checks.rsh:27:34:function exp),at ./src/contracts/coin_shop.rsh:174:40:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:174:40:function exp),at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:174:40:function exp),at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:123:68:function exp),at ./src/contracts/coin_shop.rsh:130:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:130:26:function exp)],Just "balance insufficient for transaction")'*/);
-    _f.v8644 = unsafeAdd(_svs.v6687, _svs.v6723);
-    reachRequire(((_f.v8644 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(66) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    reachRequire((msg.value == _svs.v6723), uint256(67) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify network token pay amount")'*/);
-    reachRequire(((_svs.v6715 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(68) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    reachRequire((checkPayAmt(msg.sender, _svs.v6613, uint256(0))), uint256(69) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify non-network token pay amount")'*/);
-    reachRequire(((_svs.v6717 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(70) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    reachRequire((checkPayAmt(msg.sender, _svs.v6614, uint256(0))), uint256(71) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify non-network token pay amount")'*/);
-    reachRequire(((_svs.v6719 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(72) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    reachRequire((checkPayAmt(msg.sender, _svs.v6615, uint256(0))), uint256(73) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify non-network token pay amount")'*/);
-    _f.v8855 = unsafeSub(_f.v8644, _f.v8644);
-    reachRequire(((_f.v8855 >= uint256(0))), uint256(74) /*'(./src/contracts/coin_shop.rsh:183:84:application,[at ./src/contracts/coin_shop.rsh:181:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:181:43:function exp)],Just "assume >= 0")'*/);
-    _svs.v6637.transfer(_f.v8644);
-    _f.v8885 = unsafeSub(_svs.v6717, uint256(1));
-    reachRequire(((_f.v8885 >= uint256(0))), uint256(75) /*'(./src/contracts/coin_shop.rsh:184:76:application,[at ./src/contracts/coin_shop.rsh:181:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:181:43:function exp)],Just "assume >= 0")'*/);
-    safeTokenTransfer(_svs.v6614, payable(msg.sender), uint256(1));
-    _f.v8891 = hex'73696c766572';
-    emit purchase( _f.v8891,  payable(msg.sender));
-    emit _reach_oe_v8892( (true));
+    } else if ((_a.elem1).which == _enum_T3.buyer_api_silver0_907) {
+    reachRequire((_svs.v6737), uint256(64) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:33:33:application call to "check" (defined at: reach standard library:49:32:function exp),at ./src/contracts/coin_shop.rsh:170:36:application call to "checkActive" (defined at: ./src/contracts/util/checks.rsh:33:25:function exp),at ./src/contracts/coin_shop.rsh:169:40:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:169:40:function exp),at ./src/contracts/coin_shop.rsh:118:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:169:40:function exp),at ./src/contracts/coin_shop.rsh:118:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:118:68:function exp),at ./src/contracts/coin_shop.rsh:125:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:125:26:function exp)],Just "contract is currently inactive")'*/);
+    reachRequire(((_svs.v6741 >= uint256(1))), uint256(65) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:29:42:application call to "check" (defined at: reach standard library:49:32:function exp),at ./src/contracts/coin_shop.rsh:171:40:application call to "checkWithdrawal" (defined at: ./src/contracts/util/checks.rsh:29:34:function exp),at ./src/contracts/coin_shop.rsh:169:40:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:169:40:function exp),at ./src/contracts/coin_shop.rsh:118:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:169:40:function exp),at ./src/contracts/coin_shop.rsh:118:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:118:68:function exp),at ./src/contracts/coin_shop.rsh:125:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:125:26:function exp)],Just "balance insufficient for transaction")'*/);
+    _f.v8668 = unsafeAdd(_svs.v6705, _svs.v6747);
+    reachRequire(((_f.v8668 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(66) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    reachRequire((msg.value == _svs.v6747), uint256(67) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify network token pay amount")'*/);
+    reachRequire(((_svs.v6739 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(68) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    reachRequire((checkPayAmt(msg.sender, _svs.v6630, uint256(0))), uint256(69) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify non-network token pay amount")'*/);
+    reachRequire(((_svs.v6741 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(70) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    reachRequire((checkPayAmt(msg.sender, _svs.v6631, uint256(0))), uint256(71) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify non-network token pay amount")'*/);
+    reachRequire(((_svs.v6743 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(72) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    reachRequire((checkPayAmt(msg.sender, _svs.v6632, uint256(0))), uint256(73) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify non-network token pay amount")'*/);
+    _f.v8879 = unsafeSub(_f.v8668, _f.v8668);
+    reachRequire(((_f.v8879 >= uint256(0))), uint256(74) /*'(./src/contracts/coin_shop.rsh:178:84:application,[at ./src/contracts/coin_shop.rsh:176:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:176:43:function exp)],Just "assume >= 0")'*/);
+    _svs.v6654.transfer(_f.v8668);
+    _f.v8909 = unsafeSub(_svs.v6741, uint256(1));
+    reachRequire(((_f.v8909 >= uint256(0))), uint256(75) /*'(./src/contracts/coin_shop.rsh:179:76:application,[at ./src/contracts/coin_shop.rsh:176:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:176:43:function exp)],Just "assume >= 0")'*/);
+    safeTokenTransfer(_svs.v6631, payable(msg.sender), uint256(1));
+    _f.v8915 = hex'73696c766572';
+    emit purchase( _f.v8915,  payable(msg.sender));
+    emit _reach_oe_v8916( (true));
     _Memory._reachr_buyer_api_silver = (true);
     T12  memory _ja;
-    _ja.elem0 = _svs.v6612;
-    _ja.elem1 = _svs.v6613;
-    _ja.elem2 = _svs.v6614;
-    _ja.elem3 = _svs.v6615;
-    _ja.elem4 = _svs.v6637;
-    _ja.elem5 = _svs.v6677;
-    _ja.elem6 = _svs.v6678;
-    _ja.elem7 = _svs.v6679;
+    _ja.elem0 = _svs.v6629;
+    _ja.elem1 = _svs.v6630;
+    _ja.elem2 = _svs.v6631;
+    _ja.elem3 = _svs.v6632;
+    _ja.elem4 = _svs.v6654;
+    _ja.elem5 = _svs.v6695;
+    _ja.elem6 = _svs.v6696;
+    _ja.elem7 = _svs.v6697;
     _ja.elem8 = uint256(block.number);
-    _ja.elem9 = (array_set6(_svs.v6686, uint256(1), (T5({elem0: _f.v8885, elem1: _svs.v6716.elem1, elem2: _svs.v6716.elem2}))));
-    _ja.elem10 = _f.v8855;
+    _ja.elem9 = (array_set6(_svs.v6704, uint256(1), (T5({elem0: _f.v8909, elem1: _svs.v6740.elem1, elem2: _svs.v6740.elem2}))));
+    _ja.elem10 = _f.v8879;
     _reachl_2(_ja, _Memory);
-    } else if ((_a.elem1).which == _enum_T3.controller_api_restock0_895) {
-    _f.v9049 = (_a.elem1)._controller_api_restock0_895;
-    reachRequire(((payable(msg.sender) == _svs.v6637)), uint256(76) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:30:37:application call to "check" (defined at: reach standard library:49:32:function exp),at ./src/contracts/coin_shop.rsh:218:40:application call to "checkPermission" (defined at: ./src/contracts/util/checks.rsh:30:29:function exp),at ./src/contracts/coin_shop.rsh:217:50:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:217:50:function exp),at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:217:50:function exp),at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:123:68:function exp),at ./src/contracts/coin_shop.rsh:130:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:130:26:function exp)],Just "action not permitted")'*/);
-    reachRequire(((_svs.v6687 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(77) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    reachRequire((msg.value == uint256(0)), uint256(78) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify network token pay amount")'*/);
-    _f.v9263 = unsafeAdd(_svs.v6715, ((_f.v9049.elem0)[uint256(0)]));
-    reachRequire(((_f.v9263 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(79) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    _f.v9268 = array_set6(_svs.v6686, uint256(0), (T5({elem0: _f.v9263, elem1: _svs.v6714.elem1, elem2: _svs.v6714.elem2})));
-    reachRequire((checkPayAmt(msg.sender, _svs.v6613, ((_f.v9049.elem0)[uint256(0)]))), uint256(80) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify non-network token pay amount")'*/);
-    _f.v9271 = unsafeAdd(((_f.v9268[uint256(1)]).elem0), ((_f.v9049.elem0)[uint256(1)]));
-    reachRequire(((_f.v9271 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(81) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    _f.v9276 = array_set6(_f.v9268, uint256(1), (T5({elem0: _f.v9271, elem1: (_f.v9268[uint256(1)]).elem1, elem2: (_f.v9268[uint256(1)]).elem2})));
-    reachRequire((checkPayAmt(msg.sender, _svs.v6614, ((_f.v9049.elem0)[uint256(1)]))), uint256(82) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify non-network token pay amount")'*/);
-    _f.v9279 = unsafeAdd(((_f.v9276[uint256(2)]).elem0), ((_f.v9049.elem0)[uint256(2)]));
-    reachRequire(((_f.v9279 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(83) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    _f.v9284 = array_set6(_f.v9276, uint256(2), (T5({elem0: _f.v9279, elem1: (_f.v9276[uint256(2)]).elem1, elem2: (_f.v9276[uint256(2)]).elem2})));
-    reachRequire((checkPayAmt(msg.sender, _svs.v6615, ((_f.v9049.elem0)[uint256(2)]))), uint256(84) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify non-network token pay amount")'*/);
-    _f.v9524[0] = ((_f.v9284[uint256(0)]).elem0);
-    _f.v9524[1] = ((_f.v9284[uint256(1)]).elem0);
-    _f.v9524[2] = ((_f.v9284[uint256(2)]).elem0);
-    emit restock( _f.v9524);
-    emit _reach_oe_v9528( (true));
+    } else if ((_a.elem1).which == _enum_T3.controller_api_restock0_907) {
+    _f.v9073 = (_a.elem1)._controller_api_restock0_907;
+    reachRequire(((payable(msg.sender) == _svs.v6654)), uint256(76) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:32:37:application call to "check" (defined at: reach standard library:49:32:function exp),at ./src/contracts/coin_shop.rsh:213:40:application call to "checkPermission" (defined at: ./src/contracts/util/checks.rsh:32:29:function exp),at ./src/contracts/coin_shop.rsh:212:50:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:212:50:function exp),at ./src/contracts/coin_shop.rsh:118:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:212:50:function exp),at ./src/contracts/coin_shop.rsh:118:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:118:68:function exp),at ./src/contracts/coin_shop.rsh:125:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:125:26:function exp)],Just "action not permitted")'*/);
+    reachRequire(((_svs.v6705 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(77) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    reachRequire((msg.value == uint256(0)), uint256(78) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify network token pay amount")'*/);
+    _f.v9287 = unsafeAdd(_svs.v6739, ((_f.v9073.elem0)[uint256(0)]));
+    reachRequire(((_f.v9287 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(79) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    _f.v9292 = array_set6(_svs.v6704, uint256(0), (T5({elem0: _f.v9287, elem1: _svs.v6738.elem1, elem2: _svs.v6738.elem2})));
+    reachRequire((checkPayAmt(msg.sender, _svs.v6630, ((_f.v9073.elem0)[uint256(0)]))), uint256(80) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify non-network token pay amount")'*/);
+    _f.v9295 = unsafeAdd(((_f.v9292[uint256(1)]).elem0), ((_f.v9073.elem0)[uint256(1)]));
+    reachRequire(((_f.v9295 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(81) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    _f.v9300 = array_set6(_f.v9292, uint256(1), (T5({elem0: _f.v9295, elem1: (_f.v9292[uint256(1)]).elem1, elem2: (_f.v9292[uint256(1)]).elem2})));
+    reachRequire((checkPayAmt(msg.sender, _svs.v6631, ((_f.v9073.elem0)[uint256(1)]))), uint256(82) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify non-network token pay amount")'*/);
+    _f.v9303 = unsafeAdd(((_f.v9300[uint256(2)]).elem0), ((_f.v9073.elem0)[uint256(2)]));
+    reachRequire(((_f.v9303 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(83) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    _f.v9308 = array_set6(_f.v9300, uint256(2), (T5({elem0: _f.v9303, elem1: (_f.v9300[uint256(2)]).elem1, elem2: (_f.v9300[uint256(2)]).elem2})));
+    reachRequire((checkPayAmt(msg.sender, _svs.v6632, ((_f.v9073.elem0)[uint256(2)]))), uint256(84) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify non-network token pay amount")'*/);
+    _f.v9548[0] = ((_f.v9308[uint256(0)]).elem0);
+    _f.v9548[1] = ((_f.v9308[uint256(1)]).elem0);
+    _f.v9548[2] = ((_f.v9308[uint256(2)]).elem0);
+    emit restock( _f.v9548);
+    emit _reach_oe_v9552( (true));
     _Memory._reachr_controller_api_restock = (true);
     T12  memory _ja;
-    _ja.elem0 = _svs.v6612;
-    _ja.elem1 = _svs.v6613;
-    _ja.elem2 = _svs.v6614;
-    _ja.elem3 = _svs.v6615;
-    _ja.elem4 = _svs.v6637;
-    _ja.elem5 = _svs.v6677;
-    _ja.elem6 = _svs.v6678;
-    _ja.elem7 = _svs.v6679;
+    _ja.elem0 = _svs.v6629;
+    _ja.elem1 = _svs.v6630;
+    _ja.elem2 = _svs.v6631;
+    _ja.elem3 = _svs.v6632;
+    _ja.elem4 = _svs.v6654;
+    _ja.elem5 = _svs.v6695;
+    _ja.elem6 = _svs.v6696;
+    _ja.elem7 = _svs.v6697;
     _ja.elem8 = uint256(block.number);
-    _ja.elem9 = _f.v9284;
-    _ja.elem10 = _svs.v6687;
+    _ja.elem9 = _f.v9308;
+    _ja.elem10 = _svs.v6705;
     _reachl_2(_ja, _Memory);
-    } else if ((_a.elem1).which == _enum_T3.controller_api_set_prices0_895) {
-    _f.v9663 = (_a.elem1)._controller_api_set_prices0_895;
-    reachRequire(((payable(msg.sender) == _svs.v6637)), uint256(85) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:30:37:application call to "check" (defined at: reach standard library:49:32:function exp),at ./src/contracts/coin_shop.rsh:235:40:application call to "checkPermission" (defined at: ./src/contracts/util/checks.rsh:30:29:function exp),at ./src/contracts/coin_shop.rsh:234:58:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:234:58:function exp),at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:234:58:function exp),at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:123:68:function exp),at ./src/contracts/coin_shop.rsh:130:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:130:26:function exp)],Just "action not permitted")'*/);
-    reachRequire(((_svs.v6687 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(86) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    reachRequire((msg.value == uint256(0)), uint256(87) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify network token pay amount")'*/);
-    reachRequire(((_svs.v6715 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(88) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    reachRequire((checkPayAmt(msg.sender, _svs.v6613, uint256(0))), uint256(89) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify non-network token pay amount")'*/);
-    reachRequire(((_svs.v6717 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(90) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    reachRequire((checkPayAmt(msg.sender, _svs.v6614, uint256(0))), uint256(91) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify non-network token pay amount")'*/);
-    reachRequire(((_svs.v6719 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(92) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    reachRequire((checkPayAmt(msg.sender, _svs.v6615, uint256(0))), uint256(93) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify non-network token pay amount")'*/);
-    emit price_change( (_f.v9663.elem0));
-    emit _reach_oe_v10163( (true));
+    } else if ((_a.elem1).which == _enum_T3.controller_api_set_prices0_907) {
+    _f.v9687 = (_a.elem1)._controller_api_set_prices0_907;
+    reachRequire(((payable(msg.sender) == _svs.v6654)), uint256(85) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:32:37:application call to "check" (defined at: reach standard library:49:32:function exp),at ./src/contracts/coin_shop.rsh:230:40:application call to "checkPermission" (defined at: ./src/contracts/util/checks.rsh:32:29:function exp),at ./src/contracts/coin_shop.rsh:229:58:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:229:58:function exp),at ./src/contracts/coin_shop.rsh:118:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:229:58:function exp),at ./src/contracts/coin_shop.rsh:118:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:118:68:function exp),at ./src/contracts/coin_shop.rsh:125:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:125:26:function exp)],Just "action not permitted")'*/);
+    reachRequire(((_svs.v6705 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(86) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    reachRequire((msg.value == uint256(0)), uint256(87) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify network token pay amount")'*/);
+    reachRequire(((_svs.v6739 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(88) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    reachRequire((checkPayAmt(msg.sender, _svs.v6630, uint256(0))), uint256(89) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify non-network token pay amount")'*/);
+    reachRequire(((_svs.v6741 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(90) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    reachRequire((checkPayAmt(msg.sender, _svs.v6631, uint256(0))), uint256(91) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify non-network token pay amount")'*/);
+    reachRequire(((_svs.v6743 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(92) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    reachRequire((checkPayAmt(msg.sender, _svs.v6632, uint256(0))), uint256(93) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify non-network token pay amount")'*/);
+    emit price_change( (_f.v9687.elem0));
+    emit _reach_oe_v10187( (true));
     _Memory._reachr_controller_api_set_prices = (true);
     T12  memory _ja;
-    _ja.elem0 = _svs.v6612;
-    _ja.elem1 = _svs.v6613;
-    _ja.elem2 = _svs.v6614;
-    _ja.elem3 = _svs.v6615;
-    _ja.elem4 = _svs.v6637;
-    _ja.elem5 = (_f.v9663.elem0);
-    _ja.elem6 = _svs.v6678;
-    _ja.elem7 = _svs.v6679;
+    _ja.elem0 = _svs.v6629;
+    _ja.elem1 = _svs.v6630;
+    _ja.elem2 = _svs.v6631;
+    _ja.elem3 = _svs.v6632;
+    _ja.elem4 = _svs.v6654;
+    _ja.elem5 = (_f.v9687.elem0);
+    _ja.elem6 = _svs.v6696;
+    _ja.elem7 = _svs.v6697;
     _ja.elem8 = uint256(block.number);
-    _ja.elem9 = _svs.v6686;
-    _ja.elem10 = _svs.v6687;
+    _ja.elem9 = _svs.v6704;
+    _ja.elem10 = _svs.v6705;
     _reachl_2(_ja, _Memory);
-    } else if ((_a.elem1).which == _enum_T3.controller_api_terminate0_895) {
-    reachRequire(((payable(msg.sender) == _svs.v6637)), uint256(94) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:30:37:application call to "check" (defined at: reach standard library:49:32:function exp),at ./src/contracts/coin_shop.rsh:292:40:application call to "checkPermission" (defined at: ./src/contracts/util/checks.rsh:30:29:function exp),at ./src/contracts/coin_shop.rsh:291:48:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:291:48:function exp),at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:291:48:function exp),at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:123:68:function exp),at ./src/contracts/coin_shop.rsh:130:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:130:26:function exp)],Just "action not permitted")'*/);
-    reachRequire(((_svs.v6687 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(95) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    reachRequire((msg.value == uint256(0)), uint256(96) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify network token pay amount")'*/);
-    reachRequire(((_svs.v6715 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(97) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    reachRequire((checkPayAmt(msg.sender, _svs.v6613, uint256(0))), uint256(98) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify non-network token pay amount")'*/);
-    reachRequire(((_svs.v6717 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(99) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    reachRequire((checkPayAmt(msg.sender, _svs.v6614, uint256(0))), uint256(100) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify non-network token pay amount")'*/);
-    reachRequire(((_svs.v6719 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(101) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    reachRequire((checkPayAmt(msg.sender, _svs.v6615, uint256(0))), uint256(102) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify non-network token pay amount")'*/);
+    } else if ((_a.elem1).which == _enum_T3.controller_api_terminate0_907) {
+    reachRequire(((payable(msg.sender) == _svs.v6654)), uint256(94) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:32:37:application call to "check" (defined at: reach standard library:49:32:function exp),at ./src/contracts/coin_shop.rsh:287:40:application call to "checkPermission" (defined at: ./src/contracts/util/checks.rsh:32:29:function exp),at ./src/contracts/coin_shop.rsh:286:48:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:286:48:function exp),at ./src/contracts/coin_shop.rsh:118:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:286:48:function exp),at ./src/contracts/coin_shop.rsh:118:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:118:68:function exp),at ./src/contracts/coin_shop.rsh:125:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:125:26:function exp)],Just "action not permitted")'*/);
+    reachRequire(((_svs.v6705 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(95) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    reachRequire((msg.value == uint256(0)), uint256(96) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify network token pay amount")'*/);
+    reachRequire(((_svs.v6739 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(97) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    reachRequire((checkPayAmt(msg.sender, _svs.v6630, uint256(0))), uint256(98) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify non-network token pay amount")'*/);
+    reachRequire(((_svs.v6741 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(99) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    reachRequire((checkPayAmt(msg.sender, _svs.v6631, uint256(0))), uint256(100) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify non-network token pay amount")'*/);
+    reachRequire(((_svs.v6743 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(101) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    reachRequire((checkPayAmt(msg.sender, _svs.v6632, uint256(0))), uint256(102) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify non-network token pay amount")'*/);
     emit terminate( (true));
-    emit _reach_oe_v10794( (true));
+    emit _reach_oe_v10818( (true));
     _Memory._reachr_controller_api_terminate = (true);
     T12  memory _ja;
-    _ja.elem0 = _svs.v6612;
-    _ja.elem1 = _svs.v6613;
-    _ja.elem2 = _svs.v6614;
-    _ja.elem3 = _svs.v6615;
-    _ja.elem4 = _svs.v6637;
-    _ja.elem5 = _svs.v6677;
-    _ja.elem6 = _svs.v6678;
+    _ja.elem0 = _svs.v6629;
+    _ja.elem1 = _svs.v6630;
+    _ja.elem2 = _svs.v6631;
+    _ja.elem3 = _svs.v6632;
+    _ja.elem4 = _svs.v6654;
+    _ja.elem5 = _svs.v6695;
+    _ja.elem6 = _svs.v6696;
     _ja.elem7 = true;
     _ja.elem8 = uint256(block.number);
-    _ja.elem9 = _svs.v6686;
-    _ja.elem10 = _svs.v6687;
+    _ja.elem9 = _svs.v6704;
+    _ja.elem10 = _svs.v6705;
     _reachl_2(_ja, _Memory);
-    } else if ((_a.elem1).which == _enum_T3.controller_api_toggle_pause0_895) {
-    reachRequire(((payable(msg.sender) == _svs.v6637)), uint256(103) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:30:37:application call to "check" (defined at: reach standard library:49:32:function exp),at ./src/contracts/coin_shop.rsh:252:40:application call to "checkPermission" (defined at: ./src/contracts/util/checks.rsh:30:29:function exp),at ./src/contracts/coin_shop.rsh:251:51:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:251:51:function exp),at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:251:51:function exp),at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:123:68:function exp),at ./src/contracts/coin_shop.rsh:130:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:130:26:function exp)],Just "action not permitted")'*/);
-    reachRequire(((_svs.v6687 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(104) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    reachRequire((msg.value == uint256(0)), uint256(105) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify network token pay amount")'*/);
-    reachRequire(((_svs.v6715 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(106) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    reachRequire((checkPayAmt(msg.sender, _svs.v6613, uint256(0))), uint256(107) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify non-network token pay amount")'*/);
-    reachRequire(((_svs.v6717 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(108) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    reachRequire((checkPayAmt(msg.sender, _svs.v6614, uint256(0))), uint256(109) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify non-network token pay amount")'*/);
-    reachRequire(((_svs.v6719 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(110) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    reachRequire((checkPayAmt(msg.sender, _svs.v6615, uint256(0))), uint256(111) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify non-network token pay amount")'*/);
-    _f.v11422 = _svs.v6678 ? false : true;
-    emit _reach_oe_v11422( _f.v11422);
-    _Memory._reachr_controller_api_toggle_pause = _f.v11422;
+    } else if ((_a.elem1).which == _enum_T3.controller_api_toggle_pause0_907) {
+    reachRequire(((payable(msg.sender) == _svs.v6654)), uint256(103) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:32:37:application call to "check" (defined at: reach standard library:49:32:function exp),at ./src/contracts/coin_shop.rsh:247:40:application call to "checkPermission" (defined at: ./src/contracts/util/checks.rsh:32:29:function exp),at ./src/contracts/coin_shop.rsh:246:51:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:246:51:function exp),at ./src/contracts/coin_shop.rsh:118:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:246:51:function exp),at ./src/contracts/coin_shop.rsh:118:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:118:68:function exp),at ./src/contracts/coin_shop.rsh:125:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:125:26:function exp)],Just "action not permitted")'*/);
+    reachRequire(((_svs.v6705 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(104) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    reachRequire((msg.value == uint256(0)), uint256(105) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify network token pay amount")'*/);
+    reachRequire(((_svs.v6739 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(106) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    reachRequire((checkPayAmt(msg.sender, _svs.v6630, uint256(0))), uint256(107) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify non-network token pay amount")'*/);
+    reachRequire(((_svs.v6741 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(108) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    reachRequire((checkPayAmt(msg.sender, _svs.v6631, uint256(0))), uint256(109) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify non-network token pay amount")'*/);
+    reachRequire(((_svs.v6743 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(110) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    reachRequire((checkPayAmt(msg.sender, _svs.v6632, uint256(0))), uint256(111) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify non-network token pay amount")'*/);
+    emit _reach_oe_v6735( _svs.v6735);
+    _Memory._reachr_controller_api_toggle_pause = _svs.v6735;
     T12  memory _ja;
-    _ja.elem0 = _svs.v6612;
-    _ja.elem1 = _svs.v6613;
-    _ja.elem2 = _svs.v6614;
-    _ja.elem3 = _svs.v6615;
-    _ja.elem4 = _svs.v6637;
-    _ja.elem5 = _svs.v6677;
-    _ja.elem6 = _f.v11422;
-    _ja.elem7 = _svs.v6679;
+    _ja.elem0 = _svs.v6629;
+    _ja.elem1 = _svs.v6630;
+    _ja.elem2 = _svs.v6631;
+    _ja.elem3 = _svs.v6632;
+    _ja.elem4 = _svs.v6654;
+    _ja.elem5 = _svs.v6695;
+    _ja.elem6 = _svs.v6735;
+    _ja.elem7 = _svs.v6697;
     _ja.elem8 = uint256(block.number);
-    _ja.elem9 = _svs.v6686;
-    _ja.elem10 = _svs.v6687;
+    _ja.elem9 = _svs.v6704;
+    _ja.elem10 = _svs.v6705;
     _reachl_2(_ja, _Memory);
-    } else if ((_a.elem1).which == _enum_T3.controller_api_withdraw0_895) {
-    reachRequire(((payable(msg.sender) == _svs.v6637)), uint256(112) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:30:37:application call to "check" (defined at: reach standard library:49:32:function exp),at ./src/contracts/coin_shop.rsh:272:40:application call to "checkPermission" (defined at: ./src/contracts/util/checks.rsh:30:29:function exp),at ./src/contracts/coin_shop.rsh:271:47:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:271:47:function exp),at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:271:47:function exp),at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:123:68:function exp),at ./src/contracts/coin_shop.rsh:130:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:130:26:function exp)],Just "action not permitted")'*/);
-    reachRequire(((_svs.v6687 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(113) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    reachRequire((msg.value == uint256(0)), uint256(114) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify network token pay amount")'*/);
-    reachRequire(((_svs.v6715 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(115) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    reachRequire((checkPayAmt(msg.sender, _svs.v6613, uint256(0))), uint256(116) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify non-network token pay amount")'*/);
-    reachRequire(((_svs.v6717 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(117) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    reachRequire((checkPayAmt(msg.sender, _svs.v6614, uint256(0))), uint256(118) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify non-network token pay amount")'*/);
-    reachRequire(((_svs.v6719 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(119) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],Just "assume <= UInt.max")'*/);
-    reachRequire((checkPayAmt(msg.sender, _svs.v6615, uint256(0))), uint256(120) /*'(./src/contracts/coin_shop.rsh:123:68:dot,[],"verify non-network token pay amount")'*/);
-    _f.v12083 = unsafeSub(_svs.v6715, _svs.v6715);
-    reachRequire(((_f.v12083 >= uint256(0))), uint256(121) /*'(./src/contracts/coin_shop.rsh:281:76:application,[at ./src/contracts/coin_shop.rsh:276:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:276:43:function exp)],Just "assume >= 0")'*/);
-    _f.v12088 = array_set6(_svs.v6686, uint256(0), (T5({elem0: _f.v12083, elem1: _svs.v6714.elem1, elem2: _svs.v6714.elem2})));
-    safeTokenTransfer(_svs.v6613, _svs.v6637, _svs.v6715);
-    _f.v12094 = unsafeSub(((_f.v12088[uint256(1)]).elem0), _svs.v6717);
-    reachRequire(((_f.v12094 >= uint256(0))), uint256(122) /*'(./src/contracts/coin_shop.rsh:281:76:application,[at ./src/contracts/coin_shop.rsh:276:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:276:43:function exp)],Just "assume >= 0")'*/);
-    _f.v12099 = array_set6(_f.v12088, uint256(1), (T5({elem0: _f.v12094, elem1: (_f.v12088[uint256(1)]).elem1, elem2: (_f.v12088[uint256(1)]).elem2})));
-    safeTokenTransfer(_svs.v6614, _svs.v6637, _svs.v6717);
-    _f.v12105 = unsafeSub(((_f.v12099[uint256(2)]).elem0), _svs.v6719);
-    reachRequire(((_f.v12105 >= uint256(0))), uint256(123) /*'(./src/contracts/coin_shop.rsh:281:76:application,[at ./src/contracts/coin_shop.rsh:276:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:276:43:function exp)],Just "assume >= 0")'*/);
-    safeTokenTransfer(_svs.v6615, _svs.v6637, _svs.v6719);
-    emit withdraw( _svs.v6720);
-    emit _reach_oe_v12112( (true));
+    } else if ((_a.elem1).which == _enum_T3.controller_api_withdraw0_907) {
+    reachRequire(((payable(msg.sender) == _svs.v6654)), uint256(112) /*'(reach standard library:57:5:application,[at ./src/contracts/util/checks.rsh:32:37:application call to "check" (defined at: reach standard library:49:32:function exp),at ./src/contracts/coin_shop.rsh:267:40:application call to "checkPermission" (defined at: ./src/contracts/util/checks.rsh:32:29:function exp),at ./src/contracts/coin_shop.rsh:266:47:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:266:47:function exp),at ./src/contracts/coin_shop.rsh:118:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:266:47:function exp),at ./src/contracts/coin_shop.rsh:118:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:118:68:function exp),at ./src/contracts/coin_shop.rsh:125:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:125:26:function exp)],Just "action not permitted")'*/);
+    reachRequire(((_svs.v6705 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(113) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    reachRequire((msg.value == uint256(0)), uint256(114) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify network token pay amount")'*/);
+    reachRequire(((_svs.v6739 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(115) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    reachRequire((checkPayAmt(msg.sender, _svs.v6630, uint256(0))), uint256(116) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify non-network token pay amount")'*/);
+    reachRequire(((_svs.v6741 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(117) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    reachRequire((checkPayAmt(msg.sender, _svs.v6631, uint256(0))), uint256(118) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify non-network token pay amount")'*/);
+    reachRequire(((_svs.v6743 <= uint256(115792089237316195423570985008687907853269984665640564039457584007913129639935))), uint256(119) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],Just "assume <= UInt.max")'*/);
+    reachRequire((checkPayAmt(msg.sender, _svs.v6632, uint256(0))), uint256(120) /*'(./src/contracts/coin_shop.rsh:118:68:dot,[],"verify non-network token pay amount")'*/);
+    _f.v12107 = unsafeSub(_svs.v6739, _svs.v6739);
+    reachRequire(((_f.v12107 >= uint256(0))), uint256(121) /*'(./src/contracts/coin_shop.rsh:276:76:application,[at ./src/contracts/coin_shop.rsh:271:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:271:43:function exp)],Just "assume >= 0")'*/);
+    _f.v12112 = array_set6(_svs.v6704, uint256(0), (T5({elem0: _f.v12107, elem1: _svs.v6738.elem1, elem2: _svs.v6738.elem2})));
+    safeTokenTransfer(_svs.v6630, _svs.v6654, _svs.v6739);
+    _f.v12118 = unsafeSub(((_f.v12112[uint256(1)]).elem0), _svs.v6741);
+    reachRequire(((_f.v12118 >= uint256(0))), uint256(122) /*'(./src/contracts/coin_shop.rsh:276:76:application,[at ./src/contracts/coin_shop.rsh:271:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:271:43:function exp)],Just "assume >= 0")'*/);
+    _f.v12123 = array_set6(_f.v12112, uint256(1), (T5({elem0: _f.v12118, elem1: (_f.v12112[uint256(1)]).elem1, elem2: (_f.v12112[uint256(1)]).elem2})));
+    safeTokenTransfer(_svs.v6631, _svs.v6654, _svs.v6741);
+    _f.v12129 = unsafeSub(((_f.v12123[uint256(2)]).elem0), _svs.v6743);
+    reachRequire(((_f.v12129 >= uint256(0))), uint256(123) /*'(./src/contracts/coin_shop.rsh:276:76:application,[at ./src/contracts/coin_shop.rsh:271:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:271:43:function exp)],Just "assume >= 0")'*/);
+    safeTokenTransfer(_svs.v6632, _svs.v6654, _svs.v6743);
+    emit withdraw( _svs.v6744);
+    emit _reach_oe_v12136( (true));
     _Memory._reachr_controller_api_withdraw = (true);
     T12  memory _ja;
-    _ja.elem0 = _svs.v6612;
-    _ja.elem1 = _svs.v6613;
-    _ja.elem2 = _svs.v6614;
-    _ja.elem3 = _svs.v6615;
-    _ja.elem4 = _svs.v6637;
-    _ja.elem5 = _svs.v6677;
-    _ja.elem6 = _svs.v6678;
-    _ja.elem7 = _svs.v6679;
+    _ja.elem0 = _svs.v6629;
+    _ja.elem1 = _svs.v6630;
+    _ja.elem2 = _svs.v6631;
+    _ja.elem3 = _svs.v6632;
+    _ja.elem4 = _svs.v6654;
+    _ja.elem5 = _svs.v6695;
+    _ja.elem6 = _svs.v6696;
+    _ja.elem7 = _svs.v6697;
     _ja.elem8 = uint256(block.number);
-    _ja.elem9 = (array_set6(_f.v12099, uint256(2), (T5({elem0: _f.v12105, elem1: (_f.v12099[uint256(2)]).elem1, elem2: (_f.v12099[uint256(2)]).elem2}))));
-    _ja.elem10 = _svs.v6687;
+    _ja.elem9 = (array_set6(_f.v12123, uint256(2), (T5({elem0: _f.v12129, elem1: (_f.v12123[uint256(2)]).elem1, elem2: (_f.v12123[uint256(2)]).elem2}))));
+    _ja.elem10 = _svs.v6705;
     _reachl_2(_ja, _Memory);
     }
     }
-  struct _F17806 {
-    uint256[3] v6720;
-    uint256[3] v12126;
+  struct _F17960 {
+    uint256[3] v6744;
+    uint256[3] v12152;
     }
   function _reachl_2(T12 memory _a, Memory memory _Memory) internal  {
-    _F17806 memory _f;
+    _F17960 memory _f;
     if (_a.elem7) {
-      _f.v12126[0] = ((_a.elem9[uint256(0)]).elem0);
-      _f.v12126[1] = ((_a.elem9[uint256(1)]).elem0);
-      _f.v12126[2] = ((_a.elem9[uint256(2)]).elem0);
+      _f.v12152[0] = ((_a.elem9[uint256(0)]).elem0);
+      _f.v12152[1] = ((_a.elem9[uint256(1)]).elem0);
+      _f.v12152[2] = ((_a.elem9[uint256(2)]).elem0);
       T7 memory nsvs;
-      nsvs.v6612 = _a.elem0;
-      nsvs.v6613 = _a.elem1;
-      nsvs.v6614 = _a.elem2;
-      nsvs.v6615 = _a.elem3;
-      nsvs.v6637 = _a.elem4;
-      nsvs.v6677 = _a.elem5;
-      nsvs.v6678 = _a.elem6;
-      nsvs.v6686 = _a.elem9;
-      nsvs.v6687 = _a.elem10;
-      nsvs.v12120 = (_a.elem9[uint256(0)]);
-      nsvs.v12121 = ((_a.elem9[uint256(0)]).elem0);
-      nsvs.v12123 = ((_a.elem9[uint256(1)]).elem0);
-      nsvs.v12125 = ((_a.elem9[uint256(2)]).elem0);
-      nsvs.v12126 = _f.v12126;
+      nsvs.v6629 = _a.elem0;
+      nsvs.v6630 = _a.elem1;
+      nsvs.v6631 = _a.elem2;
+      nsvs.v6632 = _a.elem3;
+      nsvs.v6654 = _a.elem4;
+      nsvs.v6695 = _a.elem5;
+      nsvs.v6696 = _a.elem6;
+      nsvs.v6704 = _a.elem9;
+      nsvs.v6705 = _a.elem10;
+      nsvs.v12146 = (_a.elem9[uint256(0)]);
+      nsvs.v12147 = ((_a.elem9[uint256(0)]).elem0);
+      nsvs.v12149 = ((_a.elem9[uint256(1)]).elem0);
+      nsvs.v12151 = ((_a.elem9[uint256(2)]).elem0);
+      nsvs.v12152 = _f.v12152;
       current_step = uint256(3);
       current_time = uint256(block.number);
       current_svbs = abi.encode(nsvs);
       }
     else {
-      _f.v6720[0] = ((_a.elem9[uint256(0)]).elem0);
-      _f.v6720[1] = ((_a.elem9[uint256(1)]).elem0);
-      _f.v6720[2] = ((_a.elem9[uint256(2)]).elem0);
+      _f.v6744[0] = ((_a.elem9[uint256(0)]).elem0);
+      _f.v6744[1] = ((_a.elem9[uint256(1)]).elem0);
+      _f.v6744[2] = ((_a.elem9[uint256(2)]).elem0);
       T8 memory nsvs;
-      nsvs.v6612 = _a.elem0;
-      nsvs.v6613 = _a.elem1;
-      nsvs.v6614 = _a.elem2;
-      nsvs.v6615 = _a.elem3;
-      nsvs.v6637 = _a.elem4;
-      nsvs.v6677 = _a.elem5;
-      nsvs.v6678 = _a.elem6;
-      nsvs.v6679 = false;
-      nsvs.v6686 = _a.elem9;
-      nsvs.v6687 = _a.elem10;
-      nsvs.v6713 = (_a.elem6);
-      nsvs.v6714 = (_a.elem9[uint256(0)]);
-      nsvs.v6715 = ((_a.elem9[uint256(0)]).elem0);
-      nsvs.v6716 = (_a.elem9[uint256(1)]);
-      nsvs.v6717 = ((_a.elem9[uint256(1)]).elem0);
-      nsvs.v6718 = (_a.elem9[uint256(2)]);
-      nsvs.v6719 = ((_a.elem9[uint256(2)]).elem0);
-      nsvs.v6720 = _f.v6720;
-      nsvs.v6722 = (_a.elem5[uint256(0)]);
-      nsvs.v6723 = (_a.elem5[uint256(1)]);
-      nsvs.v6724 = (_a.elem5[uint256(2)]);
+      nsvs.v6629 = _a.elem0;
+      nsvs.v6630 = _a.elem1;
+      nsvs.v6631 = _a.elem2;
+      nsvs.v6632 = _a.elem3;
+      nsvs.v6654 = _a.elem4;
+      nsvs.v6695 = _a.elem5;
+      nsvs.v6696 = _a.elem6;
+      nsvs.v6697 = false;
+      nsvs.v6704 = _a.elem9;
+      nsvs.v6705 = _a.elem10;
+      nsvs.v6735 = (_a.elem6 ? false : true);
+      nsvs.v6737 = (_a.elem6 ? false : true);
+      nsvs.v6738 = (_a.elem9[uint256(0)]);
+      nsvs.v6739 = ((_a.elem9[uint256(0)]).elem0);
+      nsvs.v6740 = (_a.elem9[uint256(1)]);
+      nsvs.v6741 = ((_a.elem9[uint256(1)]).elem0);
+      nsvs.v6742 = (_a.elem9[uint256(2)]);
+      nsvs.v6743 = ((_a.elem9[uint256(2)]).elem0);
+      nsvs.v6744 = _f.v6744;
+      nsvs.v6746 = (_a.elem5[uint256(0)]);
+      nsvs.v6747 = (_a.elem5[uint256(1)]);
+      nsvs.v6748 = (_a.elem5[uint256(2)]);
       current_step = uint256(5);
       current_time = uint256(block.number);
       current_svbs = abi.encode(nsvs);
       }
     }
-  constructor(T9 memory v17781) payable {
+  constructor(T9 memory v17935) payable {
     current_step = 0x0;
     creation_time = uint256(block.number);
     Memory memory _Memory;
-    _reachi_0(v17781, _Memory);
+    _reachi_0(v17935, _Memory);
     }
-  function _reachp_1(T11 calldata v17784) external payable returns (bool) {
+  function _reachp_1(T11 calldata v17938) external payable returns (bool) {
     Memory memory _Memory;
-    _reachi_1(v17784, _Memory);
+    _reachi_1(v17938, _Memory);
     }
-  function _reachp_3(T11 calldata v17787) external payable returns (bool) {
+  function _reachp_3(T11 calldata v17941) external payable returns (bool) {
     Memory memory _Memory;
-    _reachi_3(v17787, _Memory);
+    _reachi_3(v17941, _Memory);
     }
-  function _reachp_4(T4 calldata v17790) external payable returns (bool) {
+  function _reachp_4(T4 calldata v17944) external payable returns (bool) {
     Memory memory _Memory;
-    _reachi_4(v17790, _Memory);
+    _reachi_4(v17944, _Memory);
     }
   function buyer_api_bronze() external payable returns (bool) {
     Memory memory _Memory;
@@ -1480,14 +1480,14 @@ contract ReachContract is Stdlib {
     _reacha_coin_supply(_ja, _Memory);
     return _Memory._reachr_coin_supply;
     }
-  function controller_api_restock(uint256[3] calldata v17760) external payable returns (bool) {
+  function controller_api_restock(uint256[3] calldata v17914) external payable returns (bool) {
     Memory memory _Memory;
-    _reacha_controller_api_restock(v17760, _Memory);
+    _reacha_controller_api_restock(v17914, _Memory);
     return _Memory._reachr_controller_api_restock;
     }
-  function controller_api_set_prices(uint256[3] calldata v17766) external payable returns (bool) {
+  function controller_api_set_prices(uint256[3] calldata v17920) external payable returns (bool) {
     Memory memory _Memory;
-    _reacha_controller_api_set_prices(v17766, _Memory);
+    _reacha_controller_api_set_prices(v17920, _Memory);
     return _Memory._reachr_controller_api_set_prices;
     }
   function controller_api_terminate() external payable returns (bool) {

@@ -22,10 +22,7 @@ const VISUAL_TRAITS = [
     "Mouth",
 ];
 const META_TRAIT = ["Level", "Power"];
-const TRAITS = [
-    ...VISUAL_TRAITS,
-    ...META_TRAIT,
-];
+const TRAITS = [...VISUAL_TRAITS, ...META_TRAIT];
 var BaseClass;
 (function (BaseClass) {
     BaseClass["HUMANOID"] = "Humanoid";
