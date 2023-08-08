@@ -10,4 +10,6 @@ const COIN_RARITY_WEIGHTS = {
     ["gold"]: 1.0,
 };
 const COIN_TYPES = ["bronze", "silver", "gold"];
-export { COIN_RARITY_WEIGHTS, COIN_TYPES };
+const COIN_SUPPLY = [1200, 600, 200];
+const COIN_PRICES = [10, 20, 30];
+export { COIN_RARITY_WEIGHTS, COIN_TYPES, COIN_PRICES, COIN_SUPPLY };

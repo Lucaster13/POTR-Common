@@ -9,4 +9,6 @@ declare const COIN_RARITY_WEIGHTS: {
     gold: number;
 };
 declare const COIN_TYPES: Coin[];
-export { COIN_RARITY_WEIGHTS, COIN_TYPES };
+declare const COIN_SUPPLY: number[];
+declare const COIN_PRICES: number[];
+export { COIN_RARITY_WEIGHTS, COIN_TYPES, COIN_PRICES, COIN_SUPPLY };
