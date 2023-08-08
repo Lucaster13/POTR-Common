@@ -1,0 +1,32 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@reach-sh/stdlib": "^0.1.13-rc.0"
+  },
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "@typescript-eslint/parser": "^6.2.1",
+    "eslint": "^8.46.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.1",
+    "typescript": "^4.9.4"
+  },
+  "scripts": {
+    "build": "eslint ./src && prettier ./src && tsc"
+  },
+  "name": "potr-common",
+  "description": "common types and utils",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lucaster13/POTR-Common.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lucaster13/POTR-Common/issues"
+  },
+  "homepage": "https://github.com/Lucaster13/POTR-Common#readme"
+}

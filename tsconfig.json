@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "moduleResolution": "Node",
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "outDir": "./dist"
+  },
+  "include": ["./src/**/*"]
+}

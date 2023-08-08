@@ -1,0 +1,1967 @@
+#pragma version 8
+// resource: R_Txn
+txn ApplicationID
+bz alloc
+byte base64()
+app_global_get
+dup
+int 0
+extract_uint64
+store 1 // GV_currentStep :: UInt
+int 8
+extract_uint64
+store 2 // GV_currentTime :: UInt
+byte base64(AA==)
+app_global_get
+byte base64(AQ==)
+app_global_get
+concat
+byte base64(Ag==)
+app_global_get
+concat
+preamble:
+pushbytess base64(A6+jPA==) base64(Ch0mSQ==) base64(FCCDHw==) base64(LQiU7A==) base64(Pg06aQ==) base64(RlzXZg==) base64(R5E3lA==) base64(hzz+Wg==) base64(kmDfpg==) base64(omG0AA==) base64(ssgi6w==) base64(tsF5+Q==) base64(z1LUsw==) base64(39kjKA==) base64(6Ca18g==)
+txna ApplicationArgs 0
+match _reachp_0 _reachp_3 is_paused__byte61XYhmPXYss6LXZIGcOmPGCNFlmHlLGfWrm7xFsGEBc_ coin_prices__uinFnH2oGarVtJaeqsZ3oyYXSXPOEZshy0YjocYDi1g4P8_ controller_api_toPganL3IMIy1g1yc_dZQAN1KBzPJVXUPycTxarKJoDQ_ controller_api_wb0XtdEKqi8WNStHAlw2K4jvyjsherZmQDbr9M81m3CY_ controller_api_t_Z9wmzV5mC_Pvgg5lhnigQhAb9ZgRS0Ss0IHbNXkGp8_ controller_api_rriDFwwXi96yuNNECE2_Ku9VcB65JhPbzwULlPJF4IWw_ buyer_api_bronze8ABT7iafFdjMqKMPB0bZpHV1PZokl9I67vRnPcgXIqs_ coin_supply__uinybK8j2zT3f1Crmjdhe41m7GvHfwawPjUyo_pnxIzo74_ buyer_api_gold__yAXYzSxqrtOox_ee7E2zRJcHbW8GECFa1kIAJ4zneFE_ _reachp_4 buyer_api_silver0gErxCkMaLWC2yo4CoxsT4tw6PHisoNNvvUJuzx04HY_ _reachp_1 controller_api_s7WHlsZ3M4jkfFfFP8HfkEtVkrXbrVasatZqSWzK4KLY_
+errl:
+err
+_api_buyer_api_bronze4:
+load 24 // i/6713
+assert
+// ^ Claim: contract is currently inactive
+// at reach standard library:57:5:application
+// at ./src/contracts/util/checks.rsh:31:35:application call to "check" (defined at: reach standard library:49:32:function exp)
+// at ./src/contracts/coin_shop.rsh:155:38:application call to "checkInactive" (defined at: ./src/contracts/util/checks.rsh:31:27:function exp)
+// at ./src/contracts/coin_shop.rsh:154:40:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:154:40:function exp)
+// at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:154:40:function exp)
+// at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:123:68:function exp)
+// at ./src/contracts/coin_shop.rsh:130:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:130:26:function exp)
+load 22 // v6715
+int 1
+>=
+assert
+// ^ Claim: balance insufficient for transaction
+// at reach standard library:57:5:application
+// at ./src/contracts/util/checks.rsh:27:42:application call to "check" (defined at: reach standard library:49:32:function exp)
+// at ./src/contracts/coin_shop.rsh:156:40:application call to "checkWithdrawal" (defined at: ./src/contracts/util/checks.rsh:27:34:function exp)
+// at ./src/contracts/coin_shop.rsh:154:40:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:154:40:function exp)
+// at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:154:40:function exp)
+// at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:123:68:function exp)
+// at ./src/contracts/coin_shop.rsh:130:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:130:26:function exp)
+load 25 // netBalance/6687
+load 16 // v6722
++
+dup
+store 11 // v7416
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 16 // v6722
+callsub l21_LF_checkTxn_False
+// ^ CheckPay
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 22 // v6715
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 20 // v6717
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 18 // v6719
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 11 // v7416
+dup
+-
+dup
+store 12 // v7475
+int 0
+>=
+assert
+// ^ Claim: assume >= 0
+// at ./src/contracts/coin_shop.rsh:163:84:application
+// at ./src/contracts/coin_shop.rsh:161:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:161:43:function exp)
+load 11 // v7416
+// resource: R_Account
+load 31 // Admin/6637
+callsub l11_LF_makeTxn_False_False_False_True
+load 22 // v6715
+int 1
+-
+dup
+store 11 // v7505
+int 0
+>=
+assert
+// ^ Claim: assume >= 0
+// at ./src/contracts/coin_shop.rsh:164:76:application
+// at ./src/contracts/coin_shop.rsh:161:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:161:43:function exp)
+int 1
+// resource: R_Asset
+load 34 // bronze/6613
+// resource: R_Account
+txn Sender
+callsub l8_LF_makeTxn_False_False_True_True
+byte base64(YnJvbnpl)
+store 13 // v7511
+byte base64(w7qqiQ==)
+load 13 // v7511
+concat
+txn Sender
+concat
+log // up to 42 bytes
+// ^ log: "purchase" [v7511,user/7203] "purchase(byte[6],address)"
+int 1
+store 13 // v7512
+byte base64(AAAAAAAAHVg=)
+load 13 // v7512
+itob
+substring 7 8
+concat
+log // up to 9 bytes
+load 13 // v7512
+itob
+substring 7 8
+store 4 // GV_apiRet :: Null
+global Round
+load 26 // tokenInfos/6686
+load 23 // tokInfo/6714
+load 11 // v7505
+itob
+replace2 0
+replace2 0
+load 12 // v7475
+store 25 // netBalance/6687
+store 26 // tokenInfos/6686
+store 27 // thisConsensusTime/6680
+_reachl_2:
+load 28 // isTerminated/6679
+bz l23_ifF
+load 26 // tokenInfos/6686
+extract 0 17
+dup
+store 16 // tokInfo/12120
+int 0
+extract_uint64
+store 15 // v12121
+load 26 // tokenInfos/6686
+extract 17 17
+int 0
+extract_uint64
+store 14 // v12123
+load 26 // tokenInfos/6686
+extract 34 17
+int 0
+extract_uint64
+store 13 // v12125
+load 15 // v12121
+itob
+load 14 // v12123
+itob
+concat
+load 13 // v12125
+itob
+concat
+store 12 // v12126
+l24_LF_svsDump_3:
+load 35 // Deployer/6612
+load 34 // bronze/6613
+itob
+concat
+load 33 // silver/6614
+itob
+concat
+load 32 // gold/6615
+itob
+concat
+load 31 // Admin/6637
+concat
+load 30 // coinPrices/6677
+concat
+load 29 // isPaused/6678
+itob
+substring 7 8
+concat
+load 26 // tokenInfos/6686
+concat
+load 25 // netBalance/6687
+itob
+concat
+load 16 // tokInfo/12120
+concat
+load 15 // v12121
+itob
+concat
+load 14 // v12123
+itob
+concat
+load 13 // v12125
+itob
+concat
+load 12 // v12126
+concat
+int 60
+bzero
+concat
+int 3
+global Round
+updateStateNoOp:
+store 2 // GV_currentTime :: UInt
+store 1 // GV_currentStep :: UInt
+byte base64(AA==)
+dig 1
+extract 0 127
+app_global_put
+byte base64(AQ==)
+dig 1
+extract 127 127
+app_global_put
+byte base64(Ag==)
+swap
+extract 254 43
+app_global_put
+byte base64()
+load 1 // GV_currentStep :: UInt
+itob
+load 2 // GV_currentTime :: UInt
+itob
+concat
+app_global_put
+txn OnCompletion
+int NoOp
+==
+assert
+// checked on completion
+callsub l26_LF_updateMbr
+updateState:
+load 3 // GV_wasntMeth :: Bool
+bnz done
+apiReturn_noCheck:
+byte base64(FR98dQ==)
+load 4 // GV_apiRet :: Null
+concat
+log // up to 28 bytes
+done:
+int 1
+return
+_api_buyer_api_gold4:
+load 24 // i/6713
+assert
+// ^ Claim: contract is currently inactive
+// at reach standard library:57:5:application
+// at ./src/contracts/util/checks.rsh:31:35:application call to "check" (defined at: reach standard library:49:32:function exp)
+// at ./src/contracts/coin_shop.rsh:195:38:application call to "checkInactive" (defined at: ./src/contracts/util/checks.rsh:31:27:function exp)
+// at ./src/contracts/coin_shop.rsh:194:38:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:194:38:function exp)
+// at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:194:38:function exp)
+// at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:123:68:function exp)
+// at ./src/contracts/coin_shop.rsh:130:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:130:26:function exp)
+load 18 // v6719
+int 1
+>=
+assert
+// ^ Claim: balance insufficient for transaction
+// at reach standard library:57:5:application
+// at ./src/contracts/util/checks.rsh:27:42:application call to "check" (defined at: reach standard library:49:32:function exp)
+// at ./src/contracts/coin_shop.rsh:196:40:application call to "checkWithdrawal" (defined at: ./src/contracts/util/checks.rsh:27:34:function exp)
+// at ./src/contracts/coin_shop.rsh:194:38:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:194:38:function exp)
+// at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:194:38:function exp)
+// at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:123:68:function exp)
+// at ./src/contracts/coin_shop.rsh:130:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:130:26:function exp)
+load 25 // netBalance/6687
+load 14 // v6724
++
+dup
+store 11 // v8030
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 14 // v6724
+callsub l21_LF_checkTxn_False
+// ^ CheckPay
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 22 // v6715
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 20 // v6717
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 18 // v6719
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 11 // v8030
+dup
+-
+dup
+store 12 // v8165
+int 0
+>=
+assert
+// ^ Claim: assume >= 0
+// at ./src/contracts/coin_shop.rsh:203:84:application
+// at ./src/contracts/coin_shop.rsh:201:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:201:43:function exp)
+load 11 // v8030
+// resource: R_Account
+load 31 // Admin/6637
+callsub l11_LF_makeTxn_False_False_False_True
+load 18 // v6719
+int 1
+-
+dup
+store 11 // v8195
+int 0
+>=
+assert
+// ^ Claim: assume >= 0
+// at ./src/contracts/coin_shop.rsh:204:76:application
+// at ./src/contracts/coin_shop.rsh:201:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:201:43:function exp)
+int 1
+// resource: R_Asset
+load 32 // gold/6615
+// resource: R_Account
+txn Sender
+callsub l8_LF_makeTxn_False_False_True_True
+byte base64(Z29sZAAA)
+store 13 // v8201
+byte base64(w7qqiQ==)
+load 13 // v8201
+concat
+txn Sender
+concat
+log // up to 42 bytes
+// ^ log: "purchase" [v8201,user/7203] "purchase(byte[6],address)"
+int 1
+store 13 // v8202
+byte base64(AAAAAAAAIAo=)
+load 13 // v8202
+itob
+substring 7 8
+concat
+log // up to 9 bytes
+load 13 // v8202
+itob
+substring 7 8
+store 4 // GV_apiRet :: Null
+global Round
+load 26 // tokenInfos/6686
+load 19 // tokInfo/6718
+load 11 // v8195
+itob
+replace2 0
+replace2 34
+load 12 // v8165
+store 25 // netBalance/6687
+store 26 // tokenInfos/6686
+store 27 // thisConsensusTime/6680
+b _reachl_2
+_api_buyer_api_silver4:
+load 24 // i/6713
+assert
+// ^ Claim: contract is currently inactive
+// at reach standard library:57:5:application
+// at ./src/contracts/util/checks.rsh:31:35:application call to "check" (defined at: reach standard library:49:32:function exp)
+// at ./src/contracts/coin_shop.rsh:175:38:application call to "checkInactive" (defined at: ./src/contracts/util/checks.rsh:31:27:function exp)
+// at ./src/contracts/coin_shop.rsh:174:40:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:174:40:function exp)
+// at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:174:40:function exp)
+// at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:123:68:function exp)
+// at ./src/contracts/coin_shop.rsh:130:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:130:26:function exp)
+load 20 // v6717
+int 1
+>=
+assert
+// ^ Claim: balance insufficient for transaction
+// at reach standard library:57:5:application
+// at ./src/contracts/util/checks.rsh:27:42:application call to "check" (defined at: reach standard library:49:32:function exp)
+// at ./src/contracts/coin_shop.rsh:176:40:application call to "checkWithdrawal" (defined at: ./src/contracts/util/checks.rsh:27:34:function exp)
+// at ./src/contracts/coin_shop.rsh:174:40:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:174:40:function exp)
+// at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:174:40:function exp)
+// at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:123:68:function exp)
+// at ./src/contracts/coin_shop.rsh:130:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:130:26:function exp)
+load 25 // netBalance/6687
+load 15 // v6723
++
+dup
+store 11 // v8644
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 15 // v6723
+callsub l21_LF_checkTxn_False
+// ^ CheckPay
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 22 // v6715
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 20 // v6717
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 18 // v6719
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 11 // v8644
+dup
+-
+dup
+store 12 // v8855
+int 0
+>=
+assert
+// ^ Claim: assume >= 0
+// at ./src/contracts/coin_shop.rsh:183:84:application
+// at ./src/contracts/coin_shop.rsh:181:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:181:43:function exp)
+load 11 // v8644
+// resource: R_Account
+load 31 // Admin/6637
+callsub l11_LF_makeTxn_False_False_False_True
+load 20 // v6717
+int 1
+-
+dup
+store 11 // v8885
+int 0
+>=
+assert
+// ^ Claim: assume >= 0
+// at ./src/contracts/coin_shop.rsh:184:76:application
+// at ./src/contracts/coin_shop.rsh:181:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:181:43:function exp)
+int 1
+// resource: R_Asset
+load 33 // silver/6614
+// resource: R_Account
+txn Sender
+callsub l8_LF_makeTxn_False_False_True_True
+byte base64(c2lsdmVy)
+store 13 // v8891
+byte base64(w7qqiQ==)
+load 13 // v8891
+concat
+txn Sender
+concat
+log // up to 42 bytes
+// ^ log: "purchase" [v8891,user/7203] "purchase(byte[6],address)"
+int 1
+store 13 // v8892
+byte base64(AAAAAAAAIrw=)
+load 13 // v8892
+itob
+substring 7 8
+concat
+log // up to 9 bytes
+load 13 // v8892
+itob
+substring 7 8
+store 4 // GV_apiRet :: Null
+global Round
+load 26 // tokenInfos/6686
+load 21 // tokInfo/6716
+load 11 // v8885
+itob
+replace2 0
+replace2 17
+load 12 // v8855
+store 25 // netBalance/6687
+store 26 // tokenInfos/6686
+store 27 // thisConsensusTime/6680
+b _reachl_2
+_api_controller_api_restock4:
+load 13 // .fork895.msg/7204
+extract 1 24
+store 11 // amts/9123
+txn Sender
+load 31 // Admin/6637
+==
+assert
+// ^ Claim: action not permitted
+// at reach standard library:57:5:application
+// at ./src/contracts/util/checks.rsh:30:37:application call to "check" (defined at: reach standard library:49:32:function exp)
+// at ./src/contracts/coin_shop.rsh:218:40:application call to "checkPermission" (defined at: ./src/contracts/util/checks.rsh:30:29:function exp)
+// at ./src/contracts/coin_shop.rsh:217:50:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:217:50:function exp)
+// at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:217:50:function exp)
+// at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:123:68:function exp)
+// at ./src/contracts/coin_shop.rsh:130:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:130:26:function exp)
+load 11 // amts/9123
+int 0
+extract_uint64
+store 14 // b/9126
+load 11 // amts/9123
+int 8
+extract_uint64
+store 13 // s/9127
+load 11 // amts/9123
+int 16
+extract_uint64
+store 12 // g/9128
+load 25 // netBalance/6687
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 22 // v6715
+load 14 // b/9126
++
+dup
+store 11 // v9263
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 26 // tokenInfos/6686
+load 23 // tokInfo/6714
+load 11 // v9263
+itob
+replace2 0
+replace2 0
+store 15 // tokInfos'/9268
+load 14 // b/9126
+load 34 // bronze/6613
+callsub l22_LF_checkTxn_True
+// ^ CheckPay
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 15 // tokInfos'/9268
+extract 17 17
+dup
+store 16 // tokInfo/9269
+int 0
+extract_uint64
+load 13 // s/9127
++
+dup
+store 14 // v9271
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 15 // tokInfos'/9268
+load 16 // tokInfo/9269
+load 14 // v9271
+itob
+replace2 0
+replace2 17
+store 11 // tokInfos'/9276
+load 13 // s/9127
+load 33 // silver/6614
+callsub l22_LF_checkTxn_True
+// ^ CheckPay
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 11 // tokInfos'/9276
+extract 34 17
+dup
+store 15 // tokInfo/9277
+int 0
+extract_uint64
+load 12 // g/9128
++
+dup
+store 14 // v9279
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 11 // tokInfos'/9276
+load 15 // tokInfo/9277
+load 14 // v9279
+itob
+replace2 0
+replace2 34
+store 13 // tokInfos'/9284
+load 12 // g/9128
+load 32 // gold/6615
+callsub l22_LF_checkTxn_True
+// ^ CheckPay
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 13 // tokInfos'/9284
+extract 0 17
+extract 0 8
+load 13 // tokInfos'/9284
+extract 17 17
+extract 0 8
+concat
+load 13 // tokInfos'/9284
+extract 34 17
+extract 0 8
+concat
+store 11 // v9524
+byte base64(Y2Te7w==)
+load 11 // v9524
+concat
+log // up to 28 bytes
+// ^ log: "restock" [v9524] "restock(uint64[3])"
+int 1
+store 11 // v9528
+byte base64(AAAAAAAAJTg=)
+load 11 // v9528
+itob
+substring 7 8
+concat
+log // up to 9 bytes
+load 11 // v9528
+itob
+substring 7 8
+store 4 // GV_apiRet :: Null
+global Round
+load 13 // tokInfos'/9284
+store 26 // tokenInfos/6686
+store 27 // thisConsensusTime/6680
+b _reachl_2
+_api_controller_api_set_prices4:
+txn Sender
+load 31 // Admin/6637
+==
+assert
+// ^ Claim: action not permitted
+// at reach standard library:57:5:application
+// at ./src/contracts/util/checks.rsh:30:37:application call to "check" (defined at: reach standard library:49:32:function exp)
+// at ./src/contracts/coin_shop.rsh:235:40:application call to "checkPermission" (defined at: ./src/contracts/util/checks.rsh:30:29:function exp)
+// at ./src/contracts/coin_shop.rsh:234:58:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:234:58:function exp)
+// at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:234:58:function exp)
+// at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:123:68:function exp)
+// at ./src/contracts/coin_shop.rsh:130:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:130:26:function exp)
+load 25 // netBalance/6687
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 22 // v6715
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 20 // v6717
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 18 // v6719
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 13 // .fork895.msg/7204
+extract 1 24
+store 11 // coinPrices/10154
+byte base64(l1Mdtw==)
+load 11 // coinPrices/10154
+concat
+log // up to 28 bytes
+// ^ log: "price_change" [coinPrices/10154] "price_change(uint64[3])"
+int 1
+store 12 // v10163
+byte base64(AAAAAAAAJ7M=)
+load 12 // v10163
+itob
+substring 7 8
+concat
+log // up to 9 bytes
+load 12 // v10163
+itob
+substring 7 8
+store 4 // GV_apiRet :: Null
+load 11 // coinPrices/10154
+global Round
+store 27 // thisConsensusTime/6680
+store 30 // coinPrices/6677
+b _reachl_2
+_api_controller_api_terminate4:
+txn Sender
+load 31 // Admin/6637
+==
+assert
+// ^ Claim: action not permitted
+// at reach standard library:57:5:application
+// at ./src/contracts/util/checks.rsh:30:37:application call to "check" (defined at: reach standard library:49:32:function exp)
+// at ./src/contracts/coin_shop.rsh:292:40:application call to "checkPermission" (defined at: ./src/contracts/util/checks.rsh:30:29:function exp)
+// at ./src/contracts/coin_shop.rsh:291:48:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:291:48:function exp)
+// at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:291:48:function exp)
+// at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:123:68:function exp)
+// at ./src/contracts/coin_shop.rsh:130:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:130:26:function exp)
+load 25 // netBalance/6687
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 22 // v6715
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 20 // v6717
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 18 // v6719
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+int 1
+store 11 // v10793
+byte base64(LhE9bw==)
+load 11 // v10793
+itob
+substring 7 8
+concat
+log // up to 5 bytes
+// ^ log: "terminate" [v10793] "terminate(byte)"
+int 1
+store 11 // v10794
+byte base64(AAAAAAAAKio=)
+load 11 // v10794
+itob
+substring 7 8
+concat
+log // up to 9 bytes
+load 11 // v10794
+itob
+substring 7 8
+store 4 // GV_apiRet :: Null
+int 1
+global Round
+store 27 // thisConsensusTime/6680
+store 28 // isTerminated/6679
+b _reachl_2
+_api_controller_api_toggle_pause4:
+txn Sender
+load 31 // Admin/6637
+==
+assert
+// ^ Claim: action not permitted
+// at reach standard library:57:5:application
+// at ./src/contracts/util/checks.rsh:30:37:application call to "check" (defined at: reach standard library:49:32:function exp)
+// at ./src/contracts/coin_shop.rsh:252:40:application call to "checkPermission" (defined at: ./src/contracts/util/checks.rsh:30:29:function exp)
+// at ./src/contracts/coin_shop.rsh:251:51:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:251:51:function exp)
+// at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:251:51:function exp)
+// at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:123:68:function exp)
+// at ./src/contracts/coin_shop.rsh:130:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:130:26:function exp)
+load 25 // netBalance/6687
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 22 // v6715
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 20 // v6717
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 18 // v6719
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 29 // isPaused/6678
+!
+store 11 // .api852.rng/11422
+byte base64(AAAAAAAALJ4=)
+load 11 // .api852.rng/11422
+itob
+substring 7 8
+concat
+log // up to 9 bytes
+load 11 // .api852.rng/11422
+itob
+substring 7 8
+store 4 // GV_apiRet :: Null
+load 11 // .api852.rng/11422
+global Round
+store 27 // thisConsensusTime/6680
+store 29 // isPaused/6678
+b _reachl_2
+_api_controller_api_withdraw4:
+txn Sender
+load 31 // Admin/6637
+==
+assert
+// ^ Claim: action not permitted
+// at reach standard library:57:5:application
+// at ./src/contracts/util/checks.rsh:30:37:application call to "check" (defined at: reach standard library:49:32:function exp)
+// at ./src/contracts/coin_shop.rsh:272:40:application call to "checkPermission" (defined at: ./src/contracts/util/checks.rsh:30:29:function exp)
+// at ./src/contracts/coin_shop.rsh:271:47:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:271:47:function exp)
+// at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:271:47:function exp)
+// at ./src/contracts/coin_shop.rsh:123:68:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:123:68:function exp)
+// at ./src/contracts/coin_shop.rsh:130:26:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:130:26:function exp)
+load 25 // netBalance/6687
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 22 // v6715
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 20 // v6717
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 18 // v6719
+int 18446744073709551615
+<=
+assert
+// ^ Claim: assume <= UInt.max
+// at ./src/contracts/coin_shop.rsh:123:68:dot
+load 22 // v6715
+dup
+-
+dup
+store 12 // v12083
+int 0
+>=
+assert
+// ^ Claim: assume >= 0
+// at ./src/contracts/coin_shop.rsh:281:76:application
+// at ./src/contracts/coin_shop.rsh:276:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:276:43:function exp)
+load 26 // tokenInfos/6686
+load 23 // tokInfo/6714
+load 12 // v12083
+itob
+replace2 0
+replace2 0
+store 11 // tokInfos'/12088
+load 22 // v6715
+// resource: R_Asset
+load 34 // bronze/6613
+// resource: R_Account
+load 31 // Admin/6637
+callsub l8_LF_makeTxn_False_False_True_True
+load 11 // tokInfos'/12088
+extract 17 17
+dup
+store 14 // tokInfo/12089
+int 0
+extract_uint64
+load 20 // v6717
+-
+dup
+store 13 // v12094
+int 0
+>=
+assert
+// ^ Claim: assume >= 0
+// at ./src/contracts/coin_shop.rsh:281:76:application
+// at ./src/contracts/coin_shop.rsh:276:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:276:43:function exp)
+load 11 // tokInfos'/12088
+load 14 // tokInfo/12089
+load 13 // v12094
+itob
+replace2 0
+replace2 17
+store 12 // tokInfos'/12099
+load 20 // v6717
+// resource: R_Asset
+load 33 // silver/6614
+load 31 // Admin/6637
+callsub l8_LF_makeTxn_False_False_True_True
+load 12 // tokInfos'/12099
+extract 34 17
+dup
+store 13 // tokInfo/12100
+int 0
+extract_uint64
+load 18 // v6719
+-
+dup
+store 11 // v12105
+int 0
+>=
+assert
+// ^ Claim: assume >= 0
+// at ./src/contracts/coin_shop.rsh:281:76:application
+// at ./src/contracts/coin_shop.rsh:276:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:276:43:function exp)
+load 18 // v6719
+// resource: R_Asset
+load 32 // gold/6615
+load 31 // Admin/6637
+callsub l8_LF_makeTxn_False_False_True_True
+byte base64(GxXIWg==)
+load 17 // v6720
+concat
+log // up to 28 bytes
+// ^ log: "withdraw" [v6720] "withdraw(uint64[3])"
+int 1
+store 14 // v12112
+byte base64(AAAAAAAAL1A=)
+load 14 // v12112
+itob
+substring 7 8
+concat
+log // up to 9 bytes
+load 14 // v12112
+itob
+substring 7 8
+store 4 // GV_apiRet :: Null
+global Round
+load 12 // tokInfos'/12099
+load 13 // tokInfo/12100
+load 11 // v12105
+itob
+replace2 0
+replace2 34
+store 26 // tokenInfos/6686
+store 27 // thisConsensusTime/6680
+b _reachl_2
+_reacha_buyer_api_bronze:
+int 33
+bzero
+store 11 // v17789
+_reachi_4:
+int 5
+load 1 // GV_currentStep :: UInt
+==
+assert
+callsub l4_LF_svsLoad_5
+load 11 // v17789
+int 0
+extract_uint64
+store 12 // v17788
+load 11 // v17789
+extract 8 25
+store 13 // .fork895.msg/7204
+byte base64(Km21Wg==)
+load 12 // v17788
+itob
+concat
+load 13 // .fork895.msg/7204
+concat
+log // up to 37 bytes
+// ^ log: "_reach_e4" [v17788,.fork895.msg/7204] "_reach_e4(uint64,(byte,byte[24]))"
+load 12 // v17788
+callsub l7_LF_timeCheck
+load 13 // .fork895.msg/7204
+int 0
+getbyte
+switch l13_buyer_api_bronze0_895 l14_buyer_api_gold0_895 l15_buyer_api_silver0_895 l16_controller_api_restock0_895 l17_controller_api_set_prices0_895 l18_controller_api_terminate0_895 l19_controller_api_toggle_pause0_895 l20_controller_api_withdraw0_895
+b errl
+_reacha_buyer_api_gold:
+byte base64(AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)
+store 11 // v17789
+b _reachi_4
+_reacha_buyer_api_silver:
+byte base64(AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)
+store 11 // v17789
+b _reachi_4
+_reacha_coin_prices:
+load 1 // GV_currentStep :: UInt
+int 5
+<
+bz l2_ifF
+load 1 // GV_currentStep :: UInt
+int 3
+==
+assert
+// ^ Claim: Incorrect state: not leaf
+// at ./src/contracts/coin_shop.rsh:83:28:property binding
+callsub l3_LF_svsLoad_3
+load 30 // coinPrices/6677
+store 4 // GV_apiRet :: Null
+apiReturn_check:
+txn OnCompletion
+int NoOp
+==
+assert
+// checked on completion
+b apiReturn_noCheck
+_reacha_coin_supply:
+load 1 // GV_currentStep :: UInt
+int 5
+<
+bz l5_ifF
+load 1 // GV_currentStep :: UInt
+int 3
+==
+assert
+// ^ Claim: Incorrect state: not leaf
+// at ./src/contracts/coin_shop.rsh:82:28:property binding
+callsub l3_LF_svsLoad_3
+load 12 // v12126
+store 4 // GV_apiRet :: Null
+b apiReturn_check
+_reacha_controller_api_restock:
+int 8
+bzero
+byte base64(Aw==)
+load 11 // v17755
+concat
+concat
+store 11 // v17789
+b _reachi_4
+_reacha_controller_api_set_prices:
+int 8
+bzero
+byte base64(BA==)
+load 11 // v17761
+concat
+concat
+store 11 // v17789
+b _reachi_4
+_reacha_controller_api_terminate:
+byte base64(AAAAAAAAAAAFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)
+store 11 // v17789
+b _reachi_4
+_reacha_controller_api_toggle_pause:
+byte base64(AAAAAAAAAAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)
+store 11 // v17789
+b _reachi_4
+_reacha_controller_api_withdraw:
+byte base64(AAAAAAAAAAAHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)
+store 11 // v17789
+b _reachi_4
+_reacha_is_paused:
+load 1 // GV_currentStep :: UInt
+int 5
+<
+bz l6_ifF
+load 1 // GV_currentStep :: UInt
+int 3
+==
+assert
+// ^ Claim: Incorrect state: not leaf
+// at ./src/contracts/coin_shop.rsh:84:26:property binding
+callsub l3_LF_svsLoad_3
+load 29 // isPaused/6678
+itob
+substring 7 8
+store 4 // GV_apiRet :: Null
+b apiReturn_check
+_reachi_0:
+txn Sender
+store 35 // Deployer/6612
+load 11 // v17780
+int 0
+extract_uint64
+store 12 // v17779
+load 11 // v17780
+int 8
+extract_uint64
+store 34 // bronze/6613
+load 11 // v17780
+int 16
+extract_uint64
+store 33 // silver/6614
+load 11 // v17780
+int 24
+extract_uint64
+store 32 // gold/6615
+byte base64(9u2r0g==)
+load 12 // v17779
+itob
+concat
+load 34 // bronze/6613
+itob
+concat
+load 33 // silver/6614
+itob
+concat
+load 32 // gold/6615
+itob
+concat
+log // up to 36 bytes
+// ^ log: "_reach_e0" [v17779,bronze/6613,silver/6614,gold/6615] "_reach_e0(uint64,uint64,uint64,uint64)"
+load 12 // v17779
+callsub l7_LF_timeCheck
+int 17
+bzero
+dup
+store 12 // initialInfo/6567
+dup
+concat
+load 12 // initialInfo/6567
+concat
+dup
+store 11 // tokInfos/6568
+dup
+extract 0 17
+int 8
+bzero
+replace2 0
+replace2 0
+dup
+store 12 // tokInfos'/6620
+dup
+extract 17 17
+int 8
+bzero
+replace2 0
+replace2 17
+store 11 // tokInfos'/6624
+load 33 // silver/6614
+load 34 // bronze/6613
+!=
+assert
+// ^ Claim: non-network tokens distinct
+// at ./src/contracts/coin_shop.rsh:108:18:dot
+load 11 // tokInfos'/6624
+dup
+extract 34 17
+int 8
+bzero
+replace2 0
+replace2 34
+store 13 // tokInfos'/6630
+load 32 // gold/6615
+load 34 // bronze/6613
+==
+store 12 // v6632
+load 32 // gold/6615
+load 33 // silver/6614
+!=
+store 11 // v6635
+load 12 // v6632
+!
+load 11 // v6635
+&&
+assert
+// ^ Claim: non-network tokens distinct
+// at ./src/contracts/coin_shop.rsh:108:18:dot
+int 100000
+callsub l1_LF_mbrAdd
+int 0
+// resource: R_Asset
+load 34 // bronze/6613
+global CurrentApplicationAddress
+callsub l8_LF_makeTxn_False_False_True_True
+int 100000
+callsub l1_LF_mbrAdd
+int 0
+// resource: R_Asset
+load 33 // silver/6614
+global CurrentApplicationAddress
+callsub l8_LF_makeTxn_False_False_True_True
+int 100000
+callsub l1_LF_mbrAdd
+int 0
+// resource: R_Asset
+load 32 // gold/6615
+global CurrentApplicationAddress
+callsub l8_LF_makeTxn_False_False_True_True
+load 35 // Deployer/6612
+store 31 // Admin/6637
+load 34 // bronze/6613
+load 33 // silver/6614
+!=
+assert
+// ^ Claim: The asa ids provided are the same
+// at reach standard library:57:5:application
+// at ./src/contracts/util/checks.rsh:24:49:application call to "check" (defined at: reach standard library:49:32:function exp)
+// at reach standard library:554:6:application call to "f" (defined at: ./src/contracts/util/checks.rsh:23:52:function exp)
+// at reach standard library:553:20:application call to [unknown function] (defined at: reach standard library:553:41:function exp)
+// at reach standard library:559:25:application call to "Array_forEachWithIndex" (defined at: reach standard library:552:46:function exp)
+// at ./src/contracts/util/checks.rsh:23:40:application call to [unknown function] (defined at: reach standard library:558:51:function exp)
+// at reach standard library:554:6:application call to "f" (defined at: ./src/contracts/util/checks.rsh:22:44:function exp)
+// at reach standard library:553:20:application call to [unknown function] (defined at: reach standard library:553:41:function exp)
+// at reach standard library:559:25:application call to "Array_forEachWithIndex" (defined at: reach standard library:552:46:function exp)
+// at ./src/contracts/util/checks.rsh:22:32:application call to [unknown function] (defined at: reach standard library:558:51:function exp)
+// at ./src/contracts/coin_shop.rsh:114:26:application call to "checkUniqueTokens" (defined at: ./src/contracts/util/checks.rsh:21:36:function exp)
+load 34 // bronze/6613
+load 32 // gold/6615
+!=
+assert
+// ^ Claim: The asa ids provided are the same
+// at reach standard library:57:5:application
+// at ./src/contracts/util/checks.rsh:24:49:application call to "check" (defined at: reach standard library:49:32:function exp)
+// at reach standard library:554:6:application call to "f" (defined at: ./src/contracts/util/checks.rsh:23:52:function exp)
+// at reach standard library:553:20:application call to [unknown function] (defined at: reach standard library:553:41:function exp)
+// at reach standard library:559:25:application call to "Array_forEachWithIndex" (defined at: reach standard library:552:46:function exp)
+// at ./src/contracts/util/checks.rsh:23:40:application call to [unknown function] (defined at: reach standard library:558:51:function exp)
+// at reach standard library:554:6:application call to "f" (defined at: ./src/contracts/util/checks.rsh:22:44:function exp)
+// at reach standard library:553:20:application call to [unknown function] (defined at: reach standard library:553:41:function exp)
+// at reach standard library:559:25:application call to "Array_forEachWithIndex" (defined at: reach standard library:552:46:function exp)
+// at ./src/contracts/util/checks.rsh:22:32:application call to [unknown function] (defined at: reach standard library:558:51:function exp)
+// at ./src/contracts/coin_shop.rsh:114:26:application call to "checkUniqueTokens" (defined at: ./src/contracts/util/checks.rsh:21:36:function exp)
+load 33 // silver/6614
+load 32 // gold/6615
+!=
+assert
+// ^ Claim: The asa ids provided are the same
+// at reach standard library:57:5:application
+// at ./src/contracts/util/checks.rsh:24:49:application call to "check" (defined at: reach standard library:49:32:function exp)
+// at reach standard library:554:6:application call to "f" (defined at: ./src/contracts/util/checks.rsh:23:52:function exp)
+// at reach standard library:553:20:application call to [unknown function] (defined at: reach standard library:553:41:function exp)
+// at reach standard library:559:25:application call to "Array_forEachWithIndex" (defined at: reach standard library:552:46:function exp)
+// at ./src/contracts/util/checks.rsh:23:40:application call to [unknown function] (defined at: reach standard library:558:51:function exp)
+// at reach standard library:554:6:application call to "f" (defined at: ./src/contracts/util/checks.rsh:22:44:function exp)
+// at reach standard library:553:20:application call to [unknown function] (defined at: reach standard library:553:41:function exp)
+// at reach standard library:559:25:application call to "Array_forEachWithIndex" (defined at: reach standard library:552:46:function exp)
+// at ./src/contracts/util/checks.rsh:22:32:application call to [unknown function] (defined at: reach standard library:558:51:function exp)
+// at ./src/contracts/coin_shop.rsh:114:26:application call to "checkUniqueTokens" (defined at: ./src/contracts/util/checks.rsh:21:36:function exp)
+load 12 // v6632
+!
+assert
+// ^ Claim: The asa ids provided are the same
+// at reach standard library:57:5:application
+// at ./src/contracts/util/checks.rsh:24:49:application call to "check" (defined at: reach standard library:49:32:function exp)
+// at reach standard library:554:6:application call to "f" (defined at: ./src/contracts/util/checks.rsh:23:52:function exp)
+// at reach standard library:553:20:application call to [unknown function] (defined at: reach standard library:553:41:function exp)
+// at reach standard library:559:25:application call to "Array_forEachWithIndex" (defined at: reach standard library:552:46:function exp)
+// at ./src/contracts/util/checks.rsh:23:40:application call to [unknown function] (defined at: reach standard library:558:51:function exp)
+// at reach standard library:554:6:application call to "f" (defined at: ./src/contracts/util/checks.rsh:22:44:function exp)
+// at reach standard library:553:20:application call to [unknown function] (defined at: reach standard library:553:41:function exp)
+// at reach standard library:559:25:application call to "Array_forEachWithIndex" (defined at: reach standard library:552:46:function exp)
+// at ./src/contracts/util/checks.rsh:22:32:application call to [unknown function] (defined at: reach standard library:558:51:function exp)
+// at ./src/contracts/coin_shop.rsh:114:26:application call to "checkUniqueTokens" (defined at: ./src/contracts/util/checks.rsh:21:36:function exp)
+load 11 // v6635
+assert
+// ^ Claim: The asa ids provided are the same
+// at reach standard library:57:5:application
+// at ./src/contracts/util/checks.rsh:24:49:application call to "check" (defined at: reach standard library:49:32:function exp)
+// at reach standard library:554:6:application call to "f" (defined at: ./src/contracts/util/checks.rsh:23:52:function exp)
+// at reach standard library:553:20:application call to [unknown function] (defined at: reach standard library:553:41:function exp)
+// at reach standard library:559:25:application call to "Array_forEachWithIndex" (defined at: reach standard library:552:46:function exp)
+// at ./src/contracts/util/checks.rsh:23:40:application call to [unknown function] (defined at: reach standard library:558:51:function exp)
+// at reach standard library:554:6:application call to "f" (defined at: ./src/contracts/util/checks.rsh:22:44:function exp)
+// at reach standard library:553:20:application call to [unknown function] (defined at: reach standard library:553:41:function exp)
+// at reach standard library:559:25:application call to "Array_forEachWithIndex" (defined at: reach standard library:552:46:function exp)
+// at ./src/contracts/util/checks.rsh:22:32:application call to [unknown function] (defined at: reach standard library:558:51:function exp)
+// at ./src/contracts/coin_shop.rsh:114:26:application call to "checkUniqueTokens" (defined at: ./src/contracts/util/checks.rsh:21:36:function exp)
+l9_LF_svsDump_1:
+load 35 // Deployer/6612
+load 34 // bronze/6613
+itob
+concat
+load 33 // silver/6614
+itob
+concat
+load 32 // gold/6615
+itob
+concat
+load 13 // tokInfos'/6630
+concat
+load 31 // Admin/6637
+concat
+int 158
+bzero
+concat
+int 1
+global Round
+b updateStateNoOp
+_reachi_1:
+int 1
+load 1 // GV_currentStep :: UInt
+==
+assert
+l10_LF_svsLoad_1:
+dup
+extract 0 32
+store 35 // Deployer/6612
+dup
+int 32
+extract_uint64
+store 34 // bronze/6613
+dup
+int 40
+extract_uint64
+store 33 // silver/6614
+dup
+int 48
+extract_uint64
+store 32 // gold/6615
+dup
+extract 56 51
+store 13 // tokInfos'/6630
+extract 107 32
+store 31 // Admin/6637
+load 11 // v17783
+btoi
+store 12 // v17782
+byte base64(1RUZFA==)
+load 12 // v17782
+itob
+concat
+log // up to 12 bytes
+// ^ log: "_reach_e1" [v17782] "_reach_e1(uint64)"
+load 12 // v17782
+callsub l7_LF_timeCheck
+load 35 // Deployer/6612
+txn Sender
+==
+assert
+// ^ Claim: sender correct
+// at ./src/contracts/coin_shop.rsh:120:18:dot
+byte base64(AAAAAACYloAAAAAAATEtAAAAAAABycOA)
+int 0
+int 0
+global Round
+load 13 // tokInfos'/6630
+int 0
+store 25 // netBalance/6687
+store 26 // tokenInfos/6686
+store 27 // thisConsensusTime/6680
+store 28 // isTerminated/6679
+store 29 // isPaused/6678
+store 30 // coinPrices/6677
+b _reachl_2
+_reachi_3:
+int 3
+load 1 // GV_currentStep :: UInt
+==
+assert
+callsub l3_LF_svsLoad_3
+load 11 // v17786
+btoi
+store 12 // v17785
+byte base64(1Axs1g==)
+load 12 // v17785
+itob
+concat
+log // up to 12 bytes
+// ^ log: "_reach_e3" [v17785] "_reach_e3(uint64)"
+load 12 // v17785
+callsub l7_LF_timeCheck
+load 31 // Admin/6637
+txn Sender
+==
+load 35 // Deployer/6612
+txn Sender
+==
+||
+assert
+// ^ Claim: sender correct
+// at reach standard library:197:11:dot
+// at ./src/contracts/coin_shop.rsh:309:16:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
+load 25 // netBalance/6687
+dup
+-
+int 0
+>=
+assert
+// ^ Claim: assume >= 0
+// at reach standard library:198:46:application
+// at ./src/contracts/coin_shop.rsh:309:16:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
+load 25 // netBalance/6687
+// resource: R_Account
+load 31 // Admin/6637
+callsub l11_LF_makeTxn_False_False_False_True
+load 15 // v12121
+dup
+-
+dup
+store 12 // v12173
+int 0
+>=
+assert
+// ^ Claim: assume >= 0
+// at reach standard library:198:46:application
+// at ./src/contracts/coin_shop.rsh:309:16:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
+load 26 // tokenInfos/6686
+load 16 // tokInfo/12120
+load 12 // v12173
+itob
+replace2 0
+replace2 0
+store 11 // tokInfos'/12178
+load 15 // v12121
+// resource: R_Asset
+load 34 // bronze/6613
+load 31 // Admin/6637
+callsub l8_LF_makeTxn_False_False_True_True
+load 11 // tokInfos'/12178
+extract 17 17
+dup
+store 15 // tokInfo/12179
+int 0
+extract_uint64
+load 14 // v12123
+-
+dup
+store 12 // v12184
+int 0
+>=
+assert
+// ^ Claim: assume >= 0
+// at reach standard library:198:46:application
+// at ./src/contracts/coin_shop.rsh:309:16:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
+load 14 // v12123
+// resource: R_Asset
+load 33 // silver/6614
+load 31 // Admin/6637
+callsub l8_LF_makeTxn_False_False_True_True
+load 11 // tokInfos'/12178
+load 15 // tokInfo/12179
+load 12 // v12184
+itob
+replace2 0
+replace2 17
+extract 34 17
+int 0
+extract_uint64
+load 13 // v12125
+-
+int 0
+>=
+assert
+// ^ Claim: assume >= 0
+// at reach standard library:198:46:application
+// at ./src/contracts/coin_shop.rsh:309:16:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
+load 13 // v12125
+// resource: R_Asset
+load 32 // gold/6615
+load 31 // Admin/6637
+callsub l8_LF_makeTxn_False_False_True_True
+// resource: R_Account
+int 0
+load 32 // gold/6615
+global CurrentApplicationAddress
+global CreatorAddress
+callsub l12_LF_makeTxn_False_True_True_True
+int 0
+load 33 // silver/6614
+global CurrentApplicationAddress
+global CreatorAddress
+callsub l12_LF_makeTxn_False_True_True_True
+int 0
+load 34 // bronze/6613
+global CurrentApplicationAddress
+global CreatorAddress
+callsub l12_LF_makeTxn_False_True_True_True
+updateStateHalt:
+txn OnCompletion
+int DeleteApplication
+==
+assert
+// checked on completion
+callsub l26_LF_updateMbr
+// resource: R_Account
+int 0
+global CurrentApplicationAddress
+global CreatorAddress
+callsub l27_LF_makeTxn_False_True_False_True
+b updateState
+_reachp_0:
+callsub l0_LF_wasntMeth
+int 100000
+callsub l1_LF_mbrAdd
+txna ApplicationArgs 1
+store 11 // v17780
+b _reachi_0
+_reachp_1:
+callsub l0_LF_wasntMeth
+txna ApplicationArgs 1
+store 11 // v17783
+b _reachi_1
+_reachp_3:
+callsub l0_LF_wasntMeth
+txna ApplicationArgs 1
+store 11 // v17786
+b _reachi_3
+_reachp_4:
+callsub l0_LF_wasntMeth
+txna ApplicationArgs 1
+store 11 // v17789
+b _reachi_4
+alloc:
+int 0
+txn GlobalNumUint
+==
+assert
+int 4
+txn GlobalNumByteSlice
+==
+assert
+int 0
+txn LocalNumUint
+==
+assert
+int 0
+txn LocalNumByteSlice
+==
+assert
+callsub l0_LF_wasntMeth
+int 297
+bzero
+int 0
+int 0
+b updateStateNoOp
+buyer_api_bronze8ABT7iafFdjMqKMPB0bZpHV1PZokl9I67vRnPcgXIqs_:
+b _reacha_buyer_api_bronze
+buyer_api_gold__yAXYzSxqrtOox_ee7E2zRJcHbW8GECFa1kIAJ4zneFE_:
+b _reacha_buyer_api_gold
+buyer_api_silver0gErxCkMaLWC2yo4CoxsT4tw6PHisoNNvvUJuzx04HY_:
+b _reacha_buyer_api_silver
+coin_prices__uinFnH2oGarVtJaeqsZ3oyYXSXPOEZshy0YjocYDi1g4P8_:
+b _reacha_coin_prices
+coin_supply__uinybK8j2zT3f1Crmjdhe41m7GvHfwawPjUyo_pnxIzo74_:
+b _reacha_coin_supply
+controller_api_rriDFwwXi96yuNNECE2_Ku9VcB65JhPbzwULlPJF4IWw_:
+txna ApplicationArgs 1
+store 11 // v17755
+b _reacha_controller_api_restock
+controller_api_s7WHlsZ3M4jkfFfFP8HfkEtVkrXbrVasatZqSWzK4KLY_:
+txna ApplicationArgs 1
+store 11 // v17761
+b _reacha_controller_api_set_prices
+controller_api_t_Z9wmzV5mC_Pvgg5lhnigQhAb9ZgRS0Ss0IHbNXkGp8_:
+b _reacha_controller_api_terminate
+controller_api_toPganL3IMIy1g1yc_dZQAN1KBzPJVXUPycTxarKJoDQ_:
+b _reacha_controller_api_toggle_pause
+controller_api_wb0XtdEKqi8WNStHAlw2K4jvyjsherZmQDbr9M81m3CY_:
+b _reacha_controller_api_withdraw
+is_paused__byte61XYhmPXYss6LXZIGcOmPGCNFlmHlLGfWrm7xFsGEBc_:
+b _reacha_is_paused
+l13_buyer_api_bronze0_895:
+b _api_buyer_api_bronze4
+l14_buyer_api_gold0_895:
+b _api_buyer_api_gold4
+l15_buyer_api_silver0_895:
+b _api_buyer_api_silver4
+l16_controller_api_restock0_895:
+b _api_controller_api_restock4
+l17_controller_api_set_prices0_895:
+b _api_controller_api_set_prices4
+l18_controller_api_terminate0_895:
+b _api_controller_api_terminate4
+l19_controller_api_toggle_pause0_895:
+b _api_controller_api_toggle_pause4
+l20_controller_api_withdraw0_895:
+b _api_controller_api_withdraw4
+l23_ifF:
+load 29 // isPaused/6678
+store 24 // i/6713
+load 26 // tokenInfos/6686
+extract 0 17
+dup
+store 23 // tokInfo/6714
+int 0
+extract_uint64
+store 22 // v6715
+load 26 // tokenInfos/6686
+extract 17 17
+dup
+store 21 // tokInfo/6716
+int 0
+extract_uint64
+store 20 // v6717
+load 26 // tokenInfos/6686
+extract 34 17
+dup
+store 19 // tokInfo/6718
+int 0
+extract_uint64
+store 18 // v6719
+load 22 // v6715
+itob
+load 20 // v6717
+itob
+concat
+load 18 // v6719
+itob
+concat
+store 17 // v6720
+load 30 // coinPrices/6677
+int 0
+extract_uint64
+store 16 // v6722
+load 30 // coinPrices/6677
+int 8
+extract_uint64
+store 15 // v6723
+load 30 // coinPrices/6677
+int 16
+extract_uint64
+store 14 // v6724
+int 0
+store 28 // isTerminated/6679
+l25_LF_svsDump_5:
+load 35 // Deployer/6612
+load 34 // bronze/6613
+itob
+concat
+load 33 // silver/6614
+itob
+concat
+load 32 // gold/6615
+itob
+concat
+load 31 // Admin/6637
+concat
+load 30 // coinPrices/6677
+concat
+load 29 // isPaused/6678
+itob
+substring 7 8
+concat
+load 28 // isTerminated/6679
+itob
+substring 7 8
+concat
+load 26 // tokenInfos/6686
+concat
+load 25 // netBalance/6687
+itob
+concat
+load 24 // i/6713
+itob
+substring 7 8
+concat
+load 23 // tokInfo/6714
+concat
+load 22 // v6715
+itob
+concat
+load 21 // tokInfo/6716
+concat
+load 20 // v6717
+itob
+concat
+load 19 // tokInfo/6718
+concat
+load 18 // v6719
+itob
+concat
+load 17 // v6720
+concat
+load 16 // v6722
+itob
+concat
+load 15 // v6723
+itob
+concat
+load 14 // v6724
+itob
+concat
+int 5
+global Round
+b updateStateNoOp
+l28_LF_makeTxnK_False_True:
+int 0
+itxn_field Fee
+int pay
+itxn_field TypeEnum
+itxn_field Receiver
+itxn_field Amount
+itxn_submit
+retsub
+l29_LF_makeTxnK_True_True:
+int 0
+itxn_field Fee
+int axfer
+itxn_field TypeEnum
+itxn_field AssetReceiver
+itxn_field XferAsset
+itxn_field AssetAmount
+itxn_submit
+retsub
+l2_ifF:
+load 1 // GV_currentStep :: UInt
+int 5
+==
+assert
+// ^ Claim: Incorrect state: not leaf
+// at ./src/contracts/coin_shop.rsh:83:28:property binding
+callsub l4_LF_svsLoad_5
+load 30 // coinPrices/6677
+store 4 // GV_apiRet :: Null
+b apiReturn_check
+l5_ifF:
+load 1 // GV_currentStep :: UInt
+int 5
+==
+assert
+// ^ Claim: Incorrect state: not leaf
+// at ./src/contracts/coin_shop.rsh:82:28:property binding
+callsub l4_LF_svsLoad_5
+load 17 // v6720
+store 4 // GV_apiRet :: Null
+b apiReturn_check
+l6_ifF:
+load 1 // GV_currentStep :: UInt
+int 5
+==
+assert
+// ^ Claim: Incorrect state: not leaf
+// at ./src/contracts/coin_shop.rsh:84:26:property binding
+callsub l4_LF_svsLoad_5
+load 29 // isPaused/6678
+itob
+substring 7 8
+store 4 // GV_apiRet :: Null
+b apiReturn_check
+updateMbr_eq:
+pop
+retsub
+updateMbr_neg:
+swap
+-
+dup
+store 6 // GV_mbrAdd :: UInt
+global CreatorAddress
+callsub l11_LF_makeTxn_False_False_False_True
+retsub
+updateMbr_pos_eq:
+-
+dup
+bz updateMbr_eq
+dup
+store 6 // GV_mbrAdd :: UInt
+callsub l21_LF_checkTxn_False
+retsub
+l8_LF_makeTxn_False_False_True_True:
+itxn_begin
+b l29_LF_makeTxnK_True_True
+l11_LF_makeTxn_False_False_False_True:
+itxn_begin
+b l28_LF_makeTxnK_False_True
+l0_LF_wasntMeth:
+int 1
+store 3 // GV_wasntMeth :: Bool
+retsub
+l7_LF_timeCheck:
+dup
+int 0
+==
+swap
+load 2 // GV_currentTime :: UInt
+==
+||
+assert
+retsub
+l4_LF_svsLoad_5:
+dup
+extract 0 32
+store 35 // Deployer/6612
+dup
+int 32
+extract_uint64
+store 34 // bronze/6613
+dup
+int 40
+extract_uint64
+store 33 // silver/6614
+dup
+int 48
+extract_uint64
+store 32 // gold/6615
+dup
+extract 56 32
+store 31 // Admin/6637
+dup
+extract 88 24
+store 30 // coinPrices/6677
+dup
+extract 112 1
+btoi
+store 29 // isPaused/6678
+dup
+extract 113 1
+btoi
+store 28 // isTerminated/6679
+dup
+extract 114 51
+store 26 // tokenInfos/6686
+dup
+int 165
+extract_uint64
+store 25 // netBalance/6687
+dup
+extract 173 1
+btoi
+store 24 // i/6713
+dup
+extract 174 17
+store 23 // tokInfo/6714
+dup
+int 191
+extract_uint64
+store 22 // v6715
+dup
+extract 199 17
+store 21 // tokInfo/6716
+dup
+int 216
+extract_uint64
+store 20 // v6717
+dup
+extract 224 17
+store 19 // tokInfo/6718
+dup
+int 241
+extract_uint64
+store 18 // v6719
+dup
+extract 249 24
+store 17 // v6720
+dup
+int 273
+extract_uint64
+store 16 // v6722
+dup
+int 281
+extract_uint64
+store 15 // v6723
+int 289
+extract_uint64
+store 14 // v6724
+retsub
+l3_LF_svsLoad_3:
+dup
+extract 0 32
+store 35 // Deployer/6612
+dup
+int 32
+extract_uint64
+store 34 // bronze/6613
+dup
+int 40
+extract_uint64
+store 33 // silver/6614
+dup
+int 48
+extract_uint64
+store 32 // gold/6615
+dup
+extract 56 32
+store 31 // Admin/6637
+dup
+extract 88 24
+store 30 // coinPrices/6677
+dup
+extract 112 1
+btoi
+store 29 // isPaused/6678
+dup
+extract 113 51
+store 26 // tokenInfos/6686
+dup
+int 164
+extract_uint64
+store 25 // netBalance/6687
+dup
+extract 172 17
+store 16 // tokInfo/12120
+dup
+int 189
+extract_uint64
+store 15 // v12121
+dup
+int 197
+extract_uint64
+store 14 // v12123
+dup
+int 205
+extract_uint64
+store 13 // v12125
+extract 213 24
+store 12 // v12126
+retsub
+l21_LF_checkTxn_False:
+// resource: R_Txn
+txn GroupIndex
+load 0 // GV_txnCounter :: UInt
+int 1
++
+dup
+store 0 // GV_txnCounter :: UInt
+-
+dupn 2
+gtxns Receiver
+global CurrentApplicationAddress
+==
+assert
+gtxns TypeEnum
+int pay
+==
+assert
+gtxns Amount
+==
+assert
+retsub
+l1_LF_mbrAdd:
+load 6 // GV_mbrAdd :: UInt
++
+store 6 // GV_mbrAdd :: UInt
+retsub
+l22_LF_checkTxn_True:
+// resource: R_Txn
+txn GroupIndex
+load 0 // GV_txnCounter :: UInt
+int 1
++
+dup
+store 0 // GV_txnCounter :: UInt
+-
+dupn 3
+gtxns AssetReceiver
+global CurrentApplicationAddress
+==
+assert
+gtxns TypeEnum
+int axfer
+==
+assert
+gtxns XferAsset
+uncover 2
+==
+assert
+gtxns AssetAmount
+==
+assert
+retsub
+l12_LF_makeTxn_False_True_True_True:
+itxn_begin
+itxn_field AssetCloseTo
+b l29_LF_makeTxnK_True_True
+l26_LF_updateMbr:
+load 6 // GV_mbrAdd :: UInt
+load 7 // GV_mbrSub :: UInt
+dup2
+>=
+bz updateMbr_neg
+b updateMbr_pos_eq
+l27_LF_makeTxn_False_True_False_True:
+itxn_begin
+itxn_field CloseRemainderTo
+b l28_LF_makeTxnK_False_True
