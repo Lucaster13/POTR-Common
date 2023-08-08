@@ -1,15 +1,58 @@
-const RARE_BACKGROUND = ["Gold", "POTR"];
-const RARE_CLASS = ["Phantom", "Archangel", "Golem", "Dragon"];
-const RARE_BODY = ["Flame", "Frost", "God Armor", "Angel Light", "Radioactive"];
-const RARE_HEAD = ["Master Hood", "Gandalf", "Robinhood", "Santa", "Crown"];
-const RARE_EYES = ["VR", "Closed", "3D", "Thug Life"];
-const RARE_TRAITS = {
-  Background: RARE_BACKGROUND,
-  Class: RARE_CLASS,
-  Body: RARE_BODY,
-  Head: RARE_HEAD,
-  Eyes: RARE_EYES,
-};
+/**
+ *
+ * TRAIT TYPES
+ *
+ */
+
+const enum VisualTrait {
+  BACKGROUND = "Background",
+  CLASS = "Class",
+  BODY = "Body",
+  HEAD = "Head",
+  EYES = "Eyes",
+  BACK = "Back",
+  MOUTH = "Mouth",
+}
+
+const enum MetaTrait {
+  POWER = "Power",
+  LEVEL = "Level",
+}
+
+const VISUAL_TRAITS: VisualTrait[] = [
+  VisualTrait.BACKGROUND,
+  VisualTrait.CLASS,
+  VisualTrait.BODY,
+  VisualTrait.HEAD,
+  VisualTrait.BACK,
+  VisualTrait.MOUTH,
+];
+
+const META_TRAIT: MetaTrait[] = [MetaTrait.LEVEL, MetaTrait.POWER];
+
+const TRAITS: Array<MetaTrait | VisualTrait> = [
+  ...VISUAL_TRAITS,
+  ...META_TRAIT,
+];
+
+/**
+ *
+ * BASE CLASS
+ *
+ */
+
+const enum BaseClass {
+  HUMANOID = "Humanoid",
+  PHANTOM = "Phantom",
+  DRAGON = "Dragon",
+  GOLEM = "Golem",
+}
+
+/**
+ *
+ * TRAITS
+ *
+ */
 
 const enum Background {
   GRAY = "Gray",
@@ -46,7 +89,7 @@ const enum HumanoidBody {
   LIGHT_ARMOR = "Light Armor",
   WIZARD_ROBE = "Wizard Robe",
   SHADOW_ARMOR = "Shadow Armor",
-  SKULL_SHIRT = "Skull Shirt",
+  SKULLHIRT = "Skull Shirt",
   PLATE_ARMOR = "Plate Armor",
   DRAGONHIDE = "Dragonhide",
   FLAME = "Flame",
@@ -217,8 +260,35 @@ const enum GolemBack {
   "Legendary Companion",
 }
 
+/**
+ *
+ * RARE TRAITS
+ *
+ */
+
+const RARE_BACKGROUND = ["Gold", "POTR"];
+const RARE_CLASS = ["Phantom", "Archangel", "Golem", "Dragon"];
+const RARE_BODY = ["Flame", "Frost", "God Armor", "Angel Light", "Radioactive"];
+const RARE_HEAD = ["Master Hood", "Gandalf", "Robinhood", "Santa", "Crown"];
+const RARE_EYES = ["VR", "Closed", "3D", "Thug Life"];
+const RARE_TRAITS = {
+  [VisualTrait.BACKGROUND]: RARE_BACKGROUND,
+  [VisualTrait.CLASS]: RARE_CLASS,
+  [VisualTrait.BODY]: RARE_BODY,
+  [VisualTrait.HEAD]: RARE_HEAD,
+  [VisualTrait.EYES]: RARE_EYES,
+};
+
+// power that determines if potr is rare
+const RARE_POWER_CUTOFF = 250;
+
 export {
   RARE_TRAITS,
+  TRAITS,
+  RARE_POWER_CUTOFF,
+  BaseClass,
+  VisualTrait,
+  MetaTrait,
   Background,
   Class,
   HumanoidBack,

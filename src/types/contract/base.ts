@@ -5,33 +5,22 @@ import { BigNumber, ContractId, NetworkAddress } from "../network";
     BASE CONTRACT TYPES
 
 */
-type ContractName = "coin_shop" | "summon";
-
 // can be extended by any contract participant interface to enable logging
-interface ParticipantInterface {
+type ParticipantInterfaceT = {
   // for console logger
   log?: any;
-}
+};
 
 // interface used by deployer to deploy contract (each contract can extend this type)
-interface DeployerInterface extends ParticipantInterface {
+type DeployerInterfaceT = {
   // function that gets called when contract is deployed
   deployed: (ctcId: BigNumber, ctcAddr: NetworkAddress) => void;
-}
+} & ParticipantInterfaceT;
 
-interface ContractHandle {
+type ContractHandleT = {
   getInfo: () => Promise<ContractId>;
-}
-
-type ApiFn<T> = (...x: any) => Promise<Maybe<T>>;
+};
 
 type Maybe<T> = ["Some" | "None", T];
 
-export {
-  ContractName,
-  DeployerInterface,
-  ParticipantInterface,
-  Maybe,
-  ContractHandle,
-  ApiFn,
-};
+export { DeployerInterfaceT, ParticipantInterfaceT, ContractHandleT, Maybe };

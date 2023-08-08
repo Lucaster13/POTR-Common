@@ -1,9 +1,6 @@
 {
   "type": "module",
-  "dependencies": {
-    "@reach-sh/stdlib": "^0.1.13-rc.0"
-  },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "devDependencies": {
@@ -12,7 +9,8 @@
     "eslint": "^8.46.0",
     "eslint-plugin-prettier": "^5.0.0",
     "prettier": "^3.0.1",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.4",
+    "@reach-sh/stdlib": "^0.1.13-rc.0"
   },
   "scripts": {
     "build": "eslint ./src && prettier ./src && tsc"

@@ -1,10 +1,7 @@
-import { CoinShopEvent } from "./coin-shop";
-
-type ContractEventType = CoinShopEvent;
-interface ContractEvent<T> {
-  type: ContractEventType;
+interface ContractEvent<ET, T> {
+  type: ET;
   time: number;
   data: T;
 }
 
-export { ContractEventType, ContractEvent };
+export { ContractEvent };

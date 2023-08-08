@@ -1,5 +1,9 @@
 import { AsaId } from "../network";
-import { DeployerInterface, ContractHandle, ParticipantInterface } from "./base";
+import {
+  DeployerInterfaceT,
+  ContractHandleT,
+  ParticipantInterfaceT,
+} from "./base";
 
 /*
 
@@ -8,28 +12,24 @@ import { DeployerInterface, ContractHandle, ParticipantInterface } from "./base"
 */
 
 // Interface for running contract as admin
-interface SummonAdminInterface extends ParticipantInterface {
-    // determines which potr to send based on coin type
-    get_potr: (coin: AsaId) => Promise<AsaId> | AsaId;
-}
+type SummonAdminInterfaceT = {
+  // determines which potr to send based on coin type
+  get_potr: (coin: AsaId) => Promise<AsaId> | AsaId;
+  // the asa id of the payment coin
+  coin: AsaId;
+} & ParticipantInterfaceT;
 
 // interface for connecting as a summoner
-interface SummonSummonerInterface extends DeployerInterface {
-    // the asa id of the payment coin
-    coin: AsaId;
-    // does opt in and returns status of opt-in
-    claim: (potrId: AsaId) => Promise<boolean>;
-    show_event: (task: string, info: string) => Promise<void> | void;
-}
+type SummonSummonerInterfaceT = {
+  // does opt in and returns status of opt-in
+  opt_in: (potrId: AsaId) => Promise<boolean>;
+} & DeployerInterfaceT;
 
-// names for participants
-type SummonParticipant = "Admin" | "Summoner";
+type SummonHandleT = {
+  p: {
+    Admin: (int: SummonAdminInterfaceT) => Promise<void>;
+    Summoner: (int: SummonSummonerInterfaceT) => Promise<void>;
+  };
+} & ContractHandleT;
 
-interface SummonHandle extends ContractHandle {
-    p: {
-        Admin: (int: SummonAdminInterface) => Promise<void>;
-        Summoner: (int: SummonSummonerInterface) => Promise<void>;
-    };
-}
-
-export { SummonAdminInterface, SummonSummonerInterface, SummonParticipant, SummonHandle };
+export { SummonAdminInterfaceT, SummonSummonerInterfaceT, SummonHandleT };

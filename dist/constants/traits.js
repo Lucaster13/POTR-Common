@@ -1,15 +1,38 @@
-const RARE_BACKGROUND = ["Gold", "POTR"];
-const RARE_CLASS = ["Phantom", "Archangel", "Golem", "Dragon"];
-const RARE_BODY = ["Flame", "Frost", "God Armor", "Angel Light", "Radioactive"];
-const RARE_HEAD = ["Master Hood", "Gandalf", "Robinhood", "Santa", "Crown"];
-const RARE_EYES = ["VR", "Closed", "3D", "Thug Life"];
-const RARE_TRAITS = {
-    Background: RARE_BACKGROUND,
-    Class: RARE_CLASS,
-    Body: RARE_BODY,
-    Head: RARE_HEAD,
-    Eyes: RARE_EYES,
-};
+var VisualTrait;
+(function (VisualTrait) {
+    VisualTrait["BACKGROUND"] = "Background";
+    VisualTrait["CLASS"] = "Class";
+    VisualTrait["BODY"] = "Body";
+    VisualTrait["HEAD"] = "Head";
+    VisualTrait["EYES"] = "Eyes";
+    VisualTrait["BACK"] = "Back";
+    VisualTrait["MOUTH"] = "Mouth";
+})(VisualTrait || (VisualTrait = {}));
+var MetaTrait;
+(function (MetaTrait) {
+    MetaTrait["POWER"] = "Power";
+    MetaTrait["LEVEL"] = "Level";
+})(MetaTrait || (MetaTrait = {}));
+const VISUAL_TRAITS = [
+    "Background",
+    "Class",
+    "Body",
+    "Head",
+    "Back",
+    "Mouth",
+];
+const META_TRAIT = ["Level", "Power"];
+const TRAITS = [
+    ...VISUAL_TRAITS,
+    ...META_TRAIT,
+];
+var BaseClass;
+(function (BaseClass) {
+    BaseClass["HUMANOID"] = "Humanoid";
+    BaseClass["PHANTOM"] = "Phantom";
+    BaseClass["DRAGON"] = "Dragon";
+    BaseClass["GOLEM"] = "Golem";
+})(BaseClass || (BaseClass = {}));
 var Background;
 (function (Background) {
     Background["GRAY"] = "Gray";
@@ -46,7 +69,7 @@ var HumanoidBody;
     HumanoidBody["LIGHT_ARMOR"] = "Light Armor";
     HumanoidBody["WIZARD_ROBE"] = "Wizard Robe";
     HumanoidBody["SHADOW_ARMOR"] = "Shadow Armor";
-    HumanoidBody["SKULL_SHIRT"] = "Skull Shirt";
+    HumanoidBody["SKULLHIRT"] = "Skull Shirt";
     HumanoidBody["PLATE_ARMOR"] = "Plate Armor";
     HumanoidBody["DRAGONHIDE"] = "Dragonhide";
     HumanoidBody["FLAME"] = "Flame";
@@ -217,5 +240,18 @@ var GolemBack;
     GolemBack[GolemBack["Ultra Rare Companion"] = 4] = "Ultra Rare Companion";
     GolemBack[GolemBack["Legendary Companion"] = 5] = "Legendary Companion";
 })(GolemBack || (GolemBack = {}));
-export { RARE_TRAITS, Background, Class, HumanoidBack, HumanoidMouth, HumanoidHead, HumanoidEyes, HumanoidBody, DragonBack, DragonMouth, DragonHead, DragonEyes, DragonBody, GolemBack, GolemMouth, GolemHead, GolemEyes, GolemBody, PhantomBody, };
+const RARE_BACKGROUND = ["Gold", "POTR"];
+const RARE_CLASS = ["Phantom", "Archangel", "Golem", "Dragon"];
+const RARE_BODY = ["Flame", "Frost", "God Armor", "Angel Light", "Radioactive"];
+const RARE_HEAD = ["Master Hood", "Gandalf", "Robinhood", "Santa", "Crown"];
+const RARE_EYES = ["VR", "Closed", "3D", "Thug Life"];
+const RARE_TRAITS = {
+    ["Background"]: RARE_BACKGROUND,
+    ["Class"]: RARE_CLASS,
+    ["Body"]: RARE_BODY,
+    ["Head"]: RARE_HEAD,
+    ["Eyes"]: RARE_EYES,
+};
+const RARE_POWER_CUTOFF = 250;
+export { RARE_TRAITS, TRAITS, RARE_POWER_CUTOFF, BaseClass, VisualTrait, MetaTrait, Background, Class, HumanoidBack, HumanoidMouth, HumanoidHead, HumanoidEyes, HumanoidBody, DragonBack, DragonMouth, DragonHead, DragonEyes, DragonBody, GolemBack, GolemMouth, GolemHead, GolemEyes, GolemBody, PhantomBody, };
 //# sourceMappingURL=traits.js.map
