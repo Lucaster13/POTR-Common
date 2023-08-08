@@ -1,7 +1,6 @@
 declare const enum AlgoNetwork {
     MAIN_NET = "MainNet",
-    TEST_NET = "TestNet",
-    DEV_NET = "DevNet"
+    TEST_NET = "TestNet"
 }
 declare const REACH_NETWORK: AlgoNetwork;
 declare const ALGO_SERVER_PREFIX: string;

@@ -2,7 +2,6 @@ var AlgoNetwork;
 (function (AlgoNetwork) {
     AlgoNetwork["MAIN_NET"] = "MainNet";
     AlgoNetwork["TEST_NET"] = "TestNet";
-    AlgoNetwork["DEV_NET"] = "DevNet";
 })(AlgoNetwork || (AlgoNetwork = {}));
 const REACH_NETWORK = process.env.NODE_ENV === "prod" ? "MainNet" : "TestNet";
 const ALGO_SERVER_PREFIX = `https://${REACH_NETWORK.toLowerCase()}`;

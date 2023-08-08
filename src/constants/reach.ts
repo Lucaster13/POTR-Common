@@ -2,7 +2,6 @@
 const enum AlgoNetwork {
 	MAIN_NET = "MainNet",
 	TEST_NET = "TestNet",
-	DEV_NET = "DevNet",
 }
 
 // determine network to use based on env
