@@ -16,7 +16,7 @@ type CoinShopDeployerT = {
 };
 
 // names for all events, views and apis
-type CoinAmountsT = [BigNumberT, BigNumberT, BigNumberT];
+type CoinAmountsT = BigNumberT[];
 type CoinAmountsEventT = [CoinAmountsT];
 
 type CoinShopHandleT = {

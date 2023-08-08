@@ -5,7 +5,7 @@ import { Participant } from "../../constants";
 type CoinShopDeployerT = {
     coin_asa_ids: AsaIdT[];
 };
-type CoinAmountsT = [BigNumberT, BigNumberT, BigNumberT];
+type CoinAmountsT = BigNumberT[];
 type CoinAmountsEventT = [CoinAmountsT];
 type CoinShopHandleT = {
     a: {
