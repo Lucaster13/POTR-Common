@@ -11,4 +11,4 @@ declare const COIN_RARITY_WEIGHTS: {
 declare const COIN_TYPES: Coin[];
 declare const COIN_SUPPLY: number[];
 declare const COIN_PRICES: number[];
-export { COIN_RARITY_WEIGHTS, COIN_TYPES, COIN_PRICES, COIN_SUPPLY };
+export { Coin, COIN_RARITY_WEIGHTS, COIN_TYPES, COIN_PRICES, COIN_SUPPLY };

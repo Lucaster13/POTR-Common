@@ -1,5 +1,5 @@
 import { Participant } from "../../constants";
-import { BigNumber, ContractId, NetworkAddress } from "../network";
+import { BigNumber, NetworkAddress } from "../network";
 
 /*
 
@@ -7,7 +7,7 @@ import { BigNumber, ContractId, NetworkAddress } from "../network";
 
 */
 // can be extended by any contract participant interface to enable logging
-type ParticipantInterfaceT = {
+type LoggerInterfaceT = {
   // for console logger
   log?: any;
 };
@@ -16,14 +16,13 @@ type ParticipantInterfaceT = {
 type DeployerInterfaceT = {
   // function that gets called when contract is deployed
   deployed: (ctcId: BigNumber, ctcAddr: NetworkAddress) => void;
-} & ParticipantInterfaceT;
-
-type ContractHandleT<I> = {
-  p: Record<Participant, (i: I) => Promise<void>>;
-  participants: Record<Participant, (i: I) => void>;
-  getInfo: () => Promise<ContractId>;
-};
+} & LoggerInterfaceT;
 
 type Maybe<T> = ["Some" | "None", T];
 
-export { DeployerInterfaceT, ParticipantInterfaceT, ContractHandleT, Maybe };
+type BaseHandleT = {
+  p: Partial<Record<Participant, () => Promise<void>>>;
+  getInfo: () => Promise<BigNumber>;
+};
+
+export { DeployerInterfaceT, LoggerInterfaceT, Maybe, BaseHandleT };

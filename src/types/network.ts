@@ -1,5 +1,5 @@
 import { Time } from "@reach-sh/stdlib/dist/types/shared_impl";
-import { ContractHandleT, ParticipantInterfaceT } from "./contract";
+import { BaseHandleT } from "./contract";
 
 type BigNumber = Time;
 type AsaId = number;
@@ -11,13 +11,12 @@ interface NetworkAccount {
 }
 interface ReachAccount {
   networkAccount: NetworkAccount;
-  contract: <I extends ParticipantInterfaceT>(
-    b: any,
-    info?: ContractId | BigNumber,
-  ) => ContractHandleT<I>;
+  contract: <T extends BaseHandleT>(b: any, info?: ContractId | BigNumber) => T;
   balanceOf: (asa?: AsaId) => Promise<BigNumber>;
-  acceptToken: (asa: AsaId) => Promise<void>;
+  balancesOf: (asas: AsaId[]) => Promise<BigNumber[]>;
+  tokenAccept: (asa: AsaId) => Promise<void>;
   tokenAccepted: (asa: AsaId) => Promise<boolean>;
+  getAddress: () => NetworkAddress;
 }
 
 export {

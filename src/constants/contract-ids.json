@@ -1,3 +1,8 @@
 {
-  "coin_shop": 155853712
+  "TestNet": {
+    "coin_shop": 177906185
+  },
+  "MainNet": {
+    "coin_shop": null
+  }
 }
