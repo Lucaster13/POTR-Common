@@ -1,6 +1,6 @@
 import { loadStdlib } from "@reach-sh/stdlib";
 import { OPT_IN_FEE, REACH_NETWORK, REACH_STDLIB_ENV, TXN_FEE } from "../constants";
-import { BigNumberT, CoinAmountsT, Maybe, NetworkAddressT } from "../types";
+import { BigNumberT, Maybe, NetworkAddressT } from "../types";
 
 const makeReach = (dev = true) => {
 	if (dev) return loadStdlib("ALGO-devnet");
@@ -14,7 +14,6 @@ const padString = (str: string, maxLen: number) => str.padEnd(maxLen, "\u0000");
 const unPadString = (str: string) => str.replace(/\0/g, ""); // replace all null characters with ""
 const parseCurrency = (x: number | BigNumberT) => makeReach().parseCurrency(x);
 const parseCurrencies = (x: number[] | BigNumberT[]) => x.map((num) => parseCurrency(num));
-const parsePrices = (x: number[] | BigNumberT[]) => parseCurrencies(x) as CoinAmountsT;
 const getFees = (txns: number, optIns: number) => {
 	const optInFees: BigNumberT = bigNumberify(optIns * OPT_IN_FEE);
 	const txnFees: BigNumberT = bigNumberify(txns * TXN_FEE);
@@ -35,7 +34,8 @@ export {
 	padString,
 	unPadString,
 	shortenAddress,
-	parsePrices,
+	parseCurrency,
+	parseCurrencies,
 	getFees,
 	fromMaybe,
 };

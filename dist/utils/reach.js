@@ -13,7 +13,6 @@ const padString = (str, maxLen) => str.padEnd(maxLen, "\u0000");
 const unPadString = (str) => str.replace(/\0/g, "");
 const parseCurrency = (x) => makeReach().parseCurrency(x);
 const parseCurrencies = (x) => x.map((num) => parseCurrency(num));
-const parsePrices = (x) => parseCurrencies(x);
 const getFees = (txns, optIns) => {
     const optInFees = bigNumberify(optIns * OPT_IN_FEE);
     const txnFees = bigNumberify(txns * TXN_FEE);
@@ -27,4 +26,4 @@ const shortenAddress = (addr) => {
     const end = addr.substring(addr.length - 4);
     return `${start}...${end}`;
 };
-export { makeReach, bigNumberify, bigNumberifyAll, padString, unPadString, shortenAddress, parsePrices, getFees, fromMaybe, };
+export { makeReach, bigNumberify, bigNumberifyAll, padString, unPadString, shortenAddress, parseCurrency, parseCurrencies, getFees, fromMaybe, };
