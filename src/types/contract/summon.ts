@@ -1,6 +1,6 @@
 import { EventStream } from "./events";
-import { AsaId, BigNumber } from "../network";
-import { BaseHandleT, DeployerInterfaceT, LoggerInterfaceT } from "./base";
+import { AsaIdT, BigNumberT } from "../network";
+import { BaseHandleT, DeployerT, LoggerT } from "./base";
 import { Participant, Result, SummonStatus } from "../../constants";
 
 /*
@@ -9,18 +9,18 @@ import { Participant, Result, SummonStatus } from "../../constants";
 
 */
 
-// Interface for running contract as admin
-type SummonAdminInterfaceT = {
+// interface for running contract as admin
+type SummonAdminT = {
 	// determines which potr to send based on coin type
-	get_potr: (coin: BigNumber) => Promise<AsaId> | AsaId;
+	get_potr: (coin: BigNumberT) => Promise<AsaIdT> | AsaIdT;
 	// the asa id of the payment coin
-	coin: AsaId;
-} & LoggerInterfaceT;
+	coin: AsaIdT;
+} & LoggerT;
 
 // interface for connecting as a summoner
-type SummonSummonerInterfaceT = {
+type SummonSummonerT = {
 	// does opt in and returns status of opt-in
-	opt_in: (potrId: BigNumber) => Promise<boolean>;
+	opt_in: (potrId: BigNumberT) => Promise<boolean>;
 };
 
 type SummonHandleT = {
@@ -29,10 +29,10 @@ type SummonHandleT = {
 		result: EventStream<Result>;
 	};
 	p: {
-		[Participant.ADMIN]: (int: SummonAdminInterfaceT) => Promise<void>;
-		[Participant.DEPLOYER]: (int: DeployerInterfaceT) => Promise<void>;
-		[Participant.SUMMONER]: (int: SummonSummonerInterfaceT) => Promise<void>;
+		[Participant.ADMIN]: (int: SummonAdminT) => Promise<void>;
+		[Participant.DEPLOYER]: (int: DeployerT) => Promise<void>;
+		[Participant.SUMMONER]: (int: SummonSummonerT) => Promise<void>;
 	};
 } & BaseHandleT;
 
-export { SummonAdminInterfaceT, SummonSummonerInterfaceT, SummonHandleT };
+export { SummonAdminT, SummonSummonerT, SummonHandleT };

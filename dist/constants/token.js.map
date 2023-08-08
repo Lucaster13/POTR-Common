@@ -1,1 +1,0 @@
-{"version":3,"file":"token.js","sourceRoot":"","sources":["../../src/constants/token.ts"],"names":[],"mappings":"AAAA,MAAM,mBAAmB,GAAG,OAAO,CAAC;AACpC,MAAM,OAAO,GAAG,mBAAmB,GAAG,IAAI,CAAC;AAC3C,MAAM,UAAU,GAAG,mBAAmB,GAAG,EAAE,CAAC;AAE5C,OAAO,EAAE,OAAO,EAAE,mBAAmB,EAAE,UAAU,EAAE,CAAC"}

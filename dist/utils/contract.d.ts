@@ -1,8 +1,6 @@
 import { type Participant } from "../constants/contract";
-import { type BigNumber, type ContractId, type NetworkAddress, type ParticipantInterfaceT, type ReachAccount } from "../types";
-declare const padString: (str: string, maxLen: number) => string;
-declare const unPadString: (str: string) => string;
-declare const deployContract: <T>(deployer: ReachAccount, backend: any, participantInterface: T, waitUntilCompletion?: boolean) => Promise<[BigNumber, NetworkAddress]>;
-declare const attachContract: (acc: ReachAccount, backend: any, ctcId: ContractId | BigNumber, participantName: Participant, participantInterface: ParticipantInterfaceT) => Promise<void>;
+import { type BigNumberT, type ContractIdT, type NetworkAddressT, type ParticipantT } from "../types";
+import { ReachAccountT } from "../types/wallet";
+declare const deployContract: <T>(deployer: ReachAccountT, backend: any, participant: T, waitUntilCompletion?: boolean) => Promise<[BigNumberT, NetworkAddressT]>;
+declare const attachContract: (acc: ReachAccountT, backend: any, ctcId: ContractIdT | BigNumberT, participantName: Participant, participant: ParticipantT) => Promise<void>;
 export { deployContract, attachContract };
-export { padString, unPadString };

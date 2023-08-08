@@ -1,10 +1,10 @@
-import { AsaId } from "./network";
+import { AsaIdT } from "./network";
 interface Cids {
     potr: string;
     coin: string;
 }
 interface AsaIds {
-    potr: AsaId[];
-    coin: AsaId[];
+    potr: AsaIdT[];
+    coin: AsaIdT[];
 }
 export { Cids, AsaIds };

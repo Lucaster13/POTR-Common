@@ -30,6 +30,7 @@ var BaseClass;
     BaseClass["DRAGON"] = "Dragon";
     BaseClass["GOLEM"] = "Golem";
 })(BaseClass || (BaseClass = {}));
+const BASE_CLASSES = ["Humanoid", "Phantom", "Dragon", "Golem"];
 var Background;
 (function (Background) {
     Background["GRAY"] = "Gray";
@@ -249,5 +250,16 @@ const RARE_TRAITS = {
     ["Head"]: RARE_HEAD,
     ["Eyes"]: RARE_EYES,
 };
-const RARE_POWER_CUTOFF = 250;
-export { RARE_TRAITS, TRAITS, RARE_POWER_CUTOFF, BaseClass, VisualTrait, MetaTrait, Background, Class, HumanoidBack, HumanoidMouth, HumanoidHead, HumanoidEyes, HumanoidBody, DragonBack, DragonMouth, DragonHead, DragonEyes, DragonBody, GolemBack, GolemMouth, GolemHead, GolemEyes, GolemBody, PhantomBody, };
+var Rarity;
+(function (Rarity) {
+    Rarity["COMMON"] = "common";
+    Rarity["RARE"] = "rare";
+    Rarity["LEGENDARY"] = "legendary";
+})(Rarity || (Rarity = {}));
+const RARITIES = ["common", "rare", "legendary"];
+const RARITY_POWER_CUTOFFS = {
+    ["common"]: 0,
+    ["rare"]: 208,
+    ["legendary"]: 250,
+};
+export { RARITIES, RARE_TRAITS, TRAITS, RARITY_POWER_CUTOFFS, BASE_CLASSES, Rarity, BaseClass, VisualTrait, MetaTrait, Background, Class, HumanoidBack, HumanoidMouth, HumanoidHead, HumanoidEyes, HumanoidBody, DragonBack, DragonMouth, DragonHead, DragonEyes, DragonBody, GolemBack, GolemMouth, GolemHead, GolemEyes, GolemBody, PhantomBody, };

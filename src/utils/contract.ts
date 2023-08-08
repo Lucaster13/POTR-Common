@@ -1,32 +1,23 @@
 import { type Participant } from "../constants/contract";
-import {
-	ContractHandleT,
-	type BigNumber,
-	type ContractId,
-	type NetworkAddress,
-	type ParticipantInterfaceT,
-	type ReachAccount,
-} from "../types";
-
-const padString = (str: string, maxLen: number) => str.padEnd(maxLen, "\u0000");
-const unPadString = (str: string) => str.replace(/\0/g, ""); // replace all null characters with ""
+import { ContractHandleT, type BigNumberT, type ContractIdT, type NetworkAddressT, type ParticipantT } from "../types";
+import { ReachAccountT } from "../types/wallet";
 
 // turn contract deployment into promise that resolves when "deployed" interact fn is called
 const deployContract = async <T>(
-	deployer: ReachAccount,
+	deployer: ReachAccountT,
 	backend: any,
-	participantInterface: T,
+	participant: T,
 	waitUntilCompletion = false,
-): Promise<[BigNumber, NetworkAddress]> => {
+): Promise<[BigNumberT, NetworkAddressT]> => {
 	const deploy = deployer.contract<ContractHandleT>(backend).p.Deployer;
 
 	if (waitUntilCompletion) {
 		let ctcId: any;
 		let ctcAddr: any;
 		await deploy({
-			...participantInterface,
+			...participant,
 			// when deployed is called, call the response callback with the contract info
-			deployed: (id: BigNumber, addr: NetworkAddress) => {
+			deployed: (id: BigNumberT, addr: NetworkAddressT) => {
 				ctcId = id;
 				ctcAddr = addr;
 			},
@@ -36,9 +27,9 @@ const deployContract = async <T>(
 
 	return new Promise((resolve) => {
 		deploy({
-			...participantInterface,
+			...participant,
 			// when deployed is called, call the response callback with the contract info
-			deployed: (ctcId: BigNumber, ctcAddr: NetworkAddress) => {
+			deployed: (ctcId: BigNumberT, ctcAddr: NetworkAddressT) => {
 				resolve([ctcId, ctcAddr]);
 			},
 		});
@@ -47,17 +38,15 @@ const deployContract = async <T>(
 
 // attach user account to the given contract and provide interact, caller can await contract completion if they choose
 const attachContract = async (
-	acc: ReachAccount,
+	acc: ReachAccountT,
 	backend: any,
-	ctcId: ContractId | BigNumber,
+	ctcId: ContractIdT | BigNumberT,
 	participantName: Participant,
-	participantInterface: ParticipantInterfaceT,
+	participant: ParticipantT,
 ) => {
 	const participantAttach = acc.contract<ContractHandleT>(backend, ctcId).p[participantName];
 
-	if (participantAttach) return participantAttach(participantInterface as any);
+	if (participantAttach) return participantAttach(participant as any);
 };
 
 export { deployContract, attachContract };
-
-export { padString, unPadString };

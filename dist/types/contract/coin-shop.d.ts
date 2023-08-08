@@ -1,11 +1,11 @@
 import { EventStream } from "./events";
-import { AsaId, BigNumber, NetworkAddress } from "../network";
-import { BaseHandleT, LoggerInterfaceT, Maybe } from "./base";
+import { AsaIdT, BigNumberT, NetworkAddressT } from "../network";
+import { BaseHandleT, LoggerT, Maybe } from "./base";
 import { Participant } from "../../constants";
 type CoinShopDeployerT = {
-    coin_asa_ids: AsaId[];
+    coin_asa_ids: AsaIdT[];
 };
-type CoinAmountsT = [BigNumber, BigNumber, BigNumber];
+type CoinAmountsT = [BigNumberT, BigNumberT, BigNumberT];
 type CoinAmountsEventT = [CoinAmountsT];
 type CoinShopHandleT = {
     a: {
@@ -29,13 +29,13 @@ type CoinShopHandleT = {
     };
     e: {
         restock: EventStream<CoinAmountsEventT>;
-        purchase: EventStream<[AsaId, NetworkAddress]>;
+        purchase: EventStream<[AsaIdT, NetworkAddressT]>;
         price_change: EventStream<CoinAmountsEventT>;
         withdraw: EventStream<CoinAmountsEventT>;
         terminate: EventStream<CoinAmountsEventT>;
     };
     p: {
-        [Participant.ADMIN]: (i: LoggerInterfaceT) => Promise<void>;
+        [Participant.ADMIN]: (i: LoggerT) => Promise<void>;
         [Participant.DEPLOYER]: (i: CoinShopDeployerT) => Promise<void>;
     };
 } & BaseHandleT;

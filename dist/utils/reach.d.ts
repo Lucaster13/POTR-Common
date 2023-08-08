@@ -1,0 +1,11 @@
+import { BigNumberT, CoinAmountsT, Maybe, NetworkAddressT } from "../types";
+declare const makeReach: (dev?: boolean) => import("@reach-sh/stdlib/dist/types/interfaces").Stdlib_User<any, any, any, any, any, any, any, any, any, any, any>;
+declare const bigNumberify: (x: number | BigNumberT) => import("@ethersproject/bignumber").BigNumber;
+declare const bigNumberifyAll: (x: number[] | BigNumberT[]) => import("@ethersproject/bignumber").BigNumber[];
+declare const padString: (str: string, maxLen: number) => string;
+declare const unPadString: (str: string) => string;
+declare const parsePrices: (x: number[] | BigNumberT[]) => CoinAmountsT;
+declare const getFees: (txns: number, optIns: number) => import("@ethersproject/bignumber").BigNumber;
+declare const fromMaybe: <T>(mp: Promise<Maybe<T>>) => Promise<T>;
+declare const shortenAddress: (addr?: NetworkAddressT) => string;
+export { makeReach, bigNumberify, bigNumberifyAll, padString, unPadString, shortenAddress, parsePrices, getFees, fromMaybe, };

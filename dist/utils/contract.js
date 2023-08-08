@@ -1,12 +1,10 @@
-const padString = (str, maxLen) => str.padEnd(maxLen, "\u0000");
-const unPadString = (str) => str.replace(/\0/g, "");
-const deployContract = async (deployer, backend, participantInterface, waitUntilCompletion = false) => {
+const deployContract = async (deployer, backend, participant, waitUntilCompletion = false) => {
     const deploy = deployer.contract(backend).p.Deployer;
     if (waitUntilCompletion) {
         let ctcId;
         let ctcAddr;
         await deploy({
-            ...participantInterface,
+            ...participant,
             deployed: (id, addr) => {
                 ctcId = id;
                 ctcAddr = addr;
@@ -16,17 +14,16 @@ const deployContract = async (deployer, backend, participantInterface, waitUntil
     }
     return new Promise((resolve) => {
         deploy({
-            ...participantInterface,
+            ...participant,
             deployed: (ctcId, ctcAddr) => {
                 resolve([ctcId, ctcAddr]);
             },
         });
     });
 };
-const attachContract = async (acc, backend, ctcId, participantName, participantInterface) => {
+const attachContract = async (acc, backend, ctcId, participantName, participant) => {
     const participantAttach = acc.contract(backend, ctcId).p[participantName];
     if (participantAttach)
-        return participantAttach(participantInterface);
+        return participantAttach(participant);
 };
 export { deployContract, attachContract };
-export { padString, unPadString };

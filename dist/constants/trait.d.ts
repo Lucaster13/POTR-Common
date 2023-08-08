@@ -18,6 +18,7 @@ declare const enum BaseClass {
     DRAGON = "Dragon",
     GOLEM = "Golem"
 }
+declare const BASE_CLASSES: BaseClass[];
 declare const enum Background {
     GRAY = "Gray",
     LIGHT_BLUE = "Light Blue",
@@ -214,5 +215,15 @@ declare const RARE_TRAITS: {
     Head: string[];
     Eyes: string[];
 };
-declare const RARE_POWER_CUTOFF = 250;
-export { RARE_TRAITS, TRAITS, RARE_POWER_CUTOFF, BaseClass, VisualTrait, MetaTrait, Background, Class, HumanoidBack, HumanoidMouth, HumanoidHead, HumanoidEyes, HumanoidBody, DragonBack, DragonMouth, DragonHead, DragonEyes, DragonBody, GolemBack, GolemMouth, GolemHead, GolemEyes, GolemBody, PhantomBody, };
+declare const enum Rarity {
+    COMMON = "common",
+    RARE = "rare",
+    LEGENDARY = "legendary"
+}
+declare const RARITIES: Rarity[];
+declare const RARITY_POWER_CUTOFFS: {
+    common: number;
+    rare: number;
+    legendary: number;
+};
+export { RARITIES, RARE_TRAITS, TRAITS, RARITY_POWER_CUTOFFS, BASE_CLASSES, Rarity, BaseClass, VisualTrait, MetaTrait, Background, Class, HumanoidBack, HumanoidMouth, HumanoidHead, HumanoidEyes, HumanoidBody, DragonBack, DragonMouth, DragonHead, DragonEyes, DragonBody, GolemBack, GolemMouth, GolemHead, GolemEyes, GolemBody, PhantomBody, };

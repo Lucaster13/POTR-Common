@@ -45,6 +45,8 @@ const enum BaseClass {
 	GOLEM = "Golem",
 }
 
+const BASE_CLASSES = [BaseClass.HUMANOID, BaseClass.PHANTOM, BaseClass.DRAGON, BaseClass.GOLEM];
+
 /**
  *
  * TRAITS
@@ -276,13 +278,28 @@ const RARE_TRAITS = {
 	[VisualTrait.EYES]: RARE_EYES,
 };
 
-// power that determines if potr is rare
-const RARE_POWER_CUTOFF = 250;
+const enum Rarity {
+	COMMON = "common",
+	RARE = "rare",
+	LEGENDARY = "legendary",
+}
+
+const RARITIES = [Rarity.COMMON, Rarity.RARE, Rarity.LEGENDARY];
+
+// need to be >= to these powers to have this rarity
+const RARITY_POWER_CUTOFFS = {
+	[Rarity.COMMON]: 0,
+	[Rarity.RARE]: 208,
+	[Rarity.LEGENDARY]: 250,
+};
 
 export {
+	RARITIES,
 	RARE_TRAITS,
 	TRAITS,
-	RARE_POWER_CUTOFF,
+	RARITY_POWER_CUTOFFS,
+	BASE_CLASSES,
+	Rarity,
 	BaseClass,
 	VisualTrait,
 	MetaTrait,

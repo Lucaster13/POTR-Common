@@ -1,6 +1,6 @@
-import { DeployerInterfaceT } from "./base";
+import { DeployerT } from "./base";
 import { CoinShopDeployerT, CoinShopHandleT } from "./coin-shop";
-import { SummonAdminInterfaceT, SummonHandleT, SummonSummonerInterfaceT } from "./summon";
+import { SummonAdminT, SummonHandleT, SummonSummonerT } from "./summon";
 
 export * from "./base";
 export * from "./coin-shop";
@@ -9,6 +9,6 @@ export * from "./events";
 
 type ContractHandleT = CoinShopHandleT | SummonHandleT;
 
-type ParticipantInterfaceT = DeployerInterfaceT | CoinShopDeployerT | SummonAdminInterfaceT | SummonSummonerInterfaceT;
+type ParticipantT = DeployerT | CoinShopDeployerT | SummonAdminT | SummonSummonerT;
 
-export { ContractHandleT, ParticipantInterfaceT };
+export { ContractHandleT, ParticipantT };

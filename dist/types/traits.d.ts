@@ -1,49 +1,53 @@
-import { Background, Class, DragonBack, DragonBody, DragonEyes, DragonHead, DragonMouth, GolemBack, GolemBody, GolemEyes, GolemHead, GolemMouth, HumanoidBack, HumanoidBody, HumanoidEyes, HumanoidHead, HumanoidMouth, PhantomBody } from "../constants";
-import { AsaId } from "./network";
-type HumanoidTraits = {
+import { Background, BaseClass, Class, DragonBack, DragonBody, DragonEyes, DragonHead, DragonMouth, GolemBack, GolemBody, GolemEyes, GolemHead, GolemMouth, HumanoidBack, HumanoidBody, HumanoidEyes, HumanoidHead, HumanoidMouth, PhantomBody, Rarity } from "../constants";
+import { AsaIdT } from "./network";
+type HumanoidTraitsT = {
     Body: HumanoidBody;
     Head: HumanoidHead;
     Eyes: HumanoidEyes;
     Mouth: HumanoidMouth;
     Back: HumanoidBack;
 };
-type PhantomTraits = {
+type PhantomTraitsT = {
     Body: PhantomBody;
-} & HumanoidTraits;
-type DragonTraits = {
+} & HumanoidTraitsT;
+type DragonTraitsT = {
     Body: DragonBody;
     Head: DragonHead;
     Eyes: DragonEyes;
     Mouth: DragonMouth;
     Back: DragonBack;
 };
-type GolemTraits = {
+type GolemTraitsT = {
     Body: GolemBody;
     Head: GolemHead;
     Eyes: GolemEyes;
     Mouth: GolemMouth;
     Back: GolemBack;
 };
-type Traits = {
+type TraitsT = {
     Background: Background;
     Class: Class;
     Power: number;
     Level: number;
-} & (HumanoidTraits | PhantomTraits | DragonTraits | GolemTraits);
-interface PotrArc69Metadata {
+} & (HumanoidTraitsT | PhantomTraitsT | DragonTraitsT | GolemTraitsT);
+type Arc69MetadataT = {
     standard: "arc69";
     description: string;
     external_url: string;
     mime_type: "image/png";
-    properties: Traits;
-}
-interface PotrMetadata {
+    properties: TraitsT;
+};
+type PotrAssetMetadataT = {
+    id: AsaIdT;
     name: string;
-    unitName: string;
-    id: AsaId;
     url: string;
+    unitName: string;
+};
+type PotrMetadataT = {
     balance: number;
     description: string;
-    traits: Traits;
-}
-export { PotrArc69Metadata, Traits, PotrMetadata };
+    traits: TraitsT;
+    baseClass: BaseClass;
+    rarity: Rarity;
+} & PotrAssetMetadataT;
+export { Arc69MetadataT, PotrAssetMetadataT, TraitsT, PotrMetadataT };

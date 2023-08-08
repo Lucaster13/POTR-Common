@@ -1,5 +1,5 @@
 export * from "./reach";
-export * from "./traits";
+export * from "./trait";
 export * from "./coin";
 export * from "./potr";
 export * from "./ipfs";

@@ -1,14 +1,14 @@
 import { Participant } from "../../constants";
-import { BigNumber, NetworkAddress } from "../network";
-type LoggerInterfaceT = {
+import { BigNumberT, NetworkAddressT } from "../network";
+type LoggerT = {
     log?: any;
 };
-type DeployerInterfaceT = {
-    deployed: (ctcId: BigNumber, ctcAddr: NetworkAddress) => void;
-} & LoggerInterfaceT;
+type DeployerT = {
+    deployed: (ctcId: BigNumberT, ctcAddr: NetworkAddressT) => void;
+} & LoggerT;
 type Maybe<T> = ["Some" | "None", T];
 type BaseHandleT = {
     p: Partial<Record<Participant, () => Promise<void>>>;
-    getInfo: () => Promise<BigNumber>;
+    getInfo: () => Promise<BigNumberT>;
 };
-export { DeployerInterfaceT, LoggerInterfaceT, Maybe, BaseHandleT };
+export { DeployerT, LoggerT, Maybe, BaseHandleT };
