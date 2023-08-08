@@ -10,4 +10,3 @@ var SummonEvent;
     SummonEvent["STATUS"] = "status";
 })(SummonEvent || (SummonEvent = {}));
 export { SummonStatus, SummonEvent };
-//# sourceMappingURL=summon.js.map

@@ -21,4 +21,3 @@ var CoinShopEvent;
     CoinShopEvent["TERMINATE"] = "terminate";
 })(CoinShopEvent || (CoinShopEvent = {}));
 export { CoinShopEvent, CoinShopView, CoinShopApi };
-//# sourceMappingURL=coin_shop.js.map

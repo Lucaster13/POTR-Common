@@ -7817,4 +7817,3 @@ export const _APIs = {
         withdraw: controller_api_withdraw
     }
 };
-//# sourceMappingURL=coin_shop.contract.mjs.map

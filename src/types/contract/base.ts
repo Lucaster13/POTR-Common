@@ -1,3 +1,4 @@
+import { Participant } from "../../constants";
 import { BigNumber, ContractId, NetworkAddress } from "../network";
 
 /*
@@ -17,7 +18,9 @@ type DeployerInterfaceT = {
   deployed: (ctcId: BigNumber, ctcAddr: NetworkAddress) => void;
 } & ParticipantInterfaceT;
 
-type ContractHandleT = {
+type ContractHandleT<I> = {
+  p: Record<Participant, (i: I) => Promise<void>>;
+  participants: Record<Participant, (i: I) => void>;
   getInfo: () => Promise<ContractId>;
 };
 

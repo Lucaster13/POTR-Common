@@ -1,6 +1,11 @@
 import { EventStream } from "@reach-sh/stdlib/dist/types/shared_impl";
 import { AsaId, BigNumber, NetworkAddress } from "../network";
-import { DeployerInterfaceT, ContractHandleT, Maybe } from "./base";
+import {
+  DeployerInterfaceT,
+  ContractHandleT,
+  Maybe,
+  ParticipantInterfaceT,
+} from "./base";
 
 /*
 
@@ -49,11 +54,11 @@ type CoinShopApiT = {
   buyer_api: CoinShopBuyerApiT;
 };
 
-type CoinShopHandleT = {
+type CoinShopHandleT = ContractHandleT<ParticipantInterfaceT> & {
   a: CoinShopApiT;
   v: CoinShopViewT;
   e: CoinShopEventT;
-} & ContractHandleT;
+};
 
 export {
   CoinShopAdminT,

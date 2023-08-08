@@ -25,11 +25,11 @@ type SummonSummonerInterfaceT = {
   opt_in: (potrId: AsaId) => Promise<boolean>;
 } & DeployerInterfaceT;
 
-type SummonHandleT = {
+type SummonHandleT = ContractHandleT<ParticipantInterfaceT> & {
   p: {
     Admin: (int: SummonAdminInterfaceT) => Promise<void>;
     Summoner: (int: SummonSummonerInterfaceT) => Promise<void>;
   };
-} & ContractHandleT;
+};
 
 export { SummonAdminInterfaceT, SummonSummonerInterfaceT, SummonHandleT };

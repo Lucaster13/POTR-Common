@@ -1,9 +1,9 @@
-var Participants;
-(function (Participants) {
-    Participants["ADMIN"] = "Admin";
-    Participants["SUMMONER"] = "Summoner";
-    Participants["DEPLOYER"] = "Deployer";
-})(Participants || (Participants = {}));
+var Participant;
+(function (Participant) {
+    Participant["ADMIN"] = "Admin";
+    Participant["SUMMONER"] = "Summoner";
+    Participant["DEPLOYER"] = "Deployer";
+})(Participant || (Participant = {}));
 var Result;
 (function (Result) {
     Result["SUCCESS"] = "SUCCESS";
@@ -14,7 +14,6 @@ var ContractName;
     ContractName["COIN_SHOP"] = "coin_shop";
     ContractName["SUMMON"] = "summon";
 })(ContractName || (ContractName = {}));
-export { Participants, Result, ContractName };
+export { Participant, Result, ContractName };
 export * from "./coin_shop";
 export * from "./summon";
-//# sourceMappingURL=index.js.map

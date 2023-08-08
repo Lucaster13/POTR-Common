@@ -254,4 +254,3 @@ const RARE_TRAITS = {
 };
 const RARE_POWER_CUTOFF = 250;
 export { RARE_TRAITS, TRAITS, RARE_POWER_CUTOFF, BaseClass, VisualTrait, MetaTrait, Background, Class, HumanoidBack, HumanoidMouth, HumanoidHead, HumanoidEyes, HumanoidBody, DragonBack, DragonMouth, DragonHead, DragonEyes, DragonBody, GolemBack, GolemMouth, GolemHead, GolemEyes, GolemBody, PhantomBody, };
-//# sourceMappingURL=traits.js.map

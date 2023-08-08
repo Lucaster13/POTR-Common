@@ -1,4 +1,4 @@
-const enum Participants {
+const enum Participant {
   ADMIN = "Admin",
   SUMMONER = "Summoner",
   DEPLOYER = "Deployer",
@@ -14,6 +14,6 @@ const enum ContractName {
   SUMMON = "summon",
 }
 
-export { Participants, Result, ContractName };
+export { Participant, Result, ContractName };
 export * from "./coin_shop";
 export * from "./summon";

@@ -11,4 +11,3 @@ const COIN_RARITY_WEIGHTS = {
 };
 const COIN_TYPES = ["bronze", "silver", "gold"];
 export { COIN_RARITY_WEIGHTS, COIN_TYPES };
-//# sourceMappingURL=coin.js.map
