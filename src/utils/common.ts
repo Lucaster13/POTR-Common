@@ -9,4 +9,4 @@ const rateLimitedAxiosGET = <T>() =>
 		axios.get<T>(url, config),
 	);
 
-export { rateLimitedAxiosGET };
+export { rateLimitedAxiosGET, makeRateLimiter };

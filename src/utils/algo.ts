@@ -1,6 +1,5 @@
 import { Algodv2, Indexer } from "algosdk";
-import { ASSET_METADATA_URL, ASSET_TRANSACTION_URL, REACH_NETWORK } from "../constants";
-import Account from "../constants/account";
+import { ACCOUNTS, ASSET_METADATA_URL, ASSET_TRANSACTION_URL, REACH_NETWORK } from "../constants";
 import {
 	AssetConfigTransactionT,
 	AssetConfigTransactionsResponseT,
@@ -32,7 +31,7 @@ async function makeAlgodV2AndIndexer() {
 
 // gets metadata for assets created by account
 const RESPONSE_LIMIT = 30000;
-const ASSET_MD_DEFAULT_PARAMS = { creator: Account.ADMIN[REACH_NETWORK], limit: RESPONSE_LIMIT };
+const ASSET_MD_DEFAULT_PARAMS = { creator: ACCOUNTS[REACH_NETWORK].ADMIN, limit: RESPONSE_LIMIT };
 async function getAssetMetadata(nextToken?: string) {
 	return rateLimitedAxiosGET<AssetMetadataResponseT>()(ASSET_METADATA_URL, {
 		params: { ...ASSET_MD_DEFAULT_PARAMS, next: nextToken },
@@ -40,7 +39,7 @@ async function getAssetMetadata(nextToken?: string) {
 }
 
 const ACFG_TXN_DEFAULT_PARAMS = {
-	address: Account.ADMIN[REACH_NETWORK],
+	address: ACCOUNTS[REACH_NETWORK].ADMIN,
 	"address-role": "sender",
 	limit: 1,
 	"tx-type": "acfg",

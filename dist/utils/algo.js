@@ -1,5 +1,4 @@
-import { ASSET_METADATA_URL, ASSET_TRANSACTION_URL, REACH_NETWORK } from "../constants";
-import Account from "../constants/account";
+import { ACCOUNTS, ASSET_METADATA_URL, ASSET_TRANSACTION_URL, REACH_NETWORK } from "../constants";
 import { rateLimitedAxiosGET } from "./common";
 import { makeReach } from "./reach";
 async function getBlockTimestamp(blockNumber) {
@@ -19,14 +18,14 @@ async function makeAlgodV2AndIndexer() {
         .then((p) => ({ algodClient: p.algodClient, indexer: p.indexer }));
 }
 const RESPONSE_LIMIT = 30000;
-const ASSET_MD_DEFAULT_PARAMS = { creator: Account.ADMIN[REACH_NETWORK], limit: RESPONSE_LIMIT };
+const ASSET_MD_DEFAULT_PARAMS = { creator: ACCOUNTS[REACH_NETWORK].ADMIN, limit: RESPONSE_LIMIT };
 async function getAssetMetadata(nextToken) {
     return rateLimitedAxiosGET()(ASSET_METADATA_URL, {
         params: { ...ASSET_MD_DEFAULT_PARAMS, next: nextToken },
     }).then(({ data }) => data);
 }
 const ACFG_TXN_DEFAULT_PARAMS = {
-    address: Account.ADMIN[REACH_NETWORK],
+    address: ACCOUNTS[REACH_NETWORK].ADMIN,
     "address-role": "sender",
     limit: 1,
     "tx-type": "acfg",

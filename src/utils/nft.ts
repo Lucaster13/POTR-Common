@@ -6,6 +6,7 @@ import {
 	IPFS_URL_PREFIX,
 	RARITIES,
 	RARITY_POWER_CUTOFFS,
+	RAW_IPFS_URL_PREFIX,
 	REACH_NETWORK,
 	Rarity,
 } from "../constants";
@@ -89,7 +90,7 @@ async function getAllPotrAssetMetadata(): Promise<PotrAssetMetadataT[]> {
 			return {
 				id: index,
 				name,
-				url: url.replace("ipfs://", IPFS_URL_PREFIX),
+				url: url.replace(RAW_IPFS_URL_PREFIX, IPFS_URL_PREFIX),
 				unitName,
 			};
 		});

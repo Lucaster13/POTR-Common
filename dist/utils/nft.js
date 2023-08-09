@@ -1,4 +1,4 @@
-import { ASA_IDS, BASE_CLASSES, IPFS_URL_PREFIX, RARITIES, RARITY_POWER_CUTOFFS, REACH_NETWORK, } from "../constants";
+import { ASA_IDS, BASE_CLASSES, IPFS_URL_PREFIX, RARITIES, RARITY_POWER_CUTOFFS, RAW_IPFS_URL_PREFIX, REACH_NETWORK, } from "../constants";
 import { getAllAssetConfigTransactions, getAllAssetMetadata, makeAlgodV2AndIndexer } from "./algo";
 async function getOwnedPotrAsaIds(addr) {
     const { algodClient } = await makeAlgodV2AndIndexer();
@@ -52,7 +52,7 @@ async function getAllPotrAssetMetadata() {
         return {
             id: index,
             name,
-            url: url.replace("ipfs://", IPFS_URL_PREFIX),
+            url: url.replace(RAW_IPFS_URL_PREFIX, IPFS_URL_PREFIX),
             unitName,
         };
     });

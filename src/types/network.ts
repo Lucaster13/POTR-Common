@@ -5,8 +5,9 @@ type AsaIdT = number;
 type ContractIdT = number;
 type NetworkAddressT = string;
 type NetworkAccountT = {
-	addr?: string;
+	addr?: NetworkAddressT;
 	address?: NetworkAddressT;
+	sk?: string;
 };
 
 export { BigNumberT, AsaIdT, ContractIdT, NetworkAddressT, NetworkAccountT };
