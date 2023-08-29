@@ -1,7 +1,7 @@
-import { EventStream } from "./events";
-import { AsaIdT, BigNumberT, NetworkAddressT } from "../network";
-import { BaseHandleT, LoggerT, Maybe } from "./base";
-import { Participant } from "../../constants";
+import { EventStreamT } from "./events.js";
+import { AsaIdT, BigNumberT, NetworkAddressT } from "../network.js";
+import { BaseHandleT, LoggerT, Maybe } from "./base.js";
+import { Participant } from "../../constants/index.js";
 
 /*
 
@@ -40,11 +40,11 @@ type CoinShopHandleT = {
 		is_paused: () => Promise<Maybe<boolean>>;
 	};
 	e: {
-		restock: EventStream<CoinAmountsEventT>;
-		purchase: EventStream<[AsaIdT, NetworkAddressT]>;
-		price_change: EventStream<CoinAmountsEventT>;
-		withdraw: EventStream<CoinAmountsEventT>;
-		terminate: EventStream<CoinAmountsEventT>;
+		restock: EventStreamT<CoinAmountsEventT>;
+		purchase: EventStreamT<[AsaIdT, NetworkAddressT]>;
+		price_change: EventStreamT<CoinAmountsEventT>;
+		withdraw: EventStreamT<CoinAmountsEventT>;
+		terminate: EventStreamT<CoinAmountsEventT>;
 	};
 	p: {
 		[Participant.ADMIN]: (i: LoggerT) => Promise<void>;

@@ -2,6 +2,12 @@ declare const enum AlgoNetwork {
     MAIN_NET = "MainNet",
     TEST_NET = "TestNet"
 }
+declare const enum ReachProvider {
+    PERA = "pera",
+    MY_ALGO = "my-algo",
+    MNEMONIC = "mnemonic",
+    WALLET_CONNECT = "wallet-connect"
+}
 declare const REACH_NETWORK: AlgoNetwork;
 declare const ALGO_SERVER_PREFIX: string;
 declare const ALGO_SERVER: string;
@@ -15,4 +21,4 @@ declare const REACH_STDLIB_ENV: {
     ALGO_SERVER: string;
     REACH_NO_WARN: string;
 };
-export { REACH_NETWORK, ALGO_SERVER_PREFIX, ALGO_SERVER, ALGO_INDEXER_SERVER, ASSET_TRANSACTION_URL, ASSET_METADATA_URL, REACH_STDLIB_ENV, AlgoNetwork, };
+export { REACH_NETWORK, ALGO_SERVER_PREFIX, ALGO_SERVER, ALGO_INDEXER_SERVER, ASSET_TRANSACTION_URL, ASSET_METADATA_URL, REACH_STDLIB_ENV, AlgoNetwork, ReachProvider, };

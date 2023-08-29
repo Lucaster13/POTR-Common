@@ -15,5 +15,5 @@ const enum ContractName {
 }
 
 export { Participant, Result, ContractName };
-export * from "./coin_shop";
-export * from "./summon";
+export * from "./coin_shop.js";
+export * from "./summon.js";

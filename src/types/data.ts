@@ -1,4 +1,4 @@
-import { AsaIdT } from "./network";
+import { AsaIdT } from "./network.js";
 
 interface Cids {
 	potr: string;

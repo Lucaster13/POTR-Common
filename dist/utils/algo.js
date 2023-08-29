@@ -1,6 +1,6 @@
-import { ACCOUNTS, ASSET_METADATA_URL, ASSET_TRANSACTION_URL, REACH_NETWORK } from "../constants";
-import { rateLimitedAxiosGET } from "./common";
-import { makeReach } from "./reach";
+import { ACCOUNTS, ASSET_METADATA_URL, ASSET_TRANSACTION_URL, REACH_NETWORK } from "../constants/index.js";
+import { rateLimitedAxiosGET } from "./common.js";
+import { makeReach } from "./reach.js";
 async function getBlockTimestamp(blockNumber) {
     return makeAlgodV2AndIndexer()
         .then(async ({ algodClient }) => algodClient.block(blockNumber).do())

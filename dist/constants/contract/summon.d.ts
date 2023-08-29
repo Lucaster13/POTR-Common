@@ -5,6 +5,7 @@ declare const enum SummonStatus {
     CLAIMING = "CLAIMING"
 }
 declare const enum SummonEvent {
-    STATUS = "status"
+    STATUS = "status",
+    RESULT = "result"
 }
 export { SummonStatus, SummonEvent };

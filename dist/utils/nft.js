@@ -1,5 +1,5 @@
-import { ASA_IDS, BASE_CLASSES, IPFS_URL_PREFIX, RARITIES, RARITY_POWER_CUTOFFS, RAW_IPFS_URL_PREFIX, REACH_NETWORK, } from "../constants";
-import { getAllAssetConfigTransactions, getAllAssetMetadata, makeAlgodV2AndIndexer } from "./algo";
+import { ASA_IDS, BASE_CLASSES, IPFS_URL_PREFIX, RARITIES, RARITY_POWER_CUTOFFS, RAW_IPFS_URL_PREFIX, REACH_NETWORK, } from "../constants/index.js";
+import { getAllAssetConfigTransactions, getAllAssetMetadata, makeAlgodV2AndIndexer } from "./algo.js";
 async function getOwnedPotrAsaIds(addr) {
     const { algodClient } = await makeAlgodV2AndIndexer();
     const accountInfo = (await algodClient.accountInformation(addr).do());

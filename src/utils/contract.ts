@@ -1,9 +1,17 @@
-import { type Participant } from "../constants/contract";
-import { ContractHandleT, type BigNumberT, type ContractIdT, type NetworkAddressT, type ParticipantT } from "../types";
-import { ReachAccountT } from "../types/wallet";
+import { ContractName, type Participant } from "../constants/contract/index.js";
+import CONTRACT_BACKENDS from "../contracts/index.js";
+import {
+	ContractHandleT,
+	type BigNumberT,
+	type ContractIdT,
+	type NetworkAddressT,
+	type ParticipantT,
+	BaseHandleT,
+} from "../types/index.js";
+import { ReachAccountT } from "../types/wallet.js";
 
 // turn contract deployment into promise that resolves when "deployed" interact fn is called
-const deployContract = async <T>(
+const deployContract = async <T extends object>(
 	deployer: ReachAccountT,
 	backend: any,
 	participant: T,
@@ -49,4 +57,7 @@ const attachContract = async (
 	if (participantAttach) return participantAttach(participant as any);
 };
 
-export { deployContract, attachContract };
+function getContractHandle<T extends BaseHandleT>(wallet: ReachAccountT, ctcName: ContractName, ctcId: ContractIdT): T {
+	return wallet.contract<T>(CONTRACT_BACKENDS[ctcName], ctcId);
+}
+export { deployContract, attachContract, getContractHandle };

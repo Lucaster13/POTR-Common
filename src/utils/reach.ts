@@ -1,6 +1,6 @@
 import { loadStdlib } from "@reach-sh/stdlib";
-import { OPT_IN_FEE, REACH_NETWORK, REACH_STDLIB_ENV, TXN_FEE } from "../constants";
-import { BigNumberT, Maybe, NetworkAddressT } from "../types";
+import { OPT_IN_FEE, REACH_NETWORK, REACH_STDLIB_ENV, TXN_FEE } from "../constants/index.js";
+import { BigNumberT, Maybe, NetworkAddressT } from "../types/index.js";
 
 const makeReach = (dev = true) => {
 	if (dev) return loadStdlib("ALGO-devnet");

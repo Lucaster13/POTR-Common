@@ -1,19 +1,19 @@
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "declaration": true,
-    "strict": true,
-    "noImplicitAny": true,
-    "removeComments": true,
-    "moduleResolution": "Node",
-    "preserveConstEnums": true,
-    "esModuleInterop": true,
-    "allowJs": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "outDir": "./dist"
-  },
-  "include": ["./src/**/*.ts"],
-  "exclude": ["node_modules"]
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ESNext",
+		"declaration": true,
+		"strict": true,
+		"noImplicitAny": true,
+		"removeComments": true,
+		"moduleResolution": "Node",
+		"preserveConstEnums": true,
+		"esModuleInterop": true,
+		"allowJs": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"outDir": "./dist"
+	},
+	"include": ["./src/**/*.ts"],
+	"exclude": ["node_modules"]
 }

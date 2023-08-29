@@ -1,3 +1,4 @@
+import CONTRACT_BACKENDS from "../contracts/index.js";
 const deployContract = async (deployer, backend, participant, waitUntilCompletion = false) => {
     const deploy = deployer.contract(backend).p.Deployer;
     if (waitUntilCompletion) {
@@ -26,4 +27,7 @@ const attachContract = async (acc, backend, ctcId, participantName, participant)
     if (participantAttach)
         return participantAttach(participant);
 };
-export { deployContract, attachContract };
+function getContractHandle(wallet, ctcName, ctcId) {
+    return wallet.contract(CONTRACT_BACKENDS[ctcName], ctcId);
+}
+export { deployContract, attachContract, getContractHandle };

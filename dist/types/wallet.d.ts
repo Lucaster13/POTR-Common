@@ -1,5 +1,5 @@
-import { BaseHandleT } from "./contract";
-import { AsaIdT, BigNumberT, ContractIdT, NetworkAccountT } from "./network";
+import { BaseHandleT } from "./contract/index.js";
+import { AsaIdT, BigNumberT, ContractIdT, NetworkAccountT } from "./network.js";
 type ReachAccountT = {
     networkAccount: NetworkAccountT;
     contract: <T extends BaseHandleT>(b: any, info?: ContractIdT | BigNumberT) => T;

@@ -1,5 +1,5 @@
-import { Participant } from "../../constants";
-import { BigNumberT, NetworkAddressT } from "../network";
+import { Participant } from "../../constants/index.js";
+import { BigNumberT, NetworkAddressT } from "../network.js";
 
 /*
 

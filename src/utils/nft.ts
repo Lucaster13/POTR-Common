@@ -9,7 +9,7 @@ import {
 	RAW_IPFS_URL_PREFIX,
 	REACH_NETWORK,
 	Rarity,
-} from "../constants";
+} from "../constants/index.js";
 import {
 	AccountInformationResponseT,
 	Arc69MetadataT,
@@ -17,8 +17,8 @@ import {
 	NetworkAddressT,
 	PotrAssetMetadataT,
 	PotrMetadataT,
-} from "../types";
-import { getAllAssetConfigTransactions, getAllAssetMetadata, makeAlgodV2AndIndexer } from "./algo";
+} from "../types/index.js";
+import { getAllAssetConfigTransactions, getAllAssetMetadata, makeAlgodV2AndIndexer } from "./algo.js";
 
 async function getOwnedPotrAsaIds(addr: NetworkAddressT): Promise<AsaIdT[]> {
 	// get all the users owned potr ids

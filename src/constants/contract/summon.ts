@@ -7,6 +7,7 @@ const enum SummonStatus {
 
 const enum SummonEvent {
 	STATUS = "status",
+	RESULT = "result",
 }
 
 export { SummonStatus, SummonEvent };

@@ -1,5 +1,5 @@
 import { Algodv2, Indexer } from "algosdk";
-import { ACCOUNTS, ASSET_METADATA_URL, ASSET_TRANSACTION_URL, REACH_NETWORK } from "../constants";
+import { ACCOUNTS, ASSET_METADATA_URL, ASSET_TRANSACTION_URL, REACH_NETWORK } from "../constants/index.js";
 import {
 	AssetConfigTransactionT,
 	AssetConfigTransactionsResponseT,
@@ -7,8 +7,8 @@ import {
 	AssetMetadataT,
 	ContractIdT,
 } from "../types";
-import { rateLimitedAxiosGET } from "./common";
-import { makeReach } from "./reach";
+import { rateLimitedAxiosGET } from "./common.js";
+import { makeReach } from "./reach.js";
 
 async function getBlockTimestamp(blockNumber: number) {
 	return makeAlgodV2AndIndexer()

@@ -1,4 +1,4 @@
-import { ASA_IDS, COIN_TYPES, REACH_NETWORK } from "../constants";
+import { ASA_IDS, COIN_TYPES, REACH_NETWORK } from "../constants/index.js";
 function coinToAsaId(coin) {
     return ASA_IDS[REACH_NETWORK].coin[COIN_TYPES.indexOf(coin)];
 }

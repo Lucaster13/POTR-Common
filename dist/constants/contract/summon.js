@@ -8,5 +8,6 @@ var SummonStatus;
 var SummonEvent;
 (function (SummonEvent) {
     SummonEvent["STATUS"] = "status";
+    SummonEvent["RESULT"] = "result";
 })(SummonEvent || (SummonEvent = {}));
 export { SummonStatus, SummonEvent };

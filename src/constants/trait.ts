@@ -28,9 +28,9 @@ const VISUAL_TRAITS: VisualTrait[] = [
 	VisualTrait.MOUTH,
 ];
 
-const META_TRAIT: MetaTrait[] = [MetaTrait.LEVEL, MetaTrait.POWER];
+const META_TRAITS: MetaTrait[] = [MetaTrait.LEVEL, MetaTrait.POWER];
 
-const TRAITS: Array<MetaTrait | VisualTrait> = [...VISUAL_TRAITS, ...META_TRAIT];
+const TRAITS: Array<MetaTrait | VisualTrait> = [...VISUAL_TRAITS, ...META_TRAITS];
 
 /**
  *
@@ -299,6 +299,8 @@ export {
 	TRAITS,
 	RARITY_POWER_CUTOFFS,
 	BASE_CLASSES,
+	VISUAL_TRAITS,
+	META_TRAITS,
 	Rarity,
 	BaseClass,
 	VisualTrait,

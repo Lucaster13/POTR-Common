@@ -3,6 +3,13 @@ var AlgoNetwork;
     AlgoNetwork["MAIN_NET"] = "MainNet";
     AlgoNetwork["TEST_NET"] = "TestNet";
 })(AlgoNetwork || (AlgoNetwork = {}));
+var ReachProvider;
+(function (ReachProvider) {
+    ReachProvider["PERA"] = "pera";
+    ReachProvider["MY_ALGO"] = "my-algo";
+    ReachProvider["MNEMONIC"] = "mnemonic";
+    ReachProvider["WALLET_CONNECT"] = "wallet-connect";
+})(ReachProvider || (ReachProvider = {}));
 const REACH_NETWORK = process.env.NODE_ENV === "prod" ? "MainNet" : "TestNet";
 const ALGO_SERVER_PREFIX = `https://${REACH_NETWORK.toLowerCase()}`;
 const ALGO_SERVER = `${ALGO_SERVER_PREFIX}-api.algonode.cloud`;
@@ -16,4 +23,4 @@ const REACH_STDLIB_ENV = {
     ALGO_SERVER,
     REACH_NO_WARN: process.env.NODE_ENV === "prod" ? "Y" : "N",
 };
-export { REACH_NETWORK, ALGO_SERVER_PREFIX, ALGO_SERVER, ALGO_INDEXER_SERVER, ASSET_TRANSACTION_URL, ASSET_METADATA_URL, REACH_STDLIB_ENV, AlgoNetwork, };
+export { REACH_NETWORK, ALGO_SERVER_PREFIX, ALGO_SERVER, ALGO_INDEXER_SERVER, ASSET_TRANSACTION_URL, ASSET_METADATA_URL, REACH_STDLIB_ENV, AlgoNetwork, ReachProvider, };

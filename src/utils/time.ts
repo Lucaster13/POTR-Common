@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import { SECS_PER_DAY, SECS_PER_HOUR, SECS_PER_MIN } from "../constants";
+import { SECS_PER_DAY, SECS_PER_HOUR, SECS_PER_MIN } from "../constants/index.js";
 
 const minsToSecs = (m: number) => m * SECS_PER_MIN;
 const hoursToSecs = (h: number) => h * SECS_PER_HOUR;

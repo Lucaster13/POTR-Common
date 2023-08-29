@@ -11,6 +11,8 @@ declare const enum MetaTrait {
     POWER = "Power",
     LEVEL = "Level"
 }
+declare const VISUAL_TRAITS: VisualTrait[];
+declare const META_TRAITS: MetaTrait[];
 declare const TRAITS: Array<MetaTrait | VisualTrait>;
 declare const enum BaseClass {
     HUMANOID = "Humanoid",
@@ -226,4 +228,4 @@ declare const RARITY_POWER_CUTOFFS: {
     rare: number;
     legendary: number;
 };
-export { RARITIES, RARE_TRAITS, TRAITS, RARITY_POWER_CUTOFFS, BASE_CLASSES, Rarity, BaseClass, VisualTrait, MetaTrait, Background, Class, HumanoidBack, HumanoidMouth, HumanoidHead, HumanoidEyes, HumanoidBody, DragonBack, DragonMouth, DragonHead, DragonEyes, DragonBody, GolemBack, GolemMouth, GolemHead, GolemEyes, GolemBody, PhantomBody, };
+export { RARITIES, RARE_TRAITS, TRAITS, RARITY_POWER_CUTOFFS, BASE_CLASSES, VISUAL_TRAITS, META_TRAITS, Rarity, BaseClass, VisualTrait, MetaTrait, Background, Class, HumanoidBack, HumanoidMouth, HumanoidHead, HumanoidEyes, HumanoidBody, DragonBack, DragonMouth, DragonHead, DragonEyes, DragonBody, GolemBack, GolemMouth, GolemHead, GolemEyes, GolemBody, PhantomBody, };

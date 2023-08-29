@@ -21,8 +21,8 @@ const VISUAL_TRAITS = [
     "Back",
     "Mouth",
 ];
-const META_TRAIT = ["Level", "Power"];
-const TRAITS = [...VISUAL_TRAITS, ...META_TRAIT];
+const META_TRAITS = ["Level", "Power"];
+const TRAITS = [...VISUAL_TRAITS, ...META_TRAITS];
 var BaseClass;
 (function (BaseClass) {
     BaseClass["HUMANOID"] = "Humanoid";
@@ -262,4 +262,4 @@ const RARITY_POWER_CUTOFFS = {
     ["rare"]: 208,
     ["legendary"]: 250,
 };
-export { RARITIES, RARE_TRAITS, TRAITS, RARITY_POWER_CUTOFFS, BASE_CLASSES, Rarity, BaseClass, VisualTrait, MetaTrait, Background, Class, HumanoidBack, HumanoidMouth, HumanoidHead, HumanoidEyes, HumanoidBody, DragonBack, DragonMouth, DragonHead, DragonEyes, DragonBody, GolemBack, GolemMouth, GolemHead, GolemEyes, GolemBody, PhantomBody, };
+export { RARITIES, RARE_TRAITS, TRAITS, RARITY_POWER_CUTOFFS, BASE_CLASSES, VISUAL_TRAITS, META_TRAITS, Rarity, BaseClass, VisualTrait, MetaTrait, Background, Class, HumanoidBack, HumanoidMouth, HumanoidHead, HumanoidEyes, HumanoidBody, DragonBack, DragonMouth, DragonHead, DragonEyes, DragonBody, GolemBack, GolemMouth, GolemHead, GolemEyes, GolemBody, PhantomBody, };

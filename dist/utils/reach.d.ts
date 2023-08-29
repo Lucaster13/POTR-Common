@@ -1,5 +1,5 @@
-import { BigNumberT, Maybe, NetworkAddressT } from "../types";
-declare const makeReach: (dev?: boolean) => import("@reach-sh/stdlib/dist/types/interfaces").Stdlib_User<any, any, any, any, any, any, any, any, any, any, any>;
+import { BigNumberT, Maybe, NetworkAddressT } from "../types/index.js";
+declare const makeReach: (dev?: boolean) => import("@reach-sh/stdlib/dist/types/interfaces.js").Stdlib_User<any, any, any, any, any, any, any, any, any, any, any>;
 declare const bigNumberify: (x: number | BigNumberT) => import("@ethersproject/bignumber").BigNumber;
 declare const bigNumberifyAll: (x: number[] | BigNumberT[]) => import("@ethersproject/bignumber").BigNumber[];
 declare const padString: (str: string, maxLen: number) => string;

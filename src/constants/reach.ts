@@ -4,6 +4,13 @@ const enum AlgoNetwork {
 	TEST_NET = "TestNet",
 }
 
+const enum ReachProvider {
+	PERA = "pera",
+	MY_ALGO = "my-algo",
+	MNEMONIC = "mnemonic",
+	WALLET_CONNECT = "wallet-connect",
+}
+
 // determine network to use based on env
 const REACH_NETWORK = process.env.NODE_ENV === "prod" ? AlgoNetwork.MAIN_NET : AlgoNetwork.TEST_NET;
 
@@ -29,4 +36,5 @@ export {
 	ASSET_METADATA_URL,
 	REACH_STDLIB_ENV,
 	AlgoNetwork,
+	ReachProvider,
 };
