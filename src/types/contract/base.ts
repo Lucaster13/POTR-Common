@@ -1,5 +1,4 @@
 import { Participant } from "../../constants/index.js";
-import { BigNumberT, NetworkAddressT } from "../network.js";
 
 /*
 
@@ -15,14 +14,14 @@ type LoggerT = {
 // interface used by deployer to deploy contract (each contract can extend this type)
 type DeployerT = {
 	// function that gets called when contract is deployed
-	deployed: (ctcId: BigNumberT, ctcAddr: NetworkAddressT) => void;
+	deployed: (ctcId: number, ctcAddr: string) => void;
 } & LoggerT;
 
 type Maybe<T> = ["Some" | "None", T];
 
 type BaseHandleT = {
 	p: Partial<Record<Participant, () => Promise<void>>>;
-	getInfo: () => Promise<BigNumberT>;
+	getInfo: () => Promise<number>;
 };
 
 export { DeployerT, LoggerT, Maybe, BaseHandleT };

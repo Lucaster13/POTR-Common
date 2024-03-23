@@ -1,12 +1,10 @@
-import { AsaIdT } from "./network.js";
-
-type AssetInformationT = {
-	"asset-id": AsaIdT;
+type AssetInformation = {
+	"asset-id": number;
 	amount: number;
 };
 
-type AssetMetadataT = {
-	index: AsaIdT;
+type AssetMetadata = {
+	index: number;
 	params: {
 		name: string;
 		url: string;
@@ -14,26 +12,18 @@ type AssetMetadataT = {
 	};
 };
 
-type AssetConfigTransactionT = {
-	"asset-config-transaction": AssetInformationT;
-	"created-asset-index": AsaIdT;
+type AssetConfigTransaction = {
+	"asset-config-transaction": AssetInformation;
+	"created-asset-index": number;
 	note: string;
 };
 
-type AccountInformationResponseT = { assets: AssetInformationT[] };
-
-type PaginatedResponseT = {
+type PaginatedResponse = {
 	"next-token": string | undefined;
 };
 
-type AssetMetadataResponseT = { assets: AssetMetadataT[] } & PaginatedResponseT;
-type AssetConfigTransactionsResponseT = { transactions: AssetConfigTransactionT[] } & PaginatedResponseT;
+type AccountInformationResponse = { assets: AssetInformation[] };
+type AssetMetadataResponse = { assets: AssetMetadata[] } & PaginatedResponse;
+type AssetConfigTransactionsResponse = { transactions: AssetConfigTransaction[] } & PaginatedResponse;
 
-export {
-	AssetMetadataT,
-	AssetInformationT,
-	AccountInformationResponseT,
-	AssetMetadataResponseT,
-	AssetConfigTransactionsResponseT,
-	AssetConfigTransactionT,
-};
+export { AccountInformationResponse, AssetMetadataResponse, AssetConfigTransactionsResponse };

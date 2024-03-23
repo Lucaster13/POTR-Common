@@ -4,7 +4,7 @@
  *
  */
 
-const enum VisualTrait {
+const enum VisualTraitType {
 	BACKGROUND = "Background",
 	CLASS = "Class",
 	BODY = "Body",
@@ -14,23 +14,22 @@ const enum VisualTrait {
 	MOUTH = "Mouth",
 }
 
-const enum MetaTrait {
-	POWER = "Power",
+const enum MetaTraitType {
 	LEVEL = "Level",
 }
 
-const VISUAL_TRAITS: VisualTrait[] = [
-	VisualTrait.BACKGROUND,
-	VisualTrait.CLASS,
-	VisualTrait.BODY,
-	VisualTrait.HEAD,
-	VisualTrait.BACK,
-	VisualTrait.MOUTH,
+const VISUAL_TRAITS: VisualTraitType[] = [
+	VisualTraitType.BACKGROUND,
+	VisualTraitType.CLASS,
+	VisualTraitType.BODY,
+	VisualTraitType.HEAD,
+	VisualTraitType.BACK,
+	VisualTraitType.MOUTH,
 ];
 
-const META_TRAITS: MetaTrait[] = [MetaTrait.LEVEL, MetaTrait.POWER];
+const META_TRAITS = [MetaTraitType.LEVEL];
 
-const TRAITS: Array<MetaTrait | VisualTrait> = [...VISUAL_TRAITS, ...META_TRAITS];
+const TRAIT_TYPES = [...VISUAL_TRAITS, ...META_TRAITS];
 
 /**
  *
@@ -259,52 +258,14 @@ const enum GolemBack {
 	"Legendary Companion",
 }
 
-/**
- *
- * RARE TRAITS
- *
- */
-
-const RARE_BACKGROUND = ["Gold", "POTR"];
-const RARE_CLASS = ["Phantom", "Archangel", "Golem", "Dragon"];
-const RARE_BODY = ["Flame", "Frost", "God Armor", "Angel Light", "Radioactive"];
-const RARE_HEAD = ["Master Hood", "Gandalf", "Robinhood", "Santa", "Crown"];
-const RARE_EYES = ["VR", "Closed", "3D", "Thug Life"];
-const RARE_TRAITS = {
-	[VisualTrait.BACKGROUND]: RARE_BACKGROUND,
-	[VisualTrait.CLASS]: RARE_CLASS,
-	[VisualTrait.BODY]: RARE_BODY,
-	[VisualTrait.HEAD]: RARE_HEAD,
-	[VisualTrait.EYES]: RARE_EYES,
-};
-
-const enum Rarity {
-	COMMON = "common",
-	RARE = "rare",
-	LEGENDARY = "legendary",
-}
-
-const RARITIES = [Rarity.COMMON, Rarity.RARE, Rarity.LEGENDARY];
-
-// need to be >= to these powers to have this rarity
-const RARITY_POWER_CUTOFFS = {
-	[Rarity.COMMON]: 0,
-	[Rarity.RARE]: 208,
-	[Rarity.LEGENDARY]: 250,
-};
-
 export {
-	RARITIES,
-	RARE_TRAITS,
-	TRAITS,
-	RARITY_POWER_CUTOFFS,
+	TRAIT_TYPES,
 	BASE_CLASSES,
 	VISUAL_TRAITS,
 	META_TRAITS,
-	Rarity,
 	BaseClass,
-	VisualTrait,
-	MetaTrait,
+	VisualTraitType,
+	MetaTraitType,
 	Background,
 	Class,
 	HumanoidBack,

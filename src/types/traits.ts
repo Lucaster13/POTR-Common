@@ -18,11 +18,9 @@ import {
 	HumanoidHead,
 	HumanoidMouth,
 	PhantomBody,
-	Rarity,
 } from "../constants";
-import { AsaIdT } from "./network";
 
-type HumanoidTraitsT = {
+type HumanoidTraits = {
 	Body: HumanoidBody;
 	Head: HumanoidHead;
 	Eyes: HumanoidEyes;
@@ -30,11 +28,11 @@ type HumanoidTraitsT = {
 	Back: HumanoidBack;
 };
 
-type PhantomTraitsT = {
+type PhantomTraits = {
 	Body: PhantomBody;
-} & HumanoidTraitsT;
+} & HumanoidTraits;
 
-type DragonTraitsT = {
+type DragonTraits = {
 	Body: DragonBody;
 	Head: DragonHead;
 	Eyes: DragonEyes;
@@ -42,7 +40,7 @@ type DragonTraitsT = {
 	Back: DragonBack;
 };
 
-type GolemTraitsT = {
+type GolemTraits = {
 	Body: GolemBody;
 	Head: GolemHead;
 	Eyes: GolemEyes;
@@ -50,34 +48,32 @@ type GolemTraitsT = {
 	Back: GolemBack;
 };
 
-type TraitsT = {
+type Traits = {
 	Background: Background;
 	Class: Class;
-	Power: number;
 	Level: number;
-} & (HumanoidTraitsT | PhantomTraitsT | DragonTraitsT | GolemTraitsT);
+} & (HumanoidTraits | PhantomTraits | DragonTraits | GolemTraits);
 
-type Arc69MetadataT = {
+type Arc69Metadata = {
 	standard: "arc69";
 	description: string;
 	external_url: string;
 	mime_type: "image/png";
-	properties: TraitsT;
+	properties: Traits;
 };
 
-type PotrAssetMetadataT = {
-	id: AsaIdT;
+type PotrAssetMetadata = {
+	id: number;
 	name: string;
 	url: string;
 	unitName: string;
 };
 
-type PotrMetadataT = {
+type PotrMetadata = {
 	balance: number;
 	description: string;
-	traits: TraitsT;
+	traits: Traits;
 	baseClass: BaseClass;
-	rarity: Rarity;
-} & PotrAssetMetadataT;
+} & PotrAssetMetadata;
 
-export { Arc69MetadataT, PotrAssetMetadataT, TraitsT, PotrMetadataT };
+export { Arc69Metadata, PotrAssetMetadata, Traits, PotrMetadata };

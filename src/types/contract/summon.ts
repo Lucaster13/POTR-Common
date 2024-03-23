@@ -1,7 +1,5 @@
-import { EventStreamT } from "./events.js";
-import { AsaIdT, BigNumberT } from "../network.js";
 import { BaseHandleT, DeployerT, LoggerT } from "./base.js";
-import { Participant, Result, SummonStatus } from "../../constants/index.js";
+import { Participant } from "../../constants/index.js";
 
 /*
 
@@ -12,21 +10,21 @@ import { Participant, Result, SummonStatus } from "../../constants/index.js";
 // interface for running contract as admin
 type SummonAdminT = {
 	// determines which potr to send based on coin type
-	get_potr: (coin: BigNumberT) => Promise<AsaIdT> | AsaIdT;
+	get_potr: (coin: number) => Promise<number> | number;
 	// the asa id of the payment coin
-	coin: AsaIdT;
+	coin: number;
 } & LoggerT;
 
 // interface for connecting as a summoner
 type SummonSummonerT = {
 	// does opt in and returns status of opt-in
-	opt_in: (potrId: BigNumberT) => Promise<boolean>;
+	opt_in: (potrId: number) => Promise<boolean>;
 };
 
 type SummonHandleT = {
 	e: {
-		status: EventStreamT<SummonStatus>;
-		result: EventStreamT<Result>;
+		status: any;
+		result: any;
 	};
 	p: {
 		[Participant.ADMIN]: (int: SummonAdminT) => Promise<void>;

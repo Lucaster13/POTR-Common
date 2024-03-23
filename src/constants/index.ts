@@ -1,14 +1,26 @@
-export * from "./reach.js";
-export * from "./trait.js";
-export * from "./coin.js";
-export * from "./potr.js";
-export * from "./ipfs.js";
+export * from "./traits.js";
 export * from "./contract/index.js";
-export * from "./time.js";
-export * from "./token.js";
-export * from "./generic.js";
-export { default as ACCOUNTS } from "./accounts.json" assert { type: "json" };
-export { default as ASA_IDS } from "./asa-ids.json" assert { type: "json" };
-export { default as CIDS } from "./cids.json" assert { type: "json" };
-export { default as CONTRACT_IDS } from "./contract-ids.json" assert { type: "json" };
-export { default as TRAIT_TRUE_RARITIES } from "./trait-true-rarities.json" assert { type: "json" };
+export { default as ASA_IDS } from "./asa-ids.js";
+
+// WALLET PROVIDERS ON ALGORAND
+export const enum WalletProvider {
+	PERA = "pera",
+	MNEMONIC = "mnemonic",
+	WALLET_CONNECT = "wallet-connect",
+}
+
+// GENERIC STATUS ENUM
+export const enum Status {
+	SUCCESS = "SUCCESS",
+	ERROR = "ERROR",
+	WARNING = "WARNING",
+	IN_PROGRESS = "IN_PROGRESS",
+	INACTIVE = "INACTIVE",
+}
+
+// IPFS
+export const RAW_IPFS_URL_PREFIX = "ipfs://";
+export const IPFS_GATEWAY_URL_PREFIX = "https://ipfs.io/ipfs/";
+
+// POTR
+export const POTR_URL = "potr.algo.xyz";

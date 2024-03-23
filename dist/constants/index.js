@@ -1,14 +1,20 @@
-export * from "./reach.js";
-export * from "./trait.js";
-export * from "./coin.js";
-export * from "./potr.js";
-export * from "./ipfs.js";
+export * from "./traits.js";
 export * from "./contract/index.js";
-export * from "./time.js";
-export * from "./token.js";
-export * from "./generic.js";
-export { default as ACCOUNTS } from "./accounts.json" assert { type: "json" };
-export { default as ASA_IDS } from "./asa-ids.json" assert { type: "json" };
-export { default as CIDS } from "./cids.json" assert { type: "json" };
-export { default as CONTRACT_IDS } from "./contract-ids.json" assert { type: "json" };
-export { default as TRAIT_TRUE_RARITIES } from "./trait-true-rarities.json" assert { type: "json" };
+export { default as ASA_IDS } from "./asa-ids.js";
+export var WalletProvider;
+(function (WalletProvider) {
+    WalletProvider["PERA"] = "pera";
+    WalletProvider["MNEMONIC"] = "mnemonic";
+    WalletProvider["WALLET_CONNECT"] = "wallet-connect";
+})(WalletProvider || (WalletProvider = {}));
+export var Status;
+(function (Status) {
+    Status["SUCCESS"] = "SUCCESS";
+    Status["ERROR"] = "ERROR";
+    Status["WARNING"] = "WARNING";
+    Status["IN_PROGRESS"] = "IN_PROGRESS";
+    Status["INACTIVE"] = "INACTIVE";
+})(Status || (Status = {}));
+export const RAW_IPFS_URL_PREFIX = "ipfs://";
+export const IPFS_GATEWAY_URL_PREFIX = "https://ipfs.io/ipfs/";
+export const POTR_URL = "potr.algo.xyz";

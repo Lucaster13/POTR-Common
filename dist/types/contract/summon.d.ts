@@ -1,18 +1,16 @@
-import { EventStreamT } from "./events.js";
-import { AsaIdT, BigNumberT } from "../network.js";
 import { BaseHandleT, DeployerT, LoggerT } from "./base.js";
-import { Participant, Result, SummonStatus } from "../../constants/index.js";
+import { Participant } from "../../constants/index.js";
 type SummonAdminT = {
-    get_potr: (coin: BigNumberT) => Promise<AsaIdT> | AsaIdT;
-    coin: AsaIdT;
+    get_potr: (coin: number) => Promise<number> | number;
+    coin: number;
 } & LoggerT;
 type SummonSummonerT = {
-    opt_in: (potrId: BigNumberT) => Promise<boolean>;
+    opt_in: (potrId: number) => Promise<boolean>;
 };
 type SummonHandleT = {
     e: {
-        status: EventStreamT<SummonStatus>;
-        result: EventStreamT<Result>;
+        status: any;
+        result: any;
     };
     p: {
         [Participant.ADMIN]: (int: SummonAdminT) => Promise<void>;

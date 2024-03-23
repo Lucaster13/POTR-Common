@@ -1,12 +1,10 @@
-import { Event, Time } from "@reach-sh/stdlib/dist/types/shared_impl";
-
-type EventStreamT<T> = {
-	lastTime: () => Promise<Time>;
-	next: () => Promise<Event<T>>;
-	nextUpToTime: (t: Time) => Promise<Event<T>>;
-	seek: (t: Time) => void;
+type EventStreamT = {
+	lastTime: () => Promise<number>;
+	next: () => Promise<any>;
+	nextUpToTime: (t: number) => Promise<any>;
+	seek: (t: number) => void;
 	seekNow: () => Promise<void>;
-	monitor: (onEvent: (x: Event<T>) => void) => void;
+	monitor: (onEvent: (x: any) => void) => void;
 };
 
 type ContractEventT<ET, T> = {
@@ -17,6 +15,6 @@ type ContractEventT<ET, T> = {
 	block: number;
 };
 
-type EventFormatterT<ET, T> = (e: Event<T>) => Promise<ContractEventT<ET, T>> | ContractEventT<ET, T>;
+type EventFormatterT<ET, T> = (e: any) => Promise<ContractEventT<ET, T>> | ContractEventT<ET, T>;
 
 export { ContractEventT, EventStreamT, EventFormatterT };

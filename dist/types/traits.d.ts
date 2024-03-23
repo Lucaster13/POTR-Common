@@ -1,53 +1,50 @@
-import { Background, BaseClass, Class, DragonBack, DragonBody, DragonEyes, DragonHead, DragonMouth, GolemBack, GolemBody, GolemEyes, GolemHead, GolemMouth, HumanoidBack, HumanoidBody, HumanoidEyes, HumanoidHead, HumanoidMouth, PhantomBody, Rarity } from "../constants";
-import { AsaIdT } from "./network";
-type HumanoidTraitsT = {
+import { Background, BaseClass, Class, DragonBack, DragonBody, DragonEyes, DragonHead, DragonMouth, GolemBack, GolemBody, GolemEyes, GolemHead, GolemMouth, HumanoidBack, HumanoidBody, HumanoidEyes, HumanoidHead, HumanoidMouth, PhantomBody } from "../constants";
+type HumanoidTraits = {
     Body: HumanoidBody;
     Head: HumanoidHead;
     Eyes: HumanoidEyes;
     Mouth: HumanoidMouth;
     Back: HumanoidBack;
 };
-type PhantomTraitsT = {
+type PhantomTraits = {
     Body: PhantomBody;
-} & HumanoidTraitsT;
-type DragonTraitsT = {
+} & HumanoidTraits;
+type DragonTraits = {
     Body: DragonBody;
     Head: DragonHead;
     Eyes: DragonEyes;
     Mouth: DragonMouth;
     Back: DragonBack;
 };
-type GolemTraitsT = {
+type GolemTraits = {
     Body: GolemBody;
     Head: GolemHead;
     Eyes: GolemEyes;
     Mouth: GolemMouth;
     Back: GolemBack;
 };
-type TraitsT = {
+type Traits = {
     Background: Background;
     Class: Class;
-    Power: number;
     Level: number;
-} & (HumanoidTraitsT | PhantomTraitsT | DragonTraitsT | GolemTraitsT);
-type Arc69MetadataT = {
+} & (HumanoidTraits | PhantomTraits | DragonTraits | GolemTraits);
+type Arc69Metadata = {
     standard: "arc69";
     description: string;
     external_url: string;
     mime_type: "image/png";
-    properties: TraitsT;
+    properties: Traits;
 };
-type PotrAssetMetadataT = {
-    id: AsaIdT;
+type PotrAssetMetadata = {
+    id: number;
     name: string;
     url: string;
     unitName: string;
 };
-type PotrMetadataT = {
+type PotrMetadata = {
     balance: number;
     description: string;
-    traits: TraitsT;
+    traits: Traits;
     baseClass: BaseClass;
-    rarity: Rarity;
-} & PotrAssetMetadataT;
-export { Arc69MetadataT, PotrAssetMetadataT, TraitsT, PotrMetadataT };
+} & PotrAssetMetadata;
+export { Arc69Metadata, PotrAssetMetadata, Traits, PotrMetadata };
