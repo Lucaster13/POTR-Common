@@ -9027,6 +9027,7 @@ var Status;
   Status2["INACTIVE"] = "INACTIVE";
 })(Status || (Status = {}));
 var RAW_IPFS_URL_PREFIX = "ipfs://";
+var RAW_IPFS_TEMPLATE_URL_PREFIX = "template-ipfs://";
 var IPFS_GATEWAY_URL_PREFIX = "https://ipfs.io/ipfs/";
 var POTR_URL = "potr.algo.xyz";
 // node_modules/axios/lib/helpers/bind.js
@@ -26784,6 +26785,7 @@ export {
   Status,
   Result,
   RAW_IPFS_URL_PREFIX,
+  RAW_IPFS_TEMPLATE_URL_PREFIX,
   PhantomBody,
   Participant,
   POTR_URL,
