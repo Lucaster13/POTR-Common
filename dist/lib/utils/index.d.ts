@@ -7,3 +7,4 @@ export declare const rateLimitedAxiosGET: <T>() => ((arg1: string, arg2: AxiosRe
 };
 export declare const shortenAddress: (addr?: string) => string;
 export declare function formatTimestamp(timestamp: Date): string;
+export declare const sleep: (ms: number) => Promise<void>;

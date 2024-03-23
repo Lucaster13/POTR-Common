@@ -14,3 +14,4 @@ export const shortenAddress = (addr) => {
 export function formatTimestamp(timestamp) {
     return format(timestamp, "MMMM dd, yyyy hh:mm a 'UTC'xxx");
 }
+export const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

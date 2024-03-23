@@ -26769,7 +26769,9 @@ var shortenAddress = (addr) => {
   const end = addr.substring(addr.length - 4);
   return `${start}...${end}`;
 };
+var sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 export {
+  sleep,
   shortenAddress,
   rateLimitedAxiosGET,
   makeRateLimiter,

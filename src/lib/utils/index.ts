@@ -22,3 +22,5 @@ export const shortenAddress = (addr?: string) => {
 export function formatTimestamp(timestamp: Date) {
 	return format(timestamp, "MMMM dd, yyyy hh:mm a 'UTC'xxx");
 }
+
+export const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
