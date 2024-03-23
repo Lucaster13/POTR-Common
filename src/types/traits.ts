@@ -48,7 +48,7 @@ type GolemTraits = {
 	Back: GolemBack;
 };
 
-type Traits = {
+type PotrTraits = {
 	Background: Background;
 	Class: Class;
 	Level: number;
@@ -59,7 +59,7 @@ type Arc69Metadata = {
 	description: string;
 	external_url: string;
 	mime_type: "image/png";
-	properties: Traits;
+	properties: PotrTraits;
 };
 
 type PotrAssetMetadata = {
@@ -72,8 +72,8 @@ type PotrAssetMetadata = {
 type PotrMetadata = {
 	balance: number;
 	description: string;
-	traits: Traits;
+	traits: PotrTraits;
 	baseClass: BaseClass;
 } & PotrAssetMetadata;
 
-export { Arc69Metadata, PotrAssetMetadata, Traits, PotrMetadata };
+export { Arc69Metadata, PotrAssetMetadata, PotrTraits, PotrMetadata };
