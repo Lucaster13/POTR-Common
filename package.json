@@ -1,6 +1,6 @@
 {
 	"type": "module",
-	"version": "1.0.56",
+	"version": "1.0.57",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"dependencies": {
@@ -25,7 +25,7 @@
 	"scripts": {
 		"build": "eslint ./src --fix && prettier ./src --write && tsc && bun build --entrypoints ./src/index.ts --outdir ./dist",
 		"prePublish": "bun run build",
-		"publish": "git add src package.json && git commit -m 'update potr-common npm registry' && git push && npm publish"
+		"publish": "git add src dist package.json && git commit -m 'update potr-common npm registry' && git push && npm publish"
 	},
 	"name": "potr-common",
 	"description": "common types and utils",

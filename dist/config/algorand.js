@@ -1,7 +1,7 @@
 export default {
     wallets: {
         TestNet: {
-            ADMIN: "MIXDBUCV6DBL6E634UB42UGMBGEDYTDINQS2SB7LK4WKE3WLWBNBCWBMNE",
+            ADMIN: "ZT66MNCIYV24OWRFLZN7ALSKT3URV3AKYJNZQBMUZANJ76CNDLG5N6YMQY",
             USER: "",
         },
         MainNet: {
