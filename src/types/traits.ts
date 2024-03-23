@@ -1,6 +1,5 @@
 import {
 	Background,
-	BaseClass,
 	Class,
 	DragonBack,
 	DragonBody,
@@ -54,26 +53,4 @@ type PotrTraits = {
 	Level: number;
 } & (HumanoidTraits | PhantomTraits | DragonTraits | GolemTraits);
 
-type Arc69Metadata = {
-	standard: "arc69";
-	description: string;
-	external_url: string;
-	mime_type: "image/png";
-	properties: PotrTraits;
-};
-
-type PotrAssetMetadata = {
-	id: number;
-	name: string;
-	url: string;
-	unitName: string;
-};
-
-type PotrMetadata = {
-	balance: number;
-	description: string;
-	traits: PotrTraits;
-	baseClass: BaseClass;
-} & PotrAssetMetadata;
-
-export { Arc69Metadata, PotrAssetMetadata, PotrTraits, PotrMetadata };
+export { PotrTraits };

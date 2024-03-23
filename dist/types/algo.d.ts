@@ -1,3 +1,5 @@
+import { BaseClass } from "../constants";
+import { PotrTraits } from "./traits";
 type AssetInformation = {
     "asset-id": number;
     amount: number;
@@ -27,4 +29,23 @@ type AssetMetadataResponse = {
 type AssetConfigTransactionsResponse = {
     transactions: AssetConfigTransaction[];
 } & PaginatedResponse;
-export { AccountInformationResponse, AssetMetadataResponse, AssetConfigTransactionsResponse };
+type Arc69Metadata = {
+    standard: "arc69";
+    description: string;
+    external_url: string;
+    mime_type: "image/png";
+    properties: PotrTraits;
+};
+type PotrAssetMetadata = {
+    id: number;
+    name: string;
+    url: string;
+    unitName: string;
+};
+type PotrMetadata = {
+    balance: number;
+    description: string;
+    traits: PotrTraits;
+    baseClass: BaseClass;
+} & PotrAssetMetadata;
+export { AccountInformationResponse, PotrMetadata, Arc69Metadata, PotrAssetMetadata, AssetMetadataResponse, AssetConfigTransactionsResponse, };
