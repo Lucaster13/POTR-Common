@@ -21,6 +21,7 @@
 		"consistent-return": "off",
 		"no-await-in-loop": "off",
 		"import/extensions": "off",
-		"no-nested-ternary": "off"
+		"no-nested-ternary": "off",
+		"no-promise-executor-return": "off"
 	}
 }
