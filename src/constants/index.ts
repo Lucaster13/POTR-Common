@@ -21,7 +21,7 @@ export const enum Status {
 // IPFS
 export const RAW_IPFS_URL_PREFIX = "ipfs://";
 export const RAW_IPFS_TEMPLATE_URL_PREFIX = "template-ipfs://";
-export const IPFS_TEMPLATE_URL = `${RAW_IPFS_TEMPLATE_URL_PREFIX}{ipfscid:1:raw:reserve:sha2-256}`;
+export const IPFS_TEMPLATE_URL = `${RAW_IPFS_TEMPLATE_URL_PREFIX}{ipfscid:1:raw:reserve:sha2-256}#arc3`;
 export const IPFS_GATEWAY_URL_PREFIX = "https://ipfs.io/ipfs/";
 
 // POTR
