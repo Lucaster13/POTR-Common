@@ -1,4 +1,4 @@
-import { BaseClass } from "../constants";
+import { PotrBaseClass } from "../constants";
 import { PotrTraits } from "./traits";
 type AssetInformation = {
     "asset-id": number;
@@ -46,6 +46,6 @@ type PotrMetadata = {
     balance: number;
     description: string;
     traits: PotrTraits;
-    baseClass: BaseClass;
+    baseClass: PotrBaseClass;
 } & PotrAssetMetadata;
 export { AccountInformationResponse, PotrMetadata, Arc69Metadata, PotrAssetMetadata, AssetMetadataResponse, AssetConfigTransactionsResponse, };

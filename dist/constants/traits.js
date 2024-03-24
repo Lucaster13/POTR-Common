@@ -1,7 +1,7 @@
 var VisualTraitType;
 (function (VisualTraitType) {
-    VisualTraitType["BACKGROUND"] = "Background";
-    VisualTraitType["CLASS"] = "Class";
+    VisualTraitType["BACKGROUND"] = "PotrBackground";
+    VisualTraitType["CLASS"] = "PotrClass";
     VisualTraitType["BODY"] = "Body";
     VisualTraitType["HEAD"] = "Head";
     VisualTraitType["EYES"] = "Eyes";
@@ -13,8 +13,8 @@ var MetaTraitType;
     MetaTraitType["LEVEL"] = "Level";
 })(MetaTraitType || (MetaTraitType = {}));
 const VISUAL_TRAITS = [
-    "Background",
-    "Class",
+    "PotrBackground",
+    "PotrClass",
     "Body",
     "Head",
     "Back",
@@ -22,43 +22,43 @@ const VISUAL_TRAITS = [
 ];
 const META_TRAITS = ["Level"];
 const TRAIT_TYPES = [...VISUAL_TRAITS, ...META_TRAITS];
-var BaseClass;
-(function (BaseClass) {
-    BaseClass["HUMANOID"] = "Humanoid";
-    BaseClass["PHANTOM"] = "Phantom";
-    BaseClass["DRAGON"] = "Dragon";
-    BaseClass["GOLEM"] = "Golem";
-})(BaseClass || (BaseClass = {}));
+var PotrBaseClass;
+(function (PotrBaseClass) {
+    PotrBaseClass["HUMANOID"] = "Humanoid";
+    PotrBaseClass["PHANTOM"] = "Phantom";
+    PotrBaseClass["DRAGON"] = "Dragon";
+    PotrBaseClass["GOLEM"] = "Golem";
+})(PotrBaseClass || (PotrBaseClass = {}));
 const BASE_CLASSES = ["Humanoid", "Phantom", "Dragon", "Golem"];
-var Background;
-(function (Background) {
-    Background["GRAY"] = "Gray";
-    Background["LIGHT_BLUE"] = "Light Blue";
-    Background["ORANGE"] = "Orange";
-    Background["RED"] = "Red";
-    Background["GREEN"] = "Green";
-    Background["LIGHT_RED"] = "Light Red";
-    Background["PURPLE"] = "Purple";
-    Background["BLUE"] = "Blue";
-    Background["LIGHT_PURPLE"] = "Light Purple";
-    Background["TEAL"] = "Teal";
-    Background["DARK"] = "Dark";
-    Background["GOLD"] = "Gold";
-    Background["POTR"] = "POTR";
-})(Background || (Background = {}));
-var Class;
-(function (Class) {
-    Class["BERSERKER"] = "Berserker";
-    Class["RANGER"] = "Ranger";
-    Class["WIZARD"] = "Wizard";
-    Class["CRUSADER"] = "Crusader";
-    Class["NECROMANCER"] = "Necromancer";
-    Class["ASSASSIN"] = "Assassin";
-    Class["PHANTOM"] = "Phantom";
-    Class["ARCHANGEL"] = "Archangel";
-    Class["GOLEM"] = "Golem";
-    Class["DRAGON"] = "Dragon";
-})(Class || (Class = {}));
+var PotrBackground;
+(function (PotrBackground) {
+    PotrBackground["GRAY"] = "Gray";
+    PotrBackground["LIGHT_BLUE"] = "Light Blue";
+    PotrBackground["ORANGE"] = "Orange";
+    PotrBackground["RED"] = "Red";
+    PotrBackground["GREEN"] = "Green";
+    PotrBackground["LIGHT_RED"] = "Light Red";
+    PotrBackground["PURPLE"] = "Purple";
+    PotrBackground["BLUE"] = "Blue";
+    PotrBackground["LIGHT_PURPLE"] = "Light Purple";
+    PotrBackground["TEAL"] = "Teal";
+    PotrBackground["DARK"] = "Dark";
+    PotrBackground["GOLD"] = "Gold";
+    PotrBackground["POTR"] = "POTR";
+})(PotrBackground || (PotrBackground = {}));
+var PotrClass;
+(function (PotrClass) {
+    PotrClass["BERSERKER"] = "Berserker";
+    PotrClass["RANGER"] = "Ranger";
+    PotrClass["WIZARD"] = "Wizard";
+    PotrClass["CRUSADER"] = "Crusader";
+    PotrClass["NECROMANCER"] = "Necromancer";
+    PotrClass["ASSASSIN"] = "Assassin";
+    PotrClass["PHANTOM"] = "Phantom";
+    PotrClass["ARCHANGEL"] = "Archangel";
+    PotrClass["GOLEM"] = "Golem";
+    PotrClass["DRAGON"] = "Dragon";
+})(PotrClass || (PotrClass = {}));
 var HumanoidBody;
 (function (HumanoidBody) {
     HumanoidBody["NONE"] = "None";
@@ -237,4 +237,4 @@ var GolemBack;
     GolemBack[GolemBack["Ultra Rare Companion"] = 4] = "Ultra Rare Companion";
     GolemBack[GolemBack["Legendary Companion"] = 5] = "Legendary Companion";
 })(GolemBack || (GolemBack = {}));
-export { TRAIT_TYPES, BASE_CLASSES, VISUAL_TRAITS, META_TRAITS, BaseClass, VisualTraitType, MetaTraitType, Background, Class, HumanoidBack, HumanoidMouth, HumanoidHead, HumanoidEyes, HumanoidBody, DragonBack, DragonMouth, DragonHead, DragonEyes, DragonBody, GolemBack, GolemMouth, GolemHead, GolemEyes, GolemBody, PhantomBody, };
+export { TRAIT_TYPES, BASE_CLASSES, VISUAL_TRAITS, META_TRAITS, PotrBaseClass, VisualTraitType, MetaTraitType, PotrBackground, PotrClass, HumanoidBack, HumanoidMouth, HumanoidHead, HumanoidEyes, HumanoidBody, DragonBack, DragonMouth, DragonHead, DragonEyes, DragonBody, GolemBack, GolemMouth, GolemHead, GolemEyes, GolemBody, PhantomBody, };

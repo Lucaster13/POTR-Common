@@ -1,6 +1,6 @@
 import {
-	Background,
-	Class,
+	PotrBackground,
+	PotrClass,
 	DragonBack,
 	DragonBody,
 	DragonEyes,
@@ -29,7 +29,7 @@ type HumanoidTraits = {
 
 type PhantomTraits = {
 	Body: PhantomBody;
-} & HumanoidTraits;
+} & Omit<HumanoidTraits, "Body">;
 
 type DragonTraits = {
 	Body: DragonBody;
@@ -48,8 +48,8 @@ type GolemTraits = {
 };
 
 type PotrTraits = {
-	Background: Background;
-	Class: Class;
+	PotrBackground: PotrBackground;
+	PotrClass: PotrClass;
 	Level: number;
 } & (HumanoidTraits | PhantomTraits | DragonTraits | GolemTraits);
 

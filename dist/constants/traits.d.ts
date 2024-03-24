@@ -1,6 +1,6 @@
 declare const enum VisualTraitType {
-    BACKGROUND = "Background",
-    CLASS = "Class",
+    BACKGROUND = "PotrBackground",
+    CLASS = "PotrClass",
     BODY = "Body",
     HEAD = "Head",
     EYES = "Eyes",
@@ -13,14 +13,14 @@ declare const enum MetaTraitType {
 declare const VISUAL_TRAITS: VisualTraitType[];
 declare const META_TRAITS: MetaTraitType[];
 declare const TRAIT_TYPES: (VisualTraitType | MetaTraitType)[];
-declare const enum BaseClass {
+declare const enum PotrBaseClass {
     HUMANOID = "Humanoid",
     PHANTOM = "Phantom",
     DRAGON = "Dragon",
     GOLEM = "Golem"
 }
-declare const BASE_CLASSES: BaseClass[];
-declare const enum Background {
+declare const BASE_CLASSES: PotrBaseClass[];
+declare const enum PotrBackground {
     GRAY = "Gray",
     LIGHT_BLUE = "Light Blue",
     ORANGE = "Orange",
@@ -35,7 +35,7 @@ declare const enum Background {
     GOLD = "Gold",
     POTR = "POTR"
 }
-declare const enum Class {
+declare const enum PotrClass {
     BERSERKER = "Berserker",
     RANGER = "Ranger",
     WIZARD = "Wizard",
@@ -209,4 +209,4 @@ declare const enum GolemBack {
     "Ultra Rare Companion" = 4,
     "Legendary Companion" = 5
 }
-export { TRAIT_TYPES, BASE_CLASSES, VISUAL_TRAITS, META_TRAITS, BaseClass, VisualTraitType, MetaTraitType, Background, Class, HumanoidBack, HumanoidMouth, HumanoidHead, HumanoidEyes, HumanoidBody, DragonBack, DragonMouth, DragonHead, DragonEyes, DragonBody, GolemBack, GolemMouth, GolemHead, GolemEyes, GolemBody, PhantomBody, };
+export { TRAIT_TYPES, BASE_CLASSES, VISUAL_TRAITS, META_TRAITS, PotrBaseClass, VisualTraitType, MetaTraitType, PotrBackground, PotrClass, HumanoidBack, HumanoidMouth, HumanoidHead, HumanoidEyes, HumanoidBody, DragonBack, DragonMouth, DragonHead, DragonEyes, DragonBody, GolemBack, GolemMouth, GolemHead, GolemEyes, GolemBody, PhantomBody, };

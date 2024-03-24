@@ -1,4 +1,4 @@
-import { BaseClass } from "../constants";
+import { PotrBaseClass } from "../constants";
 import { PotrTraits } from "./traits";
 
 // ALGORAND NETWORK RESPONSES
@@ -50,7 +50,7 @@ type PotrMetadata = {
 	balance: number;
 	description: string;
 	traits: PotrTraits;
-	baseClass: BaseClass;
+	baseClass: PotrBaseClass;
 } & PotrAssetMetadata;
 
 export {

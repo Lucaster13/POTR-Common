@@ -5,8 +5,8 @@
  */
 
 const enum VisualTraitType {
-	BACKGROUND = "Background",
-	CLASS = "Class",
+	BACKGROUND = "PotrBackground",
+	CLASS = "PotrClass",
 	BODY = "Body",
 	HEAD = "Head",
 	EYES = "Eyes",
@@ -37,14 +37,14 @@ const TRAIT_TYPES = [...VISUAL_TRAITS, ...META_TRAITS];
  *
  */
 
-const enum BaseClass {
+const enum PotrBaseClass {
 	HUMANOID = "Humanoid",
 	PHANTOM = "Phantom",
 	DRAGON = "Dragon",
 	GOLEM = "Golem",
 }
 
-const BASE_CLASSES = [BaseClass.HUMANOID, BaseClass.PHANTOM, BaseClass.DRAGON, BaseClass.GOLEM];
+const BASE_CLASSES = [PotrBaseClass.HUMANOID, PotrBaseClass.PHANTOM, PotrBaseClass.DRAGON, PotrBaseClass.GOLEM];
 
 /**
  *
@@ -52,7 +52,7 @@ const BASE_CLASSES = [BaseClass.HUMANOID, BaseClass.PHANTOM, BaseClass.DRAGON, B
  *
  */
 
-const enum Background {
+const enum PotrBackground {
 	GRAY = "Gray",
 	LIGHT_BLUE = "Light Blue",
 	ORANGE = "Orange",
@@ -68,7 +68,7 @@ const enum Background {
 	POTR = "POTR",
 }
 
-const enum Class {
+const enum PotrClass {
 	BERSERKER = "Berserker",
 	RANGER = "Ranger",
 	WIZARD = "Wizard",
@@ -263,11 +263,11 @@ export {
 	BASE_CLASSES,
 	VISUAL_TRAITS,
 	META_TRAITS,
-	BaseClass,
+	PotrBaseClass,
 	VisualTraitType,
 	MetaTraitType,
-	Background,
-	Class,
+	PotrBackground,
+	PotrClass,
 	HumanoidBack,
 	HumanoidMouth,
 	HumanoidHead,

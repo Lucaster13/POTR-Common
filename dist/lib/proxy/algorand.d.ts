@@ -7,7 +7,7 @@ export declare const getUserAcc: () => Promise<import("algosdk").Account | impor
 export declare function getPotrAsaIdsInWallet(account: string): Promise<number[]>;
 export declare function getBlockTimestamp(blockNumber: number): Promise<Date>;
 export declare function contractIsAlive(ctcId: number): Promise<boolean>;
-export declare function getLatestAssetConfigTransactions(asaId: number): Promise<{
+export declare function getLatestAssetConfigTransaction(asaId: number): Promise<{
     "asset-config-transaction": {
         "asset-id": number;
         amount: number;

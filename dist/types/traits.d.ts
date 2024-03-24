@@ -1,4 +1,4 @@
-import { Background, Class, DragonBack, DragonBody, DragonEyes, DragonHead, DragonMouth, GolemBack, GolemBody, GolemEyes, GolemHead, GolemMouth, HumanoidBack, HumanoidBody, HumanoidEyes, HumanoidHead, HumanoidMouth, PhantomBody } from "../constants";
+import { PotrBackground, PotrClass, DragonBack, DragonBody, DragonEyes, DragonHead, DragonMouth, GolemBack, GolemBody, GolemEyes, GolemHead, GolemMouth, HumanoidBack, HumanoidBody, HumanoidEyes, HumanoidHead, HumanoidMouth, PhantomBody } from "../constants";
 type HumanoidTraits = {
     Body: HumanoidBody;
     Head: HumanoidHead;
@@ -8,7 +8,7 @@ type HumanoidTraits = {
 };
 type PhantomTraits = {
     Body: PhantomBody;
-} & HumanoidTraits;
+} & Omit<HumanoidTraits, "Body">;
 type DragonTraits = {
     Body: DragonBody;
     Head: DragonHead;
@@ -24,8 +24,8 @@ type GolemTraits = {
     Back: GolemBack;
 };
 type PotrTraits = {
-    Background: Background;
-    Class: Class;
+    PotrBackground: PotrBackground;
+    PotrClass: PotrClass;
     Level: number;
 } & (HumanoidTraits | PhantomTraits | DragonTraits | GolemTraits);
 export { PotrTraits };

@@ -27,7 +27,7 @@ export async function contractIsAlive(ctcId) {
         .then(() => true)
         .catch(() => false);
 }
-export async function getLatestAssetConfigTransactions(asaId) {
+export async function getLatestAssetConfigTransaction(asaId) {
     return indexer
         .lookupAssetTransactions(asaId)
         .do()

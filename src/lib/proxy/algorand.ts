@@ -46,7 +46,7 @@ export async function contractIsAlive(ctcId: number) {
 		.catch(() => false); // if failure return false
 }
 
-export async function getLatestAssetConfigTransactions(asaId: number) {
+export async function getLatestAssetConfigTransaction(asaId: number) {
 	return indexer
 		.lookupAssetTransactions(asaId)
 		.do()
