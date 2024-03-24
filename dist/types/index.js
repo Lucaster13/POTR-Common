@@ -1,2 +1,2 @@
 export * from "./traits.js";
-export * from "./algo.js";
+export * from "./algorand.js";

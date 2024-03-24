@@ -4,14 +4,22 @@ import {
 	getAlgoNodeConfig,
 	mnemonicAccountFromEnvironment,
 } from "@algorandfoundation/algokit-utils";
-import { AccountInformationResponse, AssetConfigTransactionsResponse, AssetMetadataResponse } from "../../types";
+import {
+	AccountInformationResponse,
+	AssetConfigTransaction,
+	AssetConfigTransactionsResponse,
+	AssetMetadata,
+	AssetMetadataResponse,
+} from "../../types";
 import { algorandConfig, potrConfig } from "../../config";
+import { makeRateLimiter } from "../utils";
 
 export const getAlgoNetwork = () => process.env.ALGO_NETWORK as "TestNet" | "MainNet";
 
 // CLIENTS
 export const algod = getAlgoClient(getAlgoNodeConfig(getAlgoNetwork().toLowerCase() as any, "algod"));
 export const indexer = getAlgoIndexerClient(getAlgoNodeConfig(getAlgoNetwork().toLowerCase() as any, "indexer"));
+const algorandRateLimiter = makeRateLimiter(...algorandConfig.tps);
 
 export type AccountRole = "ADMIN" | "USER";
 export const getAccountName = (role: AccountRole) => `POTR_${getAlgoNetwork()}_${role}`.toUpperCase();
@@ -24,7 +32,7 @@ export const getAdminAddr = () => getWalletAddrFromConfig("ADMIN");
 export const getUserAddr = () => getWalletAddrFromConfig("USER");
 
 // GET ALL POTRS IN A GIVEN WALLET
-export async function getPotrAsaIdsInWallet(account: string) {
+async function getPotrAsaIdsInWallet(account: string) {
 	return indexer
 		.lookupAccountAssets(account)
 		.do()
@@ -33,18 +41,15 @@ export async function getPotrAsaIdsInWallet(account: string) {
 		.then((asaIds) => asaIds.filter((asaId) => potrConfig.asaIds[getAlgoNetwork()].includes(asaId)));
 }
 
-export async function getPotrAsaMetadata(asaIds: number[]) {}
-
 // GET TIMESTAMP OF A BLOCK
-export async function getBlockTimestamp(blockNumber: number) {
+async function getBlockTimestamp(blockNumber: number) {
 	return algod
 		.block(blockNumber)
 		.do()
 		.then(({ block }) => new Date(block.ts * 1000));
 }
-
-// CHECK IF CONTRACT IS ALIVE
-export async function contractIsAlive(ctcId: number) {
+// CHECK IF} CONTRACT IS ALIVE
+async function contractIsAlive(ctcId: number) {
 	return algod
 		.getApplicationByID(Number(ctcId))
 		.do()
@@ -52,7 +57,7 @@ export async function contractIsAlive(ctcId: number) {
 		.catch(() => false); // if failure return false
 }
 
-export async function getLatestAssetConfigTransaction(asaId: number) {
+async function getLatestAssetConfigTransaction(asaId: number): Promise<AssetConfigTransaction> {
 	return indexer
 		.lookupAssetTransactions(asaId)
 		.do()
@@ -60,10 +65,19 @@ export async function getLatestAssetConfigTransaction(asaId: number) {
 		.then((acfgTxns) => acfgTxns.transactions.at(0)!);
 }
 
-export async function getAssetMetadata(asaId: number) {
+async function getAssetMetadata(asaId: number): Promise<AssetMetadata> {
 	return indexer
 		.lookupAssetByID(asaId)
 		.do()
 		.then((res) => res as AssetMetadataResponse)
-		.then(({ assets }) => (assets.at(0) ? assets.at(0)!.params : undefined));
+		.then(({ assets }) => assets.at(0)!);
 }
+
+// EXPORT RATE LIMITED APIS
+export const Algo = {
+	getPotrAsaIdsInWallet: algorandRateLimiter.wrap(getPotrAsaIdsInWallet),
+	getBlockTimestamp: algorandRateLimiter.wrap(getBlockTimestamp),
+	contractIsAlive: algorandRateLimiter.wrap(contractIsAlive),
+	getLatestAssetConfigTransaction: algorandRateLimiter.wrap(getLatestAssetConfigTransaction),
+	getAssetMetadata: algorandRateLimiter.wrap(getAssetMetadata),
+};
