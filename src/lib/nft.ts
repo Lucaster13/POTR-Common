@@ -1,6 +1,8 @@
+import { algorandConfig } from "../config/index.js";
 import { BASE_CLASSES, BaseClass, Class } from "../constants/index.js";
 import { Arc69Metadata, PotrAssetMetadata, PotrMetadata } from "../types/index.js";
-import { getLatestAssetConfigTransactions } from "./proxy/algorand.js";
+import { algod, getLatestAssetConfigTransactions, indexer } from "./proxy/algorand.js";
+import { getCIDFromReserveAddr, resolveIpfsGatewayUrl } from "./utils.js";
 
 export const getArc69MetadataForAsaId = (asaId: number): Promise<Arc69Metadata> =>
 	getLatestAssetConfigTransactions(asaId).then((txn) => getJsonFromNote(txn.note));
@@ -14,20 +16,26 @@ function getJsonFromNote(noteBase64: string): Arc69Metadata {
 	return noteObject;
 }
 
-// // gets asset metadata for ALL potrs
-// async function getPotrAssetMetadata(asaId: number): Promise<PotrAssetMetadata> {
-// 	// transform into mapping, filter only potrs
-// 	const md = (await algod.getAssetByID(asaId).do()) as AssetMetadataResponse;
-// 	const { index, params } = md;
-// 	const { name, url } = params;
-// 	const unitName = params["unit-name"];
-// 	return {
-// 		id: index,
-// 		name,
-// 		url: url.replace(RAW_IPFS_URL_PREFIX, IPFS_GATEWAY_URL_PREFIX),
-// 		unitName,
-// 	};
-// }
+// gets asset metadata for ALL potrs
+export async function getPotrAssetMetadata(asaId: number): Promise<PotrAssetMetadata> {
+	// transform into mapping, filter only potrs
+	const md = await algod.getAssetByID(asaId).do();
+	const test = await algod.accountAssetInformation(algorandConfig.wallets.TestNet.ADMIN, asaId).do();
+	const t = await indexer.lookupAssetByID(asaId).do();
+	console.log(md);
+	console.log(test);
+	console.log(t);
+
+	const { index, params } = md;
+	const { name } = params;
+	const unitName = params["unit-name"];
+	return {
+		id: index,
+		name,
+		url: resolveIpfsGatewayUrl(getCIDFromReserveAddr(params.reserve)),
+		unitName,
+	};
+}
 
 // takes the asset metadata and the most recent asset config transaction and creates PotrMetadata
 export function makePotrMetadata(potrAssetMetadata: PotrAssetMetadata, potrArc69Metadata: Arc69Metadata): PotrMetadata {

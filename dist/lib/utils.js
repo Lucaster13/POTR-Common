@@ -1,6 +1,11 @@
+import { CID } from "multiformats";
+import * as sha2 from "multiformats/hashes/sha2";
+import * as digest from "multiformats/hashes/digest";
+import { decodeAddress, encodeAddress } from "algosdk";
 import axios from "axios";
 import Bottleneck from "bottleneck";
 import { format } from "date-fns";
+import { IPFS_GATEWAY_URL_PREFIX } from "../constants";
 export const makeRateLimiter = (rps = 60, threads = null) => new Bottleneck({ minTime: 1000 / rps, maxConcurrent: threads });
 export const rateLimitedAxiosGET = () => makeRateLimiter(60, 3).wrap(async (url, config) => axios.get(url, config));
 export const shortenAddress = (addr) => {
@@ -14,3 +19,19 @@ export function formatTimestamp(timestamp) {
     return format(timestamp, "MMMM dd, yyyy hh:mm a 'UTC'xxx");
 }
 export const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+export function getCIDFromReserveAddr(reserveAddr) {
+    const addr = decodeAddress(reserveAddr);
+    const mhdigest = digest.create(sha2.sha256.code, addr.publicKey);
+    const cid = CID.create(1, 0x55, mhdigest);
+    return cid.toString();
+}
+export function getReserveAddrFromCID(cidString) {
+    const cid = CID.parse(cidString);
+    const reserveAddr = encodeAddress(cid.multihash.digest);
+    const cidCheck = getCIDFromReserveAddr(reserveAddr);
+    if (cid.toString() !== cidCheck) {
+        throw new Error(`CIDs did not match ${cid.toString()} !== ${cidCheck}`);
+    }
+    return reserveAddr;
+}
+export const resolveIpfsGatewayUrl = (cid) => `${IPFS_GATEWAY_URL_PREFIX}${cid}`;

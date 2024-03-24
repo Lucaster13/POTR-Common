@@ -1,6 +1,6 @@
 {
 	"type": "module",
-	"version": "1.0.76",
+	"version": "1.0.79",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"dependencies": {
@@ -8,7 +8,8 @@
 		"algosdk": "^2.7.0",
 		"axios": "^1.6.8",
 		"bottleneck": "^2.19.5",
-		"date-fns": "^2.30.0"
+		"date-fns": "^2.30.0",
+		"multiformats": "^13.1.0"
 	},
 	"devDependencies": {
 		"@types/node": "^20.4.9",
@@ -25,7 +26,7 @@
 	},
 	"scripts": {
 		"build": "eslint ./src --fix && prettier ./src --write && tsc && bun build --entrypoints ./src/index.ts --outdir ./dist",
-		"publishToNpm": "bun run build && git add *; git commit -m 'update potr-common npm registry' && git push; npm publish"
+		"publishToNpm": "bun run build && git add dist src package.json bun.lockb; git commit -m 'update potr-common npm registry' && git push; npm publish"
 	},
 	"name": "potr-common",
 	"description": "common types and utils",
