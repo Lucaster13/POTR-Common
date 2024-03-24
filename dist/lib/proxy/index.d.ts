@@ -1,2 +1,2 @@
-export * from "./algorand";
-export * from "./potr";
+export { default as Algo } from "./algorand";
+export { default as Potr } from "./potr";
