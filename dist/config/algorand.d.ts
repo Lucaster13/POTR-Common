@@ -16,5 +16,6 @@ declare const _default: {
             coin_shop: number;
         };
     };
+    tps: number[];
 };
 export default _default;

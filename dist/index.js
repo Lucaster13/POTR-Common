@@ -26770,15 +26770,47 @@ var shortenAddress = (addr) => {
   return `${start}...${end}`;
 };
 var sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+// src/config/algorand.ts
+var algorand_default = {
+  wallets: {
+    TestNet: {
+      ADMIN: "ZT66MNCIYV24OWRFLZN7ALSKT3URV3AKYJNZQBMUZANJ76CNDLG5N6YMQY",
+      USER: ""
+    },
+    MainNet: {
+      ADMIN: ""
+    }
+  },
+  contracts: {
+    TestNet: {
+      coin_shop: 177906185
+    },
+    MainNet: {
+      coin_shop: 0
+    }
+  },
+  tps: [60, 1]
+};
+// src/config/ipfs.ts
+var ipfs_default = {
+  POTR_CID: "bafybeie5sgczzcvz7lpydaqbqo5jcx2chxn6pdgvbu6s36ghwbl73ezm2y"
+};
+// src/config/nft-storage.ts
+var nft_storage_default = {
+  tps: [2, 2]
+};
 export {
   sleep,
   shortenAddress,
   rateLimitedAxiosGET,
+  nft_storage_default as nftStorage,
   makeRateLimiter,
+  ipfs_default as ipfs,
   getContractHandle,
   formatTimestamp,
   deployContract,
   attachContract,
+  algorand_default as algorand,
   WalletProvider,
   VisualTraitType,
   VISUAL_TRAITS,
