@@ -1,99 +1,55 @@
-// import { Algodv2, Indexer } from "algosdk";
-// import { ACCOUNTS, ASSET_METADATA_URL, ASSET_TRANSACTION_URL, REACH_NETWORK } from "../../constants/index.js";
-// import {
-// 	AssetConfigTransactionT,
-// 	AssetConfigTransactionsResponseT,
-// 	AssetMetadataResponseT,
-// 	AssetMetadataT,
-// 	ContractIdT,
-// } from "../../types/index.js";
-// import { rateLimitedAxiosGET } from "../utils/common.js";
+import {
+	getAlgoClient,
+	getAlgoIndexerClient,
+	getAlgoNodeConfig,
+	mnemonicAccountFromEnvironment,
+} from "@algorandfoundation/algokit-utils";
+import { AccountInformationResponse, AssetConfigTransactionsResponse } from "../../types";
+import { potrConfig } from "../../config";
 
-// async function getBlockTimestamp(blockNumber: number) {
-// 	return makeAlgodV2AndIndexer()
-// 		.then(async ({ algodClient }) => algodClient.block(blockNumber).do())
-// 		.then(({ block }) => new Date(block.ts * 1000));
-// }
+export const getAlgoNetwork = () => process.env.ALGO_NETWORK as "TestNet" | "MainNet";
 
-// async function contractIsAlive(ctcId: ContractIdT) {
-// 	return makeAlgodV2AndIndexer()
-// 		.then(async ({ algodClient }) => algodClient.getApplicationByID(Number(ctcId)).do())
-// 		.then(() => true) // if succeess return true
-// 		.catch(() => false); // if failure return false
-// }
+// CLIENTS
+export const algod = getAlgoClient(getAlgoNodeConfig(getAlgoNetwork().toLowerCase() as any, "algod"));
+export const indexer = getAlgoIndexerClient(getAlgoNodeConfig(getAlgoNetwork().toLowerCase() as any, "indexer"));
 
-// async function makeAlgodV2AndIndexer() {
-// 	return makeReach()
-// 		.getProvider()
-// 		.then((p) => ({ algodClient: p.algodClient as Algodv2, indexer: p.indexer as Indexer }));
-// }
+export const getAccountName = (type: "admin" | "user") => `POTR_${getAlgoNetwork()}_${type}`.toUpperCase();
 
-// // gets metadata for assets created by account
-// const RESPONSE_LIMIT = 30000;
-// const ASSET_MD_DEFAULT_PARAMS = { creator: ACCOUNTS[REACH_NETWORK].ADMIN, limit: RESPONSE_LIMIT };
-// async function getAssetMetadata(nextToken?: string) {
-// 	return rateLimitedAxiosGET<AssetMetadataResponseT>()(ASSET_METADATA_URL, {
-// 		params: { ...ASSET_MD_DEFAULT_PARAMS, next: nextToken },
-// 	}).then(({ data }) => data);
-// }
+// WALLETS
+export const getAdminAcc = () => mnemonicAccountFromEnvironment(getAccountName("admin"), algod);
+export const getUserAcc = () => mnemonicAccountFromEnvironment(getAccountName("user"), algod);
 
-// const ACFG_TXN_DEFAULT_PARAMS = {
-// 	address: ACCOUNTS[REACH_NETWORK].ADMIN,
-// 	"address-role": "sender",
-// 	limit: 1,
-// 	"tx-type": "acfg",
-// 	sortBy: "round:desc",
-// };
-// async function getAssetConfigTransactions(nextToken?: string) {
-// 	return rateLimitedAxiosGET<AssetConfigTransactionsResponseT>()(ASSET_TRANSACTION_URL, {
-// 		params: { ...ACFG_TXN_DEFAULT_PARAMS, limit: RESPONSE_LIMIT, next: nextToken },
-// 	}).then(({ data }) => data);
-// }
+// GET ALL POTRS IN A GIVEN WALLET
+export async function getPotrAsaIdsInWallet(account: string) {
+	return indexer
+		.lookupAccountAssets(account)
+		.do()
+		.then((res) => res as AccountInformationResponse)
+		.then((accAssets) => accAssets.assets.map((a) => a["asset-id"]))
+		.then((asaIds) => asaIds.filter((asaId) => potrConfig.asaIds[getAlgoNetwork()].includes(asaId)));
+}
 
-// async function getAllAssetConfigTransactions(): Promise<AssetConfigTransactionT[]> {
-// 	let nextToken: string | undefined;
-// 	const acfgTxns: AssetConfigTransactionT[] = [];
+// GET TIMESTAMP OF A BLOCK
+export async function getBlockTimestamp(blockNumber: number) {
+	return algod
+		.block(blockNumber)
+		.do()
+		.then(({ block }) => new Date(block.ts * 1000));
+}
 
-// 	// paginate retrieving asset transactions
-// 	do {
-// 		// make request url based on nextToken (increase limit)
-// 		const data = await getAssetConfigTransactions(nextToken);
+// CHECK IF CONTRACT IS ALIVE
+export async function contractIsAlive(ctcId: number) {
+	return algod
+		.getApplicationByID(Number(ctcId))
+		.do()
+		.then(() => true) // if succeess return true
+		.catch(() => false); // if failure return false
+}
 
-// 		// retrieve next token if available
-// 		nextToken = data["next-token"];
-
-// 		// concatenate assets results
-// 		data.transactions.forEach((txn) => acfgTxns.push(txn));
-// 	} while (nextToken);
-
-// 	return acfgTxns;
-// }
-
-// async function getAllAssetMetadata(): Promise<AssetMetadataT[]> {
-// 	let nextToken: string | undefined;
-// 	const assetMetadata: AssetMetadataT[] = [];
-
-// 	// paginate retrieving asset metadata
-// 	do {
-// 		// make request url based on nextToken (increase limit)
-// 		const data = await getAssetMetadata(nextToken);
-
-// 		// retrieve next token if available
-// 		nextToken = data["next-token"];
-
-// 		// concatenate assets results
-// 		data.assets.forEach((asset) => assetMetadata.push(asset));
-// 	} while (nextToken);
-
-// 	return assetMetadata;
-// }
-
-// export {
-// 	getBlockTimestamp,
-// 	contractIsAlive,
-// 	makeAlgodV2AndIndexer,
-// 	getAssetMetadata,
-// 	getAssetConfigTransactions,
-// 	getAllAssetConfigTransactions,
-// 	getAllAssetMetadata,
-// };
+export async function getLatestAssetConfigTransactions(asaId: number) {
+	return indexer
+		.lookupAssetTransactions(asaId)
+		.do()
+		.then((res) => res as AssetConfigTransactionsResponse)
+		.then((acfgTxns) => acfgTxns.transactions.at(0)!);
+}

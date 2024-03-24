@@ -2,8 +2,6 @@ import axios, { AxiosRequestConfig } from "axios";
 import Bottleneck from "bottleneck";
 import { format } from "date-fns";
 
-export * from "./contract.js";
-
 export const makeRateLimiter = (rps = 60, threads: number | null = null) =>
 	new Bottleneck({ minTime: 1000 / rps, maxConcurrent: threads });
 

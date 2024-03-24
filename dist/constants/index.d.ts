@@ -1,6 +1,4 @@
 export * from "./traits.js";
-export * from "./contract/index.js";
-export { default as ASA_IDS } from "./asa-ids.js";
 export declare const enum WalletProvider {
     PERA = "pera",
     MNEMONIC = "mnemonic",

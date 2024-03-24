@@ -1,6 +1,4 @@
 export * from "./traits.js";
-export * from "./contract/index.js";
-export { default as ASA_IDS } from "./asa-ids.js";
 export var WalletProvider;
 (function (WalletProvider) {
     WalletProvider["PERA"] = "pera";
