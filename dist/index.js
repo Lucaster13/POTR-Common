@@ -9028,7 +9028,7 @@ var Status;
 })(Status || (Status = {}));
 var RAW_IPFS_URL_PREFIX = "ipfs://";
 var RAW_IPFS_TEMPLATE_URL_PREFIX = "template-ipfs://";
-var IPFS_TEMPLATE_URL = `${RAW_IPFS_TEMPLATE_URL_PREFIX}{ipfscid:1:raw:reserve:sha2-256}#arc3`;
+var getIPFSTemplateURL = (potrId) => `${RAW_IPFS_TEMPLATE_URL_PREFIX}{ipfscid:1:dag-pb:reserve:sha2-256}/${potrId}.json`;
 var IPFS_GATEWAY_URL_PREFIX = "https://ipfs.io/ipfs/";
 var POTR_URL = "potr.algo.xyz";
 // node_modules/axios/lib/helpers/bind.js
@@ -26806,6 +26806,7 @@ export {
   nft_storage_default as nftStorageConfig,
   makeRateLimiter,
   ipfs_default as ipfsConfig,
+  getIPFSTemplateURL,
   getContractHandle,
   formatTimestamp,
   deployContract,
@@ -26826,7 +26827,6 @@ export {
   POTR_URL,
   MetaTraitType,
   META_TRAITS,
-  IPFS_TEMPLATE_URL,
   IPFS_GATEWAY_URL_PREFIX,
   HumanoidMouth,
   HumanoidHead,

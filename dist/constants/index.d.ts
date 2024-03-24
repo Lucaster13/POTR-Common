@@ -15,6 +15,6 @@ export declare const enum Status {
 }
 export declare const RAW_IPFS_URL_PREFIX = "ipfs://";
 export declare const RAW_IPFS_TEMPLATE_URL_PREFIX = "template-ipfs://";
-export declare const IPFS_TEMPLATE_URL: string;
+export declare const getIPFSTemplateURL: (potrId: string) => string;
 export declare const IPFS_GATEWAY_URL_PREFIX = "https://ipfs.io/ipfs/";
 export declare const POTR_URL = "potr.algo.xyz";
