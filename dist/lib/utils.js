@@ -33,4 +33,4 @@ export function getReserveAddrFromCID(cidString) {
     }
     return reserveAddr;
 }
-export const resolveIpfsGatewayUrl = (cid) => `${IPFS_GATEWAY_URL_PREFIX}${cid}`;
+export const resolveIpfsGatewayUrl = (cid) => `${IPFS_GATEWAY_URL_PREFIX}${cid}?optimizer=image`;
