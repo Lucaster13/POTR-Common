@@ -10,9 +10,20 @@ type AssetInformation = {
 type AssetMetadata = {
 	index: number;
 	params: {
+		clawback: string;
+		creator: string;
+		decimals: number;
+		"default-frozen": boolean;
+		freeze: string;
+		manager: string;
 		name: string;
-		url: string;
+		"name-b64": string;
+		reserve: string;
+		total: number;
 		"unit-name": string;
+		"unit-name-b64": string;
+		url: string;
+		"url-b64": string;
 	};
 };
 

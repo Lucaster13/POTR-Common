@@ -4,7 +4,7 @@ import {
 	getAlgoNodeConfig,
 	mnemonicAccountFromEnvironment,
 } from "@algorandfoundation/algokit-utils";
-import { AccountInformationResponse, AssetConfigTransactionsResponse } from "../../types";
+import { AccountInformationResponse, AssetConfigTransactionsResponse, AssetMetadataResponse } from "../../types";
 import { algorandConfig, potrConfig } from "../../config";
 
 export const getAlgoNetwork = () => process.env.ALGO_NETWORK as "TestNet" | "MainNet";
@@ -33,6 +33,8 @@ export async function getPotrAsaIdsInWallet(account: string) {
 		.then((asaIds) => asaIds.filter((asaId) => potrConfig.asaIds[getAlgoNetwork()].includes(asaId)));
 }
 
+export async function getPotrAsaMetadata(asaIds: number[]) {}
+
 // GET TIMESTAMP OF A BLOCK
 export async function getBlockTimestamp(blockNumber: number) {
 	return algod
@@ -56,4 +58,12 @@ export async function getLatestAssetConfigTransaction(asaId: number) {
 		.do()
 		.then((res) => res as AssetConfigTransactionsResponse)
 		.then((acfgTxns) => acfgTxns.transactions.at(0)!);
+}
+
+export async function getAssetMetadata(asaId: number) {
+	return indexer
+		.lookupAssetByID(asaId)
+		.do()
+		.then((res) => res as AssetMetadataResponse)
+		.then(({ assets }) => (assets.at(0) ? assets.at(0)!.params : undefined));
 }
