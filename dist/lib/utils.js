@@ -19,7 +19,7 @@ export const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 export function getCIDFromReserveAddr(reserveAddr) {
     const addr = decodeAddress(reserveAddr);
     const mhdigest = digest.create(sha2.sha256.code, addr.publicKey);
-    const cid = CID.create(1, 0x55, mhdigest);
+    const cid = CID.create(1, 0x70, mhdigest);
     return cid.toString();
 }
 export function getReserveAddrFromCID(cidString) {
@@ -31,4 +31,4 @@ export function getReserveAddrFromCID(cidString) {
     }
     return reserveAddr;
 }
-export const resolveIpfsGatewayUrl = (cid) => `${IPFS_GATEWAY_URL_PREFIX}${cid}?optimizer=image`;
+export const resolveIpfsGatewayUrl = (cid) => `${IPFS_GATEWAY_URL_PREFIX}${cid}`;
