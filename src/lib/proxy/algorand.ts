@@ -32,9 +32,11 @@ export const getAdminAddr = () => getWalletAddrFromConfig("ADMIN");
 export const getUserAddr = () => getWalletAddrFromConfig("USER");
 
 // GET ALL POTRS IN A GIVEN WALLET
+const RESPONSE_LIMIT = 2000;
 async function getPotrAsaIdsInWallet(account: string) {
 	return indexer
 		.lookupAccountAssets(account)
+		.limit(RESPONSE_LIMIT)
 		.do()
 		.then((res) => res as AccountInformationResponse)
 		.then((accAssets) => accAssets.assets.map((a) => a["asset-id"]))

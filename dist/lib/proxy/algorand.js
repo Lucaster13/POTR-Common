@@ -11,9 +11,11 @@ export const getAdminAcc = () => mnemonicAccountFromEnvironment(getAccountName("
 export const getUserAcc = () => mnemonicAccountFromEnvironment(getAccountName("USER"), algod);
 export const getAdminAddr = () => getWalletAddrFromConfig("ADMIN");
 export const getUserAddr = () => getWalletAddrFromConfig("USER");
+const RESPONSE_LIMIT = 2000;
 async function getPotrAsaIdsInWallet(account) {
     return indexer
         .lookupAccountAssets(account)
+        .limit(RESPONSE_LIMIT)
         .do()
         .then((res) => res)
         .then((accAssets) => accAssets.assets.map((a) => a["asset-id"]))
