@@ -13,7 +13,7 @@ const getAdminAddr = () => getWalletAddrFromConfig("ADMIN");
 const getUserAddr = () => getWalletAddrFromConfig("USER");
 const RESPONSE_LIMIT = 3000;
 async function getAllAssetIdsInWallet(addr, nextToken) {
-    indexer
+    return indexer
         .lookupAccountAssets(addr)
         .limit(RESPONSE_LIMIT)
         .nextToken(nextToken ?? "")

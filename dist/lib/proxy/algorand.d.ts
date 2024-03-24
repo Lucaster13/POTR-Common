@@ -31,13 +31,19 @@ declare const Algo: {
             readonly id?: string | null | undefined;
         }, arg1: number) => Promise<Arc69Metadata>;
     };
-    getAllAssetIdsInWallet: ((arg1: string) => Promise<void>) & {
+    getAllAssetIdsInWallet: ((arg1: string) => Promise<{
+        asaIds: number[];
+        nextToken: string | undefined;
+    }>) & {
         withOptions: (options: {
             readonly priority?: number | null | undefined;
             readonly weight?: number | null | undefined;
             readonly expiration?: number | null | undefined;
             readonly id?: string | null | undefined;
-        }, arg1: string) => Promise<void>;
+        }, arg1: string) => Promise<{
+            asaIds: number[];
+            nextToken: string | undefined;
+        }>;
     };
     getBlockTimestamp: ((arg1: number) => Promise<Date>) & {
         withOptions: (options: {

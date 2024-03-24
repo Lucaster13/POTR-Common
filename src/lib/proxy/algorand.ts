@@ -35,7 +35,7 @@ const getUserAddr = () => getWalletAddrFromConfig("USER");
 // GET ALL POTRS IN A GIVEN WALLET
 const RESPONSE_LIMIT = 3000;
 async function getAllAssetIdsInWallet(addr: string, nextToken?: string) {
-	indexer
+	return indexer
 		.lookupAccountAssets(addr)
 		.limit(RESPONSE_LIMIT)
 		.nextToken(nextToken ?? "")
