@@ -26789,7 +26789,7 @@ var algorand_default = {
       coin_shop: 0
     }
   },
-  tps: [60, 1]
+  tps: [60]
 };
 // src/config/ipfs.ts
 var ipfs_default = {
@@ -26797,20 +26797,20 @@ var ipfs_default = {
 };
 // src/config/nft-storage.ts
 var nft_storage_default = {
-  tps: [2, 2]
+  tps: [2]
 };
 export {
   sleep,
   shortenAddress,
   rateLimitedAxiosGET,
-  nft_storage_default as nftStorage,
+  nft_storage_default as nftStorageConfig,
   makeRateLimiter,
-  ipfs_default as ipfs,
+  ipfs_default as ipfsConfig,
   getContractHandle,
   formatTimestamp,
   deployContract,
   attachContract,
-  algorand_default as algorand,
+  algorand_default as algorandConfig,
   WalletProvider,
   VisualTraitType,
   VISUAL_TRAITS,
