@@ -36,7 +36,7 @@ export function getReserveAddrFromCID(cidString) {
 }
 export const resolveIpfsGatewayUrl = (cid) => `${IPFS_GATEWAY_URL_PREFIX}${cid}`;
 export const getArc69MetadataForAsaId = (asaId) => getLatestAssetConfigTransaction(asaId).then((txn) => getJsonFromNote(txn.note));
-function getJsonFromNote(noteBase64) {
+export function getJsonFromNote(noteBase64) {
     const noteString = Buffer.from(noteBase64, "base64")
         .toLocaleString()
         .trim()

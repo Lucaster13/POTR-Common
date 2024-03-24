@@ -6,6 +6,7 @@ export default {
 		},
 		MainNet: {
 			ADMIN: "",
+			USER: "",
 		},
 	},
 	contracts: {

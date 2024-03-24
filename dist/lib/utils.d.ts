@@ -13,5 +13,6 @@ export declare function getCIDFromReserveAddr(reserveAddr: string): string;
 export declare function getReserveAddrFromCID(cidString: string): string;
 export declare const resolveIpfsGatewayUrl: (cid: string) => string;
 export declare const getArc69MetadataForAsaId: (asaId: number) => Promise<Arc69Metadata>;
+export declare function getJsonFromNote(noteBase64: string): Arc69Metadata;
 export declare function makePotrMetadata(potrAssetMetadata: PotrAssetMetadata, potrArc69Metadata: Arc69Metadata): PotrMetadata;
 export declare function getBaseClass(potrClass: PotrClass): PotrBaseClass;

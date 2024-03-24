@@ -56,7 +56,7 @@ export const resolveIpfsGatewayUrl = (cid: string) => `${IPFS_GATEWAY_URL_PREFIX
 export const getArc69MetadataForAsaId = (asaId: number): Promise<Arc69Metadata> =>
 	getLatestAssetConfigTransaction(asaId).then((txn) => getJsonFromNote(txn.note));
 
-function getJsonFromNote(noteBase64: string): Arc69Metadata {
+export function getJsonFromNote(noteBase64: string): Arc69Metadata {
 	const noteString = Buffer.from(noteBase64, "base64")
 		.toLocaleString()
 		.trim()

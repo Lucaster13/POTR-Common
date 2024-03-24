@@ -6,6 +6,7 @@ declare const _default: {
         };
         MainNet: {
             ADMIN: string;
+            USER: string;
         };
     };
     contracts: {
