@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig } from "axios";
 import { decodeAddress, encodeAddress } from "algosdk";
 import { CID, digest } from "multiformats";
-import sha2 from "multiformats/hashes/sha2";
+import * as sha2 from "multiformats/hashes/sha2";
 
 import Bottleneck from "bottleneck";
 import { format } from "date-fns";
