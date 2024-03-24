@@ -34,7 +34,7 @@ export function getReserveAddrFromCID(cidString: string): string {
 	const cid = CID.parse(cidString);
 	const reserveAddr = encodeAddress(cid.multihash.digest);
 	const cidCheck = getCIDFromReserveAddr(reserveAddr);
-	if (cid.toString() !== cidCheck) {
+	if (cid.toString() !== cidCheck.toString()) {
 		throw new Error(`CIDs did not match ${cid.toString()} !== ${cidCheck}`);
 	}
 	return reserveAddr;
