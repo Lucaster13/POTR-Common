@@ -26789,7 +26789,7 @@ var algorand_default = {
       coin_shop: 0
     }
   },
-  tps: [60]
+  tps: [45, 10]
 };
 // src/config/ipfs.ts
 var ipfs_default = {
