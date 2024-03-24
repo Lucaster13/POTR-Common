@@ -44,7 +44,7 @@ async function getAssetMetadata(asaId) {
         .lookupAssetByID(asaId)
         .do()
         .then((res) => res)
-        .then(({ asset }) => asset.at(0));
+        .then(({ asset }) => asset);
 }
 export const Algo = {
     getPotrAsaIdsInWallet: algorandRateLimiter.wrap(getPotrAsaIdsInWallet),

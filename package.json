@@ -1,6 +1,6 @@
 {
 	"type": "module",
-	"version": "1.0.88",
+	"version": "1.0.89",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"dependencies": {

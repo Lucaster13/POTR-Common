@@ -70,7 +70,7 @@ async function getAssetMetadata(asaId: number): Promise<AssetMetadata> {
 		.lookupAssetByID(asaId)
 		.do()
 		.then((res) => res as AssetMetadataResponse)
-		.then(({ asset }) => asset.at(0)!);
+		.then(({ asset }) => asset);
 }
 
 // EXPORT RATE LIMITED APIS
