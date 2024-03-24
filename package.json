@@ -1,12 +1,11 @@
 {
 	"type": "module",
-	"version": "1.0.94",
+	"version": "1.0.95",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"dependencies": {
 		"@algorandfoundation/algokit-utils": "^5.7.0",
 		"algosdk": "^2.7.0",
-		"axios": "^1.6.8",
 		"bottleneck": "^2.19.5",
 		"date-fns": "^2.30.0",
 		"multiformats": "^13.1.0"

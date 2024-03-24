@@ -37,7 +37,7 @@ type PaginatedResponse = {
 	"next-token": string | undefined;
 };
 
-type AccountInformationResponse = { assets: AssetInformation[] };
+type AccountInformationResponse = { assets: AssetInformation[] } & PaginatedResponse;
 type AssetMetadataResponse = { asset: AssetMetadata };
 type AssetConfigTransactionsResponse = { transactions: AssetConfigTransaction[] } & PaginatedResponse;
 

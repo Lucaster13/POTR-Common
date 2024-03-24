@@ -33,7 +33,7 @@ type PaginatedResponse = {
 };
 type AccountInformationResponse = {
     assets: AssetInformation[];
-};
+} & PaginatedResponse;
 type AssetMetadataResponse = {
     asset: AssetMetadata;
 };

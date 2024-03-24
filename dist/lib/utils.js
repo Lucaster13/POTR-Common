@@ -1,4 +1,3 @@
-import axios from "axios";
 import { decodeAddress, encodeAddress } from "algosdk";
 import { CID, digest } from "multiformats";
 import * as sha2 from "multiformats/hashes/sha2";
@@ -6,7 +5,6 @@ import Bottleneck from "bottleneck";
 import { format } from "date-fns";
 import { IPFS_GATEWAY_URL_PREFIX } from "../constants";
 export const makeRateLimiter = (rps = 60, threads = null) => new Bottleneck({ minTime: 1000 / rps, maxConcurrent: threads });
-export const rateLimitedAxiosGET = () => makeRateLimiter(60, 3).wrap(async (url, config) => axios.get(url, config));
 export const shortenAddress = (addr) => {
     if (!addr)
         return "????...????";

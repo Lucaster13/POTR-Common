@@ -1,22 +1,43 @@
-import { AssetConfigTransaction, AssetMetadata } from "../../types";
-export declare const getAlgoNetwork: () => "TestNet" | "MainNet";
-export declare const algod: import("algosdk").Algodv2;
-export declare const indexer: import("algosdk").Indexer;
-export type AccountRole = "ADMIN" | "USER";
-export declare const getAccountName: (role: AccountRole) => string;
-export declare const getWalletAddrFromConfig: (role: AccountRole) => string;
-export declare const getAdminAcc: () => Promise<import("algosdk").Account | import("@algorandfoundation/algokit-utils/types/account").SigningAccount>;
-export declare const getUserAcc: () => Promise<import("algosdk").Account | import("@algorandfoundation/algokit-utils/types/account").SigningAccount>;
-export declare const getAdminAddr: () => string;
-export declare const getUserAddr: () => string;
-export declare const Algo: {
-    getPotrAsaIdsInWallet: ((arg1: string) => Promise<number[]>) & {
+import { Arc69Metadata, AssetConfigTransaction, AssetMetadata } from "../../types";
+export declare const getArc69Metadata: (asaId: number) => Promise<Arc69Metadata>;
+export declare function getJsonFromNote(noteBase64: string): Arc69Metadata;
+declare const Algo: {
+    getAdminAcc: (() => Promise<import("algosdk").Account | import("@algorandfoundation/algokit-utils/types/account").SigningAccount>) & {
         withOptions: (options: {
             readonly priority?: number | null | undefined;
             readonly weight?: number | null | undefined;
             readonly expiration?: number | null | undefined;
             readonly id?: string | null | undefined;
-        }, arg1: string) => Promise<number[]>;
+        }) => Promise<import("algosdk").Account | import("@algorandfoundation/algokit-utils/types/account").SigningAccount>;
+    };
+    getUserAcc: (() => Promise<import("algosdk").Account | import("@algorandfoundation/algokit-utils/types/account").SigningAccount>) & {
+        withOptions: (options: {
+            readonly priority?: number | null | undefined;
+            readonly weight?: number | null | undefined;
+            readonly expiration?: number | null | undefined;
+            readonly id?: string | null | undefined;
+        }) => Promise<import("algosdk").Account | import("@algorandfoundation/algokit-utils/types/account").SigningAccount>;
+    };
+    getAdminAddr: () => string;
+    getUserAddr: () => string;
+    getAlgoNetwork: () => "TestNet" | "MainNet";
+    algod: import("algosdk").Algodv2;
+    indexer: import("algosdk").Indexer;
+    getArc69Metadata: ((arg1: number) => Promise<Arc69Metadata>) & {
+        withOptions: (options: {
+            readonly priority?: number | null | undefined;
+            readonly weight?: number | null | undefined;
+            readonly expiration?: number | null | undefined;
+            readonly id?: string | null | undefined;
+        }, arg1: number) => Promise<Arc69Metadata>;
+    };
+    getAllAssetIdsInWallet: ((arg1: string) => Promise<void>) & {
+        withOptions: (options: {
+            readonly priority?: number | null | undefined;
+            readonly weight?: number | null | undefined;
+            readonly expiration?: number | null | undefined;
+            readonly id?: string | null | undefined;
+        }, arg1: string) => Promise<void>;
     };
     getBlockTimestamp: ((arg1: number) => Promise<Date>) & {
         withOptions: (options: {
@@ -26,7 +47,7 @@ export declare const Algo: {
             readonly id?: string | null | undefined;
         }, arg1: number) => Promise<Date>;
     };
-    contractIsAlive: ((arg1: number) => Promise<boolean>) & {
+    getContractIsAlive: ((arg1: number) => Promise<boolean>) & {
         withOptions: (options: {
             readonly priority?: number | null | undefined;
             readonly weight?: number | null | undefined;
@@ -51,3 +72,4 @@ export declare const Algo: {
         }, arg1: number) => Promise<AssetMetadata>;
     };
 };
+export default Algo;
