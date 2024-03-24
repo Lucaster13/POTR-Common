@@ -35,7 +35,7 @@ type AccountInformationResponse = {
     assets: AssetInformation[];
 };
 type AssetMetadataResponse = {
-    assets: AssetMetadata[];
+    asset: AssetMetadata[];
 } & PaginatedResponse;
 type AssetConfigTransactionsResponse = {
     transactions: AssetConfigTransaction[];
