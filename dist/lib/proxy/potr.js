@@ -1,5 +1,5 @@
 import { BASE_CLASSES } from "../../constants";
-import { getCIDFromReserveAddr, resolveIpfsGatewayUrl } from "../utils";
+import { getCIDFromReserveAddr, getReserveAddrFromCID, resolveIpfsGatewayUrl } from "../utils";
 import Algo from "./algorand";
 export async function getMetadata(asaId) {
     const [assetMetadata, arc69Metadata] = await Promise.all([
@@ -8,9 +8,14 @@ export async function getMetadata(asaId) {
     ]);
     const { description, properties: traits } = arc69Metadata;
     const { params, index } = assetMetadata;
+    const cid = getCIDFromReserveAddr(params.url, params.reserve);
+    const reserveAddrCheck = getReserveAddrFromCID(cid);
+    if (params.reserve.trim() !== reserveAddrCheck.trim()) {
+        console.warn(`Reserve Addresses did not match ${params.reserve} !== ${reserveAddrCheck}`);
+    }
     return {
         name: params.name,
-        url: resolveIpfsGatewayUrl(getCIDFromReserveAddr(params.reserve)),
+        url: resolveIpfsGatewayUrl(cid),
         unitName: params["unit-name"],
         id: index,
         balance: 1,

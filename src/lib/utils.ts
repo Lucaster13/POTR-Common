@@ -22,22 +22,17 @@ export function formatTimestamp(timestamp: Date) {
 export const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 
 // // RESOLVING IPFS URL, CID, RESERVE ADDRESS
-export function getCIDFromReserveAddr(reserveAddr: string): string {
+export function getCIDFromReserveAddr(url: string, reserveAddr: string): string {
 	// get 32 bytes Uint8Array reserve address - treating it as 32-byte sha2-256 hash
 	const addr = decodeAddress(reserveAddr);
 	const mhdigest = digest.create(sha2.sha256.code, addr.publicKey);
-	const cid = CID.create(1, 0x70, mhdigest);
+	const cid = CID.create(1, url.includes("raw") ? 0x55 : 0x70, mhdigest);
 	return cid.toString();
 }
 
 export function getReserveAddrFromCID(cidString: string): string {
 	const cid = CID.parse(cidString);
-	const reserveAddr = encodeAddress(cid.multihash.digest);
-	const cidCheck = getCIDFromReserveAddr(reserveAddr);
-	if (cid.toString().trim() !== cidCheck.toString().trim()) {
-		console.warn(`CIDs did not match ${cid.toString()} !== ${cidCheck}`);
-	}
-	return reserveAddr;
+	return encodeAddress(cid.multihash.digest);
 }
 
 // IPFS

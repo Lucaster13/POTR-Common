@@ -16,19 +16,14 @@ export function formatTimestamp(timestamp) {
     return format(timestamp, "MMMM dd, yyyy hh:mm a 'UTC'xxx");
 }
 export const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-export function getCIDFromReserveAddr(reserveAddr) {
+export function getCIDFromReserveAddr(url, reserveAddr) {
     const addr = decodeAddress(reserveAddr);
     const mhdigest = digest.create(sha2.sha256.code, addr.publicKey);
-    const cid = CID.create(1, 0x70, mhdigest);
+    const cid = CID.create(1, url.includes("raw") ? 0x55 : 0x70, mhdigest);
     return cid.toString();
 }
 export function getReserveAddrFromCID(cidString) {
     const cid = CID.parse(cidString);
-    const reserveAddr = encodeAddress(cid.multihash.digest);
-    const cidCheck = getCIDFromReserveAddr(reserveAddr);
-    if (cid.toString().trim() !== cidCheck.toString().trim()) {
-        console.warn(`CIDs did not match ${cid.toString()} !== ${cidCheck}`);
-    }
-    return reserveAddr;
+    return encodeAddress(cid.multihash.digest);
 }
 export const resolveIpfsGatewayUrl = (cid) => `${IPFS_GATEWAY_URL_PREFIX}${cid}`;
