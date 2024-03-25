@@ -1,4 +1,3 @@
-"use client";
 export default {
     asaIds: {
         TestNet: [

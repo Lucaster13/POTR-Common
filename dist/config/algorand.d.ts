@@ -10,12 +10,8 @@ declare const _default: {
         };
     };
     contracts: {
-        TestNet: {
-            coin_shop: number;
-        };
-        MainNet: {
-            coin_shop: number;
-        };
+        TestNet: {};
+        MainNet: {};
     };
     tps: number[];
 };

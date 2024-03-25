@@ -1,5 +1,3 @@
-"use client";
-
 export default {
 	wallets: {
 		TestNet: {
@@ -12,12 +10,8 @@ export default {
 		},
 	},
 	contracts: {
-		TestNet: {
-			coin_shop: 177906185,
-		},
-		MainNet: {
-			coin_shop: 0,
-		},
+		TestNet: {},
+		MainNet: {},
 	},
 	tps: [45, 10],
 };
