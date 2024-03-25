@@ -35,4 +35,4 @@ export function getReserveAddrFromCID(url, cidString) {
         throw new Error(`Cid check failed: ${cid} !== ${cidTest}`);
     return reserveAddr;
 }
-export const resolveIpfsGatewayUrl = (cid) => `${IPFS_GATEWAY_URL_PREFIX}${cid}`;
+export const resolveIpfsGatewayUrl = (cid) => `${IPFS_GATEWAY_URL_PREFIX}${cid}?optimizer=image`;
