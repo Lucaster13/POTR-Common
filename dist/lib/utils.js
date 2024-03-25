@@ -16,10 +16,14 @@ export function formatTimestamp(timestamp) {
     return format(timestamp, "MMMM dd, yyyy hh:mm a 'UTC'xxx");
 }
 export const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const RAW_CODEC = 0x55;
+const DAG_PB_CODEC = 0x70;
+const DAG_CBOR_CODEC = 0x71;
 export function getCIDFromReserveAddr(url, reserveAddr) {
     const addr = decodeAddress(reserveAddr);
     const mhdigest = digest.create(sha2.sha256.code, addr.publicKey);
-    const cid = CID.create(1, url.includes("raw") ? 0x55 : 0x70, mhdigest);
+    const resolvedCodec = url.includes("raw") ? RAW_CODEC : url.includes("dag-cbor") ? DAG_CBOR_CODEC : DAG_PB_CODEC;
+    const cid = CID.create(1, resolvedCodec, mhdigest);
     return cid.toString();
 }
 export function getReserveAddrFromCID(cidString) {

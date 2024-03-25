@@ -22,11 +22,15 @@ export function formatTimestamp(timestamp: Date) {
 export const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms));
 
 // // RESOLVING IPFS URL, CID, RESERVE ADDRESS
+const RAW_CODEC = 0x55;
+const DAG_PB_CODEC = 0x70;
+const DAG_CBOR_CODEC = 0x71;
 export function getCIDFromReserveAddr(url: string, reserveAddr: string): string {
 	// get 32 bytes Uint8Array reserve address - treating it as 32-byte sha2-256 hash
 	const addr = decodeAddress(reserveAddr);
 	const mhdigest = digest.create(sha2.sha256.code, addr.publicKey);
-	const cid = CID.create(1, url.includes("raw") ? 0x55 : 0x70, mhdigest);
+	const resolvedCodec = url.includes("raw") ? RAW_CODEC : url.includes("dag-cbor") ? DAG_CBOR_CODEC : DAG_PB_CODEC;
+	const cid = CID.create(1, resolvedCodec, mhdigest);
 	return cid.toString();
 }
 
