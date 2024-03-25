@@ -51,7 +51,7 @@ async function getAssetMetadata(asaId) {
         .then((res) => res)
         .then(({ asset }) => asset);
 }
-export const getArc69Metadata = (asaId) => Algo.getLatestAssetConfigTransaction(asaId).then((txn) => getJsonFromNote(txn.note));
+export const getArc69Metadata = (asaId) => getLatestAssetConfigTransaction(asaId).then((txn) => getJsonFromNote(txn.note));
 export function getJsonFromNote(noteBase64) {
     const noteString = Buffer.from(noteBase64, "base64")
         .toLocaleString()

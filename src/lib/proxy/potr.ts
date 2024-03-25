@@ -4,7 +4,7 @@ import { getCIDFromReserveAddr, resolveIpfsGatewayUrl } from "../utils";
 import Algo from "./algorand";
 
 // takes the asset metadata and the most recent asset config transaction and creates PotrMetadata
-export async function getMetadata(asaId: number): Promise<PotrMetadata> {
+async function getMetadata(asaId: number): Promise<PotrMetadata> {
 	const [assetMetadata, arc69Metadata] = await Promise.all([
 		Algo.getAssetMetadata(asaId),
 		Algo.getArc69Metadata(asaId),

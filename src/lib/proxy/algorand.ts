@@ -81,7 +81,7 @@ async function getAssetMetadata(asaId: number): Promise<AssetMetadata> {
 }
 
 export const getArc69Metadata = (asaId: number): Promise<Arc69Metadata> =>
-	Algo.getLatestAssetConfigTransaction(asaId).then((txn) => getJsonFromNote(txn.note));
+	getLatestAssetConfigTransaction(asaId).then((txn) => getJsonFromNote(txn.note));
 
 export function getJsonFromNote(noteBase64: string): Arc69Metadata {
 	const noteString = Buffer.from(noteBase64, "base64")

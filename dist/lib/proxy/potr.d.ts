@@ -1,6 +1,6 @@
 import { PotrBaseClass, PotrClass } from "../../constants";
 import { PotrMetadata } from "../../types";
-export declare function getMetadata(asaId: number): Promise<PotrMetadata>;
+declare function getMetadata(asaId: number): Promise<PotrMetadata>;
 declare function getBaseClass(potrClass: PotrClass): PotrBaseClass;
 declare const Potr: {
     getBaseClass: typeof getBaseClass;

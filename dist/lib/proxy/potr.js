@@ -1,7 +1,7 @@
 import { BASE_CLASSES } from "../../constants";
 import { getCIDFromReserveAddr, resolveIpfsGatewayUrl } from "../utils";
 import Algo from "./algorand";
-export async function getMetadata(asaId) {
+async function getMetadata(asaId) {
     const [assetMetadata, arc69Metadata] = await Promise.all([
         Algo.getAssetMetadata(asaId),
         Algo.getArc69Metadata(asaId),
