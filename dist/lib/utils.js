@@ -24,10 +24,15 @@ export function getCIDFromReserveAddr(url, reserveAddr) {
     const mhdigest = digest.create(sha2.sha256.code, addr.publicKey);
     const resolvedCodec = url.includes("raw") ? RAW_CODEC : url.includes("dag-cbor") ? DAG_CBOR_CODEC : DAG_PB_CODEC;
     const cid = CID.create(1, resolvedCodec, mhdigest);
-    return cid.toString();
+    return cid;
 }
-export function getReserveAddrFromCID(cidString) {
+export function getReserveAddrFromCID(url, cidString) {
     const cid = CID.parse(cidString);
-    return encodeAddress(cid.multihash.digest);
+    const reserveAddr = encodeAddress(cid.multihash.digest);
+    const cidTest = getCIDFromReserveAddr(url, reserveAddr);
+    const cidCheck = cid.toString() === cidTest.toString();
+    if (!cidCheck)
+        throw new Error(`Cid check failed: ${cid} !== ${cidTest}`);
+    return reserveAddr;
 }
 export const resolveIpfsGatewayUrl = (cid) => `${IPFS_GATEWAY_URL_PREFIX}${cid}`;

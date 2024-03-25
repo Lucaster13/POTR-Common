@@ -25,19 +25,23 @@ export const sleep = (ms: number) => new Promise<void>((r) => setTimeout(r, ms))
 const RAW_CODEC = 0x55;
 const DAG_PB_CODEC = 0x70;
 const DAG_CBOR_CODEC = 0x71;
-export function getCIDFromReserveAddr(url: string, reserveAddr: string): string {
+export function getCIDFromReserveAddr(url: string, reserveAddr: string): CID {
 	// get 32 bytes Uint8Array reserve address - treating it as 32-byte sha2-256 hash
 	const addr = decodeAddress(reserveAddr);
 	const mhdigest = digest.create(sha2.sha256.code, addr.publicKey);
 	const resolvedCodec = url.includes("raw") ? RAW_CODEC : url.includes("dag-cbor") ? DAG_CBOR_CODEC : DAG_PB_CODEC;
 	const cid = CID.create(1, resolvedCodec, mhdigest);
-	return cid.toString();
+	return cid;
 }
 
-export function getReserveAddrFromCID(cidString: string): string {
+export function getReserveAddrFromCID(url: string, cidString: string): string {
 	const cid = CID.parse(cidString);
-	return encodeAddress(cid.multihash.digest);
+	const reserveAddr = encodeAddress(cid.multihash.digest);
+	const cidTest = getCIDFromReserveAddr(url, reserveAddr);
+	const cidCheck = cid.toString() === cidTest.toString();
+	if (!cidCheck) throw new Error(`Cid check failed: ${cid} !== ${cidTest}`);
+	return reserveAddr;
 }
 
 // IPFS
-export const resolveIpfsGatewayUrl = (cid: string) => `${IPFS_GATEWAY_URL_PREFIX}${cid}`;
+export const resolveIpfsGatewayUrl = (cid: string | CID) => `${IPFS_GATEWAY_URL_PREFIX}${cid}`;
