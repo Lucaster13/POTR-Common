@@ -1,7 +1,7 @@
 import { getAlgoClient, getAlgoIndexerClient, getAlgoNodeConfig, mnemonicAccountFromEnvironment, } from "@algorandfoundation/algokit-utils";
 import { algorandConfig } from "../../config";
 import { makeRateLimiter } from "../utils";
-const getAlgoNetwork = () => process.env.ALGO_NETWORK;
+const getAlgoNetwork = () => process.env.ALGO_NETWORK ?? "TestNet";
 const algod = getAlgoClient(getAlgoNodeConfig(getAlgoNetwork().toLowerCase(), "algod"));
 const indexer = getAlgoIndexerClient(getAlgoNodeConfig(getAlgoNetwork().toLowerCase(), "indexer"));
 const algorandRateLimiter = makeRateLimiter(...algorandConfig.tps);

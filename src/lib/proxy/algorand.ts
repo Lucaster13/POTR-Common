@@ -15,7 +15,7 @@ import {
 import { algorandConfig } from "../../config";
 import { makeRateLimiter } from "../utils";
 
-const getAlgoNetwork = () => process.env.ALGO_NETWORK as "TestNet" | "MainNet";
+const getAlgoNetwork = () => (process.env.ALGO_NETWORK as "TestNet" | "MainNet") ?? "TestNet";
 
 // CLIENTS
 const algod = getAlgoClient(getAlgoNodeConfig(getAlgoNetwork().toLowerCase() as any, "algod"));
