@@ -44,7 +44,7 @@ async function getLatestAssetConfigTransaction(asaId) {
         .then((res) => res)
         .then((acfgTxns) => acfgTxns.transactions.at(0));
 }
-async function getAssetMetadata(asaId) {
+async function getAsaMetadata(asaId) {
     return indexer
         .lookupAssetByID(asaId)
         .do()
@@ -73,6 +73,6 @@ const Algo = {
     getBlockTimestamp: algorandRateLimiter.wrap(getBlockTimestamp),
     getContractIsAlive: algorandRateLimiter.wrap(getContractIsAlive),
     getLatestAssetConfigTransaction: algorandRateLimiter.wrap(getLatestAssetConfigTransaction),
-    getAssetMetadata: algorandRateLimiter.wrap(getAssetMetadata),
+    getAsaMetadata: algorandRateLimiter.wrap(getAsaMetadata),
 };
 export default Algo;

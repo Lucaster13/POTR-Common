@@ -48,8 +48,8 @@ type GolemTraits = {
 };
 
 type PotrTraits = {
-	PotrBackground: PotrBackground;
-	PotrClass: PotrClass;
+	Background: PotrBackground;
+	Class: PotrClass;
 	Level: number;
 } & (HumanoidTraits | PhantomTraits | DragonTraits | GolemTraits);
 

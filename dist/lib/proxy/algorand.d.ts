@@ -69,7 +69,7 @@ declare const Algo: {
             readonly id?: string | null | undefined;
         }, arg1: number) => Promise<AssetConfigTransaction>;
     };
-    getAssetMetadata: ((arg1: number) => Promise<AssetMetadata>) & {
+    getAsaMetadata: ((arg1: number) => Promise<AssetMetadata>) & {
         withOptions: (options: {
             readonly priority?: number | null | undefined;
             readonly weight?: number | null | undefined;

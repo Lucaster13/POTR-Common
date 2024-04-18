@@ -65,6 +65,7 @@ async function getContractIsAlive(ctcId: number) {
 		.catch(() => false); // if failure return false
 }
 
+// GETS LATEST ASSET CONFIG TRANSACTION
 async function getLatestAssetConfigTransaction(asaId: number): Promise<AssetConfigTransaction> {
 	return indexer
 		.lookupAssetTransactions(asaId)
@@ -73,7 +74,8 @@ async function getLatestAssetConfigTransaction(asaId: number): Promise<AssetConf
 		.then((acfgTxns) => acfgTxns.transactions.at(0)!);
 }
 
-async function getAssetMetadata(asaId: number): Promise<AssetMetadata> {
+// GETS ASA METADATA
+async function getAsaMetadata(asaId: number): Promise<AssetMetadata> {
 	return indexer
 		.lookupAssetByID(asaId)
 		.do()
@@ -81,6 +83,7 @@ async function getAssetMetadata(asaId: number): Promise<AssetMetadata> {
 		.then(({ asset }) => asset);
 }
 
+// GETS ARC-69 METADATA
 export const getArc69Metadata = (asaId: number): Promise<Arc69Metadata> =>
 	getLatestAssetConfigTransaction(asaId).then((txn) => getJsonFromNote(txn.note));
 
@@ -107,7 +110,7 @@ const Algo = {
 	getBlockTimestamp: algorandRateLimiter.wrap(getBlockTimestamp),
 	getContractIsAlive: algorandRateLimiter.wrap(getContractIsAlive),
 	getLatestAssetConfigTransaction: algorandRateLimiter.wrap(getLatestAssetConfigTransaction),
-	getAssetMetadata: algorandRateLimiter.wrap(getAssetMetadata),
+	getAsaMetadata: algorandRateLimiter.wrap(getAsaMetadata),
 };
 
 export default Algo;

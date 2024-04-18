@@ -6,7 +6,7 @@ import Algo from "./algorand";
 // takes the asset metadata and the most recent asset config transaction and creates PotrMetadata
 async function getMetadata(asaId: number): Promise<PotrMetadata> {
 	const [assetMetadata, arc69Metadata] = await Promise.all([
-		Algo.getAssetMetadata(asaId),
+		Algo.getAsaMetadata(asaId),
 		Algo.getArc69Metadata(asaId),
 	]);
 	// merge asaMd and traits to create metadata
@@ -20,7 +20,7 @@ async function getMetadata(asaId: number): Promise<PotrMetadata> {
 		id: index,
 		balance: 1,
 		description,
-		baseClass: getBaseClass(traits.PotrClass),
+		baseClass: getBaseClass(traits.Class),
 		traits,
 	};
 }

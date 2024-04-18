@@ -3,7 +3,7 @@ import { getCIDFromReserveAddr, resolveIpfsGatewayUrl } from "../utils";
 import Algo from "./algorand";
 async function getMetadata(asaId) {
     const [assetMetadata, arc69Metadata] = await Promise.all([
-        Algo.getAssetMetadata(asaId),
+        Algo.getAsaMetadata(asaId),
         Algo.getArc69Metadata(asaId),
     ]);
     const { description, properties: traits } = arc69Metadata;
@@ -15,7 +15,7 @@ async function getMetadata(asaId) {
         id: index,
         balance: 1,
         description,
-        baseClass: getBaseClass(traits.PotrClass),
+        baseClass: getBaseClass(traits.Class),
         traits,
     };
 }
