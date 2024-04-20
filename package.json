@@ -1,6 +1,6 @@
 {
 	"type": "module",
-	"version": "1.1.18",
+	"version": "1.1.20",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"dependencies": {
@@ -25,7 +25,8 @@
 	"scripts": {
 		"clean": "rm -rf node_modules dist",
 		"build": "eslint ./src --fix && prettier ./src --write && tsc && bun build ./src/index.ts  --outdir ./dist",
-		"publishToNpm": "bun run build; git add *; git commit -m 'update potr-common npm registry - $1'; git push; npm publish"
+		"publishToNpm": "bun run build; git add *; bun run commitToGit; git push; npm publish",
+		"commitToGit": "read -p 'Enter your commit message: ' commit_message && echo 'update potr-common npm registry: $commit_message' | git commit -F -"
 	},
 	"name": "potr-common",
 	"description": "common types and utils",
