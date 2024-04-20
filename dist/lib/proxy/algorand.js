@@ -12,15 +12,15 @@ const getUserAcc = () => mnemonicAccountFromEnvironment(getAccountName("USER"), 
 const getAdminAddr = () => getWalletAddrFromConfig("ADMIN");
 const getUserAddr = () => getWalletAddrFromConfig("USER");
 const RESPONSE_LIMIT = 3000;
-async function getAllAssetIdsInWallet(addr, nextToken) {
+async function getAssetsInWallet(addr, { nextToken, minBal, limit }) {
     return indexer
         .lookupAccountAssets(addr)
-        .limit(RESPONSE_LIMIT)
+        .limit(limit ?? RESPONSE_LIMIT)
         .nextToken(nextToken ?? "")
         .do()
         .then((res) => res)
-        .then((res) => ({
-        asaIds: res.assets.filter((a) => a.amount > 0).map((a) => a["asset-id"]),
+        .then(({ assets, ...res }) => ({
+        assets: minBal ? assets.filter((a) => a.amount > minBal) : assets,
         nextToken: res["next-token"],
     }));
 }
@@ -69,7 +69,7 @@ const Algo = {
     algod,
     indexer,
     getArc69Metadata: algorandRateLimiter.wrap(getArc69Metadata),
-    getAllAssetIdsInWallet: algorandRateLimiter.wrap(getAllAssetIdsInWallet),
+    getAssetsInWallet: algorandRateLimiter.wrap(getAssetsInWallet),
     getBlockTimestamp: algorandRateLimiter.wrap(getBlockTimestamp),
     getContractIsAlive: algorandRateLimiter.wrap(getContractIsAlive),
     getLatestAssetConfigTransaction: algorandRateLimiter.wrap(getLatestAssetConfigTransaction),

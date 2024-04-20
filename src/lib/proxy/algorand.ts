@@ -5,7 +5,7 @@ import {
 	mnemonicAccountFromEnvironment,
 } from "@algorandfoundation/algokit-utils";
 import {
-	AccountInformationResponse,
+	AccountAssetInformationResponse,
 	Arc69Metadata,
 	AssetConfigTransaction,
 	AssetConfigTransactionsResponse,
@@ -35,15 +35,21 @@ const getUserAddr = () => getWalletAddrFromConfig("USER");
 
 // GET ALL POTRS IN A GIVEN WALLET
 const RESPONSE_LIMIT = 3000;
-async function getAllAssetIdsInWallet(addr: string, nextToken?: string) {
+type GetAssetsInWalletQuery = {
+	minBal?: number;
+	nextToken?: string;
+	limit?: number;
+};
+
+async function getAssetsInWallet(addr: string, { nextToken, minBal, limit }: GetAssetsInWalletQuery) {
 	return indexer
 		.lookupAccountAssets(addr)
-		.limit(RESPONSE_LIMIT)
+		.limit(limit ?? RESPONSE_LIMIT)
 		.nextToken(nextToken ?? "")
 		.do()
-		.then((res) => res as AccountInformationResponse)
-		.then((res) => ({
-			asaIds: res.assets.filter((a) => a.amount > 0).map((a) => a["asset-id"]),
+		.then((res) => res as AccountAssetInformationResponse)
+		.then(({ assets, ...res }) => ({
+			assets: minBal ? assets.filter((a) => a.amount > minBal) : assets,
 			nextToken: res["next-token"],
 		}));
 }
@@ -106,7 +112,7 @@ const Algo = {
 	algod,
 	indexer,
 	getArc69Metadata: algorandRateLimiter.wrap(getArc69Metadata),
-	getAllAssetIdsInWallet: algorandRateLimiter.wrap(getAllAssetIdsInWallet),
+	getAssetsInWallet: algorandRateLimiter.wrap(getAssetsInWallet),
 	getBlockTimestamp: algorandRateLimiter.wrap(getBlockTimestamp),
 	getContractIsAlive: algorandRateLimiter.wrap(getContractIsAlive),
 	getLatestAssetConfigTransaction: algorandRateLimiter.wrap(getLatestAssetConfigTransaction),

@@ -31,7 +31,7 @@ type AssetConfigTransaction = {
 type PaginatedResponse = {
     "next-token": string | undefined;
 };
-type AccountInformationResponse = {
+type AccountAssetInformationResponse = {
     assets: AssetInformation[];
 } & PaginatedResponse;
 type AssetMetadataResponse = {
@@ -59,4 +59,4 @@ type PotrMetadata = {
     traits: PotrTraits;
     baseClass: PotrBaseClass;
 } & PotrAssetMetadata;
-export { AccountInformationResponse, PotrMetadata, Arc69Metadata, AssetMetadata, AssetConfigTransaction, AssetInformation, PotrAssetMetadata, AssetMetadataResponse, AssetConfigTransactionsResponse, };
+export { AccountAssetInformationResponse, PotrMetadata, Arc69Metadata, AssetMetadata, AssetConfigTransaction, AssetInformation, PotrAssetMetadata, AssetMetadataResponse, AssetConfigTransactionsResponse, };

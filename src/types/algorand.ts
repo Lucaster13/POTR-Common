@@ -37,7 +37,7 @@ type PaginatedResponse = {
 	"next-token": string | undefined;
 };
 
-type AccountInformationResponse = { assets: AssetInformation[] } & PaginatedResponse;
+type AccountAssetInformationResponse = { assets: AssetInformation[] } & PaginatedResponse;
 type AssetMetadataResponse = { asset: AssetMetadata };
 type AssetConfigTransactionsResponse = { transactions: AssetConfigTransaction[] } & PaginatedResponse;
 
@@ -65,7 +65,7 @@ type PotrMetadata = {
 } & PotrAssetMetadata;
 
 export {
-	AccountInformationResponse,
+	AccountAssetInformationResponse,
 	PotrMetadata,
 	Arc69Metadata,
 	AssetMetadata,
