@@ -1,17 +1,30 @@
 {
+	"name": "potr-common",
+	"description": "common types and utils",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Lucaster13/POTR-Common.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Lucaster13/POTR-Common/issues"
+	},
+	"homepage": "https://github.com/Lucaster13/POTR-Common#readme",
 	"type": "module",
 	"version": "1.1.22",
 	"main": "dist/index.js",
-	"types": "dist/index.d.ts",
-	"dependencies": {
-		"@algorandfoundation/algokit-utils": "^5.7.0",
+	"module": "dist/index.js",
+	"types": "dist/types/index.d.ts",
+	"peerDependencies": {
+		"@algorandfoundation/algokit-utils": "^6.0.2",
 		"algosdk": "^2.7.0",
 		"bottleneck": "^2.19.5",
-		"date-fns": "^2.30.0",
+		"date-fns": "^3.6.0",
 		"multiformats": "^13.1.0"
 	},
 	"devDependencies": {
-		"@types/node": "^20.11.30",
+		"@types/node": "^20.12.7",
 		"@typescript-eslint/eslint-plugin": "^6.3.0",
 		"@typescript-eslint/parser": "^6.3.0",
 		"bun-types": "^1.0.35",
@@ -24,20 +37,8 @@
 	},
 	"scripts": {
 		"clean": "rm -rf node_modules dist",
-		"build": "eslint ./src --fix && prettier ./src --write && tsc && bun build ./src/index.ts  --outdir ./dist",
-		"publishToNpm": "bun run build; bun run commitToGit && git push; npm publish",
+		"build": "eslint ./src --fix && prettier ./src --write && tsc && bun build ./src/index.ts --outdir ./dist",
+		"doPublish": "bun run build; bun run commitToGit && git push; bun publish",
 		"commitToGit": " git add *; read -p 'Enter your commit message: ' $commit_message && echo '$commit_message' | git commit -F -"
-	},
-	"name": "potr-common",
-	"description": "common types and utils",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/Lucaster13/POTR-Common.git"
-	},
-	"author": "",
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/Lucaster13/POTR-Common/issues"
-	},
-	"homepage": "https://github.com/Lucaster13/POTR-Common#readme"
+	}
 }

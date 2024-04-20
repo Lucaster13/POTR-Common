@@ -3,18 +3,16 @@
 		"target": "ESNext",
 		"module": "ESNext",
 		"declaration": true,
-		"strict": true,
 		"noImplicitAny": true,
 		"removeComments": true,
-		"moduleResolution": "Node",
+		"moduleResolution": "node",
 		"preserveConstEnums": true,
 		"esModuleInterop": true,
 		"allowJs": true,
 		"resolveJsonModule": true,
-		"skipLibCheck": true,
+		"lib": ["ESNext", "DOM"],
 		"outDir": "./dist",
 		"types": ["node"]
 	},
-	"include": ["./src/**/*.ts"],
-	"exclude": ["node_modules"]
+	"include": ["src/**/*"]
 }
