@@ -1,5 +1,6 @@
 {
 	"name": "potr-common",
+	"version": "1.1.23",
 	"description": "common types and utils",
 	"repository": {
 		"type": "git",
@@ -12,7 +13,6 @@
 	},
 	"homepage": "https://github.com/Lucaster13/POTR-Common#readme",
 	"type": "module",
-	"version": "1.1.22",
 	"main": "dist/index.js",
 	"module": "dist/index.js",
 	"types": "dist/types/index.d.ts",
@@ -38,7 +38,7 @@
 	"scripts": {
 		"clean": "rm -rf node_modules dist",
 		"build": "eslint ./src --fix && prettier ./src --write && tsc && bun build ./src/index.ts --outdir ./dist",
-		"doPublish": "bun run build; bun run commitToGit && git push; bun publish",
+		"doPublish": "bun run build; bun run commitToGit && git push; npm publish",
 		"commitToGit": " git add *; read -p 'Enter your commit message: ' $commit_message && echo '$commit_message' | git commit -F -"
 	}
 }
