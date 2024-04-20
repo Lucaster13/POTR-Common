@@ -1,5 +1,5 @@
 import { BASE_CLASSES, PotrBaseClass, PotrClass } from "../../constants";
-import { PotrMetadata } from "../../types";
+import { AssetMetadata, PotrAssetMetadata, PotrMetadata } from "../../types";
 import { getCIDFromReserveAddr, resolveIpfsGatewayUrl } from "../utils";
 import Algo from "./algorand";
 
@@ -31,10 +31,31 @@ function getBaseClass(potrClass: PotrClass): PotrBaseClass {
 	return !BASE_CLASSES.includes(potrBaseClass) ? PotrBaseClass.HUMANOID : potrBaseClass;
 }
 
+// fast lookup to get all potr metadata without their ARC-69 traits
+async function getAllMetadatasWithoutTraits(): Promise<PotrAssetMetadata[]> {
+	// get all admin asset metadatas
+	const assets: AssetMetadata[] = [];
+
+	let nextToken;
+	do {
+		await Algo.getAllAsaMetadata(Algo.getAdminAddr()).then((res) => assets.push(...res.assets));
+	} while (nextToken);
+
+	// transform assets
+	return assets.map(({ params, index }) => ({
+		name: params.name,
+		url: resolveIpfsGatewayUrl(getCIDFromReserveAddr(params.url, params.reserve)),
+		unitName: params["unit-name"],
+		id: index,
+		balance: 1,
+	}));
+}
+
 // EXPORT PROXYS
 const Potr = {
 	getBaseClass,
 	getMetadata,
+	getAllMetadatasWithoutTraits,
 };
 
 export default Potr;

@@ -5,27 +5,27 @@ import {
 	mnemonicAccountFromEnvironment,
 } from "@algorandfoundation/algokit-utils";
 import {
-	AccountAssetInformationResponse,
+	AccountAssetHoldingResponse,
 	Arc69Metadata,
 	AssetConfigTransaction,
 	AssetConfigTransactionsResponse,
 	AssetMetadata,
 	AssetMetadataResponse,
+	CreatedAssetsResponse,
 } from "../../types";
 import { algorandConfig } from "../../config";
 import { makeRateLimiter } from "../utils";
 
-const getAlgoNetwork = () =>
-	(process.env.ALGO_NETWORK ?? process.env.NEXT_PUBLIC_ALGO_NETWORK) as "TestNet" | "MainNet";
+const getNetwork = () => (process.env.ALGO_NETWORK ?? process.env.NEXT_PUBLIC_ALGO_NETWORK) as "TestNet" | "MainNet";
 
 // CLIENTS
-const algod = getAlgoClient(getAlgoNodeConfig(getAlgoNetwork().toLowerCase() as any, "algod"));
-const indexer = getAlgoIndexerClient(getAlgoNodeConfig(getAlgoNetwork().toLowerCase() as any, "indexer"));
+const algod = getAlgoClient(getAlgoNodeConfig(getNetwork().toLowerCase() as any, "algod"));
+const indexer = getAlgoIndexerClient(getAlgoNodeConfig(getNetwork().toLowerCase() as any, "indexer"));
 const algorandRateLimiter = makeRateLimiter(...algorandConfig.tps);
 
 type AccountRole = "ADMIN" | "USER";
-const getAccountName = (role: AccountRole) => `POTR_${getAlgoNetwork()}_${role}`.toUpperCase();
-const getWalletAddrFromConfig = (role: AccountRole) => algorandConfig.wallets[getAlgoNetwork()][role];
+const getAccountName = (role: AccountRole) => `POTR_${getNetwork()}_${role}`.toUpperCase();
+const getWalletAddrFromConfig = (role: AccountRole) => algorandConfig.wallets[getNetwork()][role];
 
 // WALLETS
 const getAdminAcc = () => mnemonicAccountFromEnvironment(getAccountName("ADMIN"), algod);
@@ -41,15 +41,15 @@ type GetAssetsInWalletQuery = {
 	limit?: number;
 };
 
-async function getAssetsInWallet(addr: string, { nextToken, minBal, limit }: GetAssetsInWalletQuery = {}) {
+async function getAsaIdsInWallet(addr: string, { nextToken, minBal, limit }: GetAssetsInWalletQuery = {}) {
 	return indexer
 		.lookupAccountAssets(addr)
 		.limit(limit ?? RESPONSE_LIMIT)
 		.nextToken(nextToken ?? "")
 		.do()
-		.then((res) => res as AccountAssetInformationResponse)
+		.then((res) => res as AccountAssetHoldingResponse)
 		.then(({ assets, ...res }) => ({
-			assets: minBal ? assets.filter((a) => a.amount > minBal) : assets,
+			asaIds: assets.filter((a) => !minBal || a.amount >= minBal).map((a) => a["asset-id"]),
 			nextToken: res["next-token"],
 		}));
 }
@@ -89,6 +89,19 @@ async function getAsaMetadata(asaId: number): Promise<AssetMetadata> {
 		.then(({ asset }) => asset);
 }
 
+async function getAllAsaMetadata(addr: string, nextToken?: string) {
+	return indexer
+		.lookupAccountCreatedAssets(addr)
+		.limit(RESPONSE_LIMIT)
+		.nextToken(nextToken ?? "")
+		.do()
+		.then((res) => res as CreatedAssetsResponse)
+		.then(({ assets, ...res }) => ({
+			assets,
+			nextToken: res["next-token"],
+		}));
+}
+
 // GETS ARC-69 METADATA
 export const getArc69Metadata = (asaId: number): Promise<Arc69Metadata> =>
 	getLatestAssetConfigTransaction(asaId).then((txn) => getJsonFromNote(txn.note));
@@ -108,15 +121,16 @@ const Algo = {
 	getUserAcc: algorandRateLimiter.wrap(getUserAcc),
 	getAdminAddr,
 	getUserAddr,
-	getAlgoNetwork,
+	getNetwork,
 	algod,
 	indexer,
 	getArc69Metadata: algorandRateLimiter.wrap(getArc69Metadata),
-	getAssetsInWallet: algorandRateLimiter.wrap(getAssetsInWallet),
+	getAsaIdsInWallet: algorandRateLimiter.wrap(getAsaIdsInWallet),
 	getBlockTimestamp: algorandRateLimiter.wrap(getBlockTimestamp),
 	getContractIsAlive: algorandRateLimiter.wrap(getContractIsAlive),
 	getLatestAssetConfigTransaction: algorandRateLimiter.wrap(getLatestAssetConfigTransaction),
 	getAsaMetadata: algorandRateLimiter.wrap(getAsaMetadata),
+	getAllAsaMetadata: algorandRateLimiter.wrap(getAllAsaMetadata),
 };
 
 export default Algo;

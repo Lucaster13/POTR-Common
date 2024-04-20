@@ -1,6 +1,6 @@
 import { PotrBaseClass } from "../constants";
 import { PotrTraits } from "./traits";
-type AssetInformation = {
+type AssetHolding = {
     "asset-id": number;
     amount: number;
 };
@@ -24,19 +24,22 @@ type AssetMetadata = {
     };
 };
 type AssetConfigTransaction = {
-    "asset-config-transaction": AssetInformation;
+    "asset-config-transaction": AssetHolding;
     "created-asset-index": number;
     note: string;
 };
 type PaginatedResponse = {
     "next-token": string | undefined;
 };
-type AccountAssetInformationResponse = {
-    assets: AssetInformation[];
+type AccountAssetHoldingResponse = {
+    assets: AssetHolding[];
 } & PaginatedResponse;
 type AssetMetadataResponse = {
     asset: AssetMetadata;
-};
+} & PaginatedResponse;
+type CreatedAssetsResponse = {
+    assets: AssetMetadata[];
+} & PaginatedResponse;
 type AssetConfigTransactionsResponse = {
     transactions: AssetConfigTransaction[];
 } & PaginatedResponse;
@@ -52,11 +55,11 @@ type PotrAssetMetadata = {
     name: string;
     url: string;
     unitName: string;
+    balance: number;
 };
 type PotrMetadata = {
-    balance: number;
-    description: string;
     traits: PotrTraits;
     baseClass: PotrBaseClass;
+    description: string;
 } & PotrAssetMetadata;
-export type { AccountAssetInformationResponse, PotrMetadata, Arc69Metadata, AssetMetadata, AssetConfigTransaction, AssetInformation, PotrAssetMetadata, AssetMetadataResponse, AssetConfigTransactionsResponse, };
+export type { AccountAssetHoldingResponse, PotrMetadata, Arc69Metadata, AssetMetadata, AssetConfigTransaction, AssetHolding, PotrAssetMetadata, AssetMetadataResponse, AssetConfigTransactionsResponse, CreatedAssetsResponse, };

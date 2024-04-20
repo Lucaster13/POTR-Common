@@ -20,7 +20,7 @@ declare const Algo: {
     };
     getAdminAddr: () => string;
     getUserAddr: () => string;
-    getAlgoNetwork: () => "TestNet" | "MainNet";
+    getNetwork: () => "TestNet" | "MainNet";
     algod: import("algosdk").Algodv2;
     indexer: import("algosdk").Indexer;
     getArc69Metadata: ((arg1: number) => Promise<Arc69Metadata>) & {
@@ -31,8 +31,8 @@ declare const Algo: {
             readonly id?: string;
         }, arg1: number) => Promise<Arc69Metadata>;
     };
-    getAssetsInWallet: ((arg1: string) => Promise<{
-        assets: import("../../types/algorand").AssetInformation[];
+    getAsaIdsInWallet: ((arg1: string) => Promise<{
+        asaIds: number[];
         nextToken: string;
     }>) & {
         withOptions: (options: {
@@ -41,7 +41,7 @@ declare const Algo: {
             readonly expiration?: number;
             readonly id?: string;
         }, arg1: string) => Promise<{
-            assets: import("../../types/algorand").AssetInformation[];
+            asaIds: number[];
             nextToken: string;
         }>;
     };
@@ -76,6 +76,20 @@ declare const Algo: {
             readonly expiration?: number;
             readonly id?: string;
         }, arg1: number) => Promise<AssetMetadata>;
+    };
+    getAllAsaMetadata: ((arg1: string) => Promise<{
+        assets: AssetMetadata[];
+        nextToken: string;
+    }>) & {
+        withOptions: (options: {
+            readonly priority?: number;
+            readonly weight?: number;
+            readonly expiration?: number;
+            readonly id?: string;
+        }, arg1: string) => Promise<{
+            assets: AssetMetadata[];
+            nextToken: string;
+        }>;
     };
 };
 export default Algo;

@@ -23,8 +23,23 @@ function getBaseClass(potrClass) {
     const potrBaseClass = potrClass;
     return !BASE_CLASSES.includes(potrBaseClass) ? "Humanoid" : potrBaseClass;
 }
+async function getAllMetadatasWithoutTraits() {
+    const assets = [];
+    let nextToken;
+    do {
+        await Algo.getAllAsaMetadata(Algo.getAdminAddr()).then((res) => assets.push(...res.assets));
+    } while (nextToken);
+    return assets.map(({ params, index }) => ({
+        name: params.name,
+        url: resolveIpfsGatewayUrl(getCIDFromReserveAddr(params.url, params.reserve)),
+        unitName: params["unit-name"],
+        id: index,
+        balance: 1,
+    }));
+}
 const Potr = {
     getBaseClass,
     getMetadata,
+    getAllMetadatasWithoutTraits,
 };
 export default Potr;
