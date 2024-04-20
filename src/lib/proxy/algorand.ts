@@ -35,13 +35,14 @@ const getUserAddr = () => getWalletAddrFromConfig("USER");
 
 // GET ALL POTRS IN A GIVEN WALLET
 const RESPONSE_LIMIT = 3000;
-type GetAssetsInWalletQuery = {
+type GetAsaIdsInWalletQuery = {
 	minBal?: number;
 	nextToken?: string;
 	limit?: number;
 };
 
-async function getAsaIdsInWallet(addr: string, { nextToken, minBal, limit }: GetAssetsInWalletQuery = {}) {
+async function getAsaIdsInWallet(addr: string, params: GetAsaIdsInWalletQuery | undefined) {
+	const { nextToken, minBal, limit } = params ?? {};
 	return indexer
 		.lookupAccountAssets(addr)
 		.limit(limit ?? RESPONSE_LIMIT)
@@ -89,7 +90,7 @@ async function getAsaMetadata(asaId: number): Promise<AssetMetadata> {
 		.then(({ asset }) => asset);
 }
 
-async function getAllAsaMetadata(addr: string, nextToken?: string) {
+async function getAllAsaMetadata(addr: string, nextToken: string | undefined) {
 	return indexer
 		.lookupAccountCreatedAssets(addr)
 		.limit(RESPONSE_LIMIT)

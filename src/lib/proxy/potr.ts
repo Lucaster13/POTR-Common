@@ -38,7 +38,7 @@ async function getAllMetadatasWithoutTraits(): Promise<PotrAssetMetadata[]> {
 
 	let nextToken;
 	do {
-		await Algo.getAllAsaMetadata(Algo.getAdminAddr()).then((res) => assets.push(...res.assets));
+		await Algo.getAllAsaMetadata(Algo.getAdminAddr(), nextToken).then((res) => assets.push(...res.assets));
 	} while (nextToken);
 
 	// transform assets
