@@ -1,2 +1,2 @@
-export * from "./traits.js";
-export * from "./algorand.js";
+export type * from "./traits.d.ts";
+export type * from "./algorand.d.ts";

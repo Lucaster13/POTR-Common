@@ -12,6 +12,14 @@
 		"url": "https://github.com/Lucaster13/POTR-Common/issues"
 	},
 	"homepage": "https://github.com/Lucaster13/POTR-Common#readme",
+	"files": [
+		"dist/"
+	],
+	"bun": {
+		"entrypoints": [
+			"src/index.ts"
+		]
+	},
 	"type": "module",
 	"main": "dist/index.js",
 	"module": "dist/index.js",

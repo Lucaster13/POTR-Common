@@ -64,7 +64,7 @@ type PotrMetadata = {
 	baseClass: PotrBaseClass;
 } & PotrAssetMetadata;
 
-export {
+export type {
 	AccountAssetInformationResponse,
 	PotrMetadata,
 	Arc69Metadata,

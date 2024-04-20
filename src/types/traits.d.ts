@@ -53,4 +53,4 @@ type PotrTraits = {
 	Level: number;
 } & (HumanoidTraits | PhantomTraits | DragonTraits | GolemTraits);
 
-export { PotrTraits };
+export type { PotrTraits };
