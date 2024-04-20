@@ -1,4 +1,4 @@
-import { Arc69Metadata } from "../../types";
+import { Arc69Metadata, AssetConfigTransaction, AssetMetadata } from "../../types";
 type GetAssetsInWalletQuery = {
     minBal?: number;
     nextToken?: string;
@@ -37,8 +37,8 @@ declare const Algo: {
         }, arg1: number) => Promise<Arc69Metadata>;
     };
     getAssetsInWallet: ((arg1: string, arg2: GetAssetsInWalletQuery) => Promise<{
-        assets: any;
-        nextToken: any;
+        assets: import("../../types/algorand").AssetInformation[];
+        nextToken: string;
     }>) & {
         withOptions: (options: {
             readonly priority?: number;
@@ -46,8 +46,8 @@ declare const Algo: {
             readonly expiration?: number;
             readonly id?: string;
         }, arg1: string, arg2: GetAssetsInWalletQuery) => Promise<{
-            assets: any;
-            nextToken: any;
+            assets: import("../../types/algorand").AssetInformation[];
+            nextToken: string;
         }>;
     };
     getBlockTimestamp: ((arg1: number) => Promise<Date>) & {

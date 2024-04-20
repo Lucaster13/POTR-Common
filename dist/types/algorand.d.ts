@@ -59,4 +59,4 @@ type PotrMetadata = {
     traits: PotrTraits;
     baseClass: PotrBaseClass;
 } & PotrAssetMetadata;
-export { AccountAssetInformationResponse, PotrMetadata, Arc69Metadata, AssetMetadata, AssetConfigTransaction, AssetInformation, PotrAssetMetadata, AssetMetadataResponse, AssetConfigTransactionsResponse, };
+export type { AccountAssetInformationResponse, PotrMetadata, Arc69Metadata, AssetMetadata, AssetConfigTransaction, AssetInformation, PotrAssetMetadata, AssetMetadataResponse, AssetConfigTransactionsResponse, };

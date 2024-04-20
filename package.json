@@ -1,6 +1,6 @@
 {
 	"name": "potr-common",
-	"version": "1.1.24",
+	"version": "1.1.25",
 	"description": "common types and utils",
 	"repository": {
 		"type": "git",
@@ -12,18 +12,13 @@
 		"url": "https://github.com/Lucaster13/POTR-Common/issues"
 	},
 	"homepage": "https://github.com/Lucaster13/POTR-Common#readme",
-	"files": [
-		"dist/"
-	],
-	"bun": {
-		"entrypoints": [
-			"src/index.ts"
-		]
-	},
 	"type": "module",
 	"main": "dist/index.js",
 	"module": "dist/index.js",
-	"types": "dist/types/index.d.ts",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist/"
+	],
 	"peerDependencies": {
 		"@algorandfoundation/algokit-utils": "^6.0.2",
 		"algosdk": "^2.7.0",
