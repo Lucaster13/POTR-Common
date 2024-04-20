@@ -44,13 +44,15 @@ async function getAllMetadatasWithoutTraits(): Promise<PotrAssetMetadata[]> {
 	} while (nextToken);
 
 	// transform assets
-	return assets.map(({ params, index }) => ({
-		name: params.name,
-		url: resolveIpfsGatewayUrl(getCIDFromReserveAddr(params.url, params.reserve)),
-		unitName: params["unit-name"],
-		id: index,
-		balance: 1,
-	}));
+	return assets
+		.filter((a) => a.params["unit-name"].startsWith("POTR"))
+		.map(({ params, index }) => ({
+			name: params.name,
+			url: resolveIpfsGatewayUrl(getCIDFromReserveAddr(params.url, params.reserve)),
+			unitName: params["unit-name"],
+			id: index,
+			balance: 1,
+		}));
 }
 
 // EXPORT PROXYS

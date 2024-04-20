@@ -1,6 +1,6 @@
 {
 	"name": "potr-common",
-	"version": "1.1.29",
+	"version": "1.1.30",
 	"description": "common types and utils",
 	"repository": {
 		"type": "git",

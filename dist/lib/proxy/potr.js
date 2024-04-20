@@ -29,7 +29,9 @@ async function getAllMetadatasWithoutTraits() {
     do {
         await Algo.getAllAsaMetadata({ addr: Algo.getAdminAddr(), nextToken }).then((res) => assets.push(...res.assets));
     } while (nextToken);
-    return assets.map(({ params, index }) => ({
+    return assets
+        .filter((a) => a.params["unit-name"].startsWith("POTR"))
+        .map(({ params, index }) => ({
         name: params.name,
         url: resolveIpfsGatewayUrl(getCIDFromReserveAddr(params.url, params.reserve)),
         unitName: params["unit-name"],
