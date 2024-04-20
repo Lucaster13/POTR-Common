@@ -12,7 +12,7 @@ const getUserAcc = () => mnemonicAccountFromEnvironment(getAccountName("USER"), 
 const getAdminAddr = () => getWalletAddrFromConfig("ADMIN");
 const getUserAddr = () => getWalletAddrFromConfig("USER");
 const RESPONSE_LIMIT = 3000;
-async function getAssetsInWallet(addr, { nextToken, minBal, limit }) {
+async function getAssetsInWallet(addr, { nextToken, minBal, limit } = {}) {
     return indexer
         .lookupAccountAssets(addr)
         .limit(limit ?? RESPONSE_LIMIT)

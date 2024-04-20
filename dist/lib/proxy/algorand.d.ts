@@ -1,9 +1,4 @@
 import { Arc69Metadata, AssetConfigTransaction, AssetMetadata } from "../../types";
-type GetAssetsInWalletQuery = {
-    minBal?: number;
-    nextToken?: string;
-    limit?: number;
-};
 export declare const getArc69Metadata: (asaId: number) => Promise<Arc69Metadata>;
 export declare function getJsonFromNote(noteBase64: string): Arc69Metadata;
 declare const Algo: {
@@ -36,7 +31,7 @@ declare const Algo: {
             readonly id?: string;
         }, arg1: number) => Promise<Arc69Metadata>;
     };
-    getAssetsInWallet: ((arg1: string, arg2: GetAssetsInWalletQuery) => Promise<{
+    getAssetsInWallet: ((arg1: string) => Promise<{
         assets: import("../../types/algorand").AssetInformation[];
         nextToken: string;
     }>) & {
@@ -45,7 +40,7 @@ declare const Algo: {
             readonly weight?: number;
             readonly expiration?: number;
             readonly id?: string;
-        }, arg1: string, arg2: GetAssetsInWalletQuery) => Promise<{
+        }, arg1: string) => Promise<{
             assets: import("../../types/algorand").AssetInformation[];
             nextToken: string;
         }>;

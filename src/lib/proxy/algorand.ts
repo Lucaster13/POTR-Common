@@ -41,7 +41,7 @@ type GetAssetsInWalletQuery = {
 	limit?: number;
 };
 
-async function getAssetsInWallet(addr: string, { nextToken, minBal, limit }: GetAssetsInWalletQuery) {
+async function getAssetsInWallet(addr: string, { nextToken, minBal, limit }: GetAssetsInWalletQuery = {}) {
 	return indexer
 		.lookupAccountAssets(addr)
 		.limit(limit ?? RESPONSE_LIMIT)
