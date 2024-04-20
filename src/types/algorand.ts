@@ -37,6 +37,20 @@ type PaginatedResponse = {
 	"next-token": string | undefined;
 };
 
+type PaginatedRequest = {
+	nextToken?: string;
+};
+
+type GetAsaIdsInWalletRequest = {
+	addr: string;
+	minBal?: number;
+	limit?: number;
+} & PaginatedRequest;
+
+type GetAllAsaMetadataRequest = {
+	addr: string;
+} & PaginatedRequest;
+
 type AccountAssetHoldingResponse = { assets: AssetHolding[] } & PaginatedResponse;
 type AssetMetadataResponse = { asset: AssetMetadata } & PaginatedResponse;
 type CreatedAssetsResponse = { assets: AssetMetadata[] } & PaginatedResponse;
@@ -76,4 +90,6 @@ export type {
 	AssetMetadataResponse,
 	AssetConfigTransactionsResponse,
 	CreatedAssetsResponse,
+	GetAsaIdsInWalletRequest,
+	GetAllAsaMetadataRequest,
 };

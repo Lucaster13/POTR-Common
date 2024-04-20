@@ -12,6 +12,8 @@ import {
 	AssetMetadata,
 	AssetMetadataResponse,
 	CreatedAssetsResponse,
+	GetAllAsaMetadataRequest,
+	GetAsaIdsInWalletRequest,
 } from "../../types";
 import { algorandConfig } from "../../config";
 import { makeRateLimiter } from "../utils";
@@ -35,14 +37,8 @@ const getUserAddr = () => getWalletAddrFromConfig("USER");
 
 // GET ALL POTRS IN A GIVEN WALLET
 const RESPONSE_LIMIT = 3000;
-type GetAsaIdsInWalletQuery = {
-	minBal?: number;
-	nextToken?: string;
-	limit?: number;
-};
 
-async function getAsaIdsInWallet(addr: string, params: GetAsaIdsInWalletQuery | undefined) {
-	const { nextToken, minBal, limit } = params ?? {};
+async function getAsaIdsInWallet({ addr, nextToken, minBal, limit }: GetAsaIdsInWalletRequest) {
 	return indexer
 		.lookupAccountAssets(addr)
 		.limit(limit ?? RESPONSE_LIMIT)
@@ -90,7 +86,7 @@ async function getAsaMetadata(asaId: number): Promise<AssetMetadata> {
 		.then(({ asset }) => asset);
 }
 
-async function getAllAsaMetadata(addr: string, nextToken: string | undefined) {
+async function getAllAsaMetadata({ addr, nextToken }: GetAllAsaMetadataRequest) {
 	return indexer
 		.lookupAccountCreatedAssets(addr)
 		.limit(RESPONSE_LIMIT)

@@ -31,6 +31,17 @@ type AssetConfigTransaction = {
 type PaginatedResponse = {
     "next-token": string | undefined;
 };
+type PaginatedRequest = {
+    nextToken?: string;
+};
+type GetAsaIdsInWalletRequest = {
+    addr: string;
+    minBal?: number;
+    limit?: number;
+} & PaginatedRequest;
+type GetAllAsaMetadataRequest = {
+    addr: string;
+} & PaginatedRequest;
 type AccountAssetHoldingResponse = {
     assets: AssetHolding[];
 } & PaginatedResponse;
@@ -62,4 +73,4 @@ type PotrMetadata = {
     baseClass: PotrBaseClass;
     description: string;
 } & PotrAssetMetadata;
-export type { AccountAssetHoldingResponse, PotrMetadata, Arc69Metadata, AssetMetadata, AssetConfigTransaction, AssetHolding, PotrAssetMetadata, AssetMetadataResponse, AssetConfigTransactionsResponse, CreatedAssetsResponse, };
+export type { AccountAssetHoldingResponse, PotrMetadata, Arc69Metadata, AssetMetadata, AssetConfigTransaction, AssetHolding, PotrAssetMetadata, AssetMetadataResponse, AssetConfigTransactionsResponse, CreatedAssetsResponse, GetAsaIdsInWalletRequest, GetAllAsaMetadataRequest, };

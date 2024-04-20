@@ -27,7 +27,7 @@ async function getAllMetadatasWithoutTraits() {
     const assets = [];
     let nextToken;
     do {
-        await Algo.getAllAsaMetadata(Algo.getAdminAddr(), nextToken).then((res) => assets.push(...res.assets));
+        await Algo.getAllAsaMetadata({ addr: Algo.getAdminAddr(), nextToken }).then((res) => assets.push(...res.assets));
     } while (nextToken);
     return assets.map(({ params, index }) => ({
         name: params.name,

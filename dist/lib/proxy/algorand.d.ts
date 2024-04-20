@@ -1,9 +1,4 @@
-import { Arc69Metadata, AssetConfigTransaction, AssetMetadata } from "../../types";
-type GetAsaIdsInWalletQuery = {
-    minBal?: number;
-    nextToken?: string;
-    limit?: number;
-};
+import { Arc69Metadata, AssetConfigTransaction, AssetMetadata, GetAllAsaMetadataRequest, GetAsaIdsInWalletRequest } from "../../types";
 export declare const getArc69Metadata: (asaId: number) => Promise<Arc69Metadata>;
 export declare function getJsonFromNote(noteBase64: string): Arc69Metadata;
 declare const Algo: {
@@ -36,7 +31,7 @@ declare const Algo: {
             readonly id?: string | null | undefined;
         }, arg1: number) => Promise<Arc69Metadata>;
     };
-    getAsaIdsInWallet: ((arg1: string, arg2: GetAsaIdsInWalletQuery | undefined) => Promise<{
+    getAsaIdsInWallet: ((arg1: GetAsaIdsInWalletRequest) => Promise<{
         asaIds: number[];
         nextToken: string | undefined;
     }>) & {
@@ -45,7 +40,7 @@ declare const Algo: {
             readonly weight?: number | null | undefined;
             readonly expiration?: number | null | undefined;
             readonly id?: string | null | undefined;
-        }, arg1: string, arg2: GetAsaIdsInWalletQuery | undefined) => Promise<{
+        }, arg1: GetAsaIdsInWalletRequest) => Promise<{
             asaIds: number[];
             nextToken: string | undefined;
         }>;
@@ -82,7 +77,7 @@ declare const Algo: {
             readonly id?: string | null | undefined;
         }, arg1: number) => Promise<AssetMetadata>;
     };
-    getAllAsaMetadata: ((arg1: string, arg2: string | undefined) => Promise<{
+    getAllAsaMetadata: ((arg1: GetAllAsaMetadataRequest) => Promise<{
         assets: AssetMetadata[];
         nextToken: string | undefined;
     }>) & {
@@ -91,7 +86,7 @@ declare const Algo: {
             readonly weight?: number | null | undefined;
             readonly expiration?: number | null | undefined;
             readonly id?: string | null | undefined;
-        }, arg1: string, arg2: string | undefined) => Promise<{
+        }, arg1: GetAllAsaMetadataRequest) => Promise<{
             assets: AssetMetadata[];
             nextToken: string | undefined;
         }>;
