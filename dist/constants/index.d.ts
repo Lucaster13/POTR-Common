@@ -1,10 +1,10 @@
 export * from "./traits.js";
-export declare const enum WalletProvider {
+export declare enum WalletProvider {
     PERA = "pera",
     MNEMONIC = "mnemonic",
     WALLET_CONNECT = "wallet-connect"
 }
-export declare const enum Status {
+export declare enum Status {
     SUCCESS = "SUCCESS",
     ERROR = "ERROR",
     WARNING = "WARNING",

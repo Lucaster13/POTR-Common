@@ -1,4 +1,4 @@
-declare const enum VisualTraitType {
+declare enum VisualTraitType {
     BACKGROUND = "PotrBackground",
     CLASS = "PotrClass",
     BODY = "Body",
@@ -7,20 +7,20 @@ declare const enum VisualTraitType {
     BACK = "Back",
     MOUTH = "Mouth"
 }
-declare const enum MetaTraitType {
+declare enum MetaTraitType {
     LEVEL = "Level"
 }
 declare const VISUAL_TRAITS: VisualTraitType[];
 declare const META_TRAITS: MetaTraitType[];
 declare const TRAIT_TYPES: (VisualTraitType | MetaTraitType)[];
-declare const enum PotrBaseClass {
+declare enum PotrBaseClass {
     HUMANOID = "Humanoid",
     PHANTOM = "Phantom",
     DRAGON = "Dragon",
     GOLEM = "Golem"
 }
 declare const BASE_CLASSES: PotrBaseClass[];
-declare const enum PotrBackground {
+declare enum PotrBackground {
     GRAY = "Gray",
     LIGHT_BLUE = "Light Blue",
     ORANGE = "Orange",
@@ -35,7 +35,7 @@ declare const enum PotrBackground {
     GOLD = "Gold",
     POTR = "POTR"
 }
-declare const enum PotrClass {
+declare enum PotrClass {
     BERSERKER = "Berserker",
     RANGER = "Ranger",
     WIZARD = "Wizard",
@@ -48,7 +48,7 @@ declare const enum PotrClass {
     DRAGON = "Dragon",
     HUMAN = "Human"
 }
-declare const enum HumanoidBody {
+declare enum HumanoidBody {
     NONE = "None",
     BEAST_HIDE = "Beast Hide",
     LIGHT_ARMOR = "Light Armor",
@@ -63,13 +63,13 @@ declare const enum HumanoidBody {
     ANGEL_LIGHT = "Angel Light",
     RADIOACTIVE = "Radioactive"
 }
-declare const enum PhantomBody {
+declare enum PhantomBody {
     CALM = "Calm",
     AGGRESSIVE = "Aggressive",
     GRACIOUS = "Gracious",
     DISTURBED = "Disturbed"
 }
-declare const enum DragonBody {
+declare enum DragonBody {
     FLAME = "Flame",
     FROST = "Frost",
     SAND = "Sand",
@@ -78,7 +78,7 @@ declare const enum DragonBody {
     RADIOACTIVE = "Radioactive",
     ANDIENT = "Ancient"
 }
-declare const enum GolemBody {
+declare enum GolemBody {
     FLAME = "Flame",
     FROST = "Frost",
     SAND = "Sand",
@@ -87,7 +87,7 @@ declare const enum GolemBody {
     GEMSTONE = "Gemstone",
     CRYSTAL = "Crystal"
 }
-declare const enum HumanoidHead {
+declare enum HumanoidHead {
     BLOND_HAIR = "Blond Hair",
     BROWN_HAIR = "Brown Hair",
     NONE = "None",
@@ -109,7 +109,7 @@ declare const enum HumanoidHead {
     SANTA = "Santa",
     CROWN = "Crown"
 }
-declare const enum DragonHead {
+declare enum DragonHead {
     NONE = "None",
     HORNS = "Horns",
     DARK_HORNS = "Dark Horns",
@@ -120,7 +120,7 @@ declare const enum DragonHead {
     CROWN = "Crown",
     ANCIENT_HORN = "Ancient Horns"
 }
-declare const enum GolemHead {
+declare enum GolemHead {
     NONE = "None",
     THOUGHTS = "Thoughts",
     HALO = "Halo",
@@ -128,7 +128,7 @@ declare const enum GolemHead {
     CROWN = "Crown",
     CRYSTAL_HORN = "Crystal Horn"
 }
-declare const enum HumanoidEyes {
+declare enum HumanoidEyes {
     "Black" = 0,
     "Blue" = 1,
     "Stone" = 2,
@@ -145,19 +145,19 @@ declare const enum HumanoidEyes {
     "Ancient" = 13,
     "Thug Life" = 14
 }
-declare const enum DragonEyes {
+declare enum DragonEyes {
     "Black" = 0,
     "Closed" = 1,
     "X" = 2,
     "Thug Life" = 3
 }
-declare const enum GolemEyes {
+declare enum GolemEyes {
     "Black" = 0,
     "Closed" = 1,
     "X" = 2,
     "Thug Life" = 3
 }
-declare const enum HumanoidMouth {
+declare enum HumanoidMouth {
     "Normal" = 0,
     "Tongue" = 1,
     "Frown" = 2,
@@ -166,7 +166,7 @@ declare const enum HumanoidMouth {
     "Joint" = 5,
     "Tooth" = 6
 }
-declare const enum DragonMouth {
+declare enum DragonMouth {
     "Normal" = 0,
     "Fangs" = 1,
     "Dark Fangs" = 2,
@@ -176,7 +176,7 @@ declare const enum DragonMouth {
     "Joint" = 6,
     "Ancient Fangs" = 7
 }
-declare const enum GolemMouth {
+declare enum GolemMouth {
     "Normal" = 0,
     "Smile" = 1,
     "Tongue" = 2,
@@ -184,7 +184,7 @@ declare const enum GolemMouth {
     "Joint" = 4,
     "Tooth" = 5
 }
-declare const enum HumanoidBack {
+declare enum HumanoidBack {
     "None" = 0,
     "Sword" = 1,
     "Common Companion" = 2,
@@ -194,7 +194,7 @@ declare const enum HumanoidBack {
     "Ultra Rare Companion" = 6,
     "Legendary Companion" = 7
 }
-declare const enum DragonBack {
+declare enum DragonBack {
     "Dragon Wings" = 0,
     "Common Companion" = 1,
     "None" = 2,
@@ -202,7 +202,7 @@ declare const enum DragonBack {
     "Ultra Rare Companion" = 4,
     "Legendary Companion" = 5
 }
-declare const enum GolemBack {
+declare enum GolemBack {
     "None" = 0,
     "Spikes" = 1,
     "Common Companion" = 2,

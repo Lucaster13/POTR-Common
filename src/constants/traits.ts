@@ -4,7 +4,7 @@
  *
  */
 
-const enum VisualTraitType {
+enum VisualTraitType {
 	BACKGROUND = "PotrBackground",
 	CLASS = "PotrClass",
 	BODY = "Body",
@@ -14,7 +14,7 @@ const enum VisualTraitType {
 	MOUTH = "Mouth",
 }
 
-const enum MetaTraitType {
+enum MetaTraitType {
 	LEVEL = "Level",
 }
 
@@ -37,7 +37,7 @@ const TRAIT_TYPES = [...VISUAL_TRAITS, ...META_TRAITS];
  *
  */
 
-const enum PotrBaseClass {
+enum PotrBaseClass {
 	HUMANOID = "Humanoid",
 	PHANTOM = "Phantom",
 	DRAGON = "Dragon",
@@ -52,7 +52,7 @@ const BASE_CLASSES = [PotrBaseClass.HUMANOID, PotrBaseClass.PHANTOM, PotrBaseCla
  *
  */
 
-const enum PotrBackground {
+enum PotrBackground {
 	GRAY = "Gray",
 	LIGHT_BLUE = "Light Blue",
 	ORANGE = "Orange",
@@ -68,7 +68,7 @@ const enum PotrBackground {
 	POTR = "POTR",
 }
 
-const enum PotrClass {
+enum PotrClass {
 	BERSERKER = "Berserker",
 	RANGER = "Ranger",
 	WIZARD = "Wizard",
@@ -82,7 +82,7 @@ const enum PotrClass {
 	HUMAN = "Human",
 }
 
-const enum HumanoidBody {
+enum HumanoidBody {
 	NONE = "None",
 	BEAST_HIDE = "Beast Hide",
 	LIGHT_ARMOR = "Light Armor",
@@ -98,14 +98,14 @@ const enum HumanoidBody {
 	RADIOACTIVE = "Radioactive",
 }
 
-const enum PhantomBody {
+enum PhantomBody {
 	CALM = "Calm",
 	AGGRESSIVE = "Aggressive",
 	GRACIOUS = "Gracious",
 	DISTURBED = "Disturbed",
 }
 
-const enum DragonBody {
+enum DragonBody {
 	FLAME = "Flame",
 	FROST = "Frost",
 	SAND = "Sand",
@@ -115,7 +115,7 @@ const enum DragonBody {
 	ANDIENT = "Ancient",
 }
 
-const enum GolemBody {
+enum GolemBody {
 	FLAME = "Flame",
 	FROST = "Frost",
 	SAND = "Sand",
@@ -125,7 +125,7 @@ const enum GolemBody {
 	CRYSTAL = "Crystal",
 }
 
-const enum HumanoidHead {
+enum HumanoidHead {
 	BLOND_HAIR = "Blond Hair",
 	BROWN_HAIR = "Brown Hair",
 	NONE = "None",
@@ -148,7 +148,7 @@ const enum HumanoidHead {
 	CROWN = "Crown",
 }
 
-const enum DragonHead {
+enum DragonHead {
 	NONE = "None",
 	HORNS = "Horns",
 	DARK_HORNS = "Dark Horns",
@@ -160,7 +160,7 @@ const enum DragonHead {
 	ANCIENT_HORN = "Ancient Horns",
 }
 
-const enum GolemHead {
+enum GolemHead {
 	NONE = "None",
 	THOUGHTS = "Thoughts",
 	HALO = "Halo",
@@ -169,7 +169,7 @@ const enum GolemHead {
 	CRYSTAL_HORN = "Crystal Horn",
 }
 
-const enum HumanoidEyes {
+enum HumanoidEyes {
 	"Black",
 	"Blue",
 	"Stone",
@@ -187,21 +187,21 @@ const enum HumanoidEyes {
 	"Thug Life",
 }
 
-const enum DragonEyes {
+enum DragonEyes {
 	"Black",
 	"Closed",
 	"X",
 	"Thug Life",
 }
 
-const enum GolemEyes {
+enum GolemEyes {
 	"Black",
 	"Closed",
 	"X",
 	"Thug Life",
 }
 
-const enum HumanoidMouth {
+enum HumanoidMouth {
 	"Normal",
 	"Tongue",
 	"Frown",
@@ -211,7 +211,7 @@ const enum HumanoidMouth {
 	"Tooth",
 }
 
-const enum DragonMouth {
+enum DragonMouth {
 	"Normal",
 	"Fangs",
 	"Dark Fangs",
@@ -222,7 +222,7 @@ const enum DragonMouth {
 	"Ancient Fangs",
 }
 
-const enum GolemMouth {
+enum GolemMouth {
 	"Normal",
 	"Smile",
 	"Tongue",
@@ -230,7 +230,7 @@ const enum GolemMouth {
 	"Joint",
 	"Tooth",
 }
-const enum HumanoidBack {
+enum HumanoidBack {
 	"None",
 	"Sword",
 	"Common Companion",
@@ -241,7 +241,7 @@ const enum HumanoidBack {
 	"Legendary Companion",
 }
 
-const enum DragonBack {
+enum DragonBack {
 	"Dragon Wings",
 	"Common Companion",
 	"None",
@@ -250,7 +250,7 @@ const enum DragonBack {
 	"Legendary Companion",
 }
 
-const enum GolemBack {
+enum GolemBack {
 	"None",
 	"Spikes",
 	"Common Companion",

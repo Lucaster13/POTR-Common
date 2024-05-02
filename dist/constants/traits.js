@@ -13,14 +13,14 @@ var MetaTraitType;
     MetaTraitType["LEVEL"] = "Level";
 })(MetaTraitType || (MetaTraitType = {}));
 const VISUAL_TRAITS = [
-    "PotrBackground",
-    "PotrClass",
-    "Body",
-    "Head",
-    "Back",
-    "Mouth",
+    VisualTraitType.BACKGROUND,
+    VisualTraitType.CLASS,
+    VisualTraitType.BODY,
+    VisualTraitType.HEAD,
+    VisualTraitType.BACK,
+    VisualTraitType.MOUTH,
 ];
-const META_TRAITS = ["Level"];
+const META_TRAITS = [MetaTraitType.LEVEL];
 const TRAIT_TYPES = [...VISUAL_TRAITS, ...META_TRAITS];
 var PotrBaseClass;
 (function (PotrBaseClass) {
@@ -29,7 +29,7 @@ var PotrBaseClass;
     PotrBaseClass["DRAGON"] = "Dragon";
     PotrBaseClass["GOLEM"] = "Golem";
 })(PotrBaseClass || (PotrBaseClass = {}));
-const BASE_CLASSES = ["Humanoid", "Phantom", "Dragon", "Golem"];
+const BASE_CLASSES = [PotrBaseClass.HUMANOID, PotrBaseClass.PHANTOM, PotrBaseClass.DRAGON, PotrBaseClass.GOLEM];
 var PotrBackground;
 (function (PotrBackground) {
     PotrBackground["GRAY"] = "Gray";

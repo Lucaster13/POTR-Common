@@ -1,4 +1,4 @@
-import { BASE_CLASSES } from "../../constants";
+import { BASE_CLASSES, PotrBaseClass } from "../../constants";
 import { getCIDFromReserveAddr, resolveIpfsGatewayUrl } from "../utils";
 import Algo from "./algorand";
 async function getMetadata(asaId) {
@@ -21,7 +21,7 @@ async function getMetadata(asaId) {
 }
 function getBaseClass(potrClass) {
     const potrBaseClass = potrClass;
-    return !BASE_CLASSES.includes(potrBaseClass) ? "Humanoid" : potrBaseClass;
+    return !BASE_CLASSES.includes(potrBaseClass) ? PotrBaseClass.HUMANOID : potrBaseClass;
 }
 async function getAllMetadatasWithoutTraits() {
     const assets = [];

@@ -1,14 +1,14 @@
 export * from "./traits.js";
 
 // WALLET PROVIDERS ON ALGORAND
-export const enum WalletProvider {
+export enum WalletProvider {
 	PERA = "pera",
 	MNEMONIC = "mnemonic",
 	WALLET_CONNECT = "wallet-connect",
 }
 
 // GENERIC STATUS ENUM
-export const enum Status {
+export enum Status {
 	SUCCESS = "SUCCESS",
 	ERROR = "ERROR",
 	WARNING = "WARNING",
