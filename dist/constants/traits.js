@@ -58,6 +58,7 @@ var PotrClass;
     PotrClass["ARCHANGEL"] = "Archangel";
     PotrClass["GOLEM"] = "Golem";
     PotrClass["DRAGON"] = "Dragon";
+    PotrClass["HUMAN"] = "Human";
 })(PotrClass || (PotrClass = {}));
 var HumanoidBody;
 (function (HumanoidBody) {

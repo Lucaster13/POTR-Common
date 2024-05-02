@@ -45,7 +45,8 @@ declare const enum PotrClass {
     PHANTOM = "Phantom",
     ARCHANGEL = "Archangel",
     GOLEM = "Golem",
-    DRAGON = "Dragon"
+    DRAGON = "Dragon",
+    HUMAN = "Human"
 }
 declare const enum HumanoidBody {
     NONE = "None",

@@ -79,6 +79,7 @@ const enum PotrClass {
 	ARCHANGEL = "Archangel",
 	GOLEM = "Golem",
 	DRAGON = "Dragon",
+	HUMAN = "Human",
 }
 
 const enum HumanoidBody {
